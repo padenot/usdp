@@ -1,0 +1,9 @@
+#Thu Nov 04 11:17:26 CET 2010
+indexer/skipMacroReferences=false
+eclipse.preferences.version=1
+indexer/indexAllFiles=false
+indexer/skipReferences=false
+indexer/skipTypeReferences=false
+indexer/updatePolicy=0
+indexer/filesToParseUpFront=stdarg.h, stddef.h, sys/types.h
+indexer/indexerId=org.eclipse.cdt.core.domsourceindexer

@@ -1,0 +1,8 @@
+#Mon Nov 08 18:17:28 CET 2010
+remoteHelpPath=/infocenter/rsasehlp/v7r5m0,/help
+eclipse.preferences.version=1
+remoteHelpPort=80,63650
+always_external_browser=true
+remoteHelpName=RSA SE Infocenter,Local
+remoteHelpICEnabled=true,false
+remoteHelpHost=publib.boulder.ibm.com,127.0.0.1
