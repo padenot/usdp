@@ -220,7 +220,7 @@
             <children xmi:id="_--abI-wqEd-S_IsmmuMhnQ" type="MessageNameLabel">
               <children xmi:id="_--abJewqEd-S_IsmmuMhnQ" type="Stereotype"/>
               <children xmi:id="_--abJuwqEd-S_IsmmuMhnQ" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--abJOwqEd-S_IsmmuMhnQ" y="-317"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--abJOwqEd-S_IsmmuMhnQ" x="-16" y="-249"/>
             </children>
             <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_--abIewqEd-S_IsmmuMhnQ" lineWidth="1" showStereotype="Text"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_--abIuwqEd-S_IsmmuMhnQ" points="[0, 0, -135, 0]$[135, 0, 0, 0]"/>
@@ -535,11 +535,11 @@
       <message xmi:id="_oajXNewrEd-S_IsmmuMhnQ" name="start()" messageSort="reply" receiveEvent="_oajXNuwrEd-S_IsmmuMhnQ" sendEvent="_oajXNOwrEd-S_IsmmuMhnQ" connector="_oajXN-wrEd-S_IsmmuMhnQ"/>
     </ownedBehavior>
     <ownedAttribute xmi:id="_F7Z34ewqEd-S_IsmmuMhnQ" name="utilisateur simulation">
-      <type xmi:type="uml:Actor" href="UseCases.emx#_kOJOkOsiEd-WupIJ3BFZLg?UseCases/Utilisateur%20simulation?"/>
+      <type xmi:type="uml:Actor" href="UseCases.emx#_kOJOkOsiEd-WupIJ3BFZLg?UseCases/Simulation/Utilisateur%20simulation?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_JAhOsewqEd-S_IsmmuMhnQ" name="Système SGBag"/>
     <ownedAttribute xmi:id="_mocV0ewqEd-S_IsmmuMhnQ" name="utilisateur simulation2">
-      <type xmi:type="uml:Actor" href="UseCases.emx#_kOJOkOsiEd-WupIJ3BFZLg?UseCases/Utilisateur%20simulation?"/>
+      <type xmi:type="uml:Actor" href="UseCases.emx#_kOJOkOsiEd-WupIJ3BFZLg?UseCases/Simulation/Utilisateur%20simulation?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_n6P78ewqEd-S_IsmmuMhnQ" name="IHM"/>
     <ownedAttribute xmi:id="_tGYCkewqEd-S_IsmmuMhnQ" name="guichet">
@@ -552,7 +552,7 @@
       <type xmi:type="uml:Class" href="Package%20vierge.emx#_9b-b4OsVEd-oy8D834IawQ?ModeleDomaine/Tapis?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_VbaMoewrEd-S_IsmmuMhnQ" name="horloge">
-      <type xmi:type="uml:Actor" href="UseCases.emx#_pP5GoOshEd-WupIJ3BFZLg?UseCases/Horloge?"/>
+      <type xmi:type="uml:Actor" href="UseCases.emx#_pP5GoOshEd-WupIJ3BFZLg?UseCases/Besoins%20communs/Horloge?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_WOEYoewrEd-S_IsmmuMhnQ" name="aéroport">
       <type xmi:type="uml:Class" href="Package%20vierge.emx#_9GtzAOsUEd-oy8D834IawQ?ModeleDomaine/Aéroport?"/>
@@ -572,7 +572,7 @@
   <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_VC73sewqEd-S_IsmmuMhnQ" name="Evénementd'exécution2"/>
   <packagedElement xmi:type="uml:Collaboration" xmi:id="_YRllAOwqEd-S_IsmmuMhnQ" name="Collaboration2">
     <ownedAttribute xmi:id="_MipcMewrEd-S_IsmmuMhnQ" name="horloge">
-      <type xmi:type="uml:Actor" href="UseCases.emx#_pP5GoOshEd-WupIJ3BFZLg?UseCases/Horloge?"/>
+      <type xmi:type="uml:Actor" href="UseCases.emx#_pP5GoOshEd-WupIJ3BFZLg?UseCases/Besoins%20communs/Horloge?"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_pe0tFOwqEd-S_IsmmuMhnQ" name="Evénementd'exécution3"/>

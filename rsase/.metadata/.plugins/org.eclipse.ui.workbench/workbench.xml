@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="138" version="2.0">
+<workbench progressCount="82" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="88" y="116">
 <fastViewData fastViewLocation="1024">
@@ -23,7 +23,7 @@
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="39" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="716" y="30"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="556" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="ModelerBrowseDiagramEditor" itemType="typePlaceholder" x="854" y="22"/>
 <coolItem id="UMLVisualizerEditor" itemType="typePlaceholder" x="931" y="22"/>
@@ -49,15 +49,6 @@
 </folder>
 </info>
 </editorArea>
-<editor id="com.ibm.xtools.modeler.ui.editors.internal.ModelEditor" name="Package vierge.emx" partName="Package vierge.emx" path="//servif-baie/hexanomes/IF-H4203/USDP/SVN/rsase/usdp/Package vierge.emx" title="Package vierge.emx" tooltip="usdp/Package vierge.emx" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usdp/Package vierge.emx"/>
-</editor>
-<editor id="com.ibm.xtools.modeler.ui.editors.internal.ModelEditor" name="Modèle de paquetages.emx" partName="Modèle de paquetages.emx" path="//servif-baie/hexanomes/IF-H4203/USDP/rsase/usdp/Modèle de paquetages.emx" title="Modèle de paquetages.emx" tooltip="usdp/Modèle de paquetages.emx" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usdp/Modèle de paquetages.emx"/>
-</editor>
-<editor id="com.ibm.xtools.modeler.ui.editors.internal.ModelEditor" name="DiagrammesSeq.emx" partName="DiagrammesSeq.emx" path="//servif-baie/hexanomes/IF-H4203/USDP/SVN/rsase/usdp/DiagrammesSeq.emx" title="DiagrammesSeq.emx" tooltip="usdp/DiagrammesSeq.emx" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/usdp/DiagrammesSeq.emx"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Propriétés">
@@ -84,14 +75,14 @@
 <viewState/>
 </view>
 <view id="com.ibm.ccl.erf.ui.views.reportexplorer" partName="Explorateur de rapports"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Structure">
+<viewState/>
+</view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Recherche">
 <viewState isPinned="false">
 <view IMemento.internal.id="com.ibm.xtools.modeler.ui.search.internal.pages.ModelerSearchResultsPage" org.eclipse.search.lastActivation="1"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Structure">
-<viewState/>
 </view>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Explorateur de projets">
 <viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
@@ -194,8 +185,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.24428684" ratioLeft="310" ratioRight="959" relationship="2" relative="org.eclipse.ui.internal.ViewStack@ad10ad1"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@4f134f13" ratio="0.8052486" ratioLeft="583" ratioRight="141" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.14736013" ratioLeft="187" ratioRight="1082" relationship="2" relative="org.eclipse.ui.internal.ViewStack@ad10ad1"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@4f134f13" ratio="0.6674528" ratioLeft="566" ratioRight="282" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Propriétés"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tâches"/>
@@ -213,7 +204,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@83f083f" ratio="0.86103284" ratioLeft="917" ratioRight="148" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@83f083f" ratio="0.88912135" ratioLeft="850" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.gef.ui.palette_view" appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="Palette"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -339,6 +330,13 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@ad10ad1"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@4d4a4d4a"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@83f083f"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -346,6 +344,7 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@4f134f13"/>
 </trimArea>
 </trimLayout>
 </window>

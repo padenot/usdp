@@ -4855,3 +4855,319 @@ org.eclipse.swt.SWTException: Device is disposed
 	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
 	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
 	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+!SESSION 2010-11-10 08:15:11.897 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows XP x86-32 jvmwi3260sr5ifx-20090821_41076 (JIT enabled, AOT enabled)
+J9VM - 20090821_041076_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=fr_FR
+Framework arguments:  -product com.ibm.rational.rsastd.product.v75.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ibm.rational.rsastd.product.v75.ide
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.473
+!MESSAGE NLS unused message: Commands_Show_Extention in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.536
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Outgoing_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.551
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Outgoing_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.551
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Incoming_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.567
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Incoming_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.567
+!MESSAGE NLS unused message: Show_Implementors_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.583
+!MESSAGE NLS unused message: Show_Implementors_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.598
+!MESSAGE NLS unused message: Show_Implemented_Interfaces_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.598
+!MESSAGE NLS unused message: Show_Implemented_Interfaces_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.614
+!MESSAGE NLS unused message: Show_Icoming_Associations_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.629
+!MESSAGE NLS unused message: Show_Icoming_Associations_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.629
+!MESSAGE NLS unused message: Show_Outgoing_Associations_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.645
+!MESSAGE NLS unused message: Show_Outgoing_Associations_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.661
+!MESSAGE NLS unused message: Show_Outgoing_Usage_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.661
+!MESSAGE NLS unused message: Show_Outgoing_Usage_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.676
+!MESSAGE NLS unused message: Show_Incoming_Usage_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.676
+!MESSAGE NLS unused message: Show_Incoming_Usage_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.692
+!MESSAGE NLS unused message: ShowExtension_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.708
+!MESSAGE NLS unused message: ShowExtension_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:16:23.723
+!MESSAGE NLS missing message: Commands_Show_ReletedElements in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.ui.console 4 2 2010-11-10 08:42:03.604
+!MESSAGE Erreurs lors de l'appel du code du plug-in : org.eclipse.ui.console.
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.asyncExec(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleDropDownAction.consolesRemoved(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.notify(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.fireUpdate(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.removeConsoles(Unknown Source)
+	at org.eclipse.ui.console.ConsolePlugin.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.SystemBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.OSGi.close(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+
+!ENTRY org.eclipse.ui.console 4 120 2010-11-10 08:42:03.620
+!MESSAGE Une exception s'est produite lors de la notification de la console.
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.asyncExec(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleDropDownAction.consolesRemoved(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.notify(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.fireUpdate(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.removeConsoles(Unknown Source)
+	at org.eclipse.ui.console.ConsolePlugin.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.SystemBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.OSGi.close(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+!SESSION 2010-11-10 08:42:48.030 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows XP x86-32 jvmwi3260sr5ifx-20090821_41076 (JIT enabled, AOT enabled)
+J9VM - 20090821_041076_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=fr_FR
+Framework arguments:  -product com.ibm.rational.rsastd.product.v75.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ibm.rational.rsastd.product.v75.ide
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.748
+!MESSAGE NLS unused message: Commands_Show_Extention in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.764
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Outgoing_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.764
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Outgoing_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.780
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Incoming_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.780
+!MESSAGE NLS unused message: Show_Immediate_Inheritance_Incoming_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.795
+!MESSAGE NLS unused message: Show_Implementors_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.795
+!MESSAGE NLS unused message: Show_Implementors_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.811
+!MESSAGE NLS unused message: Show_Implemented_Interfaces_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.811
+!MESSAGE NLS unused message: Show_Implemented_Interfaces_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.827
+!MESSAGE NLS unused message: Show_Icoming_Associations_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.827
+!MESSAGE NLS unused message: Show_Icoming_Associations_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.842
+!MESSAGE NLS unused message: Show_Outgoing_Associations_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.842
+!MESSAGE NLS unused message: Show_Outgoing_Associations_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.842
+!MESSAGE NLS unused message: Show_Outgoing_Usage_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.858
+!MESSAGE NLS unused message: Show_Outgoing_Usage_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.873
+!MESSAGE NLS unused message: Show_Incoming_Usage_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.873
+!MESSAGE NLS unused message: Show_Incoming_Usage_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.889
+!MESSAGE NLS unused message: ShowExtension_Text in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.889
+!MESSAGE NLS unused message: ShowExtension_Tooltip in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:43:33.905
+!MESSAGE NLS missing message: Commands_Show_ReletedElements in: com.ibm.xtools.viz.j2se.ui.internal.l10n.messages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.123
+!MESSAGE NLS unused message: definitions_to_package_Transform_RootElementToPackagedElement_Usingservicereference_to_interface_Extractor in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.139
+!MESSAGE NLS unused message: process_to_component_Transform_InterfaceRefToPackagedElement_Usinginterface_to_Interface_Extractor in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.155
+!MESSAGE NLS unused message: servicereference_to_interface_Transform in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.155
+!MESSAGE NLS unused message: servicereference_to_interface_Transform_Create_Rule in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.170
+!MESSAGE NLS unused message: servicereference_to_interface_Transform_InterfaceRef$NameToName_Rule in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.osgi 2 1 2010-11-10 08:48:05.186
+!MESSAGE NLS unused message: servicereference_to_interface_Transform_InterfaceRef$OperationToOwnedOperation_Usingopertation_to_operation_Extractor in: com.ibm.xtools.transform.bpmn.servicemodel.l10n.ServicemodelMessages
+
+!ENTRY org.eclipse.ui.console 4 2 2010-11-10 09:14:37.467
+!MESSAGE Erreurs lors de l'appel du code du plug-in : org.eclipse.ui.console.
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.asyncExec(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleDropDownAction.consolesRemoved(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.notify(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.fireUpdate(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.removeConsoles(Unknown Source)
+	at org.eclipse.ui.console.ConsolePlugin.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.SystemBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.OSGi.close(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
+
+!ENTRY org.eclipse.ui.console 4 120 2010-11-10 09:14:37.577
+!MESSAGE Une exception s'est produite lors de la notification de la console.
+!STACK 0
+org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.SWT.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.error(Unknown Source)
+	at org.eclipse.swt.widgets.Display.asyncExec(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleDropDownAction.consolesRemoved(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.run(Unknown Source)
+	at org.eclipse.core.runtime.SafeRunner.run(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager$ConsoleNotifier.notify(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.fireUpdate(Unknown Source)
+	at org.eclipse.ui.internal.console.ConsoleManager.removeConsoles(Unknown Source)
+	at org.eclipse.ui.console.ConsolePlugin.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.SystemBundle.suspend(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Unknown Source)
+	at org.eclipse.osgi.framework.internal.core.OSGi.close(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(Unknown Source)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.basicRun(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.run(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.main(Unknown Source)
