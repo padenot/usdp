@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item value="com.ibm.xtools.modeler.ui.actions.NewModelActionWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+	<section name="ActivityCategoryPreferencePageAdvancedDialogSettings">
+		<item value="-88" key="DIALOG_Y_ORIGIN"/>
+		<item value="249" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="746" key="DIALOG_HEIGHT"/>
+		<item value="360" key="DIALOG_WIDTH"/>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="92" key="DIALOG_Y_ORIGIN"/>
+		<item value="306" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ShowViewDialog">
+		<item value="org.eclipse.pde.runtime.LogView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="187" key="DIALOG_Y_ORIGIN"/>
+		<item value="460" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="421" key="DIALOG_HEIGHT"/>
+		<item value="369" key="DIALOG_WIDTH"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+		</list>
+	</section>
+</section>
