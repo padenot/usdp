@@ -16,7 +16,7 @@
           <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_PqgjAuxBEd-1OqxBWeP6aQ" canonical="false" collapsed="true"/>
         </children>
         <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_Pqet0exBEd-1OqxBWeP6aQ" fontName="Sans" showStereotype="Label"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pqet0uxBEd-1OqxBWeP6aQ" x="14388" y="6072"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pqet0uxBEd-1OqxBWeP6aQ" x="15708" y="8052"/>
       </children>
       <children xmi:id="_DlxBUOyaEd-q55IxPzNK8w" element="_Dk6FsOyaEd-q55IxPzNK8w">
         <children xmi:id="_DlyPcOyaEd-q55IxPzNK8w" type="ImageCompartment">
