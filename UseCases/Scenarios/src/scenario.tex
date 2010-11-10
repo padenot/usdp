@@ -1,43 +1,94 @@
-\section{Configuration}
-\scenario{Utilisateur de la configuration}{Ajouter}
-\scenario{Utilisateur de la configuration}{Déplacer}
-\scenario{Utilisateur de la configuration}{Lier aux autres éléments}
-\scenario{Utilisateur de la configuration}{Paramètrer}
-\scenario{Utilisateur de la configuration}{Supprimer}
-\scenario{Utilisateur de la configuration}{Simuler}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Besoins communs}
+\subsection{Mettre à jour l'état du système}
+\scenario{Capteur actif}{Prendre en compte l'interruption du capteur actif}
+\scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
+\subsection{Visualisation statique}
+\scenario{Utilisateur client graphique}{Selectionner l'objet statique}
+\scenario{Utilisateur client graphique}{Zoomer l'objet statique}
+\scenario{Utilisateur client graphique}{Dé-zoomer l'objet statique}
+\subsection{Visualisation dynamique}
+\scenario{Utilisateur client graphique}{Selectionner l'objet dynamique}
+\scenario{Utilisateur client graphique}{Zoomer l'objet dynamique}
+\scenario{Utilisateur client graphique}{Dé-zoomer l'objet dynamique}
+\subsection{Gérer la persistance}
+{\huge ATTENTION, INCOHERENT}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Configuration}
+
+\subsection{Ajouter un élément}
+\scenario{Utilisateur configuration}{Ajouter}
+
+\subsection{Manipuler un élément existant}
+\scenario{Utilisateur configuration}{Déplacer}
+\scenario{Utilisateur configuration}{Lier aux autres éléments}
+\scenario{Utilisateur configuration}{Paramètrer}
+\scenario{Utilisateur configuration}{Supprimer}
+
+\subsection{Simuler}
+\scenario{Utilisateur configuration}{Simuler}
+
+\subsection{Fermer la configuration}
+{\huge ICI, Problème !}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation}
 \subsection{Charger une configuration pour la simulation}
-\scenario{Utilisateur de la simulation}{Charger une simulation}
-\scenario{Utilisateur de la simulation}{Charger une configuration pour la simulation}
+\scenario{Utilisateur simulation}{Charger une simulation}
+\scenario{Utilisateur simulation}{Charger une configuration pour la simulation}
 
 \subsection{Gérer la liste des vols}
-\scenario{Utilisateur de la simulation}{Créer un vol}
-\scenario{Utilisateur de la simulation}{Modifier un vol}
-\scenario{Utilisateur de la simulation}{Supprimer un vol}
+\scenario{Utilisateur simulation}{Créer un vol}
+\scenario{Utilisateur simulation}{Modifier un vol}
+\scenario{Utilisateur simulation}{Supprimer un vol}
 
 \subsection{Changer le mode de simulation}
-\scenario{Utilisateur de la simulation}{Passer en mode automatique}
-\scenario{Utilisateur de la simulation}{Passer en mode manuel}
+\scenario{Utilisateur simulation}{Passer en mode automatique}
+\scenario{Utilisateur simulation}{Passer en mode manuel}
 
 \subsection{Agir sur les éléments visualisés}
-\scenario{Utilisateur de la simulation}{Sélectionner un élément}
-\scenario{Utilisateur de la simulation}{Paramétrer un élément}
-\scenario{Utilisateur de la simulation}{Mettre en marche un élément}
-\scenario{Utilisateur de la simulation}{Arrêter un élément}
+\scenario{Utilisateur simulation}{Sélectionner un élément}
+\scenario{Utilisateur simulation}{Paramétrer un élément}
+\scenario{Utilisateur simulation}{Mettre en marche un élément}
+\scenario{Utilisateur simulation}{Arrêter un élément}
 
 \subsection{Effectuer des opérations sur l'avancement de la simulation}
-\scenario{Utilisateur de la simulation}{Démarrer une simulation}
-\scenario{Utilisateur de la simulation}{Stopper une simulation}
-\scenario{Utilisateur de la simulation}{Mettre en pause une simulation}
+\scenario{Utilisateur simulation}{Démarrer une simulation}
+\scenario{Utilisateur simulation}{Stopper une simulation}
+\scenario{Utilisateur simulation}{Mettre en pause une simulation}
 
-\scenario{Utilisateur de la simulation}{Changer la vitesse de simulation}
+\scenario{Utilisateur simulation}{Changer la vitesse de simulation}
 
-\subsection{Effectuer des opérations sur les événement} 
-\scenario{Utilisateur de la simulation}{Créer un événement}
-\scenario{Utilisateur de la simulation}{Modifier un événement}
-\scenario{Utilisateur de la simulation}{Supprimer un événement}
-\scenario{Utilisateur de la simulation}{Visualiser un événement}
+\subsection{Gérer les événements}
+\scenario{Utilisateur simulation}{Créer un événement}
+\scenario{Utilisateur simulation}{Modifier un événement}
+\scenario{Utilisateur simulation}{Supprimer un événement}
+\scenario{Utilisateur simulation}{Visualiser un événement}
 
-\scenario{Utilisateur de la simulation}{Activer un événement}
-\scenario{Utilisateur de la simulation}{Désactiver un événement}
+\scenario{Utilisateur simulation}{Activer un événement}
+\scenario{Utilisateur simulation}{Désactiver un événement}
+
+\subsection{Déclencher les événements}
+\scenario{Horloge}{Déclencher un événement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exploitation}
+\subsection{Effectuer une opération protégée}
+\scenario{Utilisateur exploitation}{Paramétrer un élément de manière sécurisée}
+\scenario{Utilisateur exploitation}{Arrêter un élément de manière sécurisée}
+\scenario{Utilisateur exploitation}{Démarrer un élément de manière sécurisée}
+
+\subsection{Acheminer automatiquement les bagages}
+{\huge TODO : à déplacer}
+
+\subsection{Arrêter d'urgence le système}
+\scenario{Utilisateur exploitation}{Arrêter le système}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maintenance}
+{\huge TODO}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Réclamation}
+{\huge TODO}

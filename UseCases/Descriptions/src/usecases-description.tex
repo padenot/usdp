@@ -1,46 +1,125 @@
-\section{Acteurs}
-\subsection{Utilisateur de la configuration}
-C'est une personne qui manipule l'interface de configuration. Seul le responsable technique possède les attribution pour modifier ou créer des configurations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acteurs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acteurs et rôles}
+\subsection{Utilisateur client graphique}
+C'est une personne ayant accès aux fonctionnalités graphiques du logiciel SGBag. Les autres rôles \og Utilisateurs \fg en dérivent.
+% TODO : inclure le diagramme d'héritage des rôles utilisateurs
 
-\subsection{Utilisateur de la maintenance}
+\subsection{Utilisateur configuration}
+C'est une personne qui manipule l'interface de configuration. Seul le responsable technique possède les autorisations pour modifier ou créer des configurations.
+
+\subsection{Utilisateur simulation}
+C'est une personne qui manipule l'interface de simulation. Le responsable technique et le superviseur en font partie.
+
+\subsection{Utilisateur exploitation}
 C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.
 
-\subsection{Utilisateur de la gestion des réclamation}
-C'est un personne qui gère les problèmes survenus en cas de perte ou de dégradation des bagages. Elle peut accéder au dossier des litiges ainsi qu'au trajet des bagages.
+\subsection{Utilisateur maintenance}
+C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.
 
-\subsection{Base de donnée}
+\subsection{Utilisateur gestion réclamation}
+C'est une personne qui gère les problèmes survenus en cas de perte ou de dégradation des bagages. Elle peut accéder au dossier des litiges ainsi qu'au trajet des bagages.
+
+\subsection{Objet actif}
+Objet commandable à distance, tel qu'un tapis, un chariot, \ldots
+
+\subsection{Capteur actif}
+Capteur interrompant le système lorsqu'il doit transmettre une information (alarme, \ldots).
+
+\subsection{Capteur passif}
+Capteur dont la valeur doit être lue à intervalle régulier (caméra, \ldots).
+
+\subsection{Horloge}
+Une horloge, déclenchant des événement à une fréquence donnée.
+
+\subsection{Base de données}
 La base de donnée du système de gestion de bagages contient toutes les tables accessibles par l'application (\textsl{e.g} tblConfiguration, tblSimulation, \textsl{etc,} )
+{\huge TODO : supprimer ?}
+
+\subsection{BdD Exploitation}
+Permet de stocker, entre autres, l'historique des déplacement, informations reçues du système, etc.
+
+\subsection{BdD Configuration}
+Permet de stocker les configurations créées.
 
 \subsection{Technicien}
 C'est la personne qui intervient en cas de problème. Elle peut consulter et modifier la \textsl{fiche électronique d'intervention}.
 
-\section{Configuration}
-\subsection{Ajouter un élément}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cas d'utilisation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cas d'utilisation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Besoins communs}
+\subsubsection{Mettre à jour l'état du système}
+Prendre en compte les changements intervenus dans l'environnement pour conserver une représentation des données à jour.
+\subsubsection{Visualisation statique}
+Visualiser les objets propres à la configuration, donc immobiles (hall, terminal, tapis, \ldots).
+\subsubsection{Visualisation dynamique}
+Visualiser les objets propres à la simulation, donc mobiles (chariots, avions).
+\subsubsection{Gérer la persistance}
+{\huge ATTENTION, INCOHERENT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Configuration}
+\subsubsection{Ajouter un élément}
 Créer un nouvel élément et l'insérer dans la configuration. 
 
-\subsection{Simuler}
+\subsubsection{Simuler}
 Ouvrir l'interface de simulation à partir de l'interface de configuration. Les paramètres de la simulation sont ceux de la configuration en cours.
 
-\subsection{Manipuler un élément existant}
+\subsubsection{Manipuler un élément existant}
 Déplacer, lier, supprimer ou paramètrer un élément sélectionné.
 
-\subsection{Fermer la configuration}
-Quitter l'interface de configuration en demandant éventuellement de sauvegarder la configuration courrante.
+\subsubsection{Fermer la configuration}
+Quitter l'interface de configuration en demandant éventuellement de sauvegarder la configuration courrante. {\huge ICI, Problème !}
 
-\section{Maintenance}
-\subsection{Visualiser les résultats}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Simulation}
+\subsubsection{Charger une configuration}
+Définir la configuration d'aéroport utilisée pour la simulation, à partir de la BdD Configuration.
+\subsubsection{Gérer la liste des vols}
+Ajouter, retirer, paramétrer des vols à simuler.
+\subsubsection{Changer le mode de simulation}
+Basculer entre mode manuel et automatique.
+\subsubsection{Agir sur les éléments}
+Sélectionner, paramétrer, mettre en marche/arrêt.
+\subsubsection{Effectuer des opérations sur l'avancement de la simulation}
+Démarrer, stopper, mettre en pause, modifier la vitesse de la simulation.
+\subsubsection{Gérer les événements}
+Créer, modifier, supprimer, visualiser, activer/désactiver des événements.
+\subsubsection{Déclencher les événements}
+Déclencher les événements lorsqu'ils doivent l'être.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exploitation}
+\subsubsection{Effectuer une opération protégée}
+Paramétrer les éléments, les arrêter, les démarrer.
+\subsubsection{Acheminer automatiquement les bagages}
+{\huge TODO : à déplacer}
+\subsubsection{Arrêter d'urgence le système}
+Commande l'arrêt d'urgence de tous les objets contrôlables à distance.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maintenance}
+\subsubsection{Visualiser les résultats}
 Visualiser le comportement du système (via une constatation sur le terrain) à la suite d'opération d'epxloitation sur le système.
 
-\subsection{Gérer les interventions}
+\subsubsection{Gérer les interventions}
 En cas de problème, assigner la résolution d'un problème à un technicien et créer un fichier électronique qui contient un rapport d'intervention.
 
-\section{Réclamation}
-\subsection{Gérer un dossier de litige}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Réclamation}
+\subsubsection{Gérer un dossier de litige}
 En cas de litige (perte ou dégradation d'un bagage), créer, ouvrir, modifier, visualiser ou fermer un dossier de litige.
 
-\subsection{Se renseigner sur un bagage}
+\subsubsection{Se renseigner sur un bagage}
 Visualiser le trajet d'un bagage pendant son traitement par le système de gestion.
 
-TODO : Définir la notion d'élément ??
+{\huge TODO : Définir la notion d'élément ??}
 
 
