@@ -1,7 +1,12 @@
-\newcommand{\scenario}[#2]
+\newcounter{cntScenario}
+\setcounter{cntScenario}{1}
+
+\newcommand{\scenario}[2]
 {
-	\begin{tabular}[ll]
-		\textbf{Nom} & #2\\
+	\begin{tabular}{l p{17cm}}
+		\textbf{Scénario \thecntScenario} & #2\\
 		\textbf{Stimulis} & #1
 	\end{tabular}
+	~\\~\\
+	\stepcounter{cntScenario}
 }

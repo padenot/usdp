@@ -1,94 +1,171 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{scenario.inc.tex}
+
 \section{Besoins communs}
-\subsection{Mettre à jour l'état du système}
-\scenario{Capteur actif}{Prendre en compte l'interruption du capteur actif}
-\scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
 \subsection{Visualisation statique}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur client graphique}{Selectionner l'objet statique}
 \scenario{Utilisateur client graphique}{Zoomer l'objet statique}
 \scenario{Utilisateur client graphique}{Dé-zoomer l'objet statique}
+
 \subsection{Visualisation dynamique}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur client graphique}{Selectionner l'objet dynamique}
 \scenario{Utilisateur client graphique}{Zoomer l'objet dynamique}
 \scenario{Utilisateur client graphique}{Dé-zoomer l'objet dynamique}
-\subsection{Gérer la persistance}
-{\huge ATTENTION, INCOHERENT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Configuration}
 
-\subsection{Ajouter un élément}
-\scenario{Utilisateur configuration}{Ajouter}
-
-\subsection{Manipuler un élément existant}
-\scenario{Utilisateur configuration}{Déplacer}
+\subsection{Effectuer des opérations sur un élément}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur configuration}{Ajouter un élément}
+\scenario{Utilisateur configuration}{Visualiser un élément}
+\scenario{Utilisateur configuration}{Déplacer un élément}
 \scenario{Utilisateur configuration}{Lier aux autres éléments}
-\scenario{Utilisateur configuration}{Paramètrer}
-\scenario{Utilisateur configuration}{Supprimer}
+\scenario{Utilisateur configuration}{Supprimer un élément}
+\scenario{Utilisateur configuration}{Paramètrer un élément}
 
 \subsection{Simuler}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur configuration}{Simuler}
 
-\subsection{Fermer la configuration}
-{\huge ICI, Problème !}
+\subsection{Gérer la persistance de la configuration}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur configuration}{Enregistrer une configuration}
+\scenario{Utilisateur configuration}{Enregistrer-sous une configuration}
+\scenario{Utilisateur configuration}{Charger une configuration}
+\scenario{Utilisateur configuration}{Modifier une configuration}
+\scenario{Utilisateur configuration}{Ouvrir une configuration}
+\scenario{Utilisateur configuration}{Supprimer une configuration}
+\scenario{Utilisateur configuration}{Dupliquer une configuration}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation}
 \subsection{Charger une configuration pour la simulation}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Charger une simulation}
 \scenario{Utilisateur simulation}{Charger une configuration pour la simulation}
 
+\subsection{Gérer la persistance d'une simulation}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur simulation}{Enregistrer une simulation}
+\scenario{Utilisateur simulation}{Enregistrer-sous une simulation}
+\scenario{Utilisateur simulation}{Créer une simulation}
+\scenario{Utilisateur simulation}{Supprimer une simulation}
+\scenario{Utilisateur simulation}{Dupliquer une simulation}
+\scenario{Utilisateur simulation}{Modifier une simulation}
+
 \subsection{Gérer la liste des vols}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Créer un vol}
 \scenario{Utilisateur simulation}{Modifier un vol}
 \scenario{Utilisateur simulation}{Supprimer un vol}
 
 \subsection{Changer le mode de simulation}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Passer en mode automatique}
 \scenario{Utilisateur simulation}{Passer en mode manuel}
 
 \subsection{Agir sur les éléments visualisés}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Sélectionner un élément}
 \scenario{Utilisateur simulation}{Paramétrer un élément}
 \scenario{Utilisateur simulation}{Mettre en marche un élément}
 \scenario{Utilisateur simulation}{Arrêter un élément}
 
 \subsection{Effectuer des opérations sur l'avancement de la simulation}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Démarrer une simulation}
 \scenario{Utilisateur simulation}{Stopper une simulation}
 \scenario{Utilisateur simulation}{Mettre en pause une simulation}
-
 \scenario{Utilisateur simulation}{Changer la vitesse de simulation}
 
 \subsection{Gérer les événements}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur simulation}{Créer un événement}
 \scenario{Utilisateur simulation}{Modifier un événement}
 \scenario{Utilisateur simulation}{Supprimer un événement}
 \scenario{Utilisateur simulation}{Visualiser un événement}
-
 \scenario{Utilisateur simulation}{Activer un événement}
 \scenario{Utilisateur simulation}{Désactiver un événement}
 
 \subsection{Déclencher les événements}
+\setcounter{cntScenario}{1}
 \scenario{Horloge}{Déclencher un événement}
+
+\subsection{Mettre à jour l'état du système}
+\setcounter{cntScenario}{1}
+\scenario{Capteur actif}{Prendre en compte l'interruption d'un capteur actif}
+\scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Exploitation}
 \subsection{Effectuer une opération protégée}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur exploitation}{Paramétrer un élément de manière sécurisée}
 \scenario{Utilisateur exploitation}{Arrêter un élément de manière sécurisée}
 \scenario{Utilisateur exploitation}{Démarrer un élément de manière sécurisée}
 
 \subsection{Acheminer automatiquement les bagages}
-{\huge TODO : à déplacer}
+\setcounter{cntScenario}{1}
+\scenario{Système}{Acheminer automatiquement les bagages}
 
 \subsection{Arrêter d'urgence le système}
+\setcounter{cntScenario}{1}
 \scenario{Utilisateur exploitation}{Arrêter le système}
 
+\subsection{Gérer la persistance des configurations et des fichiers de logs}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur exploitation}{Charger une configuration}
+
+\subsection{Mettre à jour l'état du système}
+\setcounter{cntScenario}{1}
+\scenario{Capteur actif}{Prendre en compte l'interruption d'un capteur actif}
+\scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Maintenance}
-{\huge TODO}
+\subsection{Visualiser les résultats}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur maintenance}{Visualiser le comportement du système}
+
+\subsection{Gérer les interventions}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur maintenance}{Assigner une intervention à un technicien}
+\scenario{Utilisateur maintenance}{Créer un fichier électronique avec le rapport d'intervention}
+
+\subsection{Gérer la persistance des fichiers électroniques d'intervention et des fichiers de journaux}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur maintenance}{Enregistrer un fichier électronique d'intervention}
+\scenario{Utilisateur maintenance}{Lire un fichier électronique d'intervention}
+\scenario{Utilisateur maintenance}{Supprimer un fichier électronique d'intervention}
+\scenario{Utilisateur maintenance}{Modifier un fichier électronique d'intervention}
+
+\scenario{Utilisateur maintenance}{Lire un fichier de journal}
+\scenario{Utilisateur maintenance}{Supprimer un fichier de journal}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Réclamation}
-{\huge TODO}
+\setcounter{cntScenario}{1}
+
+\subsection{Gérer un dossier de litige}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur réclamation}{Créer un dossier de lititge}
+\scenario{Utilisateur réclamation}{Modifier un dossier de lititge}
+\scenario{Utilisateur réclamation}{Visualiser un dossier de lititge}
+\scenario{Utilisateur réclamation}{Fermer un dossier de lititge}
+
+\subsection{Créer un nouvel identifiant voyageur}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur réclamation}{Créer un numéro d'identification et un mot de passe associé à un voayageur lésé}
+
+\subsection{Se renseigner sur un bagage}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur réclamation}{Visualiser le trajet d'un bagage}
+
+\subsection{Gérer la persistance des dossiers de litiges}
+\setcounter{cntScenario}{1}
+\scenario{Utilisateur réclamation}{Enregistrer un dossier de litige}
+\scenario{Utilisateur réclamation}{Charger un dossier de litige}
+\scenario{Utilisateur réclamation}{Supprimer un dossier de litige}
+
