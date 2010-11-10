@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<section name="WorkingSetsConfigurationPage.TemplateConfiguration">
-	</section>
-	<section name="DefaultDiagramConfigurationPage.TemplateConfiguration">
-		<item value="true" key="DefaultDiagramConfigurationPage.createDefaultDiagramForModelSetting"/>
-		<item value="0" key="DefaultDiagramConfigurationPage.defaultDiagramTypeForModelSetting"/>
-	</section>
-</section>

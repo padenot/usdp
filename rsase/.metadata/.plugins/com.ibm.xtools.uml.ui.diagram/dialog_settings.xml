@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<section name="CopyToImageDialog">
-		<item value="false" key="CopyToImageDialog.exportToHTML"/>
-		<item value="pdf" key="CopyToImageDialog.imageFormat"/>
-		<item value="/home/paul/Desktop" key="CopyToImageDialog.folder"/>
-		<item value="false" key="CopyToImageDialog.overwriteExisting"/>
-	</section>
-</section>
