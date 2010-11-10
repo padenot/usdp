@@ -32,6 +32,15 @@
 										\setcounter{section}{1}
 }
 
+\newcommand{\nDefinition}[2]
+{
+	\begin{center}
+	\begin{tabular}{l l}
+		\begin{minipage}[t]{4cm}\textbf{#1}\end{minipage} & \begin{minipage}[t]{10cm}#2\end{minipage}
+	\end{tabular}
+	\end{center}
+}
+
 \newenvironment{nAbstract}		
 {								
 		\vspace*{\fill}				
@@ -42,4 +51,18 @@
 			\end{abstract}			
 				\end{center}				
 					\vspace*{\fill}				
+}
+
+\newcounter{cntBesoins}
+\setcounter{cntBesoins}{1}
+
+\newcommand{\nBesoin}[3]
+{
+	\begin{tabular}{p{3cm} l}
+		\textbf{Besoin \thecntBesoins} & \begin{minipage}[t]{10cm}#1\end{minipage}\\
+		%\textbf{Objet(s)} & \begin{minipage}[t]{10cm}#2\end{minipage}\\
+		%\textbf{Action(s)} & \begin{minipage}[t]{10cm}#3\end{minipage}
+	\end{tabular}
+	% ~\\	
+	\stepcounter{cntBesoins}
 }

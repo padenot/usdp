@@ -1,410 +1,184 @@
-\domainNeeds{Configuration}
+\section{Définitions}
+\nDefinition{Object métier haut niveau :}
+{Terminal, hall,  zone de maintenance, zone de contrôle, voie de garage, zone d'embarquement, zone de déchargement, zone de retrait, zone d'enregistrement des bagages}
+
+
+\nDefinition{Objets métier de bas niveau :}
+{Guichet, chariot, carroussel, tapis roulant, capteur actif, capteur passif,  train de wagonnets, tobogan, portique, circuit de déplacement des chariots}
+
+
+\nDefinition{Mode de simulation}
 {
-	\paragraph{ Visualiser des éléments}
-	\paragraph{ Changer de niveau de granularité sur la visualisation}
-}
-{
-\paragraph{Effectuer des opération sur les éléments }
-\begin{itemize}
-	\item Ajouter des éléments
-	\item Paramétrer des éléments
-	\item Supprimer des éléments
-	\item Lier des éléments entre eux
-	\item Déplacer des éléments
-\end{itemize}
+Il peut être automatique ou manuel. Lorsqu'il est automatique, l'intervention humaine n'est nécessaire qu'en cas de problème ou de blocage du système.
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
-
-\paragraph{Persistance de la configuration}
-\begin{itemize}
-	\item Sauvegarder une configuration
-	\item Charger une configuration
-\end{itemize}
-
-\paragraph{Effectuer des opération sur les fiches électroniques d'interventions}
-\begin{itemize}
-	\item Créer une fiche électronique d'intervention
-	\item Visualiser une fiche électronique d'intervention
-	\item Clore une fiche électronique d'intervention
-\end{itemize}
-
-\paragraph{Gérer l'avancement de la simulation}
-\begin{itemize}
-	\item Stopper le temps
-	\item Démarrer le temps
-	\item Changer la vitesse de la simulation
-\end{itemize}
-
-\paragraph{Effectuer des opérations sur les évènements}
-\begin{itemize}
-	\item Ajouter des évènements
-	\item Modifier des évènements
-	\item Supprimer des évènements
-\end{itemize}
-
-\paragraph{Visualiser une simulation}
-\begin{itemize}
-	\item Visualiser des évènements
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
-
-\paragraph{Persistance de la simulation}
-\begin{itemize}
-	\item Sauvegarder une simulation
-	\item Charger une simulation
-\end{itemize}
-
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
-
-\paragraph{Gérer les réclamations}
-\begin{itemize}
-	\item Créer un dossier de litige pour un client lésé
-	\item Attribuer un identifiant et un mot de passe au client
-	\item Visualiser le dossier de litige pour un client
-\end{itemize}
-
-\paragraph{Visualiser le système}
-\begin{itemize}
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
-
+En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décision que le système doit prendre (\textsl{e.g.} embranchement, départ d'un bagage )
 }
 
-\domainNeeds{Maintenance}
-{
-	\paragraph{ Mettre à jour le logiciel }
-}
-{
-\paragraph{Effectuer des opération sur les éléments }
-\begin{itemize}
-	\item Ajouter des éléments
-	\item Paramétrer des éléments
-	\item Supprimer des éléments
-	\item Lier des éléments entre eux
-	\item Déplacer des éléments
-\end{itemize}
+\textbf{Remarque :} Un élément de haut niveau peut-être mis en marche ou arrêté. Ainsi, tous les éléments inclus seront récursivement mis en marche ou arrêté.
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\section{Liste des besoins}
+\subsection{Besoins communs}
+\nBesoin
+{Visualiser un objet dynamique}
+{Chariot, avion}
+{Sélectionner l'objet, zoomer/ dézoomer sur un objet métier de haut niveau}
 
-\paragraph{Persistance de la configuration}
-\begin{itemize}
-	\item Sauvegarder une configuration
-	\item Charger une configuration
-\end{itemize}
+\nBesoin
+{Visualiser un objet statique}
+{Objets métiers de haut niveau}
+{Sélectionner l'objet, zoomer/dézoomer}
 
-\paragraph{Effectuer des opération sur les fiches électroniques d'interventions}
-\begin{itemize}
-	\item Créer une fiche électronique d'intervention
-	\item Visualiser une fiche électronique d'intervention
-	\item Clore une fiche électronique d'intervention
-\end{itemize}
+\nBesoin
+{Effectuer des actions sur l'historique}
+{}
+{Annuler/rétablir une opération}
 
-\paragraph{Gérer l'avancement de la simulation}
-\begin{itemize}
-	\item Stopper le temps
-	\item Démarrer le temps
-	\item Changer la vitesse de la simulation
-\end{itemize}
+\subsection{Besoins communs}
+\setcounter{cntBesoins}{1}
 
-\paragraph{Effectuer des opérations sur les évènements}
-\begin{itemize}
-	\item Ajouter des évènements
-	\item Modifier des évènements
-	\item Supprimer des évènements
-\end{itemize}
+\nBesoin
+{Effectuer des opérations sur des éléments}
+{Objets métiers haut et bas niveau}
+{Visualiser, ajouter, déplacer, lier auyx autres éléments, paramètrer, supprimer}
 
-\paragraph{Visualiser une simulation}
-\begin{itemize}
-	\item Visualiser des évènements
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Simuler la configuration en cours}
+{}
+{}
 
-\paragraph{Persistance de la simulation}
-\begin{itemize}
-	\item Sauvegarder une simulation
-	\item Charger une simulation
-\end{itemize}
+\nBesoin
+{Gérer la persistance d'une configuration}
+{}
+{Enregistrer, enregistrer sous, charger, créer, supprimer, dupliquer, modifier}
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\subsection{Simulation}
+\setcounter{cntBesoins}{1}
 
-\paragraph{Gérer les réclamations}
-\begin{itemize}
-	\item Créer un dossier de litige pour un client lésé
-	\item Attribuer un identifiant et un mot de passe au client
-	\item Visualiser le dossier de litige pour un client
-\end{itemize}
+\nBesoin
+{Charger une configuration pour la simulation}
+{}
+{}
 
-\paragraph{Visualiser le système}
-\begin{itemize}
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Gérer la liste des vols}
+{}
+{Créer, supprimer, modifier un vol}
 
-}
+\nBesoin
+{Changer le mode de simulation entre automatique et manuel}
+{}
+{}
 
-\domainNeeds{Simulation}
-{
-	\paragraph{ Pouvoir agir sur les éléments manuellement}
-	\paragraph{ Pouvoir mettre la simulation en mode automatique}
-}
-{
-\paragraph{Effectuer des opération sur les éléments }
-\begin{itemize}
-	\item Ajouter des éléments
-	\item Paramétrer des éléments
-	\item Supprimer des éléments
-	\item Lier des éléments entre eux
-	\item Déplacer des éléments
-\end{itemize}
+\nBesoin
+{Agir manuellement sur les éléments visualisés}
+{Objets métiers haut et bas niveau}
+{Sélectionner, parametrer, mettre en arrêt/marche}
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\nBesoin
+{Effectuer des opérations sur l'avancement de la simulation}
+{}
+{Stopper/démarrer/mettre en pause, changer la vitesse de simulation (changer le top d'horloge)}
 
-\paragraph{Persistance de la configuration}
-\begin{itemize}
-	\item Sauvegarder une configuration
-	\item Charger une configuration
-\end{itemize}
+\nBesoin
+{Gérer les événements}
+{Arrivée bagage, panne, départ avion, \textsl{etc.}}
+{Créer, modifier, supprimer, visualiser, activer/désactiver}
 
-\paragraph{Effectuer des opération sur les fiches électroniques d'interventions}
-\begin{itemize}
-	\item Créer une fiche électronique d'intervention
-	\item Visualiser une fiche électronique d'intervention
-	\item Clore une fiche électronique d'intervention
-\end{itemize}
+\nBesoin
+{Déclencher les événements}
+{Arrivée bagage, panne, départ avion, \textsl{etc.}}
+{}
 
-\paragraph{Gérer l'avancement de la simulation}
-\begin{itemize}
-	\item Stopper le temps
-	\item Démarrer le temps
-	\item Changer la vitesse de la simulation
-\end{itemize}
+\nBesoin
+{Gérer la persistance d'une simulation}
+{}
+{Enregistrer, enregistrer sous, charger, créer, supprimer, dupliquer, modifier}
 
-\paragraph{Effectuer des opérations sur les évènements}
-\begin{itemize}
-	\item Ajouter des évènements
-	\item Modifier des évènements
-	\item Supprimer des évènements
-\end{itemize}
+\nBesoin
+{Mettre à jour l'état du système suite à un tick d'horloge}
+{}
+{}
 
-\paragraph{Visualiser une simulation}
-\begin{itemize}
-	\item Visualiser des évènements
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Mettre à jour l'état du système suite à une alarme}
+{}
+{}
 
-\paragraph{Persistance de la simulation}
-\begin{itemize}
-	\item Sauvegarder une simulation
-	\item Charger une simulation
-\end{itemize}
+\subsection{Exploitation}
+\setcounter{cntBesoins}{1}
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\nBesoin
+{Effectuer un arrêt d'urgence}
+{}{}
 
-\paragraph{Gérer les réclamations}
-\begin{itemize}
-	\item Créer un dossier de litige pour un client lésé
-	\item Attribuer un identifiant et un mot de passe au client
-	\item Visualiser le dossier de litige pour un client
-\end{itemize}
+\nBesoin
+{Acheminer automatiquement les bagages}
+{}{}
 
-\paragraph{Visualiser le système}
-\begin{itemize}
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Stocker l'historique}
+{Opérations effectuées, informations reçues}
+{}
 
-}
+\nBesoin
+{Effectuer des opérations protégées sur des éléments}
+{Paramétrer, mettre en arrêt/marche}
+{Objets métiers haut et bas niveau, bagage}
 
-\domainNeeds{Réclamations}
-{
-	\paragraph{ Rechercher la position d'un bagage}
-	\paragraph{ Visualiser le trajet d'un bagage}
-	\paragraph{ Trouver le moment où une erreur est survenue}
-}
-{
-\paragraph{Effectuer des opération sur les éléments }
-\begin{itemize}
-	\item Ajouter des éléments
-	\item Paramétrer des éléments
-	\item Supprimer des éléments
-	\item Lier des éléments entre eux
-	\item Déplacer des éléments
-\end{itemize}
+\nBesoin
+{Gérer la persistance d'une configuration et des fichiers de logs}
+{}
+{Charger}
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\nBesoin
+{Mettre à jour l'état du système suite à un tick d'horloge}
+{}{}
 
-\paragraph{Persistance de la configuration}
-\begin{itemize}
-	\item Sauvegarder une configuration
-	\item Charger une configuration
-\end{itemize}
+\nBesoin
+{Mettre à jour l'état du système suite à une alarme}
+{}{}
 
-\paragraph{Effectuer des opération sur les fiches électroniques d'interventions}
-\begin{itemize}
-	\item Créer une fiche électronique d'intervention
-	\item Visualiser une fiche électronique d'intervention
-	\item Clore une fiche électronique d'intervention
-\end{itemize}
+\subsection{Maintenance}
+\setcounter{cntBesoins}{1}
 
-\paragraph{Gérer l'avancement de la simulation}
-\begin{itemize}
-	\item Stopper le temps
-	\item Démarrer le temps
-	\item Changer la vitesse de la simulation
-\end{itemize}
+\nBesoin
+{Manipuler l'ensemble du système}
+{}
+{Les opérations d'exploitation sans restriction}
 
-\paragraph{Effectuer des opérations sur les évènements}
-\begin{itemize}
-	\item Ajouter des évènements
-	\item Modifier des évènements
-	\item Supprimer des évènements
-\end{itemize}
+\nBesoin
+{Visualiser les résultats/problèmes}
+{}{}
 
-\paragraph{Visualiser une simulation}
-\begin{itemize}
-	\item Visualiser des évènements
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Gérer les interventions}
+{}
+{Assigner la résolution d'un problème à un technicien, créer un fichier électronique qui contient un rapport d'intervention}
 
-\paragraph{Persistance de la simulation}
-\begin{itemize}
-	\item Sauvegarder une simulation
-	\item Charger une simulation
-\end{itemize}
+\nBesoin
+{Gérer la persistance des fiches électroniques d'intervention et des fichiers de journaux.}
+{}
+{Enregistrer, charger, créer, supprimer, modifier}
 
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
+\subsection{Réclamation}
+\setcounter{cntBesoins}{1}
 
-\paragraph{Gérer les réclamations}
-\begin{itemize}
-	\item Créer un dossier de litige pour un client lésé
-	\item Attribuer un identifiant et un mot de passe au client
-	\item Visualiser le dossier de litige pour un client
-\end{itemize}
+\nBesoin
+{Gérer un dossier de  litige}
+{}
+{Créer/modifier/visualiser/fermer}
 
-\paragraph{Visualiser le système}
-\begin{itemize}
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
+\nBesoin
+{Créer un nouvel identifiant de voyageur}
+{}
+{Créer un numéro d'identification et un mot de passe}
 
-}
+\nBesoin
+{Se renseigner sur un bagage}
+{}
+{Visualiser le trajet d'un bagage,  suivre état de traitement d'un bagage}`
 
-\domainNeeds{Exploitation}
-{
-	\paragraph{ Pouvoir agir sur les éléments manuellement}
-	\paragraph{ Pouvoir mettre le système en mode automatique}
-}
-{
-\paragraph{Effectuer des opération sur les éléments }
-\begin{itemize}
-	\item Ajouter des éléments
-	\item Paramétrer des éléments
-	\item Supprimer des éléments
-	\item Lier des éléments entre eux
-	\item Déplacer des éléments
-\end{itemize}
-
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
-
-\paragraph{Persistance de la configuration}
-\begin{itemize}
-	\item Sauvegarder une configuration
-	\item Charger une configuration
-\end{itemize}
-
-\paragraph{Effectuer des opération sur les fiches électroniques d'interventions}
-\begin{itemize}
-	\item Créer une fiche électronique d'intervention
-	\item Visualiser une fiche électronique d'intervention
-	\item Clore une fiche électronique d'intervention
-\end{itemize}
-
-\paragraph{Gérer l'avancement de la simulation}
-\begin{itemize}
-	\item Stopper le temps
-	\item Démarrer le temps
-	\item Changer la vitesse de la simulation
-\end{itemize}
-
-\paragraph{Effectuer des opérations sur les évènements}
-\begin{itemize}
-	\item Ajouter des évènements
-	\item Modifier des évènements
-	\item Supprimer des évènements
-\end{itemize}
-
-\paragraph{Visualiser une simulation}
-\begin{itemize}
-	\item Visualiser des évènements
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
-
-\paragraph{Persistance de la simulation}
-\begin{itemize}
-	\item Sauvegarder une simulation
-	\item Charger une simulation
-\end{itemize}
-
-\paragraph{Effectuer des actions sur l'historique}
-\begin{itemize}
-	\item Annuler la dernière action
-	\item Annuler la dernière annulation
-\end{itemize}
-
-\paragraph{Gérer les réclamations}
-\begin{itemize}
-	\item Créer un dossier de litige pour un client lésé
-	\item Attribuer un identifiant et un mot de passe au client
-	\item Visualiser le dossier de litige pour un client
-\end{itemize}
-
-\paragraph{Visualiser le système}
-\begin{itemize}
-	\item Visualiser les éléments
-	\item Visualiser l'état du système
-\end{itemize}
-
-}
-
+\nBesoin
+{Gérer la persistance des dossiers de litiges}
+{}
+{Enregistrer, charger, supprimer}
