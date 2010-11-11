@@ -1433,7 +1433,7 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packageImport xmi:id="_ou2mcOf9Ed-C1O1kch2VdA">
-    <importedPackage xmi:type="uml:Model" href="pathmap://TRANSFORM_CPP_LIBRARIES/CPPPrimitiveTypes.emx#_1fVDwBceEduYFs9AA0Zhzw?C++%20Types?"/>
+    <importedPackage xmi:type="uml:Model" href="pathmap://TRANSFORM_CPP_LIBRARIES/CPPPrimitiveTypes.emx#_1fVDwBceEduYFs9AA0Zhzw?C++%2520Types?"/>
   </packageImport>
   <ownedRule xmi:id="_cZvcUOtdEd-6Qct7MaUvyw" constrainedElement="_xPyGoOsnEd-oy8D834IawQ _5udJAOtcEd-6Qct7MaUvyw">
     <specification xmi:type="uml:OpaqueExpression" xmi:id="_cZvcUetdEd-6Qct7MaUvyw">
@@ -1575,7 +1575,7 @@
   <packagedElement xmi:type="uml:Association" xmi:id="_E1cNsOsfEd-oy8D834IawQ" memberEnd="_E1cNsesfEd-oy8D834IawQ _E1l-sOsfEd-oy8D834IawQ">
     <ownedEnd xmi:id="_E1l-sOsfEd-oy8D834IawQ" name="" visibility="private" type="_8wh8EOseEd-oy8D834IawQ" association="_E1cNsOsfEd-oy8D834IawQ">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E1l-susfEd-oy8D834IawQ" value="1"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E1l-sesfEd-oy8D834IawQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E1l-sesfEd-oy8D834IawQ"/>
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_tziQ8OshEd-oy8D834IawQ" name="transporte" memberEnd="_tziQ8eshEd-oy8D834IawQ _tzra4OshEd-oy8D834IawQ">
