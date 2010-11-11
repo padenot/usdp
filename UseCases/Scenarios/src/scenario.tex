@@ -1,17 +1,19 @@
 \input{scenario.inc.tex}
 
+\textit{Les scenarios précédés d'un * seront dans le prototype.}
+
 \section{Besoins communs}
 \subsection{Visualisation statique}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur client graphique}{Selectionner l'objet statique}
-\scenario{Utilisateur client graphique}{Zoomer l'objet statique}
-\scenario{Utilisateur client graphique}{Dé-zoomer l'objet statique}
+\scenarProto{Utilisateur client graphique}{Selectionner l'objet statique}
+\scenarProto{Utilisateur client graphique}{Zoomer l'objet statique}
+\scenarProto{Utilisateur client graphique}{Dé-zoomer l'objet statique}
 
 \subsection{Visualisation dynamique}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur client graphique}{Selectionner l'objet dynamique}
-\scenario{Utilisateur client graphique}{Zoomer l'objet dynamique}
-\scenario{Utilisateur client graphique}{Dé-zoomer l'objet dynamique}
+\scenarProto{Utilisateur client graphique}{Selectionner l'objet dynamique}
+\scenarProto{Utilisateur client graphique}{Zoomer l'objet dynamique}
+\scenarProto{Utilisateur client graphique}{Dé-zoomer l'objet dynamique}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Configuration}
@@ -57,48 +59,49 @@
 
 \subsection{Gérer la liste des vols}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur simulation}{Créer un vol}
-\scenario{Utilisateur simulation}{Modifier un vol}
-\scenario{Utilisateur simulation}{Supprimer un vol}
+\scenarProto{Utilisateur simulation}{Créer un vol}
+\scenarProto{Utilisateur simulation}{Modifier un vol}
+\scenarProto{Utilisateur simulation}{Supprimer un vol}
 
 \subsection{Changer le mode de simulation}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur simulation}{Passer en mode automatique}
-\scenario{Utilisateur simulation}{Passer en mode manuel}
+\scenarProto{Utilisateur simulation}{Passer en mode automatique}
+\scenarProto{Utilisateur simulation}{Passer en mode manuel}
 
 \subsection{Agir sur les éléments visualisés}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur simulation}{Sélectionner un élément}
-\scenario{Utilisateur simulation}{Paramétrer un élément}
-\scenario{Utilisateur simulation}{Mettre en marche un élément}
-\scenario{Utilisateur simulation}{Arrêter un élément}
+\scenarProto{Utilisateur simulation}{Sélectionner un élément}
+\scenarProto{Utilisateur simulation}{Paramétrer un élément}
+\scenarProto{Utilisateur simulation}{Mettre en marche un élément}
+\scenarProto{Utilisateur simulation}{Arrêter un élément}
 
 \subsection{Effectuer des opérations sur l'avancement de la simulation}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur simulation}{Démarrer une simulation}
-\scenario{Utilisateur simulation}{Stopper une simulation}
-\scenario{Utilisateur simulation}{Mettre en pause une simulation}
-\scenario{Utilisateur simulation}{Changer la vitesse de simulation}
+\scenarProto{Utilisateur simulation}{Démarrer une simulation}
+\scenarProto{Utilisateur simulation}{Stopper une simulation}
+\scenarProto{Utilisateur simulation}{Mettre en pause une simulation}
+\scenarProto{Utilisateur simulation}{Changer la vitesse de simulation}
 
 \subsection{Gérer les événements}
 \setcounter{cntScenario}{1}
-\scenario{Utilisateur simulation}{Créer un événement}
-\scenario{Utilisateur simulation}{Modifier un événement}
-\scenario{Utilisateur simulation}{Supprimer un événement}
-\scenario{Utilisateur simulation}{Visualiser un événement}
-\scenario{Utilisateur simulation}{Activer un événement}
-\scenario{Utilisateur simulation}{Désactiver un événement}
+\scenarProto{Utilisateur simulation}{Créer un événement}
+\scenarProto{Utilisateur simulation}{Modifier un événement}
+\scenarProto{Utilisateur simulation}{Supprimer un événement}
+\scenarProto{Utilisateur simulation}{Visualiser un événement}
+\scenarProto{Utilisateur simulation}{Activer un événement}
+\scenarProto{Utilisateur simulation}{Désactiver un événement}
 
 \subsection{Déclencher les événements}
 \setcounter{cntScenario}{1}
-\scenario{Horloge}{Déclencher un événement}
+\scenarProto{Horloge}{Déclencher un événement}
 
 \subsection{Mettre à jour l'état du système}
 \setcounter{cntScenario}{1}
-\scenario{Capteur actif}{Prendre en compte l'interruption d'un capteur actif}
-\scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
+\scenarProto{Capteur actif}{Prendre en compte l'interruption d'un capteur actif}
+\scenarProto{Horloge}{Prendre en compte les valeurs des capteurs passifs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Exploitation}
 \subsection{Effectuer une opération protégée}
 \setcounter{cntScenario}{1}
@@ -122,6 +125,7 @@
 \setcounter{cntScenario}{1}
 \scenario{Capteur actif}{Prendre en compte l'interruption d'un capteur actif}
 \scenario{Horloge}{Prendre en compte les valeurs des capteurs passifs}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Maintenance}
@@ -168,4 +172,3 @@
 \scenario{Utilisateur réclamation}{Enregistrer un dossier de litige}
 \scenario{Utilisateur réclamation}{Charger un dossier de litige}
 \scenario{Utilisateur réclamation}{Supprimer un dossier de litige}
-

@@ -6,7 +6,18 @@
 	\begin{tabular}{l p{17cm}}
 		\textbf{Scénario \thecntScenario} & #2\\
 		\textbf{Stimulis} & #1
-	\end{tabular}
+	\end{tabular}\\~\\
+	~\\~\\
+	\stepcounter{cntScenario}
+}
+
+\newcommand{\scenarProto}[2]
+{
+	*
+	\begin{tabular}{l p{17cm}}
+		\textbf{Scénario \thecntScenario} & #2\\
+		\textbf{Stimulis} & #1
+	\end{tabular}\\~\\
 	~\\~\\
 	\stepcounter{cntScenario}
 }
