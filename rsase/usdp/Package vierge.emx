@@ -1489,6 +1489,8 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ncu9YusVEd-oy8D834IawQ" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ncu9YesVEd-oy8D834IawQ" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_41riIO52Ed-Jn7v3SB1Zsg" name="update"/>
+    <ownedOperation xmi:id="_cB0i8O57Ed-Jn7v3SB1Zsg" name="getPosition"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_nclMYOsVEd-oy8D834IawQ" name="contient" memberEnd="_nclMYesVEd-oy8D834IawQ _ncu9YOsVEd-oy8D834IawQ"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_rVuoMOsVEd-oy8D834IawQ" name="Capteur">
@@ -1500,6 +1502,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6UcqQ-sVEd-oy8D834IawQ" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6UcqQusVEd-oy8D834IawQ"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_ZhHysO55Ed-Jn7v3SB1Zsg" name="addBagage"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_t-Z6oOsVEd-oy8D834IawQ" name="Passif">
     <generalization xmi:id="_zCDasOsVEd-oy8D834IawQ" general="_Y1tCkOsVEd-oy8D834IawQ"/>
@@ -1509,6 +1512,8 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_1cuGUOsVEd-oy8D834IawQ" name="Bagage">
     <generalization xmi:id="_3eXN8OsVEd-oy8D834IawQ" general="_t-Z6oOsVEd-oy8D834IawQ"/>
+    <ownedOperation xmi:id="_2eYZ8O5-Ed-Jn7v3SB1Zsg" name="new Bagage(tapis, tobogan)"/>
+    <ownedOperation xmi:id="_-hq68O5-Ed-Jn7v3SB1Zsg" name="new Bagage(tapis, tobogan)"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_6UcqQOsVEd-oy8D834IawQ" name="contient" memberEnd="_6UcqQesVEd-oy8D834IawQ _6UmbQOsVEd-oy8D834IawQ">
     <ownedEnd xmi:id="_6UmbQOsVEd-oy8D834IawQ" name="" visibility="private" type="_slcjoOsVEd-oy8D834IawQ" association="_6UcqQOsVEd-oy8D834IawQ">
@@ -1527,6 +1532,9 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fSJGQuswEd-oy8D834IawQ" value="1"/>
     </ownedAttribute>
     <ownedOperation xmi:id="_JpFKsO5zEd-X2qSx1xpmxg" name="update"/>
+    <ownedOperation xmi:id="_bSa4kO52Ed-Jn7v3SB1Zsg" name="getNextBagage"/>
+    <ownedOperation xmi:id="_oLEMsO57Ed-Jn7v3SB1Zsg" name="getNbBagage"/>
+    <ownedOperation xmi:id="_wD2mgO5-Ed-Jn7v3SB1Zsg" name="addBagage(tapis,tobogan)"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-QH1oOsVEd-oy8D834IawQ" name="Caroussel">
     <generalization xmi:id="_VzZ4wOshEd-oy8D834IawQ" general="_Y1tCkOsVEd-oy8D834IawQ"/>
@@ -1541,6 +1549,9 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ak5MYe5DEd-dcpIgUje6-w" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ak5MYO5DEd-dcpIgUje6-w"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_FcsicO52Ed-Jn7v3SB1Zsg" name="getNextChariot"/>
+    <ownedOperation xmi:id="_muIcAO54Ed-Jn7v3SB1Zsg" name="addChariot(rail.chariot)"/>
+    <ownedOperation xmi:id="_5QzloO57Ed-Jn7v3SB1Zsg" name="getNbChariot"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_bQnJUOsWEd-oy8D834IawQ" memberEnd="_bQw6UOsWEd-oy8D834IawQ _bQ6rUOsWEd-oy8D834IawQ">
     <ownedEnd xmi:id="_bQ6rUOsWEd-oy8D834IawQ" name="" visibility="private" type="_1eju0OsUEd-oy8D834IawQ" association="_bQnJUOsWEd-oy8D834IawQ">
@@ -1576,6 +1587,10 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_alMHUu5DEd-dcpIgUje6-w" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_alMHUe5DEd-dcpIgUje6-w"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_XNzMkO52Ed-Jn7v3SB1Zsg" name="addBagage"/>
+    <ownedOperation xmi:id="_U0234O55Ed-Jn7v3SB1Zsg" name="getBagage"/>
+    <ownedOperation xmi:id="_pgh1sO55Ed-Jn7v3SB1Zsg" name="decreaseBattery"/>
+    <ownedOperation xmi:id="_WtWjMO58Ed-Jn7v3SB1Zsg" name="getPosition"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_tziQ8OshEd-oy8D834IawQ" name="transporte" memberEnd="_tziQ8eshEd-oy8D834IawQ _tzra4OshEd-oy8D834IawQ">
     <ownedEnd xmi:id="_tzra4OshEd-oy8D834IawQ" name="" visibility="private" type="_9b-b4OsVEd-oy8D834IawQ" association="_tziQ8OshEd-oy8D834IawQ">
@@ -1628,6 +1643,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VYKegusyEd-oy8D834IawQ" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VYKegesyEd-oy8D834IawQ"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_Igcf8O55Ed-Jn7v3SB1Zsg" name="getConteneur"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_hBF_kOspEd-oy8D834IawQ" name="tobogan" memberEnd="_hBF_kespEd-oy8D834IawQ _hBPwkOspEd-oy8D834IawQ">
     <ownedRule xmi:id="_ZDvYYOsyEd-oy8D834IawQ" constrainedElement="_hBF_kOspEd-oy8D834IawQ _VYAtgOsyEd-oy8D834IawQ">
@@ -1643,6 +1659,8 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_RuEE8OsqEd-oy8D834IawQ" name="Noeud Entrée">
     <generalization xmi:id="_VMhv4OsqEd-oy8D834IawQ" general="_R4640OskEd-oy8D834IawQ"/>
+    <ownedOperation xmi:id="_AHA3MO52Ed-Jn7v3SB1Zsg" name="getChariot"/>
+    <ownedOperation xmi:id="_k9JcAO53Ed-Jn7v3SB1Zsg" name="getRailSuivant"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_0QnWMOsuEd-oy8D834IawQ" name="connexion" memberEnd="_0QxHMOsuEd-oy8D834IawQ _0Q64MOsuEd-oy8D834IawQ">
     <ownedEnd xmi:id="_0Q64MOsuEd-oy8D834IawQ" name="" visibility="private" type="__FeJQOsVEd-oy8D834IawQ" association="_0QnWMOsuEd-oy8D834IawQ">
@@ -1683,6 +1701,8 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pf61oOygEd-0NvPstdZN1w" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pf6OkOygEd-0NvPstdZN1w"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_oCLrkO59Ed-Jn7v3SB1Zsg" name="setManualMode(true)"/>
+    <ownedOperation xmi:id="_0yUWMO59Ed-Jn7v3SB1Zsg" name="addBagage"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_b_jn8OygEd-0NvPstdZN1w" name="" memberEnd="_b_mrQOygEd-0NvPstdZN1w _b_tY8OygEd-0NvPstdZN1w">
     <ownedEnd xmi:id="_b_tY8OygEd-0NvPstdZN1w" name="" visibility="private" type="_14GIsOyfEd-0NvPstdZN1w" association="_b_jn8OygEd-0NvPstdZN1w">
