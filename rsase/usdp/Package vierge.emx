@@ -1526,6 +1526,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fSJGQ-swEd-oy8D834IawQ" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fSJGQuswEd-oy8D834IawQ" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_JpFKsO5zEd-X2qSx1xpmxg" name="update"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-QH1oOsVEd-oy8D834IawQ" name="Caroussel">
     <generalization xmi:id="_VzZ4wOshEd-oy8D834IawQ" general="_Y1tCkOsVEd-oy8D834IawQ"/>
