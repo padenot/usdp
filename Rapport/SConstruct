@@ -1,0 +1,15 @@
+import os
+import shutil
+import SCons
+
+env = Environment(ENV=os.environ)
+
+outputName = "RapportUSDP_H4203"
+
+texName = "main"
+binPath = "bin/"
+srcPath = ""
+tmpPath = "tmp/"
+
+buildRes = env.PDF(target = tmpPath + texName + ".pdf", source = srcPath + texName + ".tex") 
+env.AddPostAction(buildRes, "cp " + tmpPath + texName + ".pdf " +  binPath + outputName + ".pdf") 
