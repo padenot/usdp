@@ -34,8 +34,7 @@ Capteur dont la valeur doit être lue à intervalle régulier (caméra, \ldots).
 Une horloge, déclenchant des événement à une fréquence donnée.
 
 \subsection{Base de données}
-La base de donnée du système de gestion de bagages contient toutes les tables accessibles par l'application (\textsl{e.g} tblConfiguration, tblSimulation, \textsl{etc,} )
-{\huge TODO : supprimer ?}
+La base de donnée du système de gestion de bagages contient toutes les données de configuration et de gestion de l'application.
 
 \subsection{BdD Exploitation}
 Permet de stocker, entre autres, l'historique des déplacement, informations reçues du système, etc.
@@ -48,7 +47,6 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Cas d'utilisation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,29 +55,25 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Besoins communs}
-\subsubsection{Mettre à jour l'état du système}
-Prendre en compte les changements intervenus dans l'environnement pour conserver une représentation des données à jour.
-\subsubsection{Visualisation statique}
-Visualiser les objets propres à la configuration, donc immobiles (hall, terminal, tapis, \ldots).
-\subsubsection{Visualisation dynamique}
-Visualiser les objets propres à la simulation, donc mobiles (chariots, avions).
-\subsubsection{Gérer la persistance}
-{\huge ATTENTION, INCOHERENT}
+\subsection{Visualiser un objet dynamique}
+\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un chariot ou un avion.
+
+\subsection{Visualiser un objet statique}
+\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un objet de haut niveau.
+
+\subsection{Effectuer des actions sur l'historique}
+\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut annuler les actions qu'il vient de réaliser ou à l'inverse les reproduire après les avoir annulé.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Configuration}
-\subsubsection{Ajouter un élément}
-Créer un nouvel élément et l'insérer dans la configuration. 
+\subsubsection{Effectuer des opérations sur un élément}
+\user{L'utilisateur de la configuration}{confUser} peut visualiser, ajouter, déplacer, lier aux autres éléments, paramètrer ou supprimer un élément de la configuration.
 
-\subsubsection{Simuler}
-Ouvrir l'interface de simulation à partir de l'interface de configuration. Les paramètres de la simulation sont ceux de la configuration en cours.
+\subsubsection{Simuler la configuration en cours}
+\user{L'utilisateur de la configuration}{confUser} peut ouvrir l'interface de simulation à partir de l'interface de configuration. Les paramètres de la simulation sont ceux de la configuration en cours.
 
-\subsubsection{Manipuler un élément existant}
-Déplacer, lier, supprimer ou paramètrer un élément sélectionné.
-
-\subsubsection{Fermer la configuration}
-Quitter l'interface de configuration en demandant éventuellement de sauvegarder la configuration courrante. {\huge ICI, Problème !}
-
+\subsubsection{Gérer la persistence d'une configuration}
+\user{L'utilisateur de la configuration}{confUser} peut enregistrer, enregistrer sous, charger, créer, supprimer ou dupliquer la configuration en cours.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Simulation}
 \subsubsection{Charger une configuration}
@@ -119,7 +113,3 @@ En cas de litige (perte ou dégradation d'un bagage), créer, ouvrir, modifier, 
 
 \subsubsection{Se renseigner sur un bagage}
 Visualiser le trajet d'un bagage pendant son traitement par le système de gestion.
-
-{\huge TODO : Définir la notion d'élément ??}
-
-
