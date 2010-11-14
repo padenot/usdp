@@ -1491,6 +1491,7 @@
     </ownedAttribute>
     <ownedOperation xmi:id="_41riIO52Ed-Jn7v3SB1Zsg" name="update"/>
     <ownedOperation xmi:id="_cB0i8O57Ed-Jn7v3SB1Zsg" name="getPosition"/>
+    <ownedOperation xmi:id="_v0pDgO_3Ed-KganxdgdPew" name="stop"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_nclMYOsVEd-oy8D834IawQ" name="contient" memberEnd="_nclMYesVEd-oy8D834IawQ _ncu9YOsVEd-oy8D834IawQ"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_rVuoMOsVEd-oy8D834IawQ" name="Capteur">
