@@ -56,49 +56,86 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Besoins communs}
 \subsection{Visualiser un objet dynamique}
-\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un chariot ou un avion.
+\user{L'utilisateur du client graphique}{uiUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un chariot ou un avion.
 
 \subsection{Visualiser un objet statique}
-\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un objet de haut niveau.
+\user{L'utilisateur du client graphique}{uiUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un objet de haut niveau.
 
+% TODO : À confirmer
 \subsection{Effectuer des actions sur l'historique}
-\user{L'utilisateur de l'interface de simulation}{simUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut annuler les actions qu'il vient de réaliser ou à l'inverse les reproduire après les avoir annulé.
+\user{L'utilisateur du client graphique}{uiUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut annuler les actions qu'il vient de réaliser ou à l'inverse les reproduire après les avoir annulé. Il peut aussi ramener l'état du système à un état enregistré.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Configuration}
 \subsubsection{Effectuer des opérations sur un élément}
-\user{L'utilisateur de la configuration}{confUser} peut visualiser, ajouter, déplacer, lier aux autres éléments, paramètrer ou supprimer un élément de la configuration.
+\user{L'utilisateur de la configuration}{confUser} peut visualiser, ajouter, déplacer, lier aux autres éléments, paramétrer ou supprimer un élément de la configuration à la \user{base de donnée}{bdd}.
 
 \subsubsection{Simuler la configuration en cours}
 \user{L'utilisateur de la configuration}{confUser} peut ouvrir l'interface de simulation à partir de l'interface de configuration. Les paramètres de la simulation sont ceux de la configuration en cours.
 
-\subsubsection{Gérer la persistence d'une configuration}
-\user{L'utilisateur de la configuration}{confUser} peut enregistrer, enregistrer sous, charger, créer, supprimer ou dupliquer la configuration en cours.}
+\subsubsection{Gérer la persistance d'une configuration}
+\user{L'utilisateur de la configuration}{confUser} peut enregistrer, enregistrer sous, charger, créer, supprimer ou dupliquer la configuration dans la \user{base de donnée}{bdd}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Simulation}
-\subsubsection{Charger une configuration}
-Définir la configuration d'aéroport utilisée pour la simulation, à partir de la BdD Configuration.
+\subsubsection{Charger une configuration pour la simulation}
+\user{L'utilisateur de la simulation}{simUser} peut définir la configuration d'aéroport utilisée pour la simulation, à partir de la \user{Base de donnée}{bdd}.
+
 \subsubsection{Gérer la liste des vols}
-Ajouter, retirer, paramétrer des vols à simuler.
+\user{L'utilisateur de la simulation}{simUser} peut ajouter, retirer, paramétrer des vols à simuler à la \user{base de donnée}{bdd}.
+
 \subsubsection{Changer le mode de simulation}
-Basculer entre mode manuel et automatique.
-\subsubsection{Agir sur les éléments}
-Sélectionner, paramétrer, mettre en marche/arrêt.
+\user{L'utilisateur de la simulation}{simUser} peut basculer entre mode manuel et automatique.
+
+\subsubsection{Agir manuellement sur les éléments}
+% TODO : Cf Issue 5
+\user{L'utilisateur de la simulation}{simUser} peut sélectionner, paramétrer, mettre en marche/arrêt un \user{Objet}{obj}.
+
 \subsubsection{Effectuer des opérations sur l'avancement de la simulation}
-Démarrer, stopper, mettre en pause, modifier la vitesse de la simulation.
+\user{L'utilisateur de la simulation}{simUser} peut démarrer, stopper, mettre en pause, modifier la vitesse de la simulation et par conséquent modifier les paramètres de fonctionnement de \user{l'horloge}{clock}.
+
 \subsubsection{Gérer les événements}
-Créer, modifier, supprimer, visualiser, activer/désactiver des événements.
-\subsubsection{Déclencher les événements}
-Déclencher les événements lorsqu'ils doivent l'être.
+\user{L'utilisateur de la simulation}{simUser}Créer, modifier, supprimer, visualiser, activer/désactiver des événements.
+
+\subsection{Gérer la persistance d'une simulation}
+\user{L'utilisateur de la simulation}{simUser} peut enregistrer, enregistrer sous, charger, créer, supprimer ou dupliquer la configuration de la simulation dans la \user{base de donnée}{bdd}
+
+% TODO : Cf issue 6 
+\subsection{Mettre à jour l'état du système ponctuellement}
+\user{L'utilisateur de la simulation}{simUser} peut mettre à jour l'état du système en \user{base de donnée}{bdd}
+
+\subsection{Mettre à jour l'état du système périodiquement}
+\user{L'horloge}{clock} peut mettre à jour l'état du système en \user{base de donnée}{bdd}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exploitation}
-\subsubsection{Effectuer une opération protégée}
-Paramétrer les éléments, les arrêter, les démarrer.
+% TODO : Cf issue 7
+\subsection{Gérer la persistance d'une configuration et des fichiers de logs}
+\user{L'utilisateur exploitation}{expUser} peut enregistrer, enregistrer sous, charger, crée, supprimer ou dupliquer une configuration ou un fichier de journal à partir, ou dans, la \user{base de donnée}{bdd}.
+
+\subsection{Stocker l'historique}
+\user{L'utilisateur exploitation}{expUser} peut stocker l'historique des actions réalisées en \user{base de donnée}{bdd}.
+
+% TODO : Cf issue 8
+\subsection{Effectuer un arrêt d'urgence}
+\user{L'utilisateur exploitation}{expUser} peut effectuer un arrêt d'urgence.
+% Commande l'arrêt d'urgence de tous les objets contrôlables à distance.
+
+\subsubsection{Effectuer une opération protégée sur les éléments}
+\user{L'utilisateur exploitation}{expUser} peut paramétrer, arrêter ou démarrer \user{l'objet actif}{obj}.
+
 \subsubsection{Acheminer automatiquement les bagages}
-{\huge TODO : à déplacer}
-\subsubsection{Arrêter d'urgence le système}
-Commande l'arrêt d'urgence de tous les objets contrôlables à distance.
+% TODO : À revoir
+
+\subsection{Mettre à jour l'état du système périodiquement}
+\user{L'horloge}{clock} peut mettre à jour l'état du système en \user{base de donnée}{bdd}
+
+% TODO : Cf issue 6 
+\subsection{Mettre à jour l'état du système ponctuellement}
+\user{Un capteur actif}{sensor} peut mettre à jour l'état du système en \user{base de donnée}{bdd}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO : Review à finir !
 \subsection{Maintenance}
 \subsubsection{Visualiser les résultats}
 Visualiser le comportement du système (via une constatation sur le terrain) à la suite d'opération d'epxloitation sur le système.
