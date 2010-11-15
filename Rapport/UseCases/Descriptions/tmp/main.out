@@ -1,11 +1,11 @@
-\BOOKMARK [1][-]{section.1}{Acteurs et r\364les}{}% 1
+\BOOKMARK [1][-]{section.1}{R\364les}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Utilisateur client graphique}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Utilisateur configuration}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Utilisateur simulation}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.4}{Utilisateur exploitation}{section.1}% 5
 \BOOKMARK [2][-]{subsection.1.5}{Utilisateur maintenance}{section.1}% 6
 \BOOKMARK [2][-]{subsection.1.6}{Utilisateur gestion r\351clamation}{section.1}% 7
-\BOOKMARK [2][-]{subsection.1.7}{Objet actif}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.7}{Objet dynamique}{section.1}% 8
 \BOOKMARK [2][-]{subsection.1.8}{Capteur actif}{section.1}% 9
 \BOOKMARK [2][-]{subsection.1.9}{Capteur passif}{section.1}% 10
 \BOOKMARK [2][-]{subsection.1.10}{Horloge}{section.1}% 11
@@ -15,34 +15,38 @@
 \BOOKMARK [2][-]{subsection.1.14}{Technicien}{section.1}% 15
 \BOOKMARK [1][-]{section.2}{Cas d'utilisation}{}% 16
 \BOOKMARK [2][-]{subsection.2.1}{Besoins communs}{section.2}% 17
-\BOOKMARK [2][-]{subsection.2.2}{Visualiser un objet dynamique}{section.2}% 18
-\BOOKMARK [2][-]{subsection.2.3}{Visualiser un objet statique}{section.2}% 19
-\BOOKMARK [2][-]{subsection.2.4}{Effectuer des actions sur l'historique}{section.2}% 20
-\BOOKMARK [2][-]{subsection.2.5}{Configuration}{section.2}% 21
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Effectuer des op\351rations sur un \351l\351ment}{subsection.2.5}% 22
-\BOOKMARK [3][-]{subsubsection.2.5.2}{Simuler la configuration en cours}{subsection.2.5}% 23
-\BOOKMARK [3][-]{subsubsection.2.5.3}{G\351rer la persistance d'une configuration}{subsection.2.5}% 24
-\BOOKMARK [2][-]{subsection.2.6}{Simulation}{section.2}% 25
-\BOOKMARK [3][-]{subsubsection.2.6.1}{Charger une configuration pour la simulation}{subsection.2.6}% 26
-\BOOKMARK [3][-]{subsubsection.2.6.2}{G\351rer la liste des vols}{subsection.2.6}% 27
-\BOOKMARK [3][-]{subsubsection.2.6.3}{Changer le mode de simulation}{subsection.2.6}% 28
-\BOOKMARK [3][-]{subsubsection.2.6.4}{Agir manuellement sur les \351l\351ments}{subsection.2.6}% 29
-\BOOKMARK [3][-]{subsubsection.2.6.5}{Effectuer des op\351rations sur l'avancement de la simulation}{subsection.2.6}% 30
-\BOOKMARK [3][-]{subsubsection.2.6.6}{G\351rer les \351v\351nements}{subsection.2.6}% 31
-\BOOKMARK [2][-]{subsection.2.7}{G\351rer la persistance d'une simulation}{section.2}% 32
-\BOOKMARK [2][-]{subsection.2.8}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.2}% 33
-\BOOKMARK [2][-]{subsection.2.9}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.2}% 34
+\BOOKMARK [2][-]{subsection.2.2}{Visualiser un objet statique}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.3}{Effectuer des actions sur l'historique}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.4}{Configuration}{section.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Effectuer des op\351rations sur un \351l\351ment}{subsection.2.4}% 21
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Simuler la configuration en cours}{subsection.2.4}% 22
+\BOOKMARK [3][-]{subsubsection.2.4.3}{G\351rer la persistance d'une configuration}{subsection.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.5}{Simulation}{section.2}% 24
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Charger une configuration}{subsection.2.5}% 25
+\BOOKMARK [3][-]{subsubsection.2.5.2}{G\351rer la liste des vols}{subsection.2.5}% 26
+\BOOKMARK [3][-]{subsubsection.2.5.3}{Changer le mode de simulation}{subsection.2.5}% 27
+\BOOKMARK [3][-]{subsubsection.2.5.4}{Agir manuellement sur les \351l\351ments}{subsection.2.5}% 28
+\BOOKMARK [3][-]{subsubsection.2.5.5}{Effectuer des op\351rations sur l'avancement de la simulation}{subsection.2.5}% 29
+\BOOKMARK [3][-]{subsubsection.2.5.6}{G\351rer les \351v\351nements}{subsection.2.5}% 30
+\BOOKMARK [2][-]{subsection.2.6}{G\351rer la persistance d'une simulation}{section.2}% 31
+\BOOKMARK [2][-]{subsection.2.7}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.2}% 32
+\BOOKMARK [2][-]{subsection.2.8}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.2}% 33
+\BOOKMARK [2][-]{subsection.2.9}{Visualiser un objet dynamique}{section.2}% 34
 \BOOKMARK [2][-]{subsection.2.10}{Exploitation}{section.2}% 35
-\BOOKMARK [2][-]{subsection.2.11}{G\351rer la persistance d'une configuration et des fichiers de logs}{section.2}% 36
-\BOOKMARK [2][-]{subsection.2.12}{Stocker l'historique}{section.2}% 37
-\BOOKMARK [2][-]{subsection.2.13}{Effectuer un arr\352t d'urgence}{section.2}% 38
-\BOOKMARK [3][-]{subsubsection.2.13.1}{Effectuer une op\351ration prot\351g\351e sur les \351l\351ments}{subsection.2.13}% 39
-\BOOKMARK [3][-]{subsubsection.2.13.2}{Acheminer automatiquement les bagages}{subsection.2.13}% 40
-\BOOKMARK [2][-]{subsection.2.14}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.2}% 41
-\BOOKMARK [2][-]{subsection.2.15}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.2}% 42
-\BOOKMARK [2][-]{subsection.2.16}{Maintenance}{section.2}% 43
-\BOOKMARK [3][-]{subsubsection.2.16.1}{Visualiser les r\351sultats}{subsection.2.16}% 44
-\BOOKMARK [3][-]{subsubsection.2.16.2}{G\351rer les interventions}{subsection.2.16}% 45
-\BOOKMARK [2][-]{subsection.2.17}{R\351clamation}{section.2}% 46
-\BOOKMARK [3][-]{subsubsection.2.17.1}{G\351rer un dossier de litige}{subsection.2.17}% 47
-\BOOKMARK [3][-]{subsubsection.2.17.2}{Se renseigner sur un bagage}{subsection.2.17}% 48
+\BOOKMARK [3][-]{subsubsection.2.10.1}{Charger une configuration}{subsection.2.10}% 36
+\BOOKMARK [2][-]{subsection.2.11}{G\351rer la persistance des fichiers de journalisation}{section.2}% 37
+\BOOKMARK [2][-]{subsection.2.12}{Effectuer un arr\352t d'urgence}{section.2}% 38
+\BOOKMARK [3][-]{subsubsection.2.12.1}{Effectuer une op\351ration prot\351g\351e sur un \351l\351ments}{subsection.2.12}% 39
+\BOOKMARK [3][-]{subsubsection.2.12.2}{Acheminer automatiquement les bagages}{subsection.2.12}% 40
+\BOOKMARK [2][-]{subsection.2.13}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.2}% 41
+\BOOKMARK [2][-]{subsection.2.14}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.2}% 42
+\BOOKMARK [2][-]{subsection.2.15}{Visualiser un objet dynamique}{section.2}% 43
+\BOOKMARK [2][-]{subsection.2.16}{Maintenance}{section.2}% 44
+\BOOKMARK [3][-]{subsubsection.2.16.1}{Effectuer des op\351rations non prot\351g\351es sur un \351l\351ment}{subsection.2.16}% 45
+\BOOKMARK [3][-]{subsubsection.2.16.2}{Visualiser les r\351sultats}{subsection.2.16}% 46
+\BOOKMARK [3][-]{subsubsection.2.16.3}{G\351rer la persistance des fiches \351lectroniques d'interventions et des fichiers de journaux}{subsection.2.16}% 47
+\BOOKMARK [3][-]{subsubsection.2.16.4}{G\351rer les interventions}{subsection.2.16}% 48
+\BOOKMARK [2][-]{subsection.2.17}{R\351clamation}{section.2}% 49
+\BOOKMARK [3][-]{subsubsection.2.17.1}{G\351rer un dossier de litige}{subsection.2.17}% 50
+\BOOKMARK [3][-]{subsubsection.2.17.2}{Se renseigner sur un bagage}{subsection.2.17}% 51
+\BOOKMARK [3][-]{subsubsection.2.17.3}{G\351rer la persistance des dossiers de litiges}{subsection.2.17}% 52

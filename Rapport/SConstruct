@@ -13,3 +13,8 @@ tmpPath = "tmp/"
 
 buildRes = env.PDF(target = tmpPath + texName + ".pdf", source = srcPath + texName + ".tex") 
 env.AddPostAction(buildRes, "cp " + tmpPath + texName + ".pdf " +  binPath + outputName + ".pdf") 
+
+sconsFiles = ["ListeBesoins/", "UseCases/Descriptions/", "UseCases/Scenarios/"]
+
+for s in sconsFiles:
+	env.AddPostAction(buildRes, "cd " + s + " && scons" ) 

@@ -83,12 +83,7 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 \nBesoin
 {Gérer les événements}
 {Arrivée bagage, panne, départ avion, \textsl{etc.}}
-{Créer, modifier, supprimer, visualiser, activer/désactiver}
-
-\nBesoin
-{Déclencher les événements}
-{Arrivée bagage, panne, départ avion, \textsl{etc.}}
-{}
+{Créer, modifier, supprimer, visualiser, déclencher, activer/désactiver}
 
 \nBesoin
 {Gérer la persistance d'une simulation}
@@ -96,12 +91,16 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 {Enregistrer, enregistrer sous, charger, créer, supprimer, dupliquer, modifier}
 
 \nBesoin
-{Mettre à jour l'état du système suite à un tick d'horloge}
+{Mettre à jour l'état du système ponctuellement l'état du système}
+{}
+{}
+
+\nBesoin{Visualiser un objet dynamique}
 {}
 {}
 
 \nBesoin
-{Mettre à jour l'état du système suite à une alarme}
+{Mettre à jour périodiquement l'état du système}
 {}
 {}
 
@@ -109,17 +108,18 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 \setcounter{cntBesoins}{1}
 
 \nBesoin
-{Effectuer un arrêt d'urgence}
-{}{}
+{Charger une configuration}
+{}
+{Charger}
 
 \nBesoin
-{Acheminer automatiquement les bagages}
-{}{}
-
-\nBesoin
-{Stocker l'historique}
+{Gérer la persistance des fichiers de journalisation}
 {Opérations effectuées, informations reçues}
 {}
+
+\nBesoin
+{Effectuer un arrêt d'urgence}
+{}{}
 
 \nBesoin
 {Effectuer des opérations protégées sur des éléments}
@@ -127,23 +127,27 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 {Objets métiers haut et bas niveau, bagage}
 
 \nBesoin
-{Gérer la persistance d'une configuration et des fichiers de logs}
+{Acheminer automatiquement les bagages}
+{}{}
+
+\nBesoin
+{Mettre à jour l'état du système périodiquement}
+{}{}
+
+\nBesoin
+{Mettre à jour l'état du système ponctuellement}
+{}{}
+
+\nBesoin
+{Visualiser un objet dynamique}
 {}
-{Charger}
-
-\nBesoin
-{Mettre à jour l'état du système suite à un tick d'horloge}
-{}{}
-
-\nBesoin
-{Mettre à jour l'état du système suite à une alarme}
-{}{}
+{}
 
 \subsection{Maintenance}
 \setcounter{cntBesoins}{1}
 
 \nBesoin
-{Manipuler l'ensemble du système}
+{Effectuer des opérations non protégées sur un élément}
 {}
 {Les opérations d'exploitation sans restriction}
 
@@ -156,11 +160,6 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 {}
 {Assigner la résolution d'un problème à un technicien, créer un fichier électronique qui contient un rapport d'intervention}
 
-\nBesoin
-{Gérer la persistance des fiches électroniques d'intervention et des fichiers de journaux.}
-{}
-{Enregistrer, charger, créer, supprimer, modifier}
-
 \subsection{Réclamation}
 \setcounter{cntBesoins}{1}
 
@@ -168,11 +167,6 @@ En Mode manuel, l'intervention d'un opérateur est nécessaire à chaque décisi
 {Gérer un dossier de  litige}
 {}
 {Créer/modifier/visualiser/fermer}
-
-\nBesoin
-{Créer un nouvel identifiant de voyageur}
-{}
-{Créer un numéro d'identification et un mot de passe}
 
 \nBesoin
 {Se renseigner sur un bagage}

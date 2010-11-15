@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  15 NOV 2010 08:07
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  15 NOV 2010 10:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,7 +641,15 @@ Underfull \hbox (badness 5316) in paragraph at lines 16--16
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Us
 eCases/Descriptions/src/commands.tex)
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Us
-eCases/Descriptions/src/core.tex [6] [7] [8]) [9]
+eCases/Descriptions/src/core.tex [6] [7] [8]
+
+LaTeX Warning: Reference `passiveSensors' on page 9 undefined on input line 139
+.
+
+
+LaTeX Warning: Reference `pda' on page 9 undefined on input line 160.
+
+) [9]
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Us
 eCases/Scenarios/src/commands.tex
 \c@cntScenario=\count112
@@ -1799,16 +1807,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 238BBF4B828FC47B3487009598E4E3AF;7253.
+(rerunfilecheck)             Checksum: 8AECD56A7E3D4FA04FDD36FA8202F5AA;7705.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 6537 strings out of 493738
- 97916 string characters out of 3143023
- 198118 words of memory out of 3000000
- 9583 multiletter control sequences out of 15000+200000
+ 6558 strings out of 493738
+ 98192 string characters out of 3143023
+ 197640 words of memory out of 3000000
+ 9600 multiletter control sequences out of 15000+200000
  9817 words of font info for 34 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 33i,12n,43p,362b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,12n,43p,345b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -1817,10 +1829,10 @@ r/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/l
 ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loc
 al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (16 pages, 147785 bytes).
+Output written on main.pdf (16 pages, 151311 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 562 compressed objects within 6 object streams
- 109 named destinations out of 1000 (max. 500000)
- 729 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 661 PDF objects out of 1000 (max. 8388607)
+ 628 compressed objects within 7 object streams
+ 113 named destinations out of 1000 (max. 500000)
+ 761 words of extra memory for PDF output out of 10000 (max. 10000000)
 
