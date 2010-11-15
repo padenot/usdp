@@ -25,63 +25,67 @@
 \BOOKMARK [2][-]{subsection.3.14}{Technicien}{section.3}% 25
 \BOOKMARK [1][-]{section.4}{Cas d'utilisation}{part.2}% 26
 \BOOKMARK [2][-]{subsection.4.1}{Besoins communs}{section.4}% 27
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Mettre \340 jour l'\351tat du syst\350me}{subsection.4.1}% 28
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Visualisation statique}{subsection.4.1}% 29
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Visualisation dynamique}{subsection.4.1}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.4}{G\351rer la persistance}{subsection.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.2}{Configuration}{section.4}% 32
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Ajouter un \351l\351ment}{subsection.4.2}% 33
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Simuler}{subsection.4.2}% 34
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Manipuler un \351l\351ment existant}{subsection.4.2}% 35
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Fermer la configuration}{subsection.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.3}{Simulation}{section.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Charger une configuration}{subsection.4.3}% 38
-\BOOKMARK [3][-]{subsubsection.4.3.2}{G\351rer la liste des vols}{subsection.4.3}% 39
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Changer le mode de simulation}{subsection.4.3}% 40
-\BOOKMARK [3][-]{subsubsection.4.3.4}{Agir sur les \351l\351ments}{subsection.4.3}% 41
-\BOOKMARK [3][-]{subsubsection.4.3.5}{Effectuer des op\351rations sur l'avancement de la simulation}{subsection.4.3}% 42
-\BOOKMARK [3][-]{subsubsection.4.3.6}{G\351rer les \351v\351nements}{subsection.4.3}% 43
-\BOOKMARK [3][-]{subsubsection.4.3.7}{D\351clencher les \351v\351nements}{subsection.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.4}{Exploitation}{section.4}% 45
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Effectuer une op\351ration prot\351g\351e}{subsection.4.4}% 46
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Acheminer automatiquement les bagages}{subsection.4.4}% 47
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Arr\352ter d'urgence le syst\350me}{subsection.4.4}% 48
-\BOOKMARK [2][-]{subsection.4.5}{Maintenance}{section.4}% 49
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Visualiser les r\351sultats}{subsection.4.5}% 50
-\BOOKMARK [3][-]{subsubsection.4.5.2}{G\351rer les interventions}{subsection.4.5}% 51
-\BOOKMARK [2][-]{subsection.4.6}{R\351clamation}{section.4}% 52
-\BOOKMARK [3][-]{subsubsection.4.6.1}{G\351rer un dossier de litige}{subsection.4.6}% 53
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Se renseigner sur un bagage}{subsection.4.6}% 54
-\BOOKMARK [0][-]{part.3}{III Sc\351narios}{}% 55
-\BOOKMARK [1][-]{section.5}{Besoins communs}{part.3}% 56
-\BOOKMARK [2][-]{subsection.5.1}{Visualisation statique}{section.5}% 57
-\BOOKMARK [2][-]{subsection.5.2}{Visualisation dynamique}{section.5}% 58
-\BOOKMARK [1][-]{section.6}{Configuration}{part.3}% 59
-\BOOKMARK [2][-]{subsection.6.1}{Effectuer des op\351rations sur un \351l\351ment}{section.6}% 60
-\BOOKMARK [2][-]{subsection.6.2}{Simuler}{section.6}% 61
-\BOOKMARK [2][-]{subsection.6.3}{G\351rer la persistance de la configuration}{section.6}% 62
-\BOOKMARK [1][-]{section.7}{Simulation}{part.3}% 63
-\BOOKMARK [2][-]{subsection.7.1}{Charger une configuration pour la simulation}{section.7}% 64
-\BOOKMARK [2][-]{subsection.7.2}{G\351rer la persistance d'une simulation}{section.7}% 65
-\BOOKMARK [2][-]{subsection.7.3}{G\351rer la liste des vols}{section.7}% 66
-\BOOKMARK [2][-]{subsection.7.4}{Changer le mode de simulation}{section.7}% 67
-\BOOKMARK [2][-]{subsection.7.5}{Agir sur les \351l\351ments visualis\351s}{section.7}% 68
-\BOOKMARK [2][-]{subsection.7.6}{Effectuer des op\351rations sur l'avancement de la simulation}{section.7}% 69
-\BOOKMARK [2][-]{subsection.7.7}{G\351rer les \351v\351nements}{section.7}% 70
-\BOOKMARK [2][-]{subsection.7.8}{D\351clencher les \351v\351nements}{section.7}% 71
-\BOOKMARK [2][-]{subsection.7.9}{Mettre \340 jour l'\351tat du syst\350me}{section.7}% 72
-\BOOKMARK [1][-]{section.8}{Exploitation}{part.3}% 73
-\BOOKMARK [2][-]{subsection.8.1}{Effectuer une op\351ration prot\351g\351e}{section.8}% 74
-\BOOKMARK [2][-]{subsection.8.2}{Acheminer automatiquement les bagages}{section.8}% 75
-\BOOKMARK [2][-]{subsection.8.3}{Arr\352ter d'urgence le syst\350me}{section.8}% 76
-\BOOKMARK [2][-]{subsection.8.4}{G\351rer la persistance des configurations et des fichiers de logs}{section.8}% 77
-\BOOKMARK [2][-]{subsection.8.5}{Mettre \340 jour l'\351tat du syst\350me}{section.8}% 78
-\BOOKMARK [2][-]{subsection.8.6}{Maintenance}{section.8}% 79
-\BOOKMARK [2][-]{subsection.8.7}{Visualiser les r\351sultats}{section.8}% 80
-\BOOKMARK [2][-]{subsection.8.8}{G\351rer les interventions}{section.8}% 81
-\BOOKMARK [2][-]{subsection.8.9}{G\351rer la persistance des fichiers \351lectroniques d'intervention et des fichiers de journaux}{section.8}% 82
-\BOOKMARK [2][-]{subsection.8.10}{R\351clamation}{section.8}% 83
-\BOOKMARK [2][-]{subsection.8.11}{G\351rer un dossier de litige}{section.8}% 84
-\BOOKMARK [2][-]{subsection.8.12}{Cr\351er un nouvel identifiant voyageur}{section.8}% 85
-\BOOKMARK [2][-]{subsection.8.13}{Se renseigner sur un bagage}{section.8}% 86
-\BOOKMARK [2][-]{subsection.8.14}{G\351rer la persistance des dossiers de litiges}{section.8}% 87
+\BOOKMARK [2][-]{subsection.4.2}{Visualiser un objet dynamique}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.3}{Visualiser un objet statique}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.4}{Effectuer des actions sur l'historique}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.5}{Configuration}{section.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Effectuer des op\351rations sur un \351l\351ment}{subsection.4.5}% 32
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Simuler la configuration en cours}{subsection.4.5}% 33
+\BOOKMARK [3][-]{subsubsection.4.5.3}{G\351rer la persistance d'une configuration}{subsection.4.5}% 34
+\BOOKMARK [2][-]{subsection.4.6}{Simulation}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Charger une configuration pour la simulation}{subsection.4.6}% 36
+\BOOKMARK [3][-]{subsubsection.4.6.2}{G\351rer la liste des vols}{subsection.4.6}% 37
+\BOOKMARK [3][-]{subsubsection.4.6.3}{Changer le mode de simulation}{subsection.4.6}% 38
+\BOOKMARK [3][-]{subsubsection.4.6.4}{Agir manuellement sur les \351l\351ments}{subsection.4.6}% 39
+\BOOKMARK [3][-]{subsubsection.4.6.5}{Effectuer des op\351rations sur l'avancement de la simulation}{subsection.4.6}% 40
+\BOOKMARK [3][-]{subsubsection.4.6.6}{G\351rer les \351v\351nements}{subsection.4.6}% 41
+\BOOKMARK [2][-]{subsection.4.7}{G\351rer la persistance d'une simulation}{section.4}% 42
+\BOOKMARK [2][-]{subsection.4.8}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.4}% 43
+\BOOKMARK [2][-]{subsection.4.9}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.4}% 44
+\BOOKMARK [2][-]{subsection.4.10}{Exploitation}{section.4}% 45
+\BOOKMARK [2][-]{subsection.4.11}{G\351rer la persistance d'une configuration et des fichiers de logs}{section.4}% 46
+\BOOKMARK [2][-]{subsection.4.12}{Stocker l'historique}{section.4}% 47
+\BOOKMARK [2][-]{subsection.4.13}{Effectuer un arr\352t d'urgence}{section.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.13.1}{Effectuer une op\351ration prot\351g\351e sur les \351l\351ments}{subsection.4.13}% 49
+\BOOKMARK [3][-]{subsubsection.4.13.2}{Acheminer automatiquement les bagages}{subsection.4.13}% 50
+\BOOKMARK [2][-]{subsection.4.14}{Mettre \340 jour l'\351tat du syst\350me p\351riodiquement}{section.4}% 51
+\BOOKMARK [2][-]{subsection.4.15}{Mettre \340 jour l'\351tat du syst\350me ponctuellement}{section.4}% 52
+\BOOKMARK [2][-]{subsection.4.16}{Maintenance}{section.4}% 53
+\BOOKMARK [3][-]{subsubsection.4.16.1}{Visualiser les r\351sultats}{subsection.4.16}% 54
+\BOOKMARK [3][-]{subsubsection.4.16.2}{G\351rer les interventions}{subsection.4.16}% 55
+\BOOKMARK [2][-]{subsection.4.17}{R\351clamation}{section.4}% 56
+\BOOKMARK [3][-]{subsubsection.4.17.1}{G\351rer un dossier de litige}{subsection.4.17}% 57
+\BOOKMARK [3][-]{subsubsection.4.17.2}{Se renseigner sur un bagage}{subsection.4.17}% 58
+\BOOKMARK [0][-]{part.3}{III Sc\351narios}{}% 59
+\BOOKMARK [1][-]{section.5}{Besoins communs}{part.3}% 60
+\BOOKMARK [2][-]{subsection.5.1}{Visualisation statique}{section.5}% 61
+\BOOKMARK [2][-]{subsection.5.2}{Visualisation dynamique}{section.5}% 62
+\BOOKMARK [1][-]{section.6}{Configuration}{part.3}% 63
+\BOOKMARK [2][-]{subsection.6.1}{Effectuer des op\351rations sur un \351l\351ment}{section.6}% 64
+\BOOKMARK [2][-]{subsection.6.2}{Simuler}{section.6}% 65
+\BOOKMARK [2][-]{subsection.6.3}{G\351rer la persistance de la configuration}{section.6}% 66
+\BOOKMARK [1][-]{section.7}{Simulation}{part.3}% 67
+\BOOKMARK [2][-]{subsection.7.1}{Charger une configuration pour la simulation}{section.7}% 68
+\BOOKMARK [2][-]{subsection.7.2}{G\351rer la persistance d'une simulation}{section.7}% 69
+\BOOKMARK [2][-]{subsection.7.3}{G\351rer la liste des vols}{section.7}% 70
+\BOOKMARK [2][-]{subsection.7.4}{Changer le mode de simulation}{section.7}% 71
+\BOOKMARK [2][-]{subsection.7.5}{Agir sur les \351l\351ments visualis\351s}{section.7}% 72
+\BOOKMARK [2][-]{subsection.7.6}{Effectuer des op\351rations sur l'avancement de la simulation}{section.7}% 73
+\BOOKMARK [2][-]{subsection.7.7}{G\351rer les \351v\351nements}{section.7}% 74
+\BOOKMARK [2][-]{subsection.7.8}{D\351clencher les \351v\351nements}{section.7}% 75
+\BOOKMARK [2][-]{subsection.7.9}{Mettre \340 jour l'\351tat du syst\350me}{section.7}% 76
+\BOOKMARK [1][-]{section.8}{Exploitation}{part.3}% 77
+\BOOKMARK [2][-]{subsection.8.1}{Effectuer une op\351ration prot\351g\351e}{section.8}% 78
+\BOOKMARK [2][-]{subsection.8.2}{Acheminer automatiquement les bagages}{section.8}% 79
+\BOOKMARK [2][-]{subsection.8.3}{Arr\352ter d'urgence le syst\350me}{section.8}% 80
+\BOOKMARK [2][-]{subsection.8.4}{G\351rer la persistance des configurations et des fichiers de logs}{section.8}% 81
+\BOOKMARK [2][-]{subsection.8.5}{Mettre \340 jour l'\351tat du syst\350me}{section.8}% 82
+\BOOKMARK [2][-]{subsection.8.6}{Maintenance}{section.8}% 83
+\BOOKMARK [2][-]{subsection.8.7}{Visualiser les r\351sultats}{section.8}% 84
+\BOOKMARK [2][-]{subsection.8.8}{G\351rer les interventions}{section.8}% 85
+\BOOKMARK [2][-]{subsection.8.9}{G\351rer la persistance des fichiers \351lectroniques d'intervention et des fichiers de journaux}{section.8}% 86
+\BOOKMARK [2][-]{subsection.8.10}{R\351clamation}{section.8}% 87
+\BOOKMARK [2][-]{subsection.8.11}{G\351rer un dossier de litige}{section.8}% 88
+\BOOKMARK [2][-]{subsection.8.12}{Cr\351er un nouvel identifiant voyageur}{section.8}% 89
+\BOOKMARK [2][-]{subsection.8.13}{Se renseigner sur un bagage}{section.8}% 90
+\BOOKMARK [2][-]{subsection.8.14}{G\351rer la persistance des dossiers de litiges}{section.8}% 91
