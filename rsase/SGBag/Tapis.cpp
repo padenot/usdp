@@ -32,18 +32,6 @@ void Tapis::maj()
     {
         // Déroule le tapis (fait avancer les objets).
         deroulerTapis();
-
-        // Pour chaque bagage sur le tapis
-        Bagage* b;
-        std::pair<double, double> positionActuelle = position();
-        for(int i = 0; i < bagage.size(); ++i)
-        {
-            b = this->bagage[i];
-            b->simulerDeplacement(positionActuelle.first*vitesse, positionActuelle.second*vitesse);
-
-            if(bagageEstSorti(b))
-                chariotConnecte->chargerBagage(b);
-        }
     }
 }
 
@@ -59,7 +47,18 @@ void Tapis::ajouterBagage(Bagage* bagageEntrant)
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Tapis::deroulerTapis()
 {
-    // TODO What does it do ?
+    // Pour chaque bagage sur le tapis
+    Bagage* b;
+    std::pair<double, double> positionActuelle = position();
+    QVector2D vector;
+    for(int i = 0; i < bagage.size(); ++i)
+    {
+        b = this->bagage[i];
+        b->simulerDeplacement(positionActuelle.first*vitesse, positionActuelle.second*vitesse);
+
+        if(bagageEstSorti(b))
+            chariotConnecte->chargerBagage(b);
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__9W_YPD7Ed-R6YEVT5cViQ"
