@@ -1,7 +1,9 @@
-#ifndef FENETREPRINCIPALE_H
-#define FENETREPRINCIPALE_H
+#ifndef FENETREPRINCPALE_H
+#define FENETREPRINCPALE_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
+#include <QTimer>
 
 namespace Ui {
     class FenetrePrincipale;
@@ -15,8 +17,12 @@ public:
     explicit FenetrePrincipale(QWidget *parent = 0);
     ~FenetrePrincipale();
 
+    void AjouterItem(QGraphicsItem *item);
+
 private:
     Ui::FenetrePrincipale *ui;
+    QGraphicsScene *scene;
+    QTimer timer;
 };
 
-#endif // FENETREPRINCIPALE_H
+#endif // FENETREPRINCPALE_H
