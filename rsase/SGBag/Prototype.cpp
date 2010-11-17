@@ -1,4 +1,10 @@
 #include "Prototype.h"
+#include "XmlConfigFactory.h"
+#include <QXmlSimpleReader>
+#include <QFile>
+#include <QXmlInputSource>
+#include <QDebug>
+
 //Begin section for file Prototype.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
@@ -6,16 +12,39 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Prototype::Prototype()
+Prototype::Prototype(const QString& xmlfilepath)
 {
-    //TODO Auto-generated method stub
+    // Deserialize the xml file.
+    XmlConfigFactory handler;
+    QXmlSimpleReader reader;
+    reader.setContentHandler(&handler);
+    reader.setErrorHandler(&handler);
+
+    QFile file(xmlfilepath);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Cannot read XML file." << endl;
+        exit(1);
+    }
+
+    QXmlInputSource xmlInputSource(&file);
+    if (reader.parse(xmlInputSource))
+    {
+        typesSurElements = handler.mapSurTypes();
+        idSurElements = handler.mapSurId();
+
+        qDebug() << typesSurElements;
+        qDebug() << idSurElements;
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DESTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::~Prototype()
 {
-    //TODO Auto-generated method stub
+    foreach(Element* element, idSurElements)
+    {
+       delete element;
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"

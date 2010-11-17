@@ -6,7 +6,7 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon::Troncon()
+Troncon::Troncon(const QMap<QString,QString>& mapParam)
 {
     //TODO Auto-generated method stub
 }

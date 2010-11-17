@@ -1,5 +1,9 @@
 #ifndef PROTOTYPE_H
 #define PROTOTYPE_H
+
+#include <QMap>
+#include <QVector>
+
 //Begin section for file Prototype.h
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.h
@@ -9,6 +13,10 @@ class Element; //Dependency Generated Source:Prototype Target:Element
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+
+/**
+ * Prototype de la simulation : classe d'entrée de la simulation.
+ */
 class Prototype
 {
 
@@ -20,10 +28,22 @@ class Prototype
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Element * elements;
+        /**
+         * Map des types sur des pointeurs d'éléments.
+         */
+        QMap<QString, QVector<Element*> > typesSurElements;
+        /**
+         * Map des ID sur des pointeurs d'éléments
+         */
+        QMap<int, Element*> idSurElements;
+
+
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * Vitesse de la simulation.
+         */
         double vitesseSimulation;
 
 
@@ -32,10 +52,17 @@ class Prototype
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Prototype();
+        /**
+         * Construit un prototype, et instancie les objets a partir du fichier
+         * XML passé en paramêtre.
+         */
+        Prototype(const QString& xmlfilepath);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * Detruit tous les objets de la simulation.
+         */
         virtual ~Prototype();
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"

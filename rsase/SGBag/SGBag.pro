@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     Toboggan.cpp \
     Tapis.cpp \
     Prototype.cpp \
-    Noeud.cpp
+    Noeud.cpp \
+    XmlConfigFactory.cpp
 
 HEADERS  += fenetreprincipale.h \
     Chariot.h \
@@ -33,6 +34,10 @@ HEADERS  += fenetreprincipale.h \
     Toboggan.h \
     Tapis.h \
     Prototype.h \
-    Noeud.h
+    Noeud.h \
+    XmlConfigFactory.h \
+    Elements.h
 
 FORMS    += fenetreprincipale.ui
+
+QT+=xml
