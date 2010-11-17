@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  15 NOV 2010 08:06
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  15 NOV 2010 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,6 +486,9 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@dimlist=\toks19
 ))
 (../../../common/commands.tex)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Us
 eCases/Scenarios/src/commands.tex
 \c@cntScenario=\count105
@@ -1778,10 +1781,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B84792226CB3A30EAA6AA8C93D1CA1AE;2611.
  ) 
 Here is how much of TeX's memory you used:
- 6369 strings out of 493738
- 94199 string characters out of 3143023
- 193300 words of memory out of 3000000
- 9504 multiletter control sequences out of 15000+200000
+ 6394 strings out of 493738
+ 94760 string characters out of 3143023
+ 193632 words of memory out of 3000000
+ 9526 multiletter control sequences out of 15000+200000
  8596 words of font info for 30 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  33i,10n,43p,267b,362s stack positions out of 5000i,500n,10000p,200000b,50000s

@@ -11,3 +11,18 @@
 		\caption{\textsl{#2}}
 	\end{figure}
 }
+
+\newcommand{\role}[3]
+{
+	{
+	%\newlength{\parindentBuffer}
+	%\setlength{\parindentBuffer}{\parindent}
+	\setlength{\parindent}{0pt}
+
+	\label{#2}
+	\begin{tabular}{p{6cm} l}
+		\textbf{#1} & \begin{minipage}[t]{10cm}#3\end{minipage}\\
+	\end{tabular}
+	~\\
+	}
+}

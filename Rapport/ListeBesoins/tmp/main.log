@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  15 NOV 2010 10:51
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  17 NOV 2010 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,6 +486,9 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@dimlist=\toks19
 ))
 (../../common/commands.tex)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Li
 steBesoins/src/commands.tex
 \c@cntBesoins=\count105
@@ -610,50 +613,44 @@ LaTeX Info: Redefining \nameref on input line 7.
 (/Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/Li
 steBesoins/src/core.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(Font)              <10.95> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
-
-Underfull \hbox (badness 5316) in paragraph at lines 16--16
-[]\OT1/cmr/m/n/10.95 En Mode ma-nuel, l'in-ter-ven-tion d'un op^^Serateur est
- []
-
+(Font)              <6> on input line 5.
+) AED: lastpage setting LastPage 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1
 
-])
-AED: lastpage setting LastPage 
-[2]
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 9.
- (./main.aux)
+
+(./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1ACCE45F20118ECEA0F52CF7829F7BBB;470.
+(rerunfilecheck)             Checksum: 63037A4841ACD591374C3D390EA91B44;315.
  ) 
 Here is how much of TeX's memory you used:
- 6314 strings out of 493738
- 93364 string characters out of 3143023
- 199333 words of memory out of 3000000
- 9479 multiletter control sequences out of 15000+200000
- 8250 words of font info for 29 fonts, out of 3000000 for 9000
+ 6328 strings out of 493738
+ 93804 string characters out of 3143023
+ 198540 words of memory out of 3000000
+ 9493 multiletter control sequences out of 15000+200000
+ 7645 words of font info for 27 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 33i,11n,43p,264b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,10n,43p,264b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on main.pdf (2 pages, 61065 bytes).
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on main.pdf (1 page, 43940 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 52 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

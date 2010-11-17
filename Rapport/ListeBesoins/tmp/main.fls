@@ -108,6 +108,8 @@ INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT ../../common/commands.tex
 INPUT ../../common/commands.tex
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/ListeBesoins/src/commands.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/ListeBesoins/src/commands.tex
 INPUT main.aux
@@ -149,8 +151,6 @@ INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
-INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT main.aux
 INPUT ./main.out
@@ -158,4 +158,3 @@ INPUT ./main.out
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb

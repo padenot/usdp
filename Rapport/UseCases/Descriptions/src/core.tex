@@ -2,56 +2,55 @@
 % Acteurs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rôles}
-% TODO : inclure le diagramme d'héritage des rôles utilisateurs
+\includeDiagram{Usecases/Hierarchie}{Hierarchie des rôles}
 
-\subsection{Utilisateur client graphique}
-\label{uiUser}
-C'est une personne ayant accès aux fonctionnalités graphiques du logiciel SGBag. Les autres rôles \og Utilisateurs \fg en dérivent.
 
-\subsection{Utilisateur configuration}
-\label{confUser}
-C'est une personne qui manipule l'interface de configuration. Seul le responsable technique possède les autorisations pour modifier ou créer des configurations.
 
-\subsection{Utilisateur simulation}
-\label{simUser}
-C'est une personne qui manipule l'interface de simulation. Le responsable technique et le superviseur en font partie.
+\role{Utilisateur client graphique}{uiUser}{C'est une personne ayant accès aux fonctionnalités graphiques du logiciel SGBag. Les autres rôles \og Utilisateurs \fg en dérivent.}
 
-\subsection{Utilisateur exploitation}
-\label{expUser}
-C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.
+\role{Utilisateur configuration}
+{confUser}
+{C'est une personne qui manipule l'interface de configuration. Seul le responsable technique possède les autorisations pour modifier ou créer des configurations.}
 
-\subsection{Utilisateur maintenance}
-\label{mntUser}
-C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.
+\role{Utilisateur simulation}
+{simUser}
+{C'est une personne qui manipule l'interface de simulation. Le responsable technique et le superviseur en font partie.}
 
-\subsection{Utilisateur gestion réclamation}
-\label{recUser}
-C'est une personne qui gère les problèmes survenus en cas de perte ou de dégradation des bagages. Elle peut accéder au dossier des litiges ainsi qu'au trajet des bagages.
+\role{Utilisateur exploitation}
+{expUser}
+{C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.}
 
-\subsection{Objet dynamique}
-\label{obj}
-Objet commandable en mouvement, à distance, tel qu'un tapis, un chariot, \ldots
+\role{Utilisateur maintenance}
+{mntUser}
+{C'est une personne qui manipule l'interface de maintenance. Le superviseur et l'informaticien sont les deux employés pouvant accéder à cette interface.}
 
-\subsection{Capteur actif}
-\label{sensor}
-Capteur interrompant le système lorsqu'il doit transmettre une information (alarme, \ldots).
+\role{Utilisateur gestion réclamation}
+{recUser}
+{C'est une personne qui gère les problèmes survenus en cas de perte ou de dégradation des bagages. Elle peut accéder au dossier des litiges ainsi qu'au trajet des bagages.}
 
-\subsection{Capteur passif}
+\role{Objet dynamique}
+{obj}
+{Objet commandable en mouvement, à distance, tel qu'un tapis, un chariot, \ldots}
 
-Capteur dont la valeur doit être lue à intervalle régulier (caméra, \ldots).
-\label{passiveSensor}
+\role{Capteur actif}
+{sensor}
+{Capteur interrompant le système lorsqu'il doit transmettre une information (alarme, \ldots).}
 
-\subsection{Horloge}
-\label{clock}
-Une horloge, déclenchant des événement à une fréquence donnée.
+\role{Capteur passif}
+{passiveSensors}
+{Capteur dont la valeur doit être lue à intervalle régulier (caméra, \ldots).}
 
-\subsection{Serveur base de données}
-\label{bdd}
-La base de donnée du système de gestion de bagages contient toutes les données de configuration et de gestion de l'application.
+\role{Horloge}
+{clock}
+{Une horloge, déclenchant des événement à une fréquence donnée.}
 
-\subsection{PDA Technicien}
-\label{pda}
-C'est le PDA\footnote{\textsl{Personal Digital Assistant}} de la personne qui intervient en cas de problème.
+\role{Serveur base de données}
+{bdd}
+{La base de donnée du système de gestion de bagages contient toutes les données de configuration et de gestion de l'application.}
+
+\role{PDA Technicien}
+{pda}
+{C'est le PDA\footnote{\textsl{Personal Digital Assistant}} de la personne qui intervient en cas de problème.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

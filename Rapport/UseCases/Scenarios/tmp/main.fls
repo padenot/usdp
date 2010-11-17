@@ -108,6 +108,8 @@ INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT ../../../common/commands.tex
 INPUT ../../../common/commands.tex
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/tools/xspace.sty
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/UseCases/Scenarios/src/commands.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/USDP/Rapport/UseCases/Scenarios/src/commands.tex
 INPUT main.aux
