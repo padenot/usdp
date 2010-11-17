@@ -29,10 +29,6 @@ class Prototype
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
-         * Map des types sur des pointeurs d'éléments.
-         */
-        QMap<QString, QVector<Element*> > typesSurElements;
-        /**
          * Map des ID sur des pointeurs d'éléments
          */
         QMap<int, Element*> idSurElements;

@@ -1,36 +1,24 @@
+/**
+  * @file Element.h
+  * @author H4203
+  */
+
 #ifndef ELEMENT_H
 #define ELEMENT_H
-//Begin section for file Element.h
-//TODO: Add definitions that you want preserved
-//End section for file Element.h
 
+#include <QPointF>
 #include <utility>
 #include <QMap>
 
-
-class Zone; //Dependency Generated Source:Element Target:Zone
+//class Zone; //Dependency Generated Source:Element Target:Zone
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @todo
+  */
 class Element
 {
-
-    //Begin section for Element
-    //TODO: Add attributes that you want preserved
-    //End section for Element
-
-    private:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_ncu9YOsVEd-oy8D834IawQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Zone * zone;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_YHgIwPG4Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::pair<double,double> _position;
-
-
-
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
@@ -43,7 +31,17 @@ class Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::pair<double,double> position();
+        QPointF position();
+
+    protected:
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_ncu9YOsVEd-oy8D834IawQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        //Zone * zone;
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_YHgIwPG4Ed-XFOLnxrkHLA"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        QPointF _position;
 
 };  //end class Element
 

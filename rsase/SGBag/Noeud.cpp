@@ -24,4 +24,5 @@ Noeud::~Noeud()
 Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
 {
     //TODO Auto-generated method stub
+    return 0;
 }

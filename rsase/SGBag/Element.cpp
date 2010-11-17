@@ -22,8 +22,7 @@ Element::~Element()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-pair<double,double> Element::position()
+QPointF Element::position()
 {
-    //TODO Auto-generated method stub
-    return make_pair(0.0,0.0);
+    return _position;
 }

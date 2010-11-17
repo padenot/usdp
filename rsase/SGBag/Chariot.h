@@ -35,9 +35,7 @@ class Chariot : public ElementActif
 		 * @todo TODO Destructeur de chariot
 		 */
         virtual ~Chariot();
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 		/** Charge un bagage sur le chariot.
 		 * Ne doit être appelé que si le chariot ne contient pas déjà un chariot.
 		 * Etant donné que le chariot se déconnecte du tapis dès qu'il reçoit un bagage,

@@ -15,6 +15,8 @@
 Prototype::Prototype(const QString& xmlfilepath)
 {
     // Deserialize the xml file.
+    // Map des types sur des pointeurs d'éléments.
+    QMap<QString, QVector<Element*> > typesSurElements;
     XmlConfigFactory handler;
     QXmlSimpleReader reader;
     reader.setContentHandler(&handler);
