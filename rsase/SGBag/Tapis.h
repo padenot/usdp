@@ -1,3 +1,8 @@
+/**
+ * @file Tapis.h
+ * @author Martin Richard (martin.richard@insa-lyon.fr)
+ */
+
 #ifndef TAPIS_H
 #define TAPIS_H
 //Begin section for file Tapis.h
@@ -11,6 +16,10 @@
 
 class Troncon; //Dependency Generated Source:Tapis Target:Troncon
 
+/**
+ * Un tapis est un point d'entrée de bagages dans le circuit SGBag.
+ *
+ */
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Tapis : ElementActif

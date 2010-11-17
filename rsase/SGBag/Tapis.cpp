@@ -1,3 +1,8 @@
+/**
+ * @file Tapis.cpp
+ * @author Martin Richard (martin.richard@insa-lyon.fr)
+ */
+
 #include "Tapis.h"
 //Begin section for file Tapis.cpp
 //TODO: Add definitions that you want preserved
