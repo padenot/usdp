@@ -19,17 +19,17 @@ ElementActif::~ElementActif()
     //TODO Auto-generated method stub
 }
 
-void ElementActif::modifierVitesse()
+void ElementActif::modifierVitesse(double nouvelleVitesse)
 {
-    //TODO
+    _vitesse = nouvelleVitesse;
 }
 
 void ElementActif::arreter()
 {
-
+    _estActif = false;
 }
 
 void ElementActif::demarrer()
 {
-
+    _estActif = true;
 }

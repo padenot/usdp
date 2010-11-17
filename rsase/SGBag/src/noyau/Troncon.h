@@ -4,9 +4,9 @@
 //TODO: Add definitions that you want preserved
 //End section for file Troncon.h
 
-#include "Element.h"
-
 #include <QMap>
+
+#include "Element.h"
 
 
 class Noeud;
@@ -29,7 +29,7 @@ class Troncon : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_akvbYO5DEd-dcpIgUje6-w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Chariot * chariot;
+        Chariot * _chariot;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5u8RMOtcEd-6Qct7MaUvyw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -37,8 +37,9 @@ class Troncon : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bOJUIPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        unsigned long longueur;
+        //unsigned long longueur;
 
+        bool _estLibre;
 
 
     public:

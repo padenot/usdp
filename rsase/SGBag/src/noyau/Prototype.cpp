@@ -1,9 +1,10 @@
-#include "Prototype.h"
-#include "XmlConfigFactory.h"
 #include <QXmlSimpleReader>
 #include <QFile>
 #include <QXmlInputSource>
 #include <QDebug>
+
+#include "Prototype.h"
+#include "XmlConfigFactory.h"
 
 //Begin section for file Prototype.cpp
 //TODO: Add definitions that you want preserved
@@ -32,10 +33,10 @@ Prototype::Prototype(const QString& xmlfilepath)
     if (reader.parse(xmlInputSource))
     {
         typesSurElements = handler.mapSurTypes();
-        idSurElements = handler.mapSurId();
+        _idSurElements = handler.mapSurId();
 
         qDebug() << typesSurElements;
-        qDebug() << idSurElements;
+        qDebug() << _idSurElements;
     }
 }
 
@@ -43,7 +44,7 @@ Prototype::Prototype(const QString& xmlfilepath)
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::~Prototype()
 {
-    foreach(Element* element, idSurElements)
+    foreach(Element* element, _idSurElements)
     {
        delete element;
     }

@@ -1,6 +1,6 @@
-#include "XmlConfigFactory.h"
-
 #include <QDebug>
+
+#include "XmlConfigFactory.h"
 
 const char* XmlConfigFactory::NodeName_String[] = {
     "elementName", /// Nom de l'élément

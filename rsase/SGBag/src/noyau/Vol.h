@@ -6,8 +6,10 @@
 
 #include <string>
 #include <QMap>
-#include <Element.h>
 
+#include "Element.h"
+
+class Troncon;
 class Bagage; //Dependency Generated Source:Vol Target:Bagage
 class Toboggan;
 
@@ -24,21 +26,19 @@ class Vol
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_j91OhPCwEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Bagage * bagage;
+        Bagage * _bagage;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_c8bTgPG8Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        unsigned  long dateDepart;
+        unsigned  long _dateDepart;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_lueswvCwEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Toboggan * toboggan;
+        Toboggan * _toboggan;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_O3of4PG4Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::string nom;
-
-
+        std::string _nom;
 
     public:
 
@@ -49,6 +49,13 @@ class Vol
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual ~Vol();
+
+        /** Récupère le tronçon permettant d'accéder au vol.
+          * Peut être nul si le vol n'est pas associé à un toboggan.
+          * @return Le tronçon support du toboggan associé au vol, s'il existe.
+          */
+        Troncon* tronconAcces ();
+
 
 };  //end class Vol
 

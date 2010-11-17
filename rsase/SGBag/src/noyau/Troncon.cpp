@@ -24,19 +24,27 @@ Troncon::~Troncon()
 bool Troncon::occuper()
 {
     //TODO Auto-generated method stub
-    return false;
+    if (_estLibre)
+    {
+        _estLibre = false;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Troncon::liberer()
 {
-    //TODO Auto-generated method stub
+    _estLibre = true;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Noeud* Troncon::noeudFin()
 {
-    //TODO Auto-generated method stub
+    return _noeudFin;
 }

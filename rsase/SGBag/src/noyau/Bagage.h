@@ -6,9 +6,11 @@
 
 #include <string>
 #include <QMap>
+
 #include "Element.h"
 
 class Troncon;
+class Noeud;
 class Vol; //Dependency Generated Source:Bagage Target:Vol
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ"
@@ -24,7 +26,7 @@ class Bagage : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_j91OgfCwEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Vol * vol;
+        Vol * _vol;
         int a;
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_UjYFQPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -48,7 +50,7 @@ class Bagage : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon* trouverObjectifImmediat();
+        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
 
 };  //end class Bagage
 

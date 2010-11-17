@@ -3,8 +3,10 @@
  * @author Martin Richard (martin.richard@insa-lyon.fr)
  */
 
-#include "Tapis.h"
 #include <QVector2D>
+
+#include "Tapis.h"
+#include "Noeud.h"
 //Begin section for file Tapis.cpp
 using namespace std;
 //End section for file Tapis.cpp
@@ -13,7 +15,7 @@ using namespace std;
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Tapis::Tapis(const QMap<QString,QString>& mapParam)
-    :ElementActif(mapParam), chariotConnecte(NULL)
+    :ElementActif(mapParam), _chariotConnecte(0)
 {
     // Constructeur
 }
@@ -30,7 +32,7 @@ Tapis::~Tapis()
 void Tapis::maj()
 {
     // si un chariot est connecté au tapis
-    if(chariotConnecte != NULL)
+    if(_chariotConnecte != 0)
     {
         // Déroule le tapis (fait avancer les objets).
         deroulerTapis();
@@ -42,7 +44,7 @@ void Tapis::maj()
 void Tapis::ajouterBagage(Bagage* bagageEntrant)
 {
     // Connexion du bagage
-    bagage.push_back(bagageEntrant);
+    _bagage.push_back(bagageEntrant);
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
@@ -51,15 +53,14 @@ void Tapis::deroulerTapis()
 {
     // Pour chaque bagage sur le tapis
     Bagage* b;
-    QPointF positionActuelle = _position;
     QVector2D vector;
-    for(unsigned int i = 0; i < bagage.size(); ++i)
+    for(unsigned int i = 0; i < _bagage.size(); ++i)
     {
-        b = this->bagage[i];
-        b->simulerDeplacement(positionActuelle.x()*_vitesse, positionActuelle.y()*_vitesse);
+        b = _bagage[i];
+        b->simulerDeplacement(_position.x()*_vitesse, _position.y()*_vitesse);
 
         if(bagageEstSorti(b))
-            chariotConnecte->chargerBagage(b);
+            _chariotConnecte->chargerBagage(b);
     }
 }
 
@@ -69,15 +70,14 @@ void Tapis::connecter(Chariot* chariot)
 {
     // On sait qu'il ne peut pas y avoir d'autre chariot puisque le
     // test est effectué niveau tronçon support
-    chariotConnecte = chariot;
+    _chariotConnecte = chariot;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon* Tapis::trouverObjectifImmediat()
+Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
 {
-    // TODO WTFDID?
-    return 0;
+    return positionActuelle->trouverProchainTroncon(_tronconSupport);
 }
 
 /**

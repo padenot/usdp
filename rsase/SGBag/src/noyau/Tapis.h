@@ -33,15 +33,15 @@ class Tapis : public ElementActif
     private:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tziQ8eshEd-oy8D834IawQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::vector<Bagage*> bagage;
+        std::vector<Bagage*> _bagage;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_fSJGQeswEd-oy8D834IawQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Chariot * chariotConnecte;
+        Chariot * _chariotConnecte;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_TYtfcfDpEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * tronconSupport;
+        Troncon * _tronconSupport;
 
     protected:
 
@@ -102,7 +102,7 @@ class Tapis : public ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon* trouverObjectifImmediat();
+        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
 
 };  //end class Tapis
 

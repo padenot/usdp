@@ -1,4 +1,5 @@
 #include "Vol.h"
+#include "Toboggan.h"
 //Begin section for file Vol.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Vol.cpp
@@ -16,4 +17,16 @@ Vol::Vol(const QMap<QString,QString>& mapParam)
 Vol::~Vol() 
 {
     //TODO Auto-generated method stub
+}
+
+Troncon* Vol::tronconAcces()
+{
+    if (_toboggan != 0)
+    {
+        return _toboggan->tronconSupport();
+    }
+    else
+    {
+        return 0;
+    }
 }

@@ -8,35 +8,38 @@ QT       += core gui
 
 TARGET = SGBag
 TEMPLATE = app
+DEPENDPATH += src ui
 
 
-SOURCES += main.cpp\
-        fenetreprincipale.cpp \
-    Chariot.cpp \
-    Bagage.cpp \
-    ElementActif.cpp \
-    Element.cpp \
-    Vol.cpp \
-    Troncon.cpp \
-    Toboggan.cpp \
-    Tapis.cpp \
-    Prototype.cpp \
-    Noeud.cpp \
-    XmlConfigFactory.cpp
 
-HEADERS  += fenetreprincipale.h \
-    Chariot.h \
-    Bagage.h \
-    ElementActif.h \
-    Element.h \
-    Vol.h \
-    Troncon.h \
-    Toboggan.h \
-    Tapis.h \
-    Prototype.h \
-    Noeud.h \
-    XmlConfigFactory.h \
-    Elements.h
+
+SOURCES += ihm/main.cpp\
+    ihm/fenetreprincipale.cpp \
+    noyau/Chariot.cpp \
+    noyau/Bagage.cpp \
+    noyau/ElementActif.cpp \
+    noyau/Element.cpp \
+    noyau/Vol.cpp \
+    noyau/Troncon.cpp \
+    noyau/Toboggan.cpp \
+    noyau/Tapis.cpp \
+    noyau/Prototype.cpp \
+    noyau/Noeud.cpp \
+    noyau/XmlConfigFactory.cpp
+
+HEADERS  += ihm/fenetreprincipale.h \
+    noyau/Chariot.h \
+    noyau/Bagage.h \
+    noyau/ElementActif.h \
+    noyau/Element.h \
+    noyau/Vol.h \
+    noyau/Troncon.h \
+    noyau/Toboggan.h \
+    noyau/Tapis.h \
+    noyau/Prototype.h \
+    noyau/Noeud.h \
+    noyau/XmlConfigFactory.h \
+    noyau/Elements.h
 
 FORMS    += fenetreprincipale.ui
 

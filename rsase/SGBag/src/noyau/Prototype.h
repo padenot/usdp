@@ -31,7 +31,7 @@ class Prototype
         /**
          * Map des ID sur des pointeurs d'éléments
          */
-        QMap<int, Element*> idSurElements;
+        QMap<int, Element*> _idSurElements;
 
 
 
@@ -40,7 +40,7 @@ class Prototype
         /**
          * Vitesse de la simulation.
          */
-        double vitesseSimulation;
+        double _vitesseSimulation;
 
 
 

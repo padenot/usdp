@@ -1,7 +1,7 @@
 #include <QtGui/QApplication>
-#include "fenetreprincipale.h"
 
-#include "Prototype.h"
+#include "fenetreprincipale.h"
+#include "../noyau/Prototype.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     FenetrePrincipale w;
     w.show();
 
-    Prototype proto("../SGBag/configuration_simple.xml");
+    Prototype proto("configuration_simple.xml");
 
     return a.exec();
 }

@@ -23,6 +23,13 @@ Noeud::~Noeud()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
 {
-    //TODO Auto-generated method stub
-    return 0;
+    if (destination == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        // TODO
+        return 0;
+    }
 }
