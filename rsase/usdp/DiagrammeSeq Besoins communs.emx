@@ -1017,7 +1017,7 @@
     </ownedAttribute>
     <ownedAttribute xmi:id="_THvtUfAPEd-Z4bGI99i1AQ" name="ihm"/>
     <ownedAttribute xmi:id="_YmB68PAPEd-Z4bGI99i1AQ" name="prototype">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_14GIsOyfEd-0NvPstdZN1w?ModeleDomaine/Prototype?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?ModeleDomaine/Prototype?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_kb4uoPAPEd-Z4bGI99i1AQ" name="prototypeView">
       <type xmi:type="uml:Class" href="DiagrammesSeq.emx#_DLqaUO5-Ed-Jn7v3SB1Zsg?DiagrammesSeq/PrototypeView?"/>

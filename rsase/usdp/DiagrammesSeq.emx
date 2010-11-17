@@ -719,10 +719,10 @@
     <ownedAttribute xmi:id="_JAhOsewqEd-S_IsmmuMhnQ" name="Système SGBag"/>
     <ownedAttribute xmi:id="_n6P78ewqEd-S_IsmmuMhnQ" name="IHM"/>
     <ownedAttribute xmi:id="_uVMmIewqEd-S_IsmmuMhnQ" name="bagage">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_1cuGUOsVEd-oy8D834IawQ?DiagrammesClasses/Bagage?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?ModeleStructurel/Bagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_vgJWUewqEd-S_IsmmuMhnQ" name="tapis">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_9b-b4OsVEd-oy8D834IawQ?DiagrammesClasses/Tapis?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?ModeleStructurel/Tapis?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_VbaMoewrEd-S_IsmmuMhnQ" name="horloge">
       <type xmi:type="uml:Actor" href="UseCases.emx#_pP5GoOshEd-WupIJ3BFZLg?UseCases/Horloge?"/>
@@ -731,47 +731,47 @@
       <type xmi:type="uml:Actor" href="UseCases.emx#_kOJOkOsiEd-WupIJ3BFZLg?UseCases/Simulation/Utilisateur%20simulation?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_WJf44eyzEd-rHtIWqJ4l8g" name="bagage2">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_1cuGUOsVEd-oy8D834IawQ?DiagrammesClasses/Bagage?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?ModeleStructurel/Bagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_5_zN0eyzEd-rHtIWqJ4l8g" name="prototype">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_14GIsOyfEd-0NvPstdZN1w?DiagrammesClasses/Prototype?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?ModeleStructurel/Prototype?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_Ff5z8ey0Ed-rHtIWqJ4l8g" name="elément">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_Y1tCkOsVEd-oy8D834IawQ?DiagrammesClasses/Element?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?ModeleStructurel/Element?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_40UNAO5yEd-X2qSx1xpmxg" name="bagage3">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_1cuGUOsVEd-oy8D834IawQ?DiagrammesClasses/Bagage?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?ModeleStructurel/Bagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_ETsaYe5zEd-X2qSx1xpmxg" name="tapis2">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_9b-b4OsVEd-oy8D834IawQ?DiagrammesClasses/Tapis?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?ModeleStructurel/Tapis?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_T1HO8e51Ed-Jn7v3SB1Zsg" name="noeud Entrée">
       <type xmi:type="uml:Class" href="Package%20vierge.emx#_RuEE8OsqEd-oy8D834IawQ?DiagrammesClasses/TronconEntreeBagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_c0lrYO51Ed-Jn7v3SB1Zsg" name="chariot">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_8wh8EOseEd-oy8D834IawQ?DiagrammesClasses/Chariot?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?ModeleStructurel/Chariot?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_rS2Ese51Ed-Jn7v3SB1Zsg" name="rail">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#__FeJQOsVEd-oy8D834IawQ?DiagrammesClasses/Troncon?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?ModeleStructurel/Troncon?"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dgMAUO8pEd-HKbVm7STiYg" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dgLZQO8pEd-HKbVm7STiYg" value="1"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_vkI6we51Ed-Jn7v3SB1Zsg" name="chariot2">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_8wh8EOseEd-oy8D834IawQ?DiagrammesClasses/Chariot?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?ModeleStructurel/Chariot?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_pKj3oe53Ed-Jn7v3SB1Zsg" name="rail2">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#__FeJQOsVEd-oy8D834IawQ?DiagrammesClasses/Troncon?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?ModeleStructurel/Troncon?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_CDiG4e55Ed-Jn7v3SB1Zsg" name="noeud Sortie">
       <type xmi:type="uml:Class" href="Package%20vierge.emx#_lRYlgOsoEd-oy8D834IawQ?DiagrammesClasses/TronconSortieBagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_Nhafce55Ed-Jn7v3SB1Zsg" name="conteneur">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_slcjoOsVEd-oy8D834IawQ?DiagrammesClasses/Toboggan?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?ModeleStructurel/Toboggan?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_wbBFwfChEd-54vpurc77FA" name="aeroportView" type="_IygD0O56Ed-Jn7v3SB1Zsg"/>
     <ownedAttribute xmi:id="_y-MNIfChEd-54vpurc77FA" name="utilisateur de la simulation" type="_W7Ei4O_sEd-KganxdgdPew"/>
     <ownedAttribute xmi:id="_AR77IfCiEd-54vpurc77FA" name="prototype2">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_14GIsOyfEd-0NvPstdZN1w?DiagrammesClasses/Prototype?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?ModeleStructurel/Prototype?"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_K2hHAOwqEd-S_IsmmuMhnQ" name="Evénementd'envoid'opération1"/>
@@ -1208,16 +1208,16 @@
         <message xmi:id="_9OiBY-y4Ed-rHtIWqJ4l8g" name="moveChariot" messageSort="reply" receiveEvent="_9OiBZOy4Ed-rHtIWqJ4l8g" sendEvent="_9OiBYuy4Ed-rHtIWqJ4l8g" connector="_9OiBZey4Ed-rHtIWqJ4l8g"/>
       </ownedBehavior>
       <ownedAttribute xmi:id="_xxpOsey1Ed-rHtIWqJ4l8g" name="prototype">
-        <type xmi:type="uml:Class" href="Package%20vierge.emx#_14GIsOyfEd-0NvPstdZN1w?DiagrammesClasses/Prototype?"/>
+        <type xmi:type="uml:Class" href="ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?ModeleStructurel/Prototype?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1OB2Aey1Ed-rHtIWqJ4l8g" name="chariot">
-        <type xmi:type="uml:Class" href="Package%20vierge.emx#_8wh8EOseEd-oy8D834IawQ?DiagrammesClasses/Chariot?"/>
+        <type xmi:type="uml:Class" href="ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?ModeleStructurel/Chariot?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_HFiqIey2Ed-rHtIWqJ4l8g" name="rail">
-        <type xmi:type="uml:Class" href="Package%20vierge.emx#__FeJQOsVEd-oy8D834IawQ?DiagrammesClasses/Troncon?"/>
+        <type xmi:type="uml:Class" href="ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?ModeleStructurel/Troncon?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fjsJIey4Ed-rHtIWqJ4l8g" name="noeud">
-        <type xmi:type="uml:Class" href="Package%20vierge.emx#_R4640OskEd-oy8D834IawQ?DiagrammesClasses/Noeud?"/>
+        <type xmi:type="uml:Class" href="ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?ModeleStructurel/Noeud?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_pWRdgey4Ed-rHtIWqJ4l8g" name="noeud Entrée">
         <type xmi:type="uml:Class" href="Package%20vierge.emx#_RuEE8OsqEd-oy8D834IawQ?DiagrammesClasses/TronconEntreeBagage?"/>
@@ -1226,7 +1226,7 @@
         <type xmi:type="uml:Class" href="Package%20vierge.emx#_lRYlgOsoEd-oy8D834IawQ?DiagrammesClasses/TronconSortieBagage?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xvwQ8ey4Ed-rHtIWqJ4l8g" name="noeud2">
-        <type xmi:type="uml:Class" href="Package%20vierge.emx#_R4640OskEd-oy8D834IawQ?DiagrammesClasses/Noeud?"/>
+        <type xmi:type="uml:Class" href="ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?ModeleStructurel/Noeud?"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_7wpuIey4Ed-rHtIWqJ4l8g" name="noeud Sortie2">
         <type xmi:type="uml:Class" href="Package%20vierge.emx#_lRYlgOsoEd-oy8D834IawQ?DiagrammesClasses/TronconSortieBagage?"/>
@@ -1268,28 +1268,28 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_JpFKse5zEd-X2qSx1xpmxg" name="Evénementd'envoid'opération15">
-    <operation href="Package%20vierge.emx#_JpFKsO5zEd-X2qSx1xpmxg?DiagrammesClasses/Tapis/maj?"/>
+    <operation href="ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg?ModeleStructurel/Tapis/maj?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_JpFKsu5zEd-X2qSx1xpmxg" name="Evénementderéceptiond'opération11">
-    <operation href="Package%20vierge.emx#_JpFKsO5zEd-X2qSx1xpmxg?DiagrammesClasses/Tapis/maj?"/>
+    <operation href="ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg?ModeleStructurel/Tapis/maj?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_AHA3Me52Ed-Jn7v3SB1Zsg" name="SendOperationEvent1"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_AHA3Mu52Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent1"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_Fcsice52Ed-Jn7v3SB1Zsg" name="SendOperationEvent2"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_Fcsicu52Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent2"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_XNzMke52Ed-Jn7v3SB1Zsg" name="SendOperationEvent3">
-    <operation href="Package%20vierge.emx#_XNzMkO52Ed-Jn7v3SB1Zsg?DiagrammesClasses/Chariot/chargerBagage?"/>
+    <operation href="ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg?ModeleStructurel/Chariot/chargerBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_XN89kO52Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent3">
-    <operation href="Package%20vierge.emx#_XNzMkO52Ed-Jn7v3SB1Zsg?DiagrammesClasses/Chariot/chargerBagage?"/>
+    <operation href="ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg?ModeleStructurel/Chariot/chargerBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_bSa4ke52Ed-Jn7v3SB1Zsg" name="SendOperationEvent4"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_bSa4ku52Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent4"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_-CHx0O52Ed-Jn7v3SB1Zsg" name="SendOperationEvent5">
-    <operation href="Package%20vierge.emx#_41riIO52Ed-Jn7v3SB1Zsg?DiagrammesClasses/ElementActif/maj?"/>
+    <operation href="ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg?ModeleStructurel/ElementActif/maj?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_-CHx0e52Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent5">
-    <operation href="Package%20vierge.emx#_41riIO52Ed-Jn7v3SB1Zsg?DiagrammesClasses/ElementActif/maj?"/>
+    <operation href="ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg?ModeleStructurel/ElementActif/maj?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_k9JcAe53Ed-Jn7v3SB1Zsg" name="SendOperationEvent6"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_k9JcAu53Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent6"/>
@@ -1302,16 +1302,16 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_U0234e55Ed-Jn7v3SB1Zsg" name="SendOperationEvent10"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_U0234u55Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent10"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_ZhQ8oO55Ed-Jn7v3SB1Zsg" name="SendOperationEvent11">
-    <operation href="Package%20vierge.emx#_ZhHysO55Ed-Jn7v3SB1Zsg?DiagrammesClasses/Toboggan/transfererBagage?"/>
+    <operation href="ModeleStructurel.emx#_ZhHysO55Ed-Jn7v3SB1Zsg?ModeleStructurel/Toboggan/transfererBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_ZhQ8oe55Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent11">
-    <operation href="Package%20vierge.emx#_ZhHysO55Ed-Jn7v3SB1Zsg?DiagrammesClasses/Toboggan/transfererBagage?"/>
+    <operation href="ModeleStructurel.emx#_ZhHysO55Ed-Jn7v3SB1Zsg?ModeleStructurel/Toboggan/transfererBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_pgh1se55Ed-Jn7v3SB1Zsg" name="SendOperationEvent12">
-    <operation href="Package%20vierge.emx#_pgh1sO55Ed-Jn7v3SB1Zsg?DiagrammesClasses/Chariot/dechargerBatterie?"/>
+    <operation href="ModeleStructurel.emx#_pgh1sO55Ed-Jn7v3SB1Zsg?ModeleStructurel/Chariot/dechargerBatterie?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_pgh1su55Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent12">
-    <operation href="Package%20vierge.emx#_pgh1sO55Ed-Jn7v3SB1Zsg?DiagrammesClasses/Chariot/dechargerBatterie?"/>
+    <operation href="ModeleStructurel.emx#_pgh1sO55Ed-Jn7v3SB1Zsg?ModeleStructurel/Chariot/dechargerBatterie?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_81xzPO55Ed-Jn7v3SB1Zsg" name="Copy_1_Evénementd'envoid'opération12">
     <operation href="Package%20vierge.emx#_DHw34Oy0Ed-rHtIWqJ4l8g?ModeleDomaine/Prototype/onTick?"/>
@@ -1372,16 +1372,16 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_mFTvMe59Ed-Jn7v3SB1Zsg" name="SendOperationEvent20" operation="_mFTvMO59Ed-Jn7v3SB1Zsg"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_mFTvMu59Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent20" operation="_mFTvMO59Ed-Jn7v3SB1Zsg"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_oCLrke59Ed-Jn7v3SB1Zsg" name="SendOperationEvent21">
-    <operation href="Package%20vierge.emx#_oCLrkO59Ed-Jn7v3SB1Zsg?DiagrammesClasses/Prototype/modeManuel?"/>
+    <operation href="ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg?ModeleStructurel/Prototype/modeManuel?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_oCLrku59Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent21">
-    <operation href="Package%20vierge.emx#_oCLrkO59Ed-Jn7v3SB1Zsg?DiagrammesClasses/Prototype/modeManuel?"/>
+    <operation href="ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg?ModeleStructurel/Prototype/modeManuel?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_0yeHMO59Ed-Jn7v3SB1Zsg" name="SendOperationEvent22">
-    <operation href="Package%20vierge.emx#_0yUWMO59Ed-Jn7v3SB1Zsg?DiagrammesClasses/Prototype/ajouterBagage?"/>
+    <operation href="ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg?ModeleStructurel/Prototype/ajouterBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_0yeHMe59Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent22">
-    <operation href="Package%20vierge.emx#_0yUWMO59Ed-Jn7v3SB1Zsg?DiagrammesClasses/Prototype/ajouterBagage?"/>
+    <operation href="ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg?ModeleStructurel/Prototype/ajouterBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_7Jt9IO59Ed-Jn7v3SB1Zsg" name="ExecutionEvent1"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_DLqaUO5-Ed-Jn7v3SB1Zsg" name="PrototypeView"/>
@@ -1394,16 +1394,16 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_m3j2EO5-Ed-Jn7v3SB1Zsg" name="SendOperationEvent25" operation="_m3aFEO5-Ed-Jn7v3SB1Zsg"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_m3j2Ee5-Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent25" operation="_m3aFEO5-Ed-Jn7v3SB1Zsg"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_wD2mge5-Ed-Jn7v3SB1Zsg" name="SendOperationEvent26">
-    <operation href="Package%20vierge.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg?DiagrammesClasses/Tapis/ajouterBagage?"/>
+    <operation href="ModeleStructurel.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg?ModeleStructurel/Tapis/ajouterBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_wD2mgu5-Ed-Jn7v3SB1Zsg" name="ReceiveOperationEvent26">
-    <operation href="Package%20vierge.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg?DiagrammesClasses/Tapis/ajouterBagage?"/>
+    <operation href="ModeleStructurel.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg?ModeleStructurel/Tapis/ajouterBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_2eYZ8e5-Ed-Jn7v3SB1Zsg" name="SendOperationEvent27"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_9jrosu5-Ed-Jn7v3SB1Zsg" name="SendOperationEvent28"/>
   <packagedElement xmi:type="uml:CreationEvent" xmi:id="_9jrotO5-Ed-Jn7v3SB1Zsg" name="CreationEvent1"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_-hq68e5-Ed-Jn7v3SB1Zsg" name="SendOperationEvent29">
-    <operation href="Package%20vierge.emx#_-hq68O5-Ed-Jn7v3SB1Zsg?DiagrammesClasses/Bagage/Bagage?"/>
+    <operation href="ModeleStructurel.emx#_-hq68O5-Ed-Jn7v3SB1Zsg?ModeleStructurel/Bagage/Bagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_UWYOEO8nEd-HKbVm7STiYg" name="Evénementd'exécution11"/>
   <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_VeYX8O8nEd-HKbVm7STiYg" name="Evénementd'exécution12"/>
@@ -3765,7 +3765,7 @@
     <ownedAttribute xmi:id="_GyOPEO8zEd-HKbVm7STiYg" name="Système SGBag"/>
     <ownedAttribute xmi:id="_wR9uIe_2Ed-KganxdgdPew" name="utilisateur de la simulation" type="_W7Ei4O_sEd-KganxdgdPew"/>
     <ownedAttribute xmi:id="_fVo6ce_3Ed-KganxdgdPew" name="elément">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_Pu31cPGuEd-1y9a3HOSRUA?DiagrammesClasses/ElementActif?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?ModeleStructurel/ElementActif?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_iqVLEfAHEd-vn9fLmXu2_g" name="sGBagView" type="_GS8N0O_-Ed-vn9fLmXu2_g"/>
     <ownedAttribute xmi:id="_oZWjYfAHEd-vn9fLmXu2_g" name="canvas" type="__r5oYO_9Ed-vn9fLmXu2_g"/>
@@ -6776,7 +6776,7 @@
     <ownedAttribute xmi:id="_Ieam4e_-Ed-vn9fLmXu2_g" name="sGBagView" type="_GS8N0O_-Ed-vn9fLmXu2_g"/>
     <ownedAttribute xmi:id="_oooZsfAAEd-vn9fLmXu2_g" name="DummyQtComponenet"/>
     <ownedAttribute xmi:id="_N852kfADEd-vn9fLmXu2_g" name="elément">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_Pu31cPGuEd-1y9a3HOSRUA?DiagrammesClasses/ElementActif?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?ModeleStructurel/ElementActif?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_aCTFofAEEd-vn9fLmXu2_g" name="elementView" type="_ZDt9gPAEEd-vn9fLmXu2_g"/>
   </packagedElement>
@@ -8129,7 +8129,7 @@
               </children>
               <children xmi:id="_2PL2YPGqEd-1y9a3HOSRUA" element="_2Nsoo_GqEd-1y9a3HOSRUA">
                 <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_2PL2YfGqEd-1y9a3HOSRUA" showStereotype="Label"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2PL2YvGqEd-1y9a3HOSRUA" x="-1" y="1401" height="1401"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2PL2YvGqEd-1y9a3HOSRUA" x="-1" y="1401" height="740"/>
               </children>
               <children xmi:id="_WGGkofGrEd-1y9a3HOSRUA" element="_WFzpsfGrEd-1y9a3HOSRUA">
                 <eAnnotations xmi:id="_WGGkovGrEd-1y9a3HOSRUA" source="com.ibm.xtools.uml.ui.diagram.internal.styles">
@@ -8148,6 +8148,14 @@
               <children xmi:id="_95w9APIZEd-TbK1o_cJlKw" element="_93rSU_IZEd-TbK1o_cJlKw">
                 <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_95w9AfIZEd-TbK1o_cJlKw" showStereotype="Label"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_95w9AvIZEd-TbK1o_cJlKw" x="-1" y="1401" height="-265"/>
+              </children>
+              <children xmi:id="_MrAbYPIoEd-LDNj92rqEmQ" element="_IuNXA_IaEd-TbK1o_cJlKw">
+                <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_MrAbYfIoEd-LDNj92rqEmQ" showStereotype="Label"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrAbYvIoEd-LDNj92rqEmQ" x="-1" y="1322" height="1322"/>
+              </children>
+              <children xmi:id="_MrKMYPIoEd-LDNj92rqEmQ" element="_Kq1w4_IcEd-TbK1o_cJlKw">
+                <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_MrKMYfIoEd-LDNj92rqEmQ" showStereotype="Label"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrKMYvIoEd-LDNj92rqEmQ" x="-1" y="1322" height="1322"/>
               </children>
               <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_Sew1VewrEd-S_IsmmuMhnQ"/>
               <layoutConstraint xmi:type="notation:Ratio" xmi:id="_sFN80O51Ed-Jn7v3SB1Zsg" value="0.9845671922313877"/>
@@ -8528,7 +8536,7 @@
             </children>
             <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_2OmAgfGqEd-1y9a3HOSRUA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2OmAgvGqEd-1y9a3HOSRUA" points="[0, 0, -185, 0]$[185, 0, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2OmAh_GqEd-1y9a3HOSRUA" id="583:1032"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2OmAh_GqEd-1y9a3HOSRUA" id="583:714"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2OmAiPGqEd-1y9a3HOSRUA" id="640:0"/>
           </edges>
           <edges xmi:id="_2PVnYPGqEd-1y9a3HOSRUA" element="_2NsopfGqEd-1y9a3HOSRUA" source="_ET2LYO5zEd-X2qSx1xpmxg" target="_5_zN0uyzEd-rHtIWqJ4l8g">
@@ -8539,19 +8547,8 @@
             </children>
             <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_2PVnYfGqEd-1y9a3HOSRUA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2PVnYvGqEd-1y9a3HOSRUA" points="[0, 0, 185, 0]$[-185, 0, 0, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2PVnZ_GqEd-1y9a3HOSRUA" id="643:185"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2PVnZ_GqEd-1y9a3HOSRUA" id="643:740"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2PVnaPGqEd-1y9a3HOSRUA" id="644:0"/>
-          </edges>
-          <edges xmi:id="_hIQqgPGrEd-1y9a3HOSRUA" element="_hHhDoPGrEd-1y9a3HOSRUA" source="_5_zN0uyzEd-rHtIWqJ4l8g" target="_WGGkofGrEd-1y9a3HOSRUA">
-            <children xmi:id="_hIQqg_GrEd-1y9a3HOSRUA" type="MessageNameLabel">
-              <children xmi:id="_hIQqhfGrEd-1y9a3HOSRUA" type="Stereotype"/>
-              <children xmi:id="_hIQqhvGrEd-1y9a3HOSRUA" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hIQqhPGrEd-1y9a3HOSRUA" y="-317"/>
-            </children>
-            <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_hIQqgfGrEd-1y9a3HOSRUA" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hIQqgvGrEd-1y9a3HOSRUA" points="[18, 9, -19932, 9]$[19950, 9, 0, 9]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hIQqh_GrEd-1y9a3HOSRUA" id="574:1058"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hIQqiPGrEd-1y9a3HOSRUA" id="741:0"/>
           </edges>
           <edges xmi:id="_wCkjsPIZEd-TbK1o_cJlKw" element="_wA7k8PIZEd-TbK1o_cJlKw" source="_vkSEsO51Ed-Jn7v3SB1Zsg" target="_WGGkofGrEd-1y9a3HOSRUA">
             <children xmi:id="_wCkjs_IZEd-TbK1o_cJlKw" type="MessageNameLabel">
@@ -8629,6 +8626,28 @@
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KsCDsvIcEd-TbK1o_cJlKw" points="[0, 0, 5980, 0]$[-5980, 0, 0, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KsLNoPIcEd-TbK1o_cJlKw" id="581:714"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KsLNofIcEd-TbK1o_cJlKw" id="623:0"/>
+          </edges>
+          <edges xmi:id="_MrT9YPIoEd-LDNj92rqEmQ" element="_Kq1w5fIcEd-TbK1o_cJlKw" source="_jd_YMPCtEd-54vpurc77FA" target="_6Xt-0PD2Ed-R6YEVT5cViQ">
+            <children xmi:id="_MrT9Y_IoEd-LDNj92rqEmQ" type="MessageNameLabel">
+              <children xmi:id="_MrT9ZfIoEd-LDNj92rqEmQ" type="Stereotype"/>
+              <children xmi:id="_MrT9ZvIoEd-LDNj92rqEmQ" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrT9ZPIoEd-LDNj92rqEmQ" y="-317"/>
+            </children>
+            <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_MrT9YfIoEd-LDNj92rqEmQ" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MrT9YvIoEd-LDNj92rqEmQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MrT9Z_IoEd-LDNj92rqEmQ" id="86:1322"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MrT9aPIoEd-LDNj92rqEmQ" id="87:0"/>
+          </edges>
+          <edges xmi:id="_l9ZFoPIoEd-LDNj92rqEmQ" element="_l88ZsPIoEd-LDNj92rqEmQ" source="_5_zN0uyzEd-rHtIWqJ4l8g" target="_WGGkofGrEd-1y9a3HOSRUA">
+            <children xmi:id="_l9ZFo_IoEd-LDNj92rqEmQ" type="MessageNameLabel">
+              <children xmi:id="_l9ZFpfIoEd-LDNj92rqEmQ" type="Stereotype"/>
+              <children xmi:id="_l9ZFpvIoEd-LDNj92rqEmQ" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l9ZFpPIoEd-LDNj92rqEmQ" y="-317"/>
+            </children>
+            <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l9ZFofIoEd-LDNj92rqEmQ" routing="Rectilinear" lineWidth="1" showStereotype="Text"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l9ZFovIoEd-LDNj92rqEmQ" points="[0, 0, -647, 0]$[647, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l9i2oPIoEd-LDNj92rqEmQ" id="269:926"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l9i2ofIoEd-LDNj92rqEmQ" id="353:0"/>
           </edges>
         </contents>
       </eAnnotations>
@@ -8913,12 +8932,12 @@
         <end xmi:id="_Kq-60_IcEd-TbK1o_cJlKw" role="_6Xk04fD2Ed-R6YEVT5cViQ"/>
       </ownedConnector>
       <lifeline xmi:id="_VbaMoOwrEd-S_IsmmuMhnQ" name="horloge" represents="_VbaMoewrEd-S_IsmmuMhnQ" coveredBy="__kYQseyzEd-rHtIWqJ4l8g __kYQtuyzEd-rHtIWqJ4l8g"/>
-      <lifeline xmi:id="_5_zN0OyzEd-rHtIWqJ4l8g" name="prototype" represents="_5_zN0eyzEd-rHtIWqJ4l8g" coveredBy="__kYQsuyzEd-rHtIWqJ4l8g __kYQs-yzEd-rHtIWqJ4l8g __kYQtOyzEd-rHtIWqJ4l8g _Io3D0e5zEd-X2qSx1xpmxg _Io3D1u5zEd-X2qSx1xpmxg _kBA5Ae55Ed-Jn7v3SB1Zsg _kBA5Bu55Ed-Jn7v3SB1Zsg _2NsoofGqEd-1y9a3HOSRUA _2NsopvGqEd-1y9a3HOSRUA _hHhDofGrEd-1y9a3HOSRUA"/>
+      <lifeline xmi:id="_5_zN0OyzEd-rHtIWqJ4l8g" name="prototype" represents="_5_zN0eyzEd-rHtIWqJ4l8g" coveredBy="__kYQsuyzEd-rHtIWqJ4l8g __kYQs-yzEd-rHtIWqJ4l8g __kYQtOyzEd-rHtIWqJ4l8g _Io3D0e5zEd-X2qSx1xpmxg _Io3D1u5zEd-X2qSx1xpmxg _kBA5Ae55Ed-Jn7v3SB1Zsg _kBA5Bu55Ed-Jn7v3SB1Zsg _2NsoofGqEd-1y9a3HOSRUA _2NsopvGqEd-1y9a3HOSRUA _l88ZsfIoEd-LDNj92rqEmQ"/>
       <lifeline xmi:id="_ETsaYO5zEd-X2qSx1xpmxg" name="tapis" represents="_ETsaYe5zEd-X2qSx1xpmxg" coveredBy="_Io3D0u5zEd-X2qSx1xpmxg _Io3D0-5zEd-X2qSx1xpmxg _Io3D1O5zEd-X2qSx1xpmxg _0IfEIfDwEd-R6YEVT5cViQ _0IoOEPDwEd-R6YEVT5cViQ _0IoOEfDwEd-R6YEVT5cViQ _0IoOEvDwEd-R6YEVT5cViQ _0IoOFPDwEd-R6YEVT5cViQ _jkvvkfDxEd-R6YEVT5cViQ _jk45g_DxEd-R6YEVT5cViQ _bNX_gfDyEd-R6YEVT5cViQ _bNhwgvDyEd-R6YEVT5cViQ _2NsoovGqEd-1y9a3HOSRUA _2Nsoo_GqEd-1y9a3HOSRUA _2NsopPGqEd-1y9a3HOSRUA"/>
       <lifeline xmi:id="_pc0LoPDwEd-R6YEVT5cViQ" name="chariotConnecte" represents="_lRpLsPDwEd-R6YEVT5cViQ" coveredBy="_bNX_gvDyEd-R6YEVT5cViQ _bNX_g_DyEd-R6YEVT5cViQ _bNhwgPDyEd-R6YEVT5cViQ _rKWf8fD6Ed-R6YEVT5cViQ _rKWf8vD6Ed-R6YEVT5cViQ _rKWf8_D6Ed-R6YEVT5cViQ _rKWf9PD6Ed-R6YEVT5cViQ _rKWf9vD6Ed-R6YEVT5cViQ"/>
       <lifeline xmi:id="_vkI6wO51Ed-Jn7v3SB1Zsg" name="chariot" represents="_vkI6we51Ed-Jn7v3SB1Zsg" coveredBy="_kBA5Au55Ed-Jn7v3SB1Zsg _kBA5A-55Ed-Jn7v3SB1Zsg _kBA5BO55Ed-Jn7v3SB1Zsg _n0DFwe55Ed-Jn7v3SB1Zsg _n0DFwu55Ed-Jn7v3SB1Zsg _n0DFw-55Ed-Jn7v3SB1Zsg _n0DFxO55Ed-Jn7v3SB1Zsg _n0DFxu55Ed-Jn7v3SB1Zsg _k3c7UfD2Ed-R6YEVT5cViQ _k3c7VvD2Ed-R6YEVT5cViQ _9hfZ4fD7Ed-R6YEVT5cViQ _9hpK5PD7Ed-R6YEVT5cViQ _EU5nYPD8Ed-R6YEVT5cViQ _EU5nYfD8Ed-R6YEVT5cViQ _EU5nYvD8Ed-R6YEVT5cViQ _EU5nY_D8Ed-R6YEVT5cViQ _EU5nZfD8Ed-R6YEVT5cViQ _1BB_QfD8Ed-R6YEVT5cViQ _1BLwRPD8Ed-R6YEVT5cViQ _Uf0hYfD9Ed-R6YEVT5cViQ _Uf-SZPD9Ed-R6YEVT5cViQ _z37XQfD-Ed-R6YEVT5cViQ _z37XQvD-Ed-R6YEVT5cViQ _z37XQ_D-Ed-R6YEVT5cViQ _z4FIQPD-Ed-R6YEVT5cViQ _z4FIQvD-Ed-R6YEVT5cViQ _7mpWcfD-Ed-R6YEVT5cViQ _7mzHcPD-Ed-R6YEVT5cViQ _7mzHcfD-Ed-R6YEVT5cViQ _7mzHcvD-Ed-R6YEVT5cViQ _7mzHdPD-Ed-R6YEVT5cViQ _JSqrMfGnEd-1y9a3HOSRUA _JSqrNvGnEd-1y9a3HOSRUA _wA7k8fIZEd-TbK1o_cJlKw _wA7k9vIZEd-TbK1o_cJlKw _93rSUfIZEd-TbK1o_cJlKw _93rSVvIZEd-TbK1o_cJlKw"/>
       <lifeline xmi:id="_RPIDIPDxEd-R6YEVT5cViQ" name="bagage" represents="_RPIDIfDxEd-R6YEVT5cViQ" coveredBy="_jkvvkvDxEd-R6YEVT5cViQ _jk45gPDxEd-R6YEVT5cViQ _jk45gfDxEd-R6YEVT5cViQ _5VEUI_GoEd-1y9a3HOSRUA"/>
-      <lifeline xmi:id="_WFzpsfGrEd-1y9a3HOSRUA" name="bagage" represents="_WGGkoPGrEd-1y9a3HOSRUA" coveredBy="_wA7k8vIZEd-TbK1o_cJlKw _wA7k8_IZEd-TbK1o_cJlKw _wA7k9PIZEd-TbK1o_cJlKw _IuNXAfIaEd-TbK1o_cJlKw _IuNXBvIaEd-TbK1o_cJlKw _hHhDo_GrEd-1y9a3HOSRUA"/>
+      <lifeline xmi:id="_WFzpsfGrEd-1y9a3HOSRUA" name="bagage" represents="_WGGkoPGrEd-1y9a3HOSRUA" coveredBy="_wA7k8vIZEd-TbK1o_cJlKw _wA7k8_IZEd-TbK1o_cJlKw _wA7k9PIZEd-TbK1o_cJlKw _IuNXAfIaEd-TbK1o_cJlKw _IuNXBvIaEd-TbK1o_cJlKw _l88Zs_IoEd-LDNj92rqEmQ"/>
       <lifeline xmi:id="_jdsdQPCtEd-54vpurc77FA" name="objectifImmediat" represents="_jdsdQfCtEd-54vpurc77FA" coveredBy="_k3c7UvD2Ed-R6YEVT5cViQ _k3c7U_D2Ed-R6YEVT5cViQ _k3c7VPD2Ed-R6YEVT5cViQ _IuNXAvIaEd-TbK1o_cJlKw _IuNXA_IaEd-TbK1o_cJlKw _IuNXBPIaEd-TbK1o_cJlKw _Kq1w4vIcEd-TbK1o_cJlKw _Kq1w4_IcEd-TbK1o_cJlKw _Kq1w5PIcEd-TbK1o_cJlKw"/>
       <lifeline xmi:id="_6Xk04PD2Ed-R6YEVT5cViQ" name="tapis3" represents="_6Xk04fD2Ed-R6YEVT5cViQ" coveredBy="_9hpK4PD7Ed-R6YEVT5cViQ _9hpK4fD7Ed-R6YEVT5cViQ _9hpK4vD7Ed-R6YEVT5cViQ _93rSUvIZEd-TbK1o_cJlKw _93rSU_IZEd-TbK1o_cJlKw _93rSVPIZEd-TbK1o_cJlKw _Kq1w4fIcEd-TbK1o_cJlKw _Kq-60PIcEd-TbK1o_cJlKw"/>
       <lifeline xmi:id="_lyDToPD8Ed-R6YEVT5cViQ" name="troncon" represents="_lyDTofD8Ed-R6YEVT5cViQ" coveredBy="_1BLwQPD8Ed-R6YEVT5cViQ _1BLwQfD8Ed-R6YEVT5cViQ _1BLwQvD8Ed-R6YEVT5cViQ"/>
@@ -8952,11 +8971,11 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0IoOFPDwEd-R6YEVT5cViQ" covered="_ETsaYO5zEd-X2qSx1xpmxg" event="_4CrBwfDwEd-R6YEVT5cViQ" message="_0IoOE_DwEd-R6YEVT5cViQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Io3D1O5zEd-X2qSx1xpmxg" covered="_ETsaYO5zEd-X2qSx1xpmxg" event="_JpFKse5zEd-X2qSx1xpmxg" message="_Io3D1e5zEd-X2qSx1xpmxg"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Io3D1u5zEd-X2qSx1xpmxg" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_JpFKsu5zEd-X2qSx1xpmxg" message="_Io3D1e5zEd-X2qSx1xpmxg"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_l88ZsfIoEd-LDNj92rqEmQ" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_-hq68e5-Ed-Jn7v3SB1Zsg" message="_l88ZsPIoEd-LDNj92rqEmQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_l88Zs_IoEd-LDNj92rqEmQ" covered="_WFzpsfGrEd-1y9a3HOSRUA" event="_l88ZtPIoEd-LDNj92rqEmQ" message="_l88ZsPIoEd-LDNj92rqEmQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2NsoofGqEd-1y9a3HOSRUA" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_wD2mge5-Ed-Jn7v3SB1Zsg" message="_2NsooPGqEd-1y9a3HOSRUA"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2NsoovGqEd-1y9a3HOSRUA" covered="_ETsaYO5zEd-X2qSx1xpmxg" event="_wD2mgu5-Ed-Jn7v3SB1Zsg" message="_2NsooPGqEd-1y9a3HOSRUA"/>
       <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_2Nsoo_GqEd-1y9a3HOSRUA" covered="_ETsaYO5zEd-X2qSx1xpmxg" start="_2NsoovGqEd-1y9a3HOSRUA" finish="_2NsopPGqEd-1y9a3HOSRUA"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hHhDofGrEd-1y9a3HOSRUA" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_-hq68e5-Ed-Jn7v3SB1Zsg" message="_hHhDoPGrEd-1y9a3HOSRUA"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hHhDo_GrEd-1y9a3HOSRUA" covered="_WFzpsfGrEd-1y9a3HOSRUA" event="_hHhDpPGrEd-1y9a3HOSRUA" message="_hHhDoPGrEd-1y9a3HOSRUA"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2NsopPGqEd-1y9a3HOSRUA" covered="_ETsaYO5zEd-X2qSx1xpmxg" event="_wD2mge5-Ed-Jn7v3SB1Zsg" message="_2NsopfGqEd-1y9a3HOSRUA"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2NsopvGqEd-1y9a3HOSRUA" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_wD2mgu5-Ed-Jn7v3SB1Zsg" message="_2NsopfGqEd-1y9a3HOSRUA"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kBA5Ae55Ed-Jn7v3SB1Zsg" covered="_5_zN0OyzEd-rHtIWqJ4l8g" event="_-CHx0O52Ed-Jn7v3SB1Zsg" message="_kBA5AO55Ed-Jn7v3SB1Zsg"/>
@@ -9068,7 +9087,6 @@
       <message xmi:id="_5VEUIPGoEd-1y9a3HOSRUA" name="~Bagage" messageSort="deleteMessage" receiveEvent="_5VEUI_GoEd-1y9a3HOSRUA" sendEvent="_5VEUIfGoEd-1y9a3HOSRUA" connector="_bv4X9_GoEd-1y9a3HOSRUA"/>
       <message xmi:id="_2NsooPGqEd-1y9a3HOSRUA" name="ajouterBagage" receiveEvent="_2NsoovGqEd-1y9a3HOSRUA" sendEvent="_2NsoofGqEd-1y9a3HOSRUA" connector="_Io3D1-5zEd-X2qSx1xpmxg"/>
       <message xmi:id="_2NsopfGqEd-1y9a3HOSRUA" name="ajouterBagage" messageSort="reply" receiveEvent="_2NsopvGqEd-1y9a3HOSRUA" sendEvent="_2NsopPGqEd-1y9a3HOSRUA" connector="_Io3D1-5zEd-X2qSx1xpmxg"/>
-      <message xmi:id="_hHhDoPGrEd-1y9a3HOSRUA" name="Bagage" messageSort="createMessage" receiveEvent="_hHhDo_GrEd-1y9a3HOSRUA" sendEvent="_hHhDofGrEd-1y9a3HOSRUA" connector="_HL9rsPIbEd-TbK1o_cJlKw"/>
       <message xmi:id="_wA7k8PIZEd-TbK1o_cJlKw" name="trouverObjectifImmediat" receiveEvent="_wA7k8vIZEd-TbK1o_cJlKw" sendEvent="_wA7k8fIZEd-TbK1o_cJlKw" connector="_wA7k9_IZEd-TbK1o_cJlKw"/>
       <message xmi:id="_wA7k9fIZEd-TbK1o_cJlKw" name="trouverObjectifImmediat" messageSort="reply" receiveEvent="_wA7k9vIZEd-TbK1o_cJlKw" sendEvent="_wA7k9PIZEd-TbK1o_cJlKw" connector="_wA7k9_IZEd-TbK1o_cJlKw"/>
       <message xmi:id="_93rSUPIZEd-TbK1o_cJlKw" name="trouverObjectifImmediat" receiveEvent="_93rSUvIZEd-TbK1o_cJlKw" sendEvent="_93rSUfIZEd-TbK1o_cJlKw" connector="_9hpK5fD7Ed-R6YEVT5cViQ"/>
@@ -9077,6 +9095,7 @@
       <message xmi:id="_IuNXBfIaEd-TbK1o_cJlKw" name="trouverProchainTroncon" messageSort="reply" receiveEvent="_IuNXBvIaEd-TbK1o_cJlKw" sendEvent="_IuNXBPIaEd-TbK1o_cJlKw" connector="_CCtIUPIaEd-TbK1o_cJlKw"/>
       <message xmi:id="_Kq1w4PIcEd-TbK1o_cJlKw" name="trouverProchainTroncon" receiveEvent="_Kq1w4vIcEd-TbK1o_cJlKw" sendEvent="_Kq1w4fIcEd-TbK1o_cJlKw" connector="_Kq-60fIcEd-TbK1o_cJlKw"/>
       <message xmi:id="_Kq1w5fIcEd-TbK1o_cJlKw" name="trouverProchainTroncon" messageSort="reply" receiveEvent="_Kq-60PIcEd-TbK1o_cJlKw" sendEvent="_Kq1w5PIcEd-TbK1o_cJlKw" connector="_Kq-60fIcEd-TbK1o_cJlKw"/>
+      <message xmi:id="_l88ZsPIoEd-LDNj92rqEmQ" name="Bagage" messageSort="createMessage" receiveEvent="_l88Zs_IoEd-LDNj92rqEmQ" sendEvent="_l88ZsfIoEd-LDNj92rqEmQ" connector="_HL9rsPIbEd-TbK1o_cJlKw"/>
     </ownedBehavior>
     <ownedBehavior xmi:type="uml:Interaction" xmi:id="_JzH64OwrEd-S_IsmmuMhnQ" name="TopHorloge Noir">
       <eAnnotations xmi:id="_JzH64ewrEd-S_IsmmuMhnQ" source="uml2.diagrams">
@@ -9134,37 +9153,37 @@
       <message xmi:id="_Wb0GBey1Ed-rHtIWqJ4l8g" name="onTick()" messageSort="reply" receiveEvent="_Wb0GBuy1Ed-rHtIWqJ4l8g" sendEvent="_Wb0GBOy1Ed-rHtIWqJ4l8g"/>
     </ownedBehavior>
     <ownedAttribute xmi:id="_jdsdQfCtEd-54vpurc77FA" name="objectifImmediat" visibility="public">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_R4640OskEd-oy8D834IawQ?DiagrammesClasses/Noeud?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?ModeleStructurel/Noeud?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_NONA0fDwEd-R6YEVT5cViQ" name="chariot">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_8wh8EOseEd-oy8D834IawQ?DiagrammesClasses/Chariot?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?ModeleStructurel/Chariot?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_lRpLsPDwEd-R6YEVT5cViQ" name="chariotConnecte" visibility="private">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_8wh8EOseEd-oy8D834IawQ?DiagrammesClasses/Chariot?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?ModeleStructurel/Chariot?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_RPIDIfDxEd-R6YEVT5cViQ" name="bagage">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_1cuGUOsVEd-oy8D834IawQ?DiagrammesClasses/Bagage?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?ModeleStructurel/Bagage?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_6Xk04fD2Ed-R6YEVT5cViQ" name="tapisAssocie" visibility="public">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_9b-b4OsVEd-oy8D834IawQ?DiagrammesClasses/Tapis?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?ModeleStructurel/Tapis?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_lyDTofD8Ed-R6YEVT5cViQ" name="nouveauTroncon" visibility="public">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#__FeJQOsVEd-oy8D834IawQ?DiagrammesClasses/Troncon?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?ModeleStructurel/Troncon?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_LTFFAfD9Ed-R6YEVT5cViQ" name="ancienTroncon">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#__FeJQOsVEd-oy8D834IawQ?DiagrammesClasses/Troncon?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?ModeleStructurel/Troncon?"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_WGGkoPGrEd-1y9a3HOSRUA" name="bagageGenere" visibility="public">
-      <type xmi:type="uml:Class" href="Package%20vierge.emx#_1cuGUOsVEd-oy8D834IawQ?DiagrammesClasses/Bagage?"/>
+      <type xmi:type="uml:Class" href="ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?ModeleStructurel/Bagage?"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_PXcVMe_zEd-KganxdgdPew" name="Evénementd'envoid'opération16" operation="_PXcVMO_zEd-KganxdgdPew"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_PXcVMu_zEd-KganxdgdPew" name="Evénementderéceptiond'opération12" operation="_PXcVMO_zEd-KganxdgdPew"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_v0pDge_3Ed-KganxdgdPew" name="Evénementd'envoid'opération17">
-    <operation href="Package%20vierge.emx#_v0pDgO_3Ed-KganxdgdPew?DiagrammesClasses/ElementActif/arreter?"/>
+    <operation href="ModeleStructurel.emx#_v0pDgO_3Ed-KganxdgdPew?ModeleStructurel/ElementActif/arreter?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_v0pDgu_3Ed-KganxdgdPew" name="Evénementderéceptiond'opération13">
-    <operation href="Package%20vierge.emx#_v0pDgO_3Ed-KganxdgdPew?DiagrammesClasses/ElementActif/arreter?"/>
+    <operation href="ModeleStructurel.emx#_v0pDgO_3Ed-KganxdgdPew?ModeleStructurel/ElementActif/arreter?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="__r5oYO_9Ed-vn9fLmXu2_g" name="Canvas">
     <ownedOperation xmi:id="_SOn8sO_-Ed-vn9fLmXu2_g" name="zoomMoveUp"/>
@@ -9342,10 +9361,10 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_4Y7-kfChEd-54vpurc77FA" name="SendOperationEvent30" operation="_4Y7-kPChEd-54vpurc77FA"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_4Y7-kvChEd-54vpurc77FA" name="ReceiveOperationEvent27" operation="_4Y7-kPChEd-54vpurc77FA"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_Eq-X8fCiEd-54vpurc77FA" name="SendOperationEvent31">
-    <operation href="Package%20vierge.emx#_Eq-X8PCiEd-54vpurc77FA?DiagrammesClasses/Prototype/modeAjoutBagage?"/>
+    <operation href="ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA?ModeleStructurel/Prototype/modeAjoutBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_Eq-X8vCiEd-54vpurc77FA" name="ReceiveOperationEvent28">
-    <operation href="Package%20vierge.emx#_Eq-X8PCiEd-54vpurc77FA?DiagrammesClasses/Prototype/modeAjoutBagage?"/>
+    <operation href="ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA?ModeleStructurel/Prototype/modeAjoutBagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_J58-QPCiEd-54vpurc77FA" name="SendOperationEvent32" operation="_J5zNQPCiEd-54vpurc77FA"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_J58-QfCiEd-54vpurc77FA" name="ReceiveOperationEvent29" operation="_J5zNQPCiEd-54vpurc77FA"/>
@@ -9358,10 +9377,10 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_53PZgPCqEd-54vpurc77FA" name="SendOperationEvent36"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_53PZgfCqEd-54vpurc77FA" name="ReceiveOperationEvent32"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_abnqsPCrEd-54vpurc77FA" name="SendOperationEvent37">
-    <operation href="Package%20vierge.emx#_cB0i8O57Ed-Jn7v3SB1Zsg?DiagrammesClasses/Element/calculerPosition?"/>
+    <operation href="ModeleStructurel.emx#_cB0i8O57Ed-Jn7v3SB1Zsg?ModeleStructurel/Element/calculerPosition?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_abnqsfCrEd-54vpurc77FA" name="ReceiveOperationEvent33">
-    <operation href="Package%20vierge.emx#_cB0i8O57Ed-Jn7v3SB1Zsg?DiagrammesClasses/Element/calculerPosition?"/>
+    <operation href="ModeleStructurel.emx#_cB0i8O57Ed-Jn7v3SB1Zsg?ModeleStructurel/Element/calculerPosition?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_dq5DEfCrEd-54vpurc77FA" name="SendOperationEvent38"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_dq5DEvCrEd-54vpurc77FA" name="ReceiveOperationEvent34"/>
@@ -9370,81 +9389,86 @@
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_7_uZ4fCzEd-54vpurc77FA" name="SendOperationEvent40"/>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_7_uZ4vCzEd-54vpurc77FA" name="ReceiveOperationEvent36"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_4CrBwPDwEd-R6YEVT5cViQ" name="SendOperationEvent41">
-    <operation href="Package%20vierge.emx#_4ChQwPDwEd-R6YEVT5cViQ?DiagrammesClasses/Tapis/deroulerTapis?"/>
+    <operation href="ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ?ModeleStructurel/Tapis/deroulerTapis?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_4CrBwfDwEd-R6YEVT5cViQ" name="ReceiveOperationEvent37">
-    <operation href="Package%20vierge.emx#_4ChQwPDwEd-R6YEVT5cViQ?DiagrammesClasses/Tapis/deroulerTapis?"/>
+    <operation href="ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ?ModeleStructurel/Tapis/deroulerTapis?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_qKAMUfDxEd-R6YEVT5cViQ" name="SendOperationEvent42">
-    <operation href="Package%20vierge.emx#_qKAMUPDxEd-R6YEVT5cViQ?DiagrammesClasses/Bagage/simulerDeplacement?"/>
+    <operation href="ModeleStructurel.emx#_qKAMUPDxEd-R6YEVT5cViQ?ModeleStructurel/Bagage/simulerDeplacement?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_qKAMUvDxEd-R6YEVT5cViQ" name="ReceiveOperationEvent38">
-    <operation href="Package%20vierge.emx#_qKAMUPDxEd-R6YEVT5cViQ?DiagrammesClasses/Bagage/simulerDeplacement?"/>
+    <operation href="ModeleStructurel.emx#_qKAMUPDxEd-R6YEVT5cViQ?ModeleStructurel/Bagage/simulerDeplacement?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_h2_JEPD4Ed-R6YEVT5cViQ" name="SendOperationEvent43">
-    <operation href="Package%20vierge.emx#_h21_IPD4Ed-R6YEVT5cViQ?DiagrammesClasses/Element/position?"/>
+    <operation href="ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ?ModeleStructurel/Element/position?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_h2_JEfD4Ed-R6YEVT5cViQ" name="ReceiveOperationEvent39">
-    <operation href="Package%20vierge.emx#_h21_IPD4Ed-R6YEVT5cViQ?DiagrammesClasses/Element/position?"/>
+    <operation href="ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ?ModeleStructurel/Element/position?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_tmEUcPD6Ed-R6YEVT5cViQ" name="SendOperationEvent44">
-    <operation href="Package%20vierge.emx#_tl7KgPD6Ed-R6YEVT5cViQ?DiagrammesClasses/ElementActif/demarrer?"/>
+    <operation href="ModeleStructurel.emx#_tl7KgPD6Ed-R6YEVT5cViQ?ModeleStructurel/ElementActif/demarrer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_tmEUcfD6Ed-R6YEVT5cViQ" name="ReceiveOperationEvent40">
-    <operation href="Package%20vierge.emx#_tl7KgPD6Ed-R6YEVT5cViQ?DiagrammesClasses/ElementActif/demarrer?"/>
+    <operation href="ModeleStructurel.emx#_tl7KgPD6Ed-R6YEVT5cViQ?ModeleStructurel/ElementActif/demarrer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="__9gJUPD7Ed-R6YEVT5cViQ" name="SendOperationEvent45">
-    <operation href="Package%20vierge.emx#__9W_YPD7Ed-R6YEVT5cViQ?DiagrammesClasses/Tapis/connecter?"/>
+    <operation href="ModeleStructurel.emx#__9W_YPD7Ed-R6YEVT5cViQ?ModeleStructurel/Tapis/connecter?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="__9gJUfD7Ed-R6YEVT5cViQ" name="ReceiveOperationEvent41">
-    <operation href="Package%20vierge.emx#__9W_YPD7Ed-R6YEVT5cViQ?DiagrammesClasses/Tapis/connecter?"/>
+    <operation href="ModeleStructurel.emx#__9W_YPD7Ed-R6YEVT5cViQ?ModeleStructurel/Tapis/connecter?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_bUGHAPD8Ed-R6YEVT5cViQ" name="SendOperationEvent46">
-    <operation href="Package%20vierge.emx#_bT8WAPD8Ed-R6YEVT5cViQ?DiagrammesClasses/Noeud/trouverProchainTroncon?"/>
+    <operation href="ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ?ModeleStructurel/Noeud/trouverProchainTroncon?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_bUGHAfD8Ed-R6YEVT5cViQ" name="ReceiveOperationEvent42">
-    <operation href="Package%20vierge.emx#_bT8WAPD8Ed-R6YEVT5cViQ?DiagrammesClasses/Noeud/trouverProchainTroncon?"/>
+    <operation href="ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ?ModeleStructurel/Noeud/trouverProchainTroncon?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_3ZedUPD8Ed-R6YEVT5cViQ" name="SendOperationEvent47">
-    <operation href="Package%20vierge.emx#_3ZUsUPD8Ed-R6YEVT5cViQ?DiagrammesClasses/Troncon/occuper?"/>
+    <operation href="ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ?ModeleStructurel/Troncon/occuper?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_3ZedUfD8Ed-R6YEVT5cViQ" name="ReceiveOperationEvent43">
-    <operation href="Package%20vierge.emx#_3ZUsUPD8Ed-R6YEVT5cViQ?DiagrammesClasses/Troncon/occuper?"/>
+    <operation href="ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ?ModeleStructurel/Troncon/occuper?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_WmX-MPD9Ed-R6YEVT5cViQ" name="SendOperationEvent48">
-    <operation href="Package%20vierge.emx#_WmO0QPD9Ed-R6YEVT5cViQ?DiagrammesClasses/Troncon/liberer?"/>
+    <operation href="ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ?ModeleStructurel/Troncon/liberer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_WmX-MfD9Ed-R6YEVT5cViQ" name="ReceiveOperationEvent44">
-    <operation href="Package%20vierge.emx#_WmO0QPD9Ed-R6YEVT5cViQ?DiagrammesClasses/Troncon/liberer?"/>
+    <operation href="ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ?ModeleStructurel/Troncon/liberer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_r3Lz8fD-Ed-R6YEVT5cViQ" name="SendOperationEvent49">
-    <operation href="Package%20vierge.emx#_r3Lz8PD-Ed-R6YEVT5cViQ?DiagrammesClasses/Chariot/avancer?"/>
+    <operation href="ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ?ModeleStructurel/Chariot/avancer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_r3U94PD-Ed-R6YEVT5cViQ" name="ReceiveOperationEvent45">
-    <operation href="Package%20vierge.emx#_r3Lz8PD-Ed-R6YEVT5cViQ?DiagrammesClasses/Chariot/avancer?"/>
+    <operation href="ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ?ModeleStructurel/Chariot/avancer?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_q1UtEfGoEd-1y9a3HOSRUA" name="Evénementd'envoid'opération70">
-    <operation href="Package%20vierge.emx#_q1UtEPGoEd-1y9a3HOSRUA?DiagrammesClasses/Bagage/~Bagage?"/>
+    <operation href="ModeleStructurel.emx#_q1UtEPGoEd-1y9a3HOSRUA?ModeleStructurel/Bagage/~Bagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_q1UtEvGoEd-1y9a3HOSRUA" name="Evénementderéceptiond'opération66">
-    <operation href="Package%20vierge.emx#_q1UtEPGoEd-1y9a3HOSRUA?DiagrammesClasses/Bagage/~Bagage?"/>
+    <operation href="ModeleStructurel.emx#_q1UtEPGoEd-1y9a3HOSRUA?ModeleStructurel/Bagage/~Bagage?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_5VEUIvGoEd-1y9a3HOSRUA" name="Evénementd'envoid'opération71"/>
   <packagedElement xmi:type="uml:DestructionEvent" xmi:id="_5VEUJPGoEd-1y9a3HOSRUA" name="Evénementdedestruction1"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_hHhDovGrEd-1y9a3HOSRUA" name="Evénementd'envoid'opération72"/>
   <packagedElement xmi:type="uml:CreationEvent" xmi:id="_hHhDpPGrEd-1y9a3HOSRUA" name="Evénementdecréation3"/>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_yl4N8fIZEd-TbK1o_cJlKw" name="Evénementd'envoid'opération73">
-    <operation href="Package%20vierge.emx#_yl4N8PIZEd-TbK1o_cJlKw?DiagrammesClasses/Bagage/trouverObjectifImmediat?"/>
+    <operation href="ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw?ModeleStructurel/Bagage/trouverObjectifImmediat?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_yl4N8vIZEd-TbK1o_cJlKw" name="Evénementderéceptiond'opération67">
-    <operation href="Package%20vierge.emx#_yl4N8PIZEd-TbK1o_cJlKw?DiagrammesClasses/Bagage/trouverObjectifImmediat?"/>
+    <operation href="ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw?ModeleStructurel/Bagage/trouverObjectifImmediat?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="__aB14fIZEd-TbK1o_cJlKw" name="Evénementd'envoid'opération74">
-    <operation href="Package%20vierge.emx#__aB14PIZEd-TbK1o_cJlKw?DiagrammesClasses/Tapis/trouverObjectifImmediat?"/>
+    <operation href="ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw?ModeleStructurel/Tapis/trouverObjectifImmediat?"/>
   </packagedElement>
   <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="__aB14vIZEd-TbK1o_cJlKw" name="Evénementderéceptiond'opération68">
-    <operation href="Package%20vierge.emx#__aB14PIZEd-TbK1o_cJlKw?DiagrammesClasses/Tapis/trouverObjectifImmediat?"/>
+    <operation href="ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw?ModeleStructurel/Tapis/trouverObjectifImmediat?"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_bVeEsPIoEd-LDNj92rqEmQ" name="Evénementderéceptiond'opération69">
+    <operation href="ModeleStructurel.emx#_-hq68O5-Ed-Jn7v3SB1Zsg?ModeleStructurel/Bagage/Bagage?"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_l88ZsvIoEd-LDNj92rqEmQ" name="Evénementd'envoid'opération75"/>
+  <packagedElement xmi:type="uml:CreationEvent" xmi:id="_l88ZtPIoEd-LDNj92rqEmQ" name="Evénementdecréation4"/>
   <profileApplication xmi:id="_xGQ1LOwpEd-S_IsmmuMhnQ">
     <eAnnotations xmi:id="_xGQ1LewpEd-S_IsmmuMhnQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
