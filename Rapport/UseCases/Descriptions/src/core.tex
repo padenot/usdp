@@ -2,10 +2,11 @@
 % Acteurs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rôles}
+% TODO : inclure le diagramme d'héritage des rôles utilisateurs
+
 \subsection{Utilisateur client graphique}
 \label{uiUser}
 C'est une personne ayant accès aux fonctionnalités graphiques du logiciel SGBag. Les autres rôles \og Utilisateurs \fg en dérivent.
-% TODO : inclure le diagramme d'héritage des rôles utilisateurs
 
 \subsection{Utilisateur configuration}
 \label{confUser}
@@ -36,29 +37,21 @@ Objet commandable en mouvement, à distance, tel qu'un tapis, un chariot, \ldots
 Capteur interrompant le système lorsqu'il doit transmettre une information (alarme, \ldots).
 
 \subsection{Capteur passif}
-% TODO : Jamais utilisé, a supprimer ?
+
 Capteur dont la valeur doit être lue à intervalle régulier (caméra, \ldots).
+\label{passiveSensor}
 
 \subsection{Horloge}
 \label{clock}
 Une horloge, déclenchant des événement à une fréquence donnée.
 
-\subsection{Base de données}
+\subsection{Serveur base de données}
 \label{bdd}
 La base de donnée du système de gestion de bagages contient toutes les données de configuration et de gestion de l'application.
 
-\subsection{BdD Exploitation}
-% TODO : Jamais utilisé, a supprimer ?
-Permet de stocker, entre autres, l'historique des déplacement, informations reçues du système, etc.
-
-\subsection{BdD Configuration}
-% TODO : Jamais utilisé, a supprimer ?
-Permet de stocker les configurations créées.
-
-\subsection{Technicien}
-% TODO : Jamais utilisé, a supprimer ?
-C'est la personne qui intervient en cas de problème. Elle peut consulter et modifier la \textsl{fiche électronique d'intervention}.
-
+\subsection{PDA Technicien}
+\label{pda}
+C'est le PDA\footnote{\textsl{Personal Digital Assistant}} de la personne qui intervient en cas de problème.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,6 +62,8 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Besoins communs}
+\includeDiagram{Usecases/BesoinsCommuns}{Cas d'utilisations : Besoins communs}
+
 \subsection{Visualiser un objet statique}
 \user{L'utilisateur du client graphique}{uiUser} ou \user{L'utilisateur de l'interface de configuration}{confUser} peut sélectionner, zoomer ou dézoomer sur un objet de haut niveau.
 
@@ -77,6 +72,8 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Configuration}
+\includeDiagram{Usecases/Configuration}{Cas d'utilisations : Configuration}
+
 \subsubsection{Effectuer des opérations sur un élément}
 \user{L'utilisateur de la configuration}{confUser} peut visualiser, ajouter, déplacer, lier aux autres éléments, paramétrer ou supprimer un élément de la configuration courante.
 
@@ -88,7 +85,8 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Simulation}
-% TODO : Reporter les modification apportée sur ListeBesoins et sur les diagramme.
+\includeDiagram{Usecases/Simulation}{Cas d'utilisations : Simulation}
+
 \subsubsection{Charger une configuration} 
 \user{L'utilisateur de la simulation}{simUser} peut définir la configuration d'aéroport utilisée pour la simulation, à partir de la \user{base de donnée}{bdd}.
 
@@ -120,6 +118,8 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 \user{L'utilisateur de l'interface de simulation}{simUser} peut sélectionner, zoomer ou dézoomer sur un chariot ou un avion.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exploitation}
+\includeDiagram{Usecases/Exploitation}{Cas d'utilisations : Exploitation}
+
 \subsubsection{Charger une configuration}
 \user{L'utilisateur exploitation}{simUser} peut définir la configuration d'aéroport utilisée pour l'exploitation, à partir de la \user{base de donnée}{bdd}.
 
@@ -146,6 +146,7 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maintenance}
+\includeDiagram{Usecases/Maintenance}{Cas d'utilisations : Maintenance}
 
 \subsubsection{Effectuer des opérations non protégées sur un élément}
 \user{L'utilisateur de la maintenancen}{expUser} peut TODO \user{l'objet dynamique}{obj}.
@@ -161,6 +162,8 @@ C'est la personne qui intervient en cas de problème. Elle peut consulter et mod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Réclamation}
+\includeDiagram{Usecases/Reclamations}{Cas d'utilisations : Reclamation}
+
 \subsubsection{Gérer un dossier de litige}
 En cas de litige,  \user{l'utilisateur gestion réclamations}{recUser} peut (perte ou dégradation d'un bagage), ouvrir, modifier, visualiser ou fermer un dossier de litige. Il peut aussi créer un nouveau couple identifiant/Mot de passe voyageur.
 

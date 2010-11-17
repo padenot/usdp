@@ -2,3 +2,12 @@
 {
 	\textsl{#1} (\ref{#2})
 }
+
+\newcommand{\includeDiagram}[2]
+{
+	\begin{figure}[H]
+		\centering		
+		\includegraphics[keepaspectratio=true, width=0.75\textwidth]{#1}
+		\caption{\textsl{#2}}
+	\end{figure}
+}
