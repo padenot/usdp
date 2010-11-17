@@ -1,22 +1,22 @@
 \newcounter{cntScenario}
 \setcounter{cntScenario}{1}
 
-\newcommand{\scenario}[2]
-{
-	\par
-	\begin{tabular}{l p{17cm}}
-		\textbf{Scénario \thecntScenario} & #2\\
-		\textbf{Stimulis} & #1
-	\end{tabular}\\~\\
-	\stepcounter{cntScenario}
-}
-
 \newcommand{\scenarProto}[2]
 {
-	\par *
+	{
+	\setlength{\parindent}{0pt}
+	* \scenario{#1}{#2}
+	}
+}
+
+\newcommand{\scenario}[2]
+{
+	{
+	\setlength{\parindent}{0pt}
 	\begin{tabular}{l p{17cm}}
 		\textbf{Scénario \thecntScenario} & #2\\
 		\textbf{Stimulis} & #1
 	\end{tabular}\\~\\
 	\stepcounter{cntScenario}
+	}
 }

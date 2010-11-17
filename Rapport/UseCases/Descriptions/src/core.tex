@@ -2,9 +2,7 @@
 % Acteurs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rôles}
-\includeDiagram{Usecases/Hierarchie}{Hierarchie des rôles}
-
-
+\includeDiagram{Usecases/Hierarchie}{Hiérarchie des rôles}
 
 \role{Utilisateur client graphique}{uiUser}{C'est une personne ayant accès aux fonctionnalités graphiques du logiciel SGBag. Les autres rôles \og Utilisateurs \fg en dérivent.}
 
@@ -135,7 +133,7 @@
 À chaque ticks d'\user{horloge}{clock}, et lorsque c'est nécessaire, le système détermine le chemin que chaque \user{objet dynamique}{obj} doit emprunter.
 
 \subsection{Mettre à jour l'état du système périodiquement}
-\user{L'horloge}{clock} peut mettre à jour l'état du système en consultant les \user{cpateurs passifs}{passiveSensors}.
+\user{L'horloge}{clock} peut mettre à jour l'état du système en consultant les \user{capteurs passifs}{passiveSensors}.
 
 \subsection{Mettre à jour l'état du système ponctuellement}
 \user{Un capteur actif}{sensor} peut mettre à jour l'état du système.
@@ -148,7 +146,7 @@
 \includeDiagram{Usecases/Maintenance}{Cas d'utilisations : Maintenance}
 
 \subsubsection{Effectuer des opérations non protégées sur un élément}
-\user{L'utilisateur de la maintenancen}{expUser} peut TODO \user{l'objet dynamique}{obj}.
+\user{L'utilisateur de la maintenance}{expUser} peut effectuer des opérations habituellement interdites par le système (\textsl{e.g.} ajouter dans un conteneur déjà surchargé) sur un  \user{objet dynamique}{obj}.
 
 \subsubsection{Visualiser les résultats}
 \user{L'utilisateur de la maintenance}{mntUser} peut visualiser le comportement du système (via une constatation sur le terrain) à la suite d'opération d'exploitation sur le système.
@@ -161,7 +159,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Réclamation}
-\includeDiagram{Usecases/Reclamations}{Cas d'utilisations : Reclamation}
+\includeDiagram{Usecases/Reclamations}{Cas d'utilisations : Réclamation}
 
 \subsubsection{Gérer un dossier de litige}
 En cas de litige,  \user{l'utilisateur gestion réclamations}{recUser} peut (perte ou dégradation d'un bagage), ouvrir, modifier, visualiser ou fermer un dossier de litige. Il peut aussi créer un nouveau couple identifiant/Mot de passe voyageur.
