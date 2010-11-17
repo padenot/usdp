@@ -5,9 +5,11 @@
 //End section for file Vol.h
 
 #include <string>
+#include <QMap>
+#include <Element.h>
 
 class Bagage; //Dependency Generated Source:Vol Target:Bagage
-class Toboggan; //Dependency Generated Source:Vol Target:Toboggan
+class Toboggan;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -42,7 +44,7 @@ class Vol
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Vol();
+        Vol(const QMap<QString,QString>& mapParam);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

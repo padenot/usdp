@@ -11,8 +11,8 @@ const char* XmlConfigFactory::NodeName_String[] = {
     "x", /// Coordonnée
     "y", /// Coordonnée
     "suivant", /// Le(s) rail(s) suivant un noeud
-    "tapis", /// Un tapis (true si il doit y en avoir un)
-    "toboggan", /// Un toboggan (true si il doit y en avoir un)
+    "tapis", /// Un tapis
+    "toboggan", /// Un toboggan
     "chariot", /// Chariot
     "pos", /// Position d'origin du chariot
     "bagage", /// Un bagage
@@ -89,33 +89,33 @@ void XmlConfigFactory::construireElements(const QMap<QString,QString>& mapParam)
   //  printElement(mapParam[NodeName_String[elementName]]);
     if(mapParam[NodeName_String[elementName]] =="troncon")
     {
-//        Troncon* ttroncon = new Troncon(mapParam);
-//        types_elements[NodeName_String[troncon]].push_back(ttroncon);
-//        id_elements[mapParam[NodeName_String[id]].toInt()]=ttroncon;
+        Troncon* ttroncon = new Troncon(mapParam);
+        types_elements[NodeName_String[troncon]].push_back(ttroncon);
+        id_elements[mapParam[NodeName_String[id]].toInt()]=ttroncon;
     }
     else if(mapParam[NodeName_String[elementName]] == "noeud")
     {
-//        Noeud* nnoeud = new Noeud(mapParam);
-//        types_elements[NodeName_String[noeud]].push_back(nnoeud);
-//        id_elements[mapParam[NodeName_String[id]].toInt()] = nnoeud;
+        Noeud* nnoeud = new Noeud(mapParam);
+        types_elements[NodeName_String[noeud]].push_back(nnoeud);
+        id_elements[mapParam[NodeName_String[id]].toInt()] = nnoeud;
     }
     else if(mapParam[NodeName_String[elementName]] == "chariot")
     {
-//        Chariot* cchariot = new Chariot(mapParam);
-//        types_elements[NodeName_String[chariot]].push_back(cchariot);
-//        id_elements[mapParam[NodeName_String[id]].toInt()]=cchariot;
+        Chariot* cchariot = new Chariot(mapParam);
+        types_elements[NodeName_String[chariot]].push_back(cchariot);
+        id_elements[mapParam[NodeName_String[id]].toInt()]=cchariot;
     }
     else if(mapParam[NodeName_String[elementName]] == "bagage")
     {
-//        Bagage* bbagage = new Bagage(mapParam);
-//        types_elements[NodeName_String[bagage]].push_back(bbagage);
-//        id_elements[mapParam[NodeName_String[id]].toInt()]=bbagage;
+        Bagage* bbagage = new Bagage(mapParam);
+        types_elements[NodeName_String[bagage]].push_back(bbagage);
+        id_elements[mapParam[NodeName_String[id]].toInt()]=bbagage;
     }
-    else if(mapParam[NodeName_String[elementName]] == "vol")
+    else if(mapParam[NodeName_String[elementName]] == "toboggan")
     {
-//        Vol* vvol = new Vol(mapParam);
-//        types_elements[NodeName_String[vol]].push_back(vvol);
-//        id_elements[mapParam[NodeName_String[id]].toInt()]=vvol;
+        Toboggan* ttoboggan = new Toboggan(mapParam);
+        types_elements[NodeName_String[toboggan]].push_back(ttoboggan);
+        id_elements[mapParam[NodeName_String[id]].toInt()]=ttoboggan;
     }
 }
 

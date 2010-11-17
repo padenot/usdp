@@ -8,5 +8,6 @@
 #include "Tapis.h"
 #include "Troncon.h"
 #include "Vol.h"
+#include "Toboggan.h"
 
 #endif // ELEMENTS_H

@@ -5,6 +5,7 @@
 //End section for file Toboggan.h
 
 #include "Element.h"
+#include <QMap>
 
 class Bagage;
 class Vol; //Dependency Generated Source:Toboggan Target:Vol
@@ -12,7 +13,7 @@ class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-class Toboggan : Element
+class Toboggan : public Element
 {
 
     //Begin section for Toboggan
@@ -35,7 +36,7 @@ class Toboggan : Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Toboggan();
+        Toboggan(const QMap<QString,QString>& mapParam);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

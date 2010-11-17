@@ -6,7 +6,8 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-ElementActif::ElementActif() 
+ElementActif::ElementActif(const QMap<QString,QString>& mapParam)
+    :Element(mapParam)
 {
     //TODO Auto-generated method stub
 }
@@ -16,4 +17,19 @@ ElementActif::ElementActif()
 ElementActif::~ElementActif() 
 {
     //TODO Auto-generated method stub
+}
+
+void ElementActif::modifierVitesse()
+{
+    //TODO
+}
+
+void ElementActif::arreter()
+{
+
+}
+
+void ElementActif::demarrer()
+{
+
 }

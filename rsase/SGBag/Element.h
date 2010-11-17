@@ -5,7 +5,7 @@
 //End section for file Element.h
 
 #include <utility>
-
+#include <QMap>
 
 
 class Zone; //Dependency Generated Source:Element Target:Zone
@@ -35,7 +35,7 @@ class Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Element();
+        Element(const QMap<QString,QString>& mapParam);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

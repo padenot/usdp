@@ -6,6 +6,8 @@
 
 #include "ElementActif.h"
 #include "Bagage.h"
+#include <QMap>
+
 
 
 class Troncon; //Dependency Generated Source:Chariot Target:Troncon
@@ -25,7 +27,7 @@ class Chariot : public ElementActif
 		/**
 		 * @todo TODO Constructeur de chariot
 		 */
-        Chariot();
+        Chariot(const QMap<QString,QString>& mapParam);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -42,18 +44,6 @@ class Chariot : public ElementActif
 		 * on ne devrait jamais recevoir de deuxième bagage de toute façon.
 		 */
         void chargerBagage(Bagage* bagage);
-
-		/**
-		 * Arrête le chariot (arrêt instantané).
-		 * @todo Rendre l'arrêt progressif
-		 */
-        virtual void arreter();
-
-		/**
-		 * Démarre le chariot (démarrage instantané).
-		 * @todo Rendre l'arrêt progressif
-		 */
-        virtual void demarrer();
 
 		/**
 		 * Met à jour le chariot.

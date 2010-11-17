@@ -6,7 +6,8 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Noeud::Noeud()
+Noeud::Noeud(const QMap<QString,QString>& mapParam)
+    :Element(mapParam)
 {
     //TODO Auto-generated method stub
 }

@@ -4,6 +4,7 @@
  */
 
 #include "Tapis.h"
+#include <QVector2D>
 //Begin section for file Tapis.cpp
 using namespace std;
 //End section for file Tapis.cpp
@@ -11,7 +12,8 @@ using namespace std;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Tapis::Tapis() : chariotConnecte(NULL)
+Tapis::Tapis(const QMap<QString,QString>& mapParam)
+    :ElementActif(mapParam), chariotConnecte(NULL)
 {
     // Constructeur
 }

@@ -23,7 +23,7 @@ class Troncon; //Dependency Generated Source:Tapis Target:Troncon
  */
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-class Tapis : ElementActif
+class Tapis : public ElementActif
 {
 
     //Begin section for Tapis
@@ -65,7 +65,7 @@ class Tapis : ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Tapis();
+        Tapis(const QMap<QString,QString>& mapParam);
 
         /**
          * Destructeur de tapis.
@@ -103,11 +103,6 @@ class Tapis : ElementActif
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Troncon* trouverObjectifImmediat();
-
-        /**
-         * Modifie la vitesse.
-         */
-        void modifierVitesse();
 
 };  //end class Tapis
 

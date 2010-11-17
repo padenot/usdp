@@ -6,7 +6,8 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Chariot::Chariot()
+Chariot::Chariot(const QMap<QString,QString>& mapParam)
+    :ElementActif(mapParam)
 {
     //TODO Auto-generated method stub
 }
@@ -39,15 +40,6 @@ void Chariot::avancer()
     //TODO Auto-generated method stub
 }
 
-void Chariot::arreter()
-{
-
-}
-
-void Chariot::demarrer()
-{
-
-}
 
 void Chariot::maj()
 {
