@@ -59,7 +59,7 @@ void Tapis::deroulerTapis()
 
         // TODO faut vérifier, le modèle est pas clair, je calcule la direction en prenant
         // _position pour point de départ et la position du "noeudFin" comme point final.
-        QPointF posFin = _tronconSupport->noeudFin()->position();
+        QPointF posFin(_milieuTroncon());
         b->simulerDeplacement(
                 (posFin.x() - _position.x())*_vitesse,
                 (posFin.y() - _position.y())*_vitesse
@@ -105,8 +105,10 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
     // du noeud suivant.
 
     qreal posGauche, posDroite;
-    QPointF posFin = _tronconSupport->noeudFin()->position();
-    QPointF posBagage = bagage->position();
+    QPointF posBagage(bagage->position());
+
+    // Milieu du tronçon
+    QPointF posFin(_milieuTroncon());
 
     if(posFin.x() > _position.x())
     {
@@ -137,4 +139,9 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
         return true;
 
     return false;
+}
+
+QPointF Tapis::_milieuTroncon() const
+{
+    return ((_tronconSupport->noeudFin()->position() + _tronconSupport->position())/2);
 }

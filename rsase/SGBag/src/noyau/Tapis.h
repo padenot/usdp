@@ -43,6 +43,12 @@ class Tapis : public ElementActif
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Troncon * _tronconSupport;
 
+        /**
+         * Calcul du milieu du tronçon.
+         * @return QPointF
+         */
+        QPointF _milieuTroncon() const;
+
     protected:
 
         /**
