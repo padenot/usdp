@@ -1,6 +1,9 @@
 #include "Chariot.h"
 #include "Troncon.h"
 #include "Noeud.h"
+#include "Tapis.h"
+
+#include <QVector2D>
 //Begin section for file Chariot.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Chariot.cpp
@@ -67,7 +70,7 @@ void Chariot::maj()
 }
 
 
-Etat Chariot::etat()
+Chariot::Etat Chariot::etat()
 {
     if (QVector2D(_tronconActuel->noeudFin()->position() - _position).length()
         < RAYON_PROXIMITE_NOEUD)
@@ -78,7 +81,7 @@ Etat Chariot::etat()
     else if (_bagage != 0)
     {
         // Livraison de bagage en cours
-        if (_bagage->estDestination(_tronconActuel) &&
+        if (_bagage->estObjectifFinal(_tronconActuel) &&
             QVector2D(_tronconActuel->noeudFin()->position() - _tronconActuel->position()).length()
                     < RAYON_PROXIMITE_NOEUD)
         {
@@ -92,7 +95,7 @@ Etat Chariot::etat()
     else
     {
         // Retour au tapis en cours
-        if (_tapisAssocie->estDestination(_tronconActuel) &&
+        if (_tapisAssocie->estObjectifFinal(_tronconActuel) &&
             QVector2D(_tronconActuel->noeudFin()->position() - _tronconActuel->position()).length()
                     < RAYON_PROXIMITE_NOEUD)
         {
@@ -105,32 +108,32 @@ Etat Chariot::etat()
     }
 }
 
-void majArret()
+void Chariot::majArret()
 {
     // Rien à faire
 }
 
-void majNoeudAtteint()
+void Chariot::majNoeudAtteint()
 {
     // TODO
 }
 
-void majTobogganAtteint()
+void Chariot::majTobogganAtteint()
 {
     // TODO
 }
 
-void majLivraisonBagage()
+void Chariot::majLivraisonBagage()
 {
     // TODO
 }
 
-void majTapisAtteint()
+void Chariot::majTapisAtteint()
 {
     // TODO
 }
 
-void majRetourTapis()
+void Chariot::majRetourTapis()
 {
     // TODO
 }

@@ -91,7 +91,7 @@ Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
     return positionActuelle->trouverProchainTroncon(_tronconSupport);
 }
 
-bool estObjectifFinal (const Troncon* troncon)
+bool Tapis::estObjectifFinal (const Troncon* troncon)
 {
     return _tronconSupport == troncon;
 }

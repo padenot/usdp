@@ -35,7 +35,7 @@ Troncon* Bagage::trouverObjectifImmediat(Noeud* positionActuelle)
     return positionActuelle->trouverProchainTroncon(_vol->tronconAcces());
 }
 
-bool estObjectifFinal (const Troncon* troncon)
+bool Bagage::estObjectifFinal (const Troncon* troncon)
 {
     return _vol->tronconAcces() == troncon;
 }

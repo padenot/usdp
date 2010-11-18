@@ -3,6 +3,7 @@
 
 #include <QMap>
 #include <QVector>
+#include <QTimer>
 
 //Begin section for file Prototype.h
 //TODO: Add definitions that you want preserved
@@ -41,6 +42,11 @@ class Prototype
          * Vitesse de la simulation.
          */
         double _vitesseSimulation;
+
+        /**
+         * Ce timer règle la vitesse de la simulation, il envoie un évènement à chaque tick.
+         */
+        QTimer _timer;
 
 
 
