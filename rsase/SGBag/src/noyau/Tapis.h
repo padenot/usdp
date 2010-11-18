@@ -98,11 +98,23 @@ class Tapis : public ElementActif
         void connecter(Chariot* chariot);
 
         /**
+         * Déconnecte le chariot actuellement connecté au tapis.
+         */
+        void deconnecter();
+
+        /**
+         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
          * @todo commenter la méthode
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
+
+        /**
+         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
+         * @todo commenter la méthode
+         */
+        bool estObjectifFinal (const Troncon* troncon);
 
 };  //end class Tapis
 

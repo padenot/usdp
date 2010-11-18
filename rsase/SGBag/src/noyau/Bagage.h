@@ -50,7 +50,17 @@ class Bagage : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
+         * @todo Commenter la méthode
+         */
         Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
+
+        /**
+         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
+         * @todo commenter la méthode
+         */
+        bool estObjectifFinal (const Troncon* troncon);
 
 };  //end class Bagage
 

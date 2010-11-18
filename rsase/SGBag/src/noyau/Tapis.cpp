@@ -73,11 +73,21 @@ void Tapis::connecter(Chariot* chariot)
     _chariotConnecte = chariot;
 }
 
+void Tapis::deconnecter()
+{
+    _chariotConnecte = 0;
+}
+
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
 {
     return positionActuelle->trouverProchainTroncon(_tronconSupport);
+}
+
+bool estObjectifFinal (const Troncon* troncon)
+{
+    return _tronconSupport == troncon;
 }
 
 /**

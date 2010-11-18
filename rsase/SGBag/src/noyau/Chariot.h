@@ -37,7 +37,8 @@ class Chariot : public ElementActif
         virtual ~Chariot();
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 		/** Charge un bagage sur le chariot.
-		 * Ne doit être appelé que si le chariot ne contient pas déjà un chariot.
+                 * Déconnecte automatiquement le chariot du tapis.
+                 * Ne doit être appelé que si le chariot ne contient pas déjà un bagage.
 		 * Etant donné que le chariot se déconnecte du tapis dès qu'il reçoit un bagage,
 		 * on ne devrait jamais recevoir de deuxième bagage de toute façon.
 		 */
@@ -72,23 +73,46 @@ class Chariot : public ElementActif
 		 */
         void avancer();
 
-    private:
+        /** Gère la mise à jour du chariot lorsqu'il est à l'arrêt
+         * (Ne fait donc a priori rien).
+         */
+        void majArret();
 
-		enum Etat
-		{
-			ARRET,
-			RETOUR_TAPIS,
-			LIVRAISON_BAGAGE,
-			APPROCHE_DESTINATION,
-			TAPIS_ATTEINT,
-			TOBOGGAN_ATTEINT
-		};
+        /** Gère la mise à jour du chariot lorsqu'il atteint le noeud de fin du tronçon.
+         */
+        void majNoeudAtteint();
 
-		/** Retourne l'état actuel du chariot.
-		 * Utile pour déterminer les actions à effectuer lors d'une mise à jour.
-		 * (Un chariot est une machine à états)
-		 */
-		Etat etat();
+        /** Gère la mise à jour du chariot lorsqu'il atteint le toboggan objectif.
+         */
+        void majTobogganAtteint();
+
+        /** Gère la mise à jour du chariot lorsqu'il est en train de livrer un bagage.
+         */
+        void majLivraisonBagage();
+
+        /** Gère la mise à jour du chariot lorsqu'il atteint le tapis objectif.
+         */
+        void majTapisAtteint();
+
+        /** Gère la mise à jour du chariot lorsqu'il est en train de revenir au tapis.
+         */
+        void majRetourTapis();
+
+        enum Etat
+        {
+                ARRET,
+                RETOUR_TAPIS,
+                LIVRAISON_BAGAGE,
+                NOEUD_ATTEINT,
+                TAPIS_ATTEINT,
+                TOBOGGAN_ATTEINT
+        };
+
+        /** Retourne l'état actuel du chariot.
+         * Utile pour déterminer les actions à effectuer lors d'une mise à jour.
+         * (Un chariot est une machine à états)
+         */
+        Etat etat();
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_klhKcOybEd-q55IxPzNK8w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -96,12 +120,28 @@ class Chariot : public ElementActif
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_alMHUO5DEd-dcpIgUje6-w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * _troncon; /// Troncon sur lequel se déplace actuellement le chariot.
+        Troncon * _tronconActuel;
+        /// Troncon sur lequel se déplace actuellement le chariot.
+        /// Ne doit jamais être nul.
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1bIQYPDzEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Tapis * _tapisAssocie; /// Tapis auquel le chariot devra revenir.
+        Tapis * _tapisAssocie;
+        /// Tapis auquel le chariot devra revenir.
+        /// Ne doit jamais être nul.
 
+
+        static const qreal RAYON_PROXIMITE_NOEUD;
+        /// Distance avec un noeud en dessous de laquelle le chariot est
+        /// considéré comme étant sur le noeud.
+
+        static const qreal RAYON_PROXIMITE_TAPIS;
+        /// Distance avec un tapis en dessous de laquelle le chariot est
+        /// considéré comme étant à portée du tapis.
+
+        static const qreal RAYON_PROXIMITE_TOBOGGAN;
+        /// Distance avec un toboggan en dessous de laquelle le chariot est
+        /// considéré comme étant à portée du toboggan.
 
 
 };  //end class Chariot
