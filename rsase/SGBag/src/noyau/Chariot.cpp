@@ -118,30 +118,45 @@ Chariot::Etat Chariot::etat()
 
 void Chariot::majArret()
 {
-    // Rien Ã  faire
+    // Rien Ã  faire
 }
 
 void Chariot::majNoeudAtteint()
 {
-    // TODO
+    Troncon* troncon;
+    if(_bagage != 0)
+    {
+        troncon = _bagage->trouverObjectifImmediat(_tronconActuel->noeudFin());
+    }
+    else
+    {
+        troncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
+    }
+
+    if(troncon->occuper())
+    {
+        _tronconActuel->liberer();
+        avancer();
+    }
 }
 
 void Chariot::majTobogganAtteint()
 {
-    // TODO
+    //_bagage->_vol->_toboggan->transfererBagage(_bagage);
 }
 
 void Chariot::majLivraisonBagage()
 {
-    // TODO
+    avancer();
 }
 
 void Chariot::majTapisAtteint()
 {
-    // TODO
+    _tapisAssocie->connecter(this);
+    arreter();
 }
 
 void Chariot::majRetourTapis()
 {
-    // TODO
+    avancer();
 }
