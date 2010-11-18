@@ -5,6 +5,9 @@
 //End section for file Noeud.h
 
 #include <QMap>
+#include <QVector>
+#include <QPair>
+
 
 #include "Element.h"
 #include "Troncon.h"
@@ -22,7 +25,9 @@ class Noeud : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5utnsOtcEd-6Qct7MaUvyw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * _tronconSuivant;
+    QVector<Troncon *> _tronconsSuivants;
+
+    bool _visite;
 
 
 
@@ -39,6 +44,8 @@ class Noeud : public Element
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Troncon* trouverProchainTroncon(Troncon* destination);
+
+        QPair<Troncon*, qreal> calculChemin(Troncon* destination);
 
 };  //end class Noeud
 
