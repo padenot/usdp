@@ -4,9 +4,10 @@
 //TODO: Add definitions that you want preserved
 //End section for file Chariot.h
 
+#include <QMap>
+
 #include "ElementActif.h"
 #include "Bagage.h"
-#include <QMap>
 
 
 
@@ -27,7 +28,12 @@ class Chariot : public ElementActif
 		/**
 		 * @todo TODO Constructeur de chariot
 		 */
-        Chariot(const QMap<QString,QString>& mapParam);
+        Chariot();
+
+        /** Initialise les membres privés de l'élément
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

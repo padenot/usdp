@@ -2,6 +2,7 @@
 #include "Troncon.h"
 #include "Noeud.h"
 #include "Tapis.h"
+#include "XmlConfigFactory.h"
 
 #include <QVector2D>
 //Begin section for file Chariot.cpp
@@ -15,13 +16,20 @@ const qreal Chariot::RAYON_PROXIMITE_TOBOGGAN = 1.0;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Chariot::Chariot(const QMap<QString,QString>& mapParam)
-    :ElementActif(mapParam),
+Chariot::Chariot() :
     _bagage (0),
     _tronconActuel (0),
     _tapisAssocie (0)
 {
+
     //TODO Auto-generated method stub
+}
+
+void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    ElementActif::init(indexParamValeur,fabrique);
+    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
