@@ -4,34 +4,35 @@
 #include "Elements.h"
 
 const char* XmlConfigFactory::NodeName_String[] = {
+    "config", /// Racine du fichier
     "elementName", /// Nom de l'élément
-    "config", /// Root
-    "troncon", /// Un troncon de rail
     "id", /// L'ID d'un élément
+    "x", /// Coordonnée en abscisse
+    "y", /// Coordonnée en ordonnée
+    "troncon", /// Un troncon de rail
+        "noeudDebut", // Noeud de début
+        "noeudFin", // Noeud de fin
     "noeud", /// Un noeud
-    "x", /// Coordonnée
-    "y", /// Coordonnée
-    "suivant", /// Le(s) rail(s) suivant un noeud
-    "tapis", /// Un tapis
-    "toboggan", /// Un toboggan
+        "suivantGauche", /// Le rail gauche suivant un noeud, toujours présent
+        "suivantDroit", /// Le rail droit suivant un noeud, parfois absent
+    "tapis", /// Tapis
+    "toboggan", /// Toboggan
     "chariot", /// Chariot
-    "pos", /// Position d'origin du chariot
-    "bagage", /// Un bagage
-    "destination", /// L'ID de son vol
+        "pos", /// Position d'origine du chariot, tapis ou toboggan
     "vol", /// Un vol
-    "date", /// La date d'un vol, en seconde depuis l'epoch UNIX.
-    "nom" /// Le nom d'un vol
+        "date", /// La date d'un vol, en secondes depuis l'epoch UNIX.
+        "nom", /// Le nom d'un vol
 };
 
 
 XmlConfigFactory::XmlConfigFactory()
     :noeudInterne(false)
 {
-    element_list.append("troncon");
-    element_list.append("noeud");
-    element_list.append("chariot");
-    element_list.append("bagage");
-    element_list.append("vol");
+    element_list.append(NodeName_String[troncon]);
+    element_list.append(NodeName_String[noeud]);
+    element_list.append(NodeName_String[chariot]);
+    element_list.append(NodeName_String[toboggan]);
+    element_list.append(NodeName_String[tapis]);
 }
 
 
@@ -56,7 +57,7 @@ bool XmlConfigFactory::endElement(const QString &/*namespaceURI*/,
     {
         mapParam[NodeName_String[elementName]] = qname;
         noeudInterne = false;
-        construireElements(mapParam);
+        construireElement(mapParam);
         mapParam.clear();
     }
     else
@@ -76,56 +77,65 @@ bool XmlConfigFactory::characters(const QString &str)
         return true;
 }
 
-/**
- * For debugging
- */
-void XmlConfigFactory::afficherElements(const QString& qname)
+Element* XmlConfigFactory::elementParId(int id)
 {
-    qDebug() << qname << " " << mapParam;
+    IndexIdInfosElements::const_iterator it = _idInfosElements.find(id);
+    if (it != _idInfosElements.end())
+    {
+        return it->first;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-
-void XmlConfigFactory::construireElements(const QMap<QString,QString>& mapParam)
+void XmlConfigFactory::construireElement(const QMap<QString,QString>& mapParam)
 {
     Element* nElement = 0;
     //  printElement(mapParam[NodeName_String[elementName]]);
-    if(mapParam[NodeName_String[elementName]] =="troncon")
+    if(mapParam[NodeName_String[elementName]] == NodeName_String[troncon])
     {
-        nElement = new Troncon();
+        nElement = new Troncon(mapParam);
         types_elements[NodeName_String[troncon]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == "noeud")
+    else if(mapParam[NodeName_String[elementName]] == NodeName_String[noeud])
     {
-        nElement = new Noeud();
+        nElement = new Noeud(mapParam);
         types_elements[NodeName_String[noeud]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == "chariot")
+    else if(mapParam[NodeName_String[elementName]] == NodeName_String[chariot])
     {
-        nElement = new Chariot();
+        nElement = new Chariot(mapParam);
         types_elements[NodeName_String[chariot]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == "bagage")
+    else if(mapParam[NodeName_String[elementName]] == NodeName_String[toboggan])
     {
-        nElement = new Bagage();
-        types_elements[NodeName_String[bagage]].push_back(nElement);
-    }
-    else if(mapParam[NodeName_String[elementName]] == "toboggan")
-    {
-        nElement = new Toboggan();
+        nElement = new Toboggan(mapParam);
         types_elements[NodeName_String[toboggan]].push_back(nElement);
+    }
+    else if(mapParam[NodeName_String[elementName]] == NodeName_String[tapis])
+    {
+        nElement = new Tapis(mapParam);
+        types_elements[NodeName_String[tapis]].push_back(nElement);
     }
 
     _idInfosElements[mapParam[NodeName_String[id]].toInt()]=qMakePair(nElement,mapParam);
 }
 
-QMap<QString,QVector<Element*> > XmlConfigFactory::mapSurTypes()
+XmlConfigFactory::IndexTypesElements XmlConfigFactory::resultat()
 {
+    typedef QPair<Element*,IndexParamValeur> Paire;
+    // Nécessaire pour utiliser la macro foreach (problème
+    // de parsing s'il y a une virgule dans un type)
+
+    foreach(Paire paire, _idInfosElements)
+    {
+        paire.first->init(paire.second,*this);
+    }
+
     return types_elements;
 }
 
-XmlConfigFactory::IndexIdInfosElements XmlConfigFactory::mapSurId()
-{
-    return _idInfosElements;
-}
 
 

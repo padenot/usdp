@@ -8,7 +8,8 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Bagage::Bagage()
+Bagage::Bagage(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        Element(indexParamValeur)
 {
     //TODO Auto-generated method stub
 }
@@ -17,7 +18,6 @@ void Bagage::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                    XmlConfigFactory& fabrique)
 {
     Element::init(indexParamValeur,fabrique);
-    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DESTRUCTOR"
@@ -29,19 +29,14 @@ Bagage::~Bagage()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qKAMUPDxEd-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Bagage::simulerDeplacement(double x, double y)
+void Bagage::simulerDeplacement(const QVector2D& deplacement)
 {
+    _position += deplacement.toPointF();
     //TODO Auto-generated method stub
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon* Bagage::trouverObjectifImmediat(Noeud* positionActuelle)
+Toboggan* Bagage::objectifFinal()
 {
-    return positionActuelle->trouverProchainTroncon(_vol->tronconAcces());
+    return _vol->tobogganAssocie();
 }
 
-bool Bagage::estObjectifFinal (const Troncon* troncon)
-{
-    return _vol->tronconAcces() == troncon;
-}

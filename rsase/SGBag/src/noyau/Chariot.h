@@ -28,7 +28,7 @@ class Chariot : public ElementActif
 		/**
 		 * @todo TODO Constructeur de chariot
 		 */
-        Chariot();
+        Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
           */

@@ -25,45 +25,6 @@ class Troncon; //Dependency Generated Source:Tapis Target:Troncon
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Tapis : public ElementActif
 {
-
-    //Begin section for Tapis
-    //TODO: Add attributes that you want preserved
-    //End section for Tapis
-
-    private:
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tziQ8eshEd-oy8D834IawQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::vector<Bagage*> _bagage;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_fSJGQeswEd-oy8D834IawQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Chariot * _chariotConnecte;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_TYtfcfDpEd-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * _tronconSupport;
-
-        /**
-         * Calcul du milieu du tronçon.
-         * @return QPointF
-         */
-        QPointF _milieuTroncon() const;
-
-    protected:
-
-        /**
-         * Met le tapis en action (déplace les bagages).
-         */
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void deroulerTapis();
-
-        /**
-         * Teste si le bagage bagage est sorti du tapis.
-         * @param[in] bagage Bagage à tester
-         */
-        bool bagageEstSorti(Bagage* bagage);
-
     public:
 
         /**
@@ -71,7 +32,7 @@ class Tapis : public ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Tapis();
+        Tapis(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
           */
@@ -114,7 +75,7 @@ class Tapis : public ElementActif
         void deconnecter();
 
         /**
-         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
+         * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
          * @todo commenter la méthode
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
@@ -122,10 +83,39 @@ class Tapis : public ElementActif
         Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
 
         /**
-         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
+         * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
          * @todo commenter la méthode
          */
-        bool estObjectifFinal (const Troncon* troncon);
+        bool estSupport (const Troncon* troncon);
+
+    protected:
+
+        /**
+         * Met le tapis en action (déplace les bagages).
+         */
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        void deroulerTapis();
+
+        /**
+         * Teste si le bagage bagage est sorti du tapis.
+         * @param[in] bagage Bagage à tester
+         */
+        bool bagageEstSorti(Bagage* bagage);
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tziQ8eshEd-oy8D834IawQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        std::vector<Bagage*> _bagages;
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_fSJGQeswEd-oy8D834IawQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        Chariot * _chariotConnecte;
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_TYtfcfDpEd-R6YEVT5cViQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        Troncon * _tronconSupport;
+
+        static const qreal RAYON_PROXIMITE_TRONCON;
 
 };  //end class Tapis
 

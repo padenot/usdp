@@ -15,26 +15,11 @@
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Noeud : public Element
 {
-
-    //Begin section for Noeud
-    //TODO: Add attributes that you want preserved
-    //End section for Noeud
-
-    private:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5utnsOtcEd-6Qct7MaUvyw"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-    QVector<Troncon *> _tronconsSuivants;
-
-    bool _visite;
-
-
-
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Noeud();
+        Noeud(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
           */
@@ -50,6 +35,17 @@ class Noeud : public Element
         Troncon* trouverProchainTroncon(Troncon* destination);
 
         QPair<Troncon*, qreal> calculChemin(Troncon* destination);
+
+
+    private:
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5utnsOtcEd-6Qct7MaUvyw"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+    QVector<Troncon *> _tronconsSuivants;
+
+    bool _visite;
+
+
 
 };  //end class Noeud
 

@@ -8,6 +8,7 @@
 
 #include "Element.h"
 
+class Noeud;
 class Bagage;
 class Vol; //Dependency Generated Source:Toboggan Target:Vol
 class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
@@ -16,28 +17,11 @@ class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Toboggan : public Element
 {
-
-    //Begin section for Toboggan
-    //TODO: Add attributes that you want preserved
-    //End section for Toboggan
-
-    private:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_luU7wfCwEd-54vpurc77FA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Vol * _vol;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_hBPwkOspEd-oy8D834IawQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * _tronconSupport;
-
-
-
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Toboggan();
+        Toboggan(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
           */
@@ -52,11 +36,29 @@ class Toboggan : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         void transfererBagage(Bagage* bagage);
 
-        /** Récupère le tronçon support du toboggan.
-          * @todo Forcément différent de 0 ?
-          * @return Le troncon support du toboggan.
-          */
-        Troncon* tronconSupport();
+        /**
+         * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
+         * @todo Commenter la méthode
+         */
+        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
+
+
+        /**
+         * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
+         * @todo commenter la méthode
+         */
+        bool estSupport (const Troncon* troncon);
+
+    private:
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_luU7wfCwEd-54vpurc77FA"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        //Vol * _vol;
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_hBPwkOspEd-oy8D834IawQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        Troncon * _tronconSupport;
+
 
 };  //end class Toboggan
 

@@ -5,26 +5,26 @@
     <id>1</id>
     <x>10</x>
     <y>10</y>
-    <suivant>2</suivant>
+    <suivantGauche>2</suivantGauche>
   </noeud>
   <noeud>
     <id>3</id>
     <x>60</x>
     <y>10</y>
-    <suivant>9</suivant>
-    <suivant>4</suivant>
+    <suivantGauche>9</suivantGauche>
+    <suivantDroit>4</suivantDroit>
   </noeud>
   <noeud>
     <id>5</id>
     <x>60</x>
     <y>60</y>
-    <suivant>6</suivant>
+    <suivantGauche>6</suivantGauche>
   </noeud>
   <noeud>
     <id>7</id>
     <x>10</x>
     <y>60</y>
-    <suivant>8</suivant>
+    <suivantGauche>8</suivantGauche>
   </noeud>
   <troncon>
     <id>2</id>
@@ -44,26 +44,26 @@
   <troncon>
     <id>8</id>
     <noeudDebut>7</noeudDebut>
-    <noeudFin>9</noeudFin>
-    <toboggan>15</toboggan>
+    <noeudFin>10</noeudFin>
   </troncon>
-    <toboggan>
+  <toboggan>
 	<id>15</id>
 	<x>0</x>
 	<y>0</y>
-    </toboggan>
+	<pos>8</pos>
+  </toboggan>
   <!-- Bifurcation pour le tapis -->
   <noeud>
     <id>10</id>
     <x>70</x>
     <y>10</y>
-    <suivant>9</suivant>
+    <suivantGauche>9</suivantGauche>
   </noeud>
   <noeud>
     <id>12</id>
     <x>70</x>
     <y>60</y>
-    <suivant>11</suivant>
+    <suivantGauche>11</suivantGauche>
   </noeud>
   <troncon>
     <id>9</id>
@@ -74,19 +74,19 @@
     <id>11</id>
     <noeudDebut>10</noeudDebut>
     <noeudFin>12</noeudFin>
-    <tapis>16</tapis>
   </troncon>
     
-<tapis>
+  <tapis>
     <id>16</id>
-	<!-- Coordonnées du début du tapis, les coordonnées de la fin seront données par le rail -->
+	<!-- Coordonnées du début du tapis, les coordonnées de la fin seront données par le troncon -->
     <x>70</x> 
     <y>35</y>
-</toboggan>
+	<pos>13</pos>
+  </tapis>
   <troncon>
     <id>13</id>
     <noeudDebut>12</noeudDebut>
-    <noeudFin>5</noeudFin>
+    <noeudFin>1</noeudFin>
   </troncon>
   <chariot>
     <id>14</id>

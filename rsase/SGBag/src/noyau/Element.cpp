@@ -7,17 +7,17 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Element::Element()
+Element::Element(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        _position(indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]].toFloat(),
+                  indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat())
 {
-
+    // Vide
 }
 
 void Element::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                    XmlConfigFactory& fabrique)
 {
-    /*_position = QPointF(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]].toFloat(),
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat());*/
+    // Vide
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DESTRUCTOR"

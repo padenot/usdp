@@ -4,29 +4,33 @@
  */
 
 #include <QPointF>
+#include <QVector2D>
 
 #include "Tapis.h"
 #include "Noeud.h"
 //Begin section for file Tapis.cpp
-using namespace std;
 //End section for file Tapis.cpp
 
+const qreal Tapis::RAYON_PROXIMITE_TRONCON = 1.0;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Tapis::Tapis()
-    :ElementActif(), _chariotConnecte(0)
+Tapis::Tapis(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        ElementActif(indexParamValeur),
+        _bagages(),
+        _chariotConnecte(0),
+        _tronconSupport(0)
 {
     // Constructeur
 }
 
 void Tapis::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                  XmlConfigFactory& fabrique) : _bagage(0), _chariotConnecte(0), _tronconSupport(0)
+                  XmlConfigFactory& fabrique)
 {
     ElementActif::init(indexParamValeur,fabrique);
     Element::init(indexParamValeur,fabrique);
     _tronconSupport = dynamic_cast<Troncon*> (fabrique.elementParId(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]]));
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DESTRUCTOR"
@@ -53,7 +57,7 @@ void Tapis::maj()
 void Tapis::ajouterBagage(Bagage* bagageEntrant)
 {
     // Connexion du bagage
-    _bagage.push_back(bagageEntrant);
+    _bagages.push_back(bagageEntrant);
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
@@ -62,17 +66,13 @@ void Tapis::deroulerTapis()
 {
     // Pour chaque bagage sur le tapis
     Bagage* b;
-    for(unsigned int i = 0; i < _bagage.size(); ++i)
+    for(unsigned int i = 0; i < _bagages.size(); ++i)
     {
-        b = _bagage[i];
+        b = _bagages[i];
 
         // TODO faut vérifier, le modèle est pas clair, je calcule la direction en prenant
         // _position pour point de départ et la position du "noeudFin" comme point final.
-        QPointF posFin(_milieuTroncon());
-        b->simulerDeplacement(
-                (posFin.x() - _position.x())*_vitesse,
-                (posFin.y() - _position.y())*_vitesse
-        );
+        b->simulerDeplacement(QVector2D(_tronconSupport->position() - _position*_vitesse));
 
         if(bagageEstSorti(b))
             _chariotConnecte->chargerBagage(b);
@@ -100,7 +100,7 @@ Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
     return positionActuelle->trouverProchainTroncon(_tronconSupport);
 }
 
-bool Tapis::estObjectifFinal (const Troncon* troncon)
+bool Tapis::estSupport (const Troncon* troncon)
 {
     return _tronconSupport == troncon;
 }
@@ -110,6 +110,9 @@ bool Tapis::estObjectifFinal (const Troncon* troncon)
  */
 bool Tapis::bagageEstSorti(Bagage *bagage)
 {
+    /*
+     * TODO : WTF ????? C'est quoi ça ?
+
     // On teste si la position du bagage est comprise entre la position du tapis et la position
     // du noeud suivant.
 
@@ -148,9 +151,8 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
         return true;
 
     return false;
-}
+    */
 
-QPointF Tapis::_milieuTroncon() const
-{
-    return ((_tronconSupport->noeudFin()->position() + _tronconSupport->position())/2);
+    return QVector2D(bagage->position() - _tronconSupport->position()).length()
+            < RAYON_PROXIMITE_TRONCON;
 }

@@ -10,8 +10,10 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Noeud::Noeud()
-    : _visite(false), _noeudsSuivants(0)
+Noeud::Noeud(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        Element(indexParamValeur),
+        _tronconsSuivants(),
+        _visite(false)
 {
     //TODO Auto-generated method stub
 }
@@ -21,7 +23,7 @@ void Noeud::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
 {
     Element::init(indexParamValeur,fabrique);
     _tronconsSuivants.push_back(dynamic_cast<Troncon*> (fabrique.elementParId(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::suivantGauche]])));
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::suivantGauche]].toInt())));
 
 }
 

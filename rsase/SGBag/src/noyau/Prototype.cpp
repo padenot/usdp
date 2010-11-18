@@ -10,14 +10,18 @@
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
+const int Prototype::VITESSE_DEFAUT = 0;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::Prototype(const QString& xmlfilepath) :
-        QObject(0), _elementsParType(0), _vitesseSimulation(0), _mode_generation_bagage(AUTOMATIQUE)
+        QObject(0),
+        _elementsParType(),
+        _vitesseSimulation(VITESSE_DEFAUT),
+        _mode_generation_bagage(AUTOMATIQUE)
 {
-    // Deserialize the xml file.
-    // Map des types sur des pointeurs d'éléments.
+    // Désérialise le fichier XML.
+    // Extrait et classe par type des pointeurs d'éléments.
     XmlConfigFactory handler;
     QXmlSimpleReader reader;
     reader.setContentHandler(&handler);
@@ -33,7 +37,7 @@ Prototype::Prototype(const QString& xmlfilepath) :
     QXmlInputSource xmlInputSource(&file);
     if (reader.parse(xmlInputSource))
     {
-        _elementsParType = handler.mapSurTypes();
+        _elementsParType = handler.resultat();
 
         qDebug() << _elementsParType;
     }

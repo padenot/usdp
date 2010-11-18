@@ -24,33 +24,8 @@ class Element; //Dependency Generated Source:Prototype Target:Element
 class Prototype : public QObject
 {
     Q_OBJECT
-    //Begin section for Prototype
-    //TODO: Add attributes that you want preserved
-    //End section for Prototype
 
-    private:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * Map des types sur les vecteurs d'éléments
-         */
-        XmlConfigFactory::IndexTypesElements _elementsParType;
-
-
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * Vitesse de la simulation.
-         * Ce membre correspond à interval entre deux ticks d'horloge.
-         */
-        int _vitesseSimulation;
-
-        /**
-         * Cette horloge règle la vitesse de la simulation, il envoie un évènement à chaque tick.
-         */
-        QTimer _horloge;
+    public:
 
         /**
          * Pour les fonctionnalités qui peuvent avoir un comportement
@@ -63,14 +38,6 @@ class Prototype : public QObject
             AUTOMATIQUE
         };
 
-        /**
-         * Mode de la génération de bagage : automatique ou manuel.
-         */
-        ModeSimulation _mode_generation_bagage;
-
-
-
-    public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -135,6 +102,35 @@ class Prototype : public QObject
          */
         void changerVitesse(const int msec);
 
+
+    private:
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * Map des types sur les vecteurs d'éléments
+         */
+        XmlConfigFactory::IndexTypesElements _elementsParType;
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * Vitesse de la simulation.
+         * Ce membre correspond à intervalle entre deux ticks d'horloge.
+         */
+        int _vitesseSimulation;
+
+        /**
+         * Cette horloge règle la vitesse de la simulation, il envoie un évènement à chaque tick.
+         */
+        QTimer _horloge;
+
+        /**
+         * Mode de la génération de bagage : automatique ou manuel.
+         */
+        ModeSimulation _mode_generation_bagage;
+
+        static const int VITESSE_DEFAUT;
 };  //end class Prototype
 
 #endif

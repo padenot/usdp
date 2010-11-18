@@ -1,5 +1,6 @@
 #include "Toboggan.h"
 #include "Bagage.h"
+#include "Noeud.h"
 //Begin section for file Toboggan.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Toboggan.cpp
@@ -7,17 +8,19 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Toboggan::Toboggan()
+Toboggan::Toboggan(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        Element(indexParamValeur),
+        _tronconSupport(0)
 {
     //TODO Auto-generated method stub
 }
 
 void Toboggan::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                     XmlConfigFactory& fabrique) : vol(0), _tronconSupport(0)
+                     XmlConfigFactory& fabrique)
 {
     Element::init(indexParamValeur,fabrique);
     _tronconSupport = dynamic_cast<Troncon*> (fabrique.elementParId(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]]));
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DESTRUCTOR"
@@ -34,7 +37,13 @@ void Toboggan::transfererBagage(Bagage* bagage)
     delete bagage;
 }
 
-Troncon* Toboggan::tronconSupport()
+
+Troncon* Toboggan::trouverObjectifImmediat(Noeud* positionActuelle)
 {
-    return _tronconSupport;
+    return positionActuelle->trouverProchainTroncon(_tronconSupport);
+}
+
+bool Toboggan::estSupport (const Troncon* troncon)
+{
+    return _tronconSupport == troncon;
 }

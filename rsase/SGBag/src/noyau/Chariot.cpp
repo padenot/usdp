@@ -1,7 +1,7 @@
 #include "Chariot.h"
-#include "Troncon.h"
 #include "Noeud.h"
 #include "Tapis.h"
+#include "Toboggan.h"
 #include "XmlConfigFactory.h"
 
 #include <QVector2D>
@@ -16,7 +16,8 @@ const qreal Chariot::RAYON_PROXIMITE_TOBOGGAN = 1.0;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Chariot::Chariot() :
+Chariot::Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+    ElementActif(indexParamValeur),
     _bagage (0),
     _tronconActuel (0),
     _tapisAssocie (0)
@@ -29,7 +30,12 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                    XmlConfigFactory& fabrique)
 {
     ElementActif::init(indexParamValeur,fabrique);
-    // TODO
+    _tronconActuel = dynamic_cast<Troncon*>(fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()
+            ));
+    _tapisAssocie = dynamic_cast<Tapis*>(fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]].toInt()
+            ));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
@@ -89,7 +95,7 @@ Chariot::Etat Chariot::etat()
     else if (_bagage != 0)
     {
         // Livraison de bagage en cours
-        if (_bagage->estObjectifFinal(_tronconActuel) &&
+        if (_bagage->objectifFinal()->estSupport(_tronconActuel) &&
             QVector2D(_tronconActuel->noeudFin()->position() - _tronconActuel->position()).length()
                     < RAYON_PROXIMITE_NOEUD)
         {
@@ -103,7 +109,7 @@ Chariot::Etat Chariot::etat()
     else
     {
         // Retour au tapis en cours
-        if (_tapisAssocie->estObjectifFinal(_tronconActuel) &&
+        if (_tapisAssocie->estSupport(_tronconActuel) &&
             QVector2D(_tronconActuel->noeudFin()->position() - _tronconActuel->position()).length()
                     < RAYON_PROXIMITE_NOEUD)
         {
@@ -118,7 +124,7 @@ Chariot::Etat Chariot::etat()
 
 void Chariot::majArret()
 {
-    // Rien Ã  faire
+    // Rien   faire
 }
 
 void Chariot::majNoeudAtteint()
@@ -126,7 +132,7 @@ void Chariot::majNoeudAtteint()
     Troncon* troncon;
     if(_bagage != 0)
     {
-        troncon = _bagage->trouverObjectifImmediat(_tronconActuel->noeudFin());
+        troncon = _bagage->objectifFinal()->trouverObjectifImmediat(_tronconActuel->noeudFin());
     }
     else
     {

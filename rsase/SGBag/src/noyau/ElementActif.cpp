@@ -3,14 +3,17 @@
 //TODO: Add definitions that you want preserved
 //End section for file ElementActif.cpp
 
+const qreal ElementActif::VITESSE_DEFAUT = 0.1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-ElementActif::ElementActif()
+ElementActif::ElementActif(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
+        Element(indexParamValeur),
+        _vitesse (VITESSE_DEFAUT),
+        _estActif(false)
 {
     //TODO Auto-generated method stub
 }
-
 
 void ElementActif::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                    XmlConfigFactory& fabrique)
@@ -25,7 +28,7 @@ ElementActif::~ElementActif()
     //TODO Auto-generated method stub
 }
 
-void ElementActif::modifierVitesse(double nouvelleVitesse)
+void ElementActif::modifierVitesse(qreal nouvelleVitesse)
 {
     _vitesse = nouvelleVitesse;
 }

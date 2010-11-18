@@ -1,5 +1,4 @@
 #include "Vol.h"
-#include "Toboggan.h"
 //Begin section for file Vol.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Vol.cpp
@@ -12,12 +11,6 @@ Vol::Vol() : _bagage(0), _dateDepart(0), _toboggan(0), _nom(0)
     //TODO Auto-generated method stub
 }
 
-void Vol::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
-{
-    // TODO
-}
-
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Vol::~Vol() 
@@ -25,14 +18,7 @@ Vol::~Vol()
     //TODO Auto-generated method stub
 }
 
-Troncon* Vol::tronconAcces()
+Toboggan* Vol::tobogganAssocie ()
 {
-    if (_toboggan != 0)
-    {
-        return _toboggan->tronconSupport();
-    }
-    else
-    {
-        return 0;
-    }
+    return _toboggan;
 }

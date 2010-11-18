@@ -4,10 +4,11 @@
 //TODO: Add definitions that you want preserved
 //End section for file Bagage.h
 
-#include <QMap>
+#include <QVector2D>
 
 #include "Element.h"
 
+class Toboggan;
 class Troncon;
 class Noeud;
 class Vol; //Dependency Generated Source:Bagage Target:Vol
@@ -16,17 +17,11 @@ class Vol; //Dependency Generated Source:Bagage Target:Vol
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Bagage : public Element
 {
-
-    //Begin section for Bagage
-    //TODO: Add attributes that you want preserved
-    //End section for Bagage
-
-
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Bagage();
+        Bagage(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
           */
@@ -39,21 +34,17 @@ class Bagage : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qKAMUPDxEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void simulerDeplacement(double x, double y);
+        void simulerDeplacement(const QVector2D& deplacement);
+
+
+        /** Renvoie le toboggan sur lequel doit être déposé le bagage.
+         * @return Le toboggan sur lequel doit être déposé le bagage.
+         */
+        Toboggan* objectifFinal();
+
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
-         * @todo Commenter la méthode
-         */
-        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
-
-        /**
-         * @todo Définir une interface commune à Tapis et Bagage pour cette méthode ? (IDestinationChariot ?)
-         * @todo commenter la méthode
-         */
-        bool estObjectifFinal (const Troncon* troncon);
 
     private:
 

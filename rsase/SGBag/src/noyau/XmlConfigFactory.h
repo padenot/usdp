@@ -20,37 +20,40 @@ public:
     bool endElement(const QString &namespaceURI, const QString &localName, const QString &qName);
     bool characters(const QString &str);
 
+    Element* elementParId(int id);
+
     enum NodeName
     {
+        config, /// Racine du fichier
         elementName, /// Nom de l'élément
-        config, /// Root
-        troncon, /// Un troncon de rail
         id, /// L'ID d'un élément
+        x, /// Coordonnée en abscisse
+        y, /// Coordonnée en ordonnée
+        troncon, /// Un troncon de rail
+            noeudDebut, // Noeud de début
+            noeudFin, // Noeud de fin
         noeud, /// Un noeud
-        x, /// Coordonnée
-        y, /// Coordonnée
-        suivant, /// Le(s) rail(s) suivant un noeud
-        tapis, /// Un tapis (true si il doit y en avoir un)
-        toboggan, /// Un toboggan (true si il doit y en avoir un)
+            suivantGauche, /// Le rail gauche suivant un noeud, toujours présent
+            suivantDroit, /// Le rail droit suivant un noeud, parfois absent
+        tapis, /// Tapis
+        toboggan, /// Toboggan
         chariot, /// Chariot
-        pos, /// Position d'origin du chariot
-        bagage, /// Un bagage
-        destination, /// L'ID de son vol
+            pos, /// Position d'origine du chariot, tapis ou toboggan
         vol, /// Un vol
-        date, /// La date d'un vol, en seconde depuis l'epoch UNIX.
-        nom, /// Le nom d'un vol
+            date, /// La date d'un vol, en secondes depuis l'epoch UNIX.
+            nom, /// Le nom d'un vol
         _COUNT
     };
 
+    static const char* NodeName_String[_COUNT];
+
+    QList<QString> element_list;
+
+
     typedef QMap<QString,QString> IndexParamValeur;
-    typedef QMap<int,QPair<Element*,IndexParamValeur> >  IndexIdInfosElements;
     typedef QMap<QString,QVector<Element*> > IndexTypesElements;
 
-
-    static const char* NodeName_String[_COUNT];
-    QList<QString> element_list;
-     QMap<QString,QVector<Element*> > mapSurTypes();
-     IndexIdInfosElements mapSurId();
+    IndexTypesElements resultat();
 
 
 
@@ -58,13 +61,16 @@ private:
     bool noeudInterne;
     QString noeudTexte;
     QMap<QString,QString> mapParam;
+
     /**
      * @brief Map des types vers les instances.
      */
     IndexTypesElements types_elements;
+
+    typedef QMap<int,QPair<Element*,IndexParamValeur> >  IndexIdInfosElements;
     IndexIdInfosElements _idInfosElements;
-    void afficherElements(const QString& qname);
-    void construireElements(const QMap<QString,QString>& mapParam);
+
+    void construireElement(const QMap<QString,QString>& mapParam);
 };
 
 #endif // MYXMLHANDLER_H
