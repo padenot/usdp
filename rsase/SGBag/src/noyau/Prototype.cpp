@@ -14,7 +14,7 @@
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::Prototype(const QString& xmlfilepath) :
-        QObject(0)
+        QObject(0), _elementsParType(0), _vitesseSimulation(0), _mode_generation_bagage(AUTOMATIQUE)
 {
     // Deserialize the xml file.
     // Map des types sur des pointeurs d'éléments.

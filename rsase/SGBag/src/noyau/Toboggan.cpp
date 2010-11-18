@@ -13,10 +13,11 @@ Toboggan::Toboggan()
 }
 
 void Toboggan::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
+                     XmlConfigFactory& fabrique) : vol(0), _tronconSupport(0)
 {
     Element::init(indexParamValeur,fabrique);
-    // TODO
+    _tronconSupport = dynamic_cast<Troncon*> (fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]]));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DESTRUCTOR"

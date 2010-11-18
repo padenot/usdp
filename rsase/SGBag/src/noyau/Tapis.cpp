@@ -21,10 +21,12 @@ Tapis::Tapis()
 }
 
 void Tapis::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
+                  XmlConfigFactory& fabrique) : _bagage(0), _chariotConnecte(0), _tronconSupport(0)
 {
     ElementActif::init(indexParamValeur,fabrique);
-    // TODO
+    Element::init(indexParamValeur,fabrique);
+    _tronconSupport = dynamic_cast<Troncon*> (fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]]));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DESTRUCTOR"

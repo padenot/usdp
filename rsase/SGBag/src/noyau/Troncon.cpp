@@ -13,10 +13,13 @@ Troncon::Troncon()
 
 
 void Troncon::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
+                    XmlConfigFactory& fabrique) : _noeudFin(0), _noeudDebut(0), _chariot(0), _estLibre(0)
 {
     Element::init(indexParamValeur,fabrique);
-    // TODO
+    _noeudDebut = dynamic_cast<Noeud*> (fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::noeudDebut]]));
+    _noeudFin = dynamic_cast<Noeud*> (fabrique.elementParId(
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::noeudFin]]));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DESTRUCTOR"
