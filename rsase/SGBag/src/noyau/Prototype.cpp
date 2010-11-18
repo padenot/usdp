@@ -24,7 +24,8 @@ Prototype::Prototype(const QString& xmlfilepath)
     reader.setErrorHandler(&handler);
 
     QFile file(xmlfilepath);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+    {
         qDebug() << "Cannot read XML file." << endl;
         exit(1);
     }

@@ -42,8 +42,8 @@ public:
 
     static const char* NodeName_String[_COUNT];
     QList<QString> element_list;
-     QMap<QString,QVector<Element*> > mapSurTypes();
-     QMap<int,Element*> mapSurId();
+    QMap<QString,QVector<Element*> > mapSurTypes();
+    QMap<int,Element*> mapSurId();
 
 
 private:

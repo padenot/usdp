@@ -79,8 +79,9 @@
     
 <tapis>
     <id>16</id>
-    <x>60</x>
-    <y>60</y>
+	<!-- Coordonnées du début du tapis, les coordonnées de la fin seront données par le rail -->
+    <x>70</x> 
+    <y>35</y>
 </toboggan>
   <troncon>
     <id>13</id>
