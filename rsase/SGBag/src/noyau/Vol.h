@@ -44,7 +44,12 @@ class Vol
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Vol(const QMap<QString,QString>& mapParam);
+        Vol();
+
+        /** Initialise les membres privés du vol
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

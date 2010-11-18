@@ -46,7 +46,12 @@ class Troncon : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon(const QMap<QString,QString>& mapParam);
+        Troncon();
+
+        /** Initialise les membres privés de l'élément
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

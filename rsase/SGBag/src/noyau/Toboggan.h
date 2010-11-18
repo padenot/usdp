@@ -37,7 +37,12 @@ class Toboggan : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Toboggan(const QMap<QString,QString>& mapParam);
+        Toboggan();
+
+        /** Initialise les membres privés de l'élément
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

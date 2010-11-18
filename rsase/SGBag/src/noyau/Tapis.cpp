@@ -14,10 +14,17 @@ using namespace std;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Tapis::Tapis(const QMap<QString,QString>& mapParam)
-    :ElementActif(mapParam), _chariotConnecte(0), _position(mapParam["x"], mapParam["y"])
+Tapis::Tapis()
+    :ElementActif(), _chariotConnecte(0)
 {
     // Constructeur
+}
+
+void Tapis::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    ElementActif::init(indexParamValeur,fabrique);
+    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DESTRUCTOR"

@@ -71,7 +71,12 @@ class Tapis : public ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Tapis(const QMap<QString,QString>& mapParam);
+        Tapis();
+
+        /** Initialise les membres privés de l'élément
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         /**
          * Destructeur de tapis.

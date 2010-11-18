@@ -4,10 +4,12 @@
 #include <QtXml/QXmlDefaultHandler>
 #include <QTextStream>
 #include <QMap>
+#include <QString>
 #include <QVector>
+#include <QPair>
 
-#include "Elements.h"
 
+class Element;
 
 class XmlConfigFactory : public QXmlDefaultHandler
 {
@@ -40,10 +42,16 @@ public:
         _COUNT
     };
 
+    typedef QMap<QString,QString> IndexParamValeur;
+    typedef QMap<int,QPair<Element*,IndexParamValeur> >  IndexIdInfosElements;
+    typedef QMap<QString,QVector<Element*> > IndexTypesElements;
+
+
     static const char* NodeName_String[_COUNT];
     QList<QString> element_list;
-    QMap<QString,QVector<Element*> > mapSurTypes();
-    QMap<int,Element*> mapSurId();
+     QMap<QString,QVector<Element*> > mapSurTypes();
+     IndexIdInfosElements mapSurId();
+
 
 
 private:
@@ -53,8 +61,8 @@ private:
     /**
      * @brief Map des types vers les instances.
      */
-    QMap<QString,QVector<Element*> > types_elements;
-    QMap<int,Element*> id_elements;
+    IndexTypesElements types_elements;
+    IndexIdInfosElements _idInfosElements;
     void afficherElements(const QString& qname);
     void construireElements(const QMap<QString,QString>& mapParam);
 };

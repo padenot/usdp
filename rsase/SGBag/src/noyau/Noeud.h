@@ -8,7 +8,6 @@
 #include <QVector>
 #include <QPair>
 
-
 #include "Element.h"
 #include "Troncon.h"
 
@@ -35,7 +34,12 @@ class Noeud : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Noeud(const QMap<QString,QString>& mapParam);
+        Noeud();
+
+        /** Initialise les membres privés de l'élément
+          */
+        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                           XmlConfigFactory& fabrique);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

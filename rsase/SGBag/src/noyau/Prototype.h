@@ -33,9 +33,9 @@ class Prototype : public QObject
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
-         * Map des ID sur des pointeurs d'éléments
+         * Map des types sur les vecteurs d'éléments
          */
-        QMap<int, Element*> _idSurElements;
+        XmlConfigFactory::IndexTypesElements _elementsParType;
 
 
 

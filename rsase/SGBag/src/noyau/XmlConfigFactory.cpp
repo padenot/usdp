@@ -1,6 +1,7 @@
 #include <QDebug>
 
 #include "XmlConfigFactory.h"
+#include "Elements.h"
 
 const char* XmlConfigFactory::NodeName_String[] = {
     "elementName", /// Nom de l'élément
@@ -86,37 +87,35 @@ void XmlConfigFactory::afficherElements(const QString& qname)
 
 void XmlConfigFactory::construireElements(const QMap<QString,QString>& mapParam)
 {
-  //  printElement(mapParam[NodeName_String[elementName]]);
+    Element* nElement = 0;
+    //  printElement(mapParam[NodeName_String[elementName]]);
     if(mapParam[NodeName_String[elementName]] =="troncon")
     {
-        Troncon* ttroncon = new Troncon(mapParam);
-        types_elements[NodeName_String[troncon]].push_back(ttroncon);
-        id_elements[mapParam[NodeName_String[id]].toInt()]=ttroncon;
+        nElement = new Troncon();
+        types_elements[NodeName_String[troncon]].push_back(nElement);
     }
     else if(mapParam[NodeName_String[elementName]] == "noeud")
     {
-        Noeud* nnoeud = new Noeud(mapParam);
-        types_elements[NodeName_String[noeud]].push_back(nnoeud);
-        id_elements[mapParam[NodeName_String[id]].toInt()] = nnoeud;
+        nElement = new Noeud();
+        types_elements[NodeName_String[noeud]].push_back(nElement);
     }
     else if(mapParam[NodeName_String[elementName]] == "chariot")
     {
-        Chariot* cchariot = new Chariot(mapParam);
-        types_elements[NodeName_String[chariot]].push_back(cchariot);
-        id_elements[mapParam[NodeName_String[id]].toInt()]=cchariot;
+        nElement = new Chariot();
+        types_elements[NodeName_String[chariot]].push_back(nElement);
     }
     else if(mapParam[NodeName_String[elementName]] == "bagage")
     {
-        Bagage* bbagage = new Bagage(mapParam);
-        types_elements[NodeName_String[bagage]].push_back(bbagage);
-        id_elements[mapParam[NodeName_String[id]].toInt()]=bbagage;
+        nElement = new Bagage();
+        types_elements[NodeName_String[bagage]].push_back(nElement);
     }
     else if(mapParam[NodeName_String[elementName]] == "toboggan")
     {
-        Toboggan* ttoboggan = new Toboggan(mapParam);
-        types_elements[NodeName_String[toboggan]].push_back(ttoboggan);
-        id_elements[mapParam[NodeName_String[id]].toInt()]=ttoboggan;
+        nElement = new Toboggan();
+        types_elements[NodeName_String[toboggan]].push_back(nElement);
     }
+
+    _idInfosElements[mapParam[NodeName_String[id]].toInt()]=qMakePair(nElement,mapParam);
 }
 
 QMap<QString,QVector<Element*> > XmlConfigFactory::mapSurTypes()
@@ -124,9 +123,9 @@ QMap<QString,QVector<Element*> > XmlConfigFactory::mapSurTypes()
     return types_elements;
 }
 
-QMap<int,Element*> XmlConfigFactory::mapSurId()
+XmlConfigFactory::IndexIdInfosElements XmlConfigFactory::mapSurId()
 {
-    return id_elements;
+    return _idInfosElements;
 }
 
 

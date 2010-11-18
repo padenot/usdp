@@ -8,10 +8,16 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Bagage::Bagage(const QMap<QString,QString>& mapParam)
-    :Element(mapParam)
+Bagage::Bagage()
 {
     //TODO Auto-generated method stub
+}
+
+void Bagage::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    Element::init(indexParamValeur,fabrique);
+    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DESTRUCTOR"

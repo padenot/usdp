@@ -6,10 +6,17 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon::Troncon(const QMap<QString,QString>& mapParam)
-    :Element(mapParam)
+Troncon::Troncon()
 {
     //TODO Auto-generated method stub
+}
+
+
+void Troncon::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    Element::init(indexParamValeur,fabrique);
+    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DESTRUCTOR"

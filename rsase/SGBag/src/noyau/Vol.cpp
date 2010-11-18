@@ -7,9 +7,15 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Vol::Vol(const QMap<QString,QString>& mapParam)
+Vol::Vol()
 {
     //TODO Auto-generated method stub
+}
+
+void Vol::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    // TODO
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"

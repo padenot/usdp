@@ -13,11 +13,11 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Prototype::Prototype(const QString& xmlfilepath)
+Prototype::Prototype(const QString& xmlfilepath) :
+        QObject(0)
 {
     // Deserialize the xml file.
     // Map des types sur des pointeurs d'éléments.
-    QMap<QString, QVector<Element*> > typesSurElements;
     XmlConfigFactory handler;
     QXmlSimpleReader reader;
     reader.setContentHandler(&handler);
@@ -33,11 +33,9 @@ Prototype::Prototype(const QString& xmlfilepath)
     QXmlInputSource xmlInputSource(&file);
     if (reader.parse(xmlInputSource))
     {
-        typesSurElements = handler.mapSurTypes();
-        _idSurElements = handler.mapSurId();
+        _elementsParType = handler.mapSurTypes();
 
-        qDebug() << typesSurElements;
-        qDebug() << _idSurElements;
+        qDebug() << _elementsParType;
     }
 }
 
@@ -45,9 +43,12 @@ Prototype::Prototype(const QString& xmlfilepath)
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::~Prototype()
 {
-    foreach(Element* element, _idSurElements)
+    foreach(QVector<Element*> tabElements, _elementsParType)
     {
-       delete element;
+        foreach(Element* element, tabElements)
+        {
+            delete element;
+        }
     }
 }
 

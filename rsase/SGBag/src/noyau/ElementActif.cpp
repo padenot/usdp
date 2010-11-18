@@ -6,10 +6,16 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-ElementActif::ElementActif(const QMap<QString,QString>& mapParam)
-    :Element(mapParam)
+ElementActif::ElementActif()
 {
     //TODO Auto-generated method stub
+}
+
+
+void ElementActif::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
+                   XmlConfigFactory& fabrique)
+{
+    Element::init(indexParamValeur,fabrique);
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DESTRUCTOR"
@@ -33,3 +39,4 @@ void ElementActif::demarrer()
 {
     _estActif = true;
 }
+
