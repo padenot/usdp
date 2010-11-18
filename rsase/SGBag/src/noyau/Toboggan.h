@@ -17,6 +17,8 @@ class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Toboggan : public Element
 {
+    Q_OBJECT
+
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"

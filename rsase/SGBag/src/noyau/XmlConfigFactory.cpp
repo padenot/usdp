@@ -19,6 +19,7 @@ const char* XmlConfigFactory::NodeName_String[] = {
     "toboggan", /// Toboggan
     "chariot", /// Chariot
         "pos", /// Position d'origine du chariot, tapis ou toboggan
+        "tapisAssocie", /// Tapis associé au chariot
     "vol", /// Un vol
         "date", /// La date d'un vol, en secondes depuis l'epoch UNIX.
         "nom", /// Le nom d'un vol

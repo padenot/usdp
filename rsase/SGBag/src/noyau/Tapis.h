@@ -25,6 +25,8 @@ class Troncon; //Dependency Generated Source:Tapis Target:Troncon
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Tapis : public ElementActif
 {
+    Q_OBJECT
+
     public:
 
         /**

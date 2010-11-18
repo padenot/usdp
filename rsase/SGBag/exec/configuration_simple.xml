@@ -91,5 +91,6 @@
   <chariot>
     <id>14</id>
     <pos>2</pos>
+	<tapisAssocie>16</tapisAssocie>
   </chariot>
 </config>

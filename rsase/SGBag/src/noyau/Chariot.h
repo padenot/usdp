@@ -9,8 +9,6 @@
 #include "ElementActif.h"
 #include "Bagage.h"
 
-
-
 class Troncon; //Dependency Generated Source:Chariot Target:Troncon
 class Tapis; //Dependency Generated Source:Chariot Target:Tapis
 
@@ -21,6 +19,8 @@ class Tapis; //Dependency Generated Source:Chariot Target:Tapis
  */
 class Chariot : public ElementActif
 {
+    Q_OBJECT
+
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"

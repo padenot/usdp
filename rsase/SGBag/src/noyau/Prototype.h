@@ -88,9 +88,8 @@ class Prototype : public QObject
 
         /**
          * @brief Commencer la simulation
-         * @param msec Le temps entre deux ticks d'horloge.
          */
-        void commencerSimulation(const int msec);
+        void commencerSimulation();
         /**
          * @brief Arreter la simulation
          */
@@ -100,7 +99,7 @@ class Prototype : public QObject
          * simulation
          * @param msec Le temps entre deux ticks d'horloge.
          */
-        void changerVitesse(const int msec);
+        void changerVitesse(int msec);
 
 
     private:
@@ -114,11 +113,7 @@ class Prototype : public QObject
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * Vitesse de la simulation.
-         * Ce membre correspond à intervalle entre deux ticks d'horloge.
-         */
-        int _vitesseSimulation;
+        //int _vitesseSimulation;
 
         /**
          * Cette horloge règle la vitesse de la simulation, il envoie un évènement à chaque tick.
@@ -130,7 +125,7 @@ class Prototype : public QObject
          */
         ModeSimulation _mode_generation_bagage;
 
-        static const int VITESSE_DEFAUT;
+        static const int INTERVALLE_DEFAUT;
 };  //end class Prototype
 
 #endif

@@ -1,10 +1,17 @@
+#define DEBUG_CHARIOT
+
+#include <QVector2D>
+#ifdef DEBUG_CHARIOT
+#include <QDebug>
+#endif
+
 #include "Chariot.h"
 #include "Noeud.h"
 #include "Tapis.h"
 #include "Toboggan.h"
 #include "XmlConfigFactory.h"
 
-#include <QVector2D>
+
 //Begin section for file Chariot.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Chariot.cpp
@@ -34,7 +41,7 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
             indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()
             ));
     _tapisAssocie = dynamic_cast<Tapis*>(fabrique.elementParId(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]].toInt()
+            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapisAssocie]].toInt()
             ));
 }
 
@@ -42,7 +49,7 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Chariot::~Chariot()
 {
-    //TODO Auto-generated method stub
+    delete _bagage;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg"
@@ -65,7 +72,15 @@ void Chariot::dechargerBatterie()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Chariot::avancer()
 {
-    //TODO Auto-generated method stub
+    QVector2D deplacement(_tronconActuel->noeudFin()->position() - _position);
+    deplacement.normalize();
+    deplacement *= _vitesse;
+
+    _position += deplacement.toPointF();
+    if (_bagage != 0)
+    {
+        _bagage->simulerDeplacement(deplacement);
+    }
 }
 
 
@@ -125,6 +140,9 @@ Chariot::Etat Chariot::etat()
 void Chariot::majArret()
 {
     // Rien   faire
+#ifdef DEBUG_CHARIOT
+    qDebug() << this << "à l'arrêt.";
+#endif
 }
 
 void Chariot::majNoeudAtteint()
@@ -139,30 +157,53 @@ void Chariot::majNoeudAtteint()
         troncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
     }
 
+#ifdef DEBUG_CHARIOT
+    qDebug() << this << "sur" << _tronconActuel << ", arrive sur" << _tronconActuel->noeudFin();
+#endif
+
     if(troncon->occuper())
     {
         _tronconActuel->liberer();
+        _tronconActuel = troncon;
         avancer();
+#ifdef DEBUG_CHARIOT
+        qDebug() << this << "passe sur" << troncon;
+#endif
     }
+#ifdef DEBUG_CHARIOT
+    else
+    {
+        qDebug() << this << "attend son tour pour passer sur" << troncon;
+    }
+#endif
 }
 
 void Chariot::majTobogganAtteint()
 {
-    //_bagage->_vol->_toboggan->transfererBagage(_bagage);
+#ifdef DEBUG_CHARIOT
+    qDebug() << this << "donne son bagage à" << _bagage->objectifFinal();
+#endif
+    _bagage->objectifFinal()->transfererBagage(_bagage);
+    _bagage = 0;
 }
 
 void Chariot::majLivraisonBagage()
 {
+    qDebug() << this << "avance avec" << _bagage;
     avancer();
 }
 
 void Chariot::majTapisAtteint()
 {
+#ifdef DEBUG_CHARIOT
+    qDebug() << this << "a atteint son tapis" << _tapisAssocie;
+#endif
     _tapisAssocie->connecter(this);
     arreter();
 }
 
 void Chariot::majRetourTapis()
 {
+    qDebug() << this << "retourne sur" << _tapisAssocie;
     avancer();
 }

@@ -17,8 +17,9 @@
 /**
   * @todo
   */
-class Element
+class Element : public QObject
 {
+    Q_OBJECT
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
@@ -37,8 +38,6 @@ class Element
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual QPointF position();
-
-
 
     protected:
 

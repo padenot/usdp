@@ -38,17 +38,14 @@ Noeud::~Noeud()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
 {
-    Troncon* troncon = 0;
-
     if(_tronconsSuivants.size()==1)
     {
-        troncon = _tronconsSuivants.first();
+        return _tronconsSuivants.first();
     }
-    else{
-        troncon = calculChemin(destination).first;
+    else
+    {
+        return calculChemin(destination).first;
     }
-
-    return troncon;
 }
 
 

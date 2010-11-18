@@ -16,26 +16,7 @@ class Chariot; //Dependency Generated Source:Troncon Target:Chariot
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 class Troncon : public Element
 {
-
-    //Begin section for Troncon
-    //TODO: Add attributes that you want preserved
-    //End section for Troncon
-
-    private:
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5u8RMOtcEd-6Qct7MaUvyw"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Noeud * _noeudDebut;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0QxHMOsuEd-oy8D834IawQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Noeud * _noeudFin;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bOJUIPG5Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //unsigned long longueur;
-
-        bool _estLibre;
-
+    Q_OBJECT
 
     public:
 
@@ -64,6 +45,21 @@ class Troncon : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Noeud* noeudFin();
 
+
+protected:
+    //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5u8RMOtcEd-6Qct7MaUvyw"
+    //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+    Noeud * _noeudDebut;
+
+    //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0QxHMOsuEd-oy8D834IawQ"
+    //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+    Noeud * _noeudFin;
+
+    //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bOJUIPG5Ed-XFOLnxrkHLA"
+    //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+    //unsigned long longueur;
+
+    bool _estLibre;
 };  //end class Troncon
 
 #endif

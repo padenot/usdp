@@ -11,7 +11,7 @@ Troncon::Troncon(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
         _noeudDebut(0),
         _noeudFin(0),
-        _estLibre(false)
+        _estLibre(true)
 {
     //TODO Auto-generated method stub
 }
@@ -39,7 +39,6 @@ Troncon::~Troncon()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 bool Troncon::occuper()
 {
-    //TODO Auto-generated method stub
     if (_estLibre)
     {
         _estLibre = false;
