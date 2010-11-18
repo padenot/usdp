@@ -53,23 +53,36 @@ Prototype::~Prototype()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-bool Prototype::modeManuel()
+void Prototype::changementMode(ModeSimulation mode)
 {
-    //TODO Auto-generated method stub
-    return false;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Prototype::ajouterBagage()
+void Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
     //TODO Auto-generated method stub
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-bool Prototype::modeAjoutBagage()
+void Prototype::changementModeAjoutBagage(ModeSimulation mode)
 {
     //TODO Auto-generated method stub
-    return false;
 }
+
+void Prototype::commencerSimulation(const int msec)
+{
+     _horloge.start(msec);
+}
+
+void Prototype::arreterSimulation()
+{
+    _horloge.stop();
+}
+
+void Prototype::changerVitesse(const int msec)
+{
+
+}
+

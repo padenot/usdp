@@ -4,6 +4,9 @@
 #include <QMap>
 #include <QVector>
 #include <QTimer>
+#include <QObject>
+#include "Tapis.h"
+#include "Vol.h"
 
 //Begin section for file Prototype.h
 //TODO: Add definitions that you want preserved
@@ -18,9 +21,9 @@ class Element; //Dependency Generated Source:Prototype Target:Element
 /**
  * Prototype de la simulation : classe d'entrée de la simulation.
  */
-class Prototype
+class Prototype : public QObject
 {
-
+    Q_OBJECT
     //Begin section for Prototype
     //TODO: Add attributes that you want preserved
     //End section for Prototype
@@ -40,13 +43,30 @@ class Prototype
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
          * Vitesse de la simulation.
+         * Ce membre correspond à interval entre deux ticks d'horloge.
          */
-        double _vitesseSimulation;
+        int _vitesseSimulation;
 
         /**
-         * Ce timer règle la vitesse de la simulation, il envoie un évènement à chaque tick.
+         * Cette horloge règle la vitesse de la simulation, il envoie un évènement à chaque tick.
          */
-        QTimer _timer;
+        QTimer _horloge;
+
+        /**
+         * Pour les fonctionnalités qui peuvent avoir un comportement
+         * automatique ou manuel, cette enumération permet d'en connaitre
+         * l'état.
+         */
+        enum ModeSimulation
+        {
+            MANUEL,
+            AUTOMATIQUE
+        };
+
+        /**
+         * Mode de la génération de bagage : automatique ou manuel.
+         */
+        ModeSimulation _mode_generation_bagage;
 
 
 
@@ -67,17 +87,53 @@ class Prototype
          */
         virtual ~Prototype();
 
+
+    public slots:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        bool modeManuel();
+        /**
+         * @brief Passage en mode manuel.
+         * @param mode Nouveau mode.
+         * Si mode est égal au mode actuel, cet apppel n'effectue rien.
+         */
+        void changementMode(ModeSimulation mode);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void ajouterBagage();
+        /**
+         * @brief Ajout d'un bagage dans la simulation.
+         * Le bagage est crée, et est placé sur le tapis.
+         * @param tapis Le tapis d'origine du bagage : là où il apparaitra.
+         * @param vol Le vol de destination du bagage : là où il sortira.
+         */
+        void ajouterBagage(Tapis* tapis, Vol* vol);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        bool modeAjoutBagage();
+        /**
+         * @brief Changer de mode pour l'ajout de bagages
+         * Les bagages peuvent être générés par le prototype, ou alors
+         * ajoutés manuellement. Cette méthode permet de changer le
+         * comportement du système.
+         * @param mode Le nouveau mode de fonctionnement d'arrivée des bagages.
+         */
+        void changementModeAjoutBagage(ModeSimulation mode);
+
+        /**
+         * @brief Commencer la simulation
+         * @param msec Le temps entre deux ticks d'horloge.
+         */
+        void commencerSimulation(const int msec);
+        /**
+         * @brief Arreter la simulation
+         */
+        void arreterSimulation();
+        /**
+         * @brief Changer la vitesse de la simulation, sans arrêter la
+         * simulation
+         * @param msec Le temps entre deux ticks d'horloge.
+         */
+        void changerVitesse(const int msec);
 
 };  //end class Prototype
 
