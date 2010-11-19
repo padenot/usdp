@@ -5,6 +5,8 @@
 #include <QGraphicsScene>
 #include <QTimer>
 
+#include "src/noyau/Prototype.h"
+
 namespace Ui {
     class FenetrePrincipale;
 }
@@ -14,7 +16,7 @@ class FenetrePrincipale : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit FenetrePrincipale(QWidget *parent = 0);
+    explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
     ~FenetrePrincipale();
 
     void AjouterItem(QGraphicsItem *item);
@@ -22,6 +24,7 @@ public:
 private:
     Ui::FenetrePrincipale *ui;
     QGraphicsScene *scene;
+    Prototype *prototype;
 };
 
 #endif // FENETREPRINCPALE_H

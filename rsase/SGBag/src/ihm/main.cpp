@@ -6,10 +6,13 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    FenetrePrincipale w;
-    w.show();
 
     Prototype proto("configuration_simple.xml");
+
+    FenetrePrincipale w(&proto);
+    w.show();
+
+
 
     return a.exec();
 }

@@ -13,17 +13,54 @@
   <property name="windowTitle">
    <string>FenetrePrincipale</string>
   </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGraphicsView" name="vue">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>461</width>
-      <height>381</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="Visualisation">
+      <property name="title">
+       <string>Visualisation</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="stopButton">
+         <property name="text">
+          <string>stop</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QSlider" name="speedSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="3">
+        <widget class="QGraphicsView" name="vue"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="startButton">
+         <property name="text">
+          <string>start</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -31,7 +68,7 @@
      <x>0</x>
      <y>0</y>
      <width>581</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

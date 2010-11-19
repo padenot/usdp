@@ -2,4 +2,5 @@
     <qresource prefix="/images">
         <file alias="bagage-etatNormal">ui/images/bagage.svg</file>
     </qresource>
+    <qresource prefix="/icones"/>
 </RCC>
