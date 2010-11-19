@@ -26,7 +26,11 @@ SOURCES += ihm/main.cpp\
     noyau/XmlConfigFactory.cpp \
     noyau/Troncon.cpp \
     noyau/Toboggan.cpp \
-    noyau/Tapis.cpp
+    noyau/Tapis.cpp \
+    src/ihm/vuetroncon.cpp \
+    src/ihm/vuetoboggan.cpp \
+    src/ihm/vuetapis.cpp \
+    src/ihm/vuechariot.cpp
 
 HEADERS  += ihm/fenetreprincipale.h \
     ihm/vuebagage.h \
@@ -41,7 +45,12 @@ HEADERS  += ihm/fenetreprincipale.h \
     noyau/Elements.h \
     noyau/Troncon.h \
     noyau/Toboggan.h \
-    noyau/Tapis.h
+    noyau/Tapis.h \
+    src/ihm/vuetroncon.h \
+    src/ihm/vuetoboggan.h \
+    src/ihm/vuetapis.h \
+    src/ihm/vuechariot.h \
+    src/ihm/vueconfig.h
 
 FORMS    += fenetreprincipale.ui
 
