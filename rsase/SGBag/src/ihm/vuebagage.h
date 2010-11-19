@@ -7,7 +7,9 @@
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
 
-#include "bagage.h"
+#include "src/noyau/Bagage.h"
+
+#define FILEPATH_SVG_ETATNORMAL ":/images/bagages-etatNormal"
 
 class VueBagage : public QGraphicsItem
 {
@@ -25,8 +27,7 @@ protected:
 
 private:
     int etat;
-    QFile imageFile;
-    QSvgRenderer image;
+    QSvgRenderer *image;
 
     Bagage *bagage;
 

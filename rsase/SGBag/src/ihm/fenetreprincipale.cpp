@@ -1,6 +1,6 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
-
+#include "src/ihm/vuebagage.h"
 
 void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
 {
@@ -29,6 +29,10 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
 
     //TODO changer pour un intervalle mieux.
     timer.start(1);
+
+    VueBagage * vbag = new VueBagage();
+    scene->addItem(vbag);
+
 }
 
 FenetrePrincipale::~FenetrePrincipale()
