@@ -1,16 +1,17 @@
-#include "src/ihm/vuebagage.h"
+#include "src/ihm/vuetroncon.h"
 #include "src/ihm/vueconfig.h"
+
 #include <QtSvg/QSvgRenderer>
 
-using namespace vue_config::bagage;
+using namespace vue_config::troncon;
 
-VueBagage::VueBagage():
+VueTroncon::VueTroncon():
         image(new QSvgRenderer(etatNormal))
 {
 }
 
 
-void VueBagage::advance(int pas)
+void VueTroncon::advance(int pas)
 {
         if(!pas)
         {
@@ -21,12 +22,12 @@ void VueBagage::advance(int pas)
         setPos(x()+1,y()+1);
 }
 
-void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     image->render(painter, rect);
 }
 
-QRectF VueBagage::boundingRect() const
+QRectF VueTroncon::boundingRect() const
 {
     return rect;
 }

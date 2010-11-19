@@ -15,7 +15,7 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
     ui->setupUi(this);
 
     //TODO ici mettre la taille d la zone de l'aeorport.
-    scene->setSceneRect(0, 0, 500,300);
+    scene->setSceneRect(0, 0, 300,300);
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
@@ -24,15 +24,6 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
-
-    connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
-
-    //TODO changer pour un intervalle mieux.
-    timer.start(1);
-
-    VueBagage * vbag = new VueBagage();
-    scene->addItem(vbag);
-
 }
 
 FenetrePrincipale::~FenetrePrincipale()

@@ -1,5 +1,5 @@
-#ifndef VUEBAGAGE_H
-#define VUEBAGAGE_H
+#ifndef VUETOBOGGAN_H
+#define VUETOBOGGAN_H
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -7,12 +7,14 @@
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
 
-#include "src/noyau/Bagage.h"
+#include "src/noyau/Toboggan.h"
 
-class VueBagage : public QGraphicsItem
+#define FILEPATH_SVG_ETATNORMAL ":/images/toboggan-etatNormal"
+
+class VueToboggan : public QGraphicsItem
 {
 public:
-    VueBagage();
+    VueToboggan();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -23,8 +25,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-
     Bagage *bagage;
 };
 
-#endif // VUEBAGAGE_H
+#endif // VUETOBOGGAN_H

@@ -1,16 +1,17 @@
-#include "src/ihm/vuebagage.h"
+#include "src/ihm/vuechariot.h"
 #include "src/ihm/vueconfig.h"
+
 #include <QtSvg/QSvgRenderer>
 
-using namespace vue_config::bagage;
+using namespace vue_config::chariot;
 
-VueBagage::VueBagage():
+VueChariot::VueChariot():
         image(new QSvgRenderer(etatNormal))
 {
 }
 
 
-void VueBagage::advance(int pas)
+void VueChariot::advance(int pas)
 {
         if(!pas)
         {
@@ -21,12 +22,12 @@ void VueBagage::advance(int pas)
         setPos(x()+1,y()+1);
 }
 
-void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     image->render(painter, rect);
 }
 
-QRectF VueBagage::boundingRect() const
+QRectF VueChariot::boundingRect() const
 {
     return rect;
 }

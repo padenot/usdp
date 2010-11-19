@@ -22,7 +22,6 @@ public:
 private:
     Ui::FenetrePrincipale *ui;
     QGraphicsScene *scene;
-    QTimer timer;
 };
 
 #endif // FENETREPRINCPALE_H

@@ -1,5 +1,5 @@
-#ifndef VUEBAGAGE_H
-#define VUEBAGAGE_H
+#ifndef VUETRONCON_H
+#define VUETRONCON_H
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -9,10 +9,12 @@
 
 #include "src/noyau/Bagage.h"
 
-class VueBagage : public QGraphicsItem
+#define FILEPATH_SVG_ETATNORMAL ":/images/bagage-etatNormal"
+
+class VueTroncon : public QGraphicsItem
 {
 public:
-    VueBagage();
+    VueTroncon();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -23,8 +25,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-
     Bagage *bagage;
 };
 
-#endif // VUEBAGAGE_H
+#endif // VUETRONCON_H

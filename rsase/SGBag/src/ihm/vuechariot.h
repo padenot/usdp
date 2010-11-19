@@ -1,5 +1,5 @@
-#ifndef VUEBAGAGE_H
-#define VUEBAGAGE_H
+#ifndef VUECHARIOT_H
+#define VUECHARIOT_H
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -7,12 +7,12 @@
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
 
-#include "src/noyau/Bagage.h"
+#include "src/noyau/Chariot.h"
 
-class VueBagage : public QGraphicsItem
+class VueChariot : public QGraphicsItem
 {
 public:
-    VueBagage();
+    VueChariot();
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -23,8 +23,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-
     Bagage *bagage;
 };
 
-#endif // VUEBAGAGE_H
+#endif // VUECHARIOT_H

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     FenetrePrincipale w;
     w.show();
 
-    //Prototype proto("configuration_simple.xml");
+    Prototype proto("configuration_simple.xml");
 
     return a.exec();
 }
