@@ -28,7 +28,7 @@ namespace vue_config
         const int zIndex = 9;
         const int longueur = 10;
         const int largeur = 10;
-        const QString etatNormal = ":/images/bagage-etatNormal";
+        const QString etatNormal = ":/images/chariot";
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 
@@ -37,7 +37,7 @@ namespace vue_config
         const int zIndex = 8;
         const int longueur = 10;
         const int largeur = 10;
-        const QString etatNormal = ":/images/bagage-etatNormal";
+        const QString etatNormal = ":/images/tapis-roulant";
         const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
     }
 
@@ -46,7 +46,7 @@ namespace vue_config
         const int zIndex = 7;
         const int longueur = 10;
         const int largeur = 10;
-        const QString etatNormal = ":/images/bagage-etatNormal";
+        const QString etatNormal = ":/images/toboggan";
         const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
     }
 
