@@ -6,7 +6,7 @@ using namespace vue_config::bagage;
 
 VueBagage::VueBagage(FenetrePrincipale* _fenetrePrincipale, Bagage *bagage):
         VueElement(_fenetrePrincipale),
-        image(new QSvgRenderer(etatNormal)),
+        image(new QSvgRenderer(resBagage[rand() % nbrRes])),
         bagage(bagage)
 {
     setZValue(zIndex);

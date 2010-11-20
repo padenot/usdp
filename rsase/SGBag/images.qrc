@@ -4,6 +4,10 @@
         <file alias="tapis-roulant">ui/images/tapis-roulant.svg</file>
         <file alias="toboggan">ui/images/toboggan.svg</file>
         <file alias="chariot">ui/images/chariot.svg</file>
+        <file alias="saccuir">ui/images/saccuir.svg</file>
+        <file alias="sacsport">ui/images/sacsport.svg</file>
+        <file alias="valise">ui/images/valise.svg</file>
+        <file alias="homard">ui/images/homard.svg</file>
     </qresource>
     <qresource prefix="/icones">
         <file alias="pause">ui/icones/pause.svg</file>

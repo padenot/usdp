@@ -7,6 +7,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    srand(time(NULL));
+
     Prototype proto("configuration_simple.xml");
 
     FenetrePrincipale w(&proto);
