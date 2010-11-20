@@ -57,9 +57,6 @@ class ElementActif : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         bool _estActif;
 
-        QPointF _position;
-
-
 };  //end class ElementActif
 
 #endif
