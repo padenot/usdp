@@ -1,5 +1,6 @@
 #include "src/ihm/vuetapis.h"
 #include "src/ihm/vueconfig.h"
+#include "src/ihm/fenetreprincipale.h"
 
 #include <QtSvg/QSvgRenderer>
 
@@ -39,8 +40,9 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     image->render(painter, rect);
 }
 
-void VueTapis::ajoutBagage()
+void VueTapis::ajouterBagage()
 {
+    fenetrePrincipale->modeAjoutBagage(this);
     //VueGlobale.ajoutBagage(tapis);
 }
 
@@ -67,5 +69,5 @@ VueTapisHandler::VueTapisHandler(VueTapis * parent):
  */
 void VueTapisHandler::ajouterBagage()
 {
-    qDebug() << "tachatte";
+    vueTapis->ajouterBagage();
 }

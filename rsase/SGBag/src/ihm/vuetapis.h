@@ -25,10 +25,10 @@ public:
     QRectF boundingRect() const;
 
     Tapis* tapisAssocie();
+    void ajouterBagage();
 
 protected:
     void advance(int step);
-    void ajoutBagage();
 
 private:
     int etat;
