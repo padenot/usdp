@@ -97,13 +97,20 @@ void FenetrePrincipale::modeAjoutBagage(VueTapis* vueTapis)
 
 void FenetrePrincipale::finAjoutBagage(VueVol* vueVol)
 {
+    for(int i = 0; i<100; ++i)
+        qDebug() << "Bagage ajouté";
+
        prototype->ajouterBagage(vueTapisSelectionne->tapisAssocie(), vueVol->volAssocie());
        verrouAjoutBagage(false);
+       // Fin ajout bagage : déconnexion du signal
+       this->disconnect(SIGNAL(volSelectionne(VueVol*)));
 }
 
 void FenetrePrincipale::annulerAjoutBagage()
 {
     verrouAjoutBagage(false);
+    // Fin ajout bagage : déconnexion du signal.
+    this->disconnect(SIGNAL(volSelectionne(VueVol*)));
 }
 
 
