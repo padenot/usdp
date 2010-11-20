@@ -6,7 +6,6 @@
 //using namespace vue_config::vol;
 
 VueVol::VueVol()
-
 {
     //TODO
 }

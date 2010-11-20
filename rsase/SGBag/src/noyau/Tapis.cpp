@@ -157,3 +157,8 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
     return QVector2D(bagage->position() - _tronconSupport->position()).length()
             < RAYON_PROXIMITE_TRONCON;
 }
+
+Troncon* Tapis::troncon()
+{
+    return _tronconSupport;
+}

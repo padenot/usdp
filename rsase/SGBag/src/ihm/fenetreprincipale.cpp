@@ -58,7 +58,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
-
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
@@ -69,7 +68,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
-    ui->vue->scale(5, 5);
+    ui->vue->scale(7, 7);
 
     timer.start(vue_config::dt);
 }
@@ -106,6 +105,7 @@ void FenetrePrincipale::annulerAjoutBagage()
 {
     verrouAjoutBagage(false);
 }
+
 
 void FenetrePrincipale::verrouAjoutBagage(bool flag)
 {

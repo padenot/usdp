@@ -87,6 +87,12 @@ class Prototype : public QObject
         void changementModeAjoutBagage(ModeSimulation mode);
 
         /**
+         * @brief Ajoute des bagages de manières aléatoire.
+         */
+        void ajouterBagageAleatoire();
+
+
+        /**
          * @brief Commencer la simulation
          */
         void commencerSimulation();

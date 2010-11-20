@@ -3,5 +3,4 @@
 Vue::Vue()
 {
     setFlags(QGraphicsItem::ItemIsSelectable);
-
 }

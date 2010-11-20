@@ -1,5 +1,6 @@
 #include "src/ihm/vuetapis.h"
 #include "src/ihm/vueconfig.h"
+#include "src/noyau/Troncon.h"
 #include "src/ihm/fenetreprincipale.h"
 
 #include <QtSvg/QSvgRenderer>

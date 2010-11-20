@@ -6,10 +6,12 @@
 #include "Prototype.h"
 #include "XmlConfigFactory.h"
 
+
 //Begin section for file Prototype.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
+const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 10000;
 const int Prototype::INTERVALLE_DEFAUT = 1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
@@ -50,6 +52,8 @@ Prototype::Prototype(const QString& xmlfilepath) :
             connect(&_horloge,SIGNAL(timeout()),tapis,SLOT(maj()));
         }
 
+        connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
+
         qDebug() << _elementsParType;
     }
 
@@ -81,7 +85,15 @@ void Prototype::changementMode(ModeSimulation mode)
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
-    //TODO Auto-generated method stub
+}
+
+void Prototype::ajouterBagageAleatoire()
+{
+    if( ! qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK)
+    {
+        // Bagage* bagage = new Bagage(0);
+        // _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append()
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"

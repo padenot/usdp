@@ -150,7 +150,7 @@ void Chariot::majArret()
 {
     // Rien   faire
 #ifdef DEBUG_ACHEMINEMENT
-    qDebug() << this << "à l'arrêt.";
+ //   qDebug() << this << "à l'arrêt.";
 #endif
 }
 

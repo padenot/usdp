@@ -90,6 +90,7 @@ class Tapis : public ElementActif
          */
         bool estSupport (const Troncon* troncon) const;
 
+        Troncon* troncon();
     protected:
 
         /**

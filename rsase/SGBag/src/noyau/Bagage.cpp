@@ -8,8 +8,8 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Bagage::Bagage(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
-        Element(indexParamValeur)
+Bagage::Bagage(Vol* vol) :
+        Element( XmlConfigFactory::IndexParamValeur()),_vol(vol)
 {
     //TODO Auto-generated method stub
 }
