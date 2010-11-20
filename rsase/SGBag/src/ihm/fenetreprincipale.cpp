@@ -1,9 +1,10 @@
-    #include "fenetreprincipale.h"
+#include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
 #include "src/ihm/vuebagage.h"
 #include "src/ihm/vuechariot.h"
 #include "src/ihm/vuetapis.h"
+#include "src/ihm/vuetoboggan.h"
 #include "src/ihm/vuetroncon.h"
 
 #include "src/ihm/vueconfig.h"
@@ -28,11 +29,18 @@ void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements 
     {
             scene->addItem(new VueTapis(dynamic_cast<Tapis*>(tapis)));
     }
-    foreach(Element *troncon,
+
+    foreach(Element *toboggan,
+            elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::toboggan]])
+    {
+            scene->addItem(new VueToboggan(dynamic_cast<Toboggan*>(toboggan)));
+    }
+
+   foreach(Element *troncon,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::troncon]])
     {
             scene->addItem(new VueTroncon(dynamic_cast<Troncon*>(troncon)));
-        }
+    }
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -82,10 +90,10 @@ void FenetrePrincipale::modeAjoutBagage(VueTapis* vueTapis)
 {
     verrouAjoutBagage(true);
 
-    // Préparer fin de l'ajout du bagage
-    // Connecter les avions à FenetrePrincipale::finAjoutBagage(Vol* vol)
+    // Prparer fin de l'ajout du bagage
+    // Connecter les avions  FenetrePrincipale::finAjoutBagage(Vol* vol)
     connect(this, SIGNAL(volSelectionne(VueVol*)), SLOT(finAjoutBagage(VueVol*)));
-    // Connecter le bouton annuler à FenetrePrincipale::annulerAjoutBagage()
+    // Connecter le bouton annuler  FenetrePrincipale::annulerAjoutBagage()
 }
 
 void FenetrePrincipale::finAjoutBagage(VueVol* vueVol)

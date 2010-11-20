@@ -4,27 +4,26 @@
 
 using namespace vue_config::bagage;
 
-VueBagage::VueBagage():
-        image(new QSvgRenderer(etatNormal))
+VueBagage::VueBagage(Bagage *bagage):
+        image(new QSvgRenderer(etatNormal)),
+        bagage(bagage)
 {
 }
 
 
 void VueBagage::advance(int pas)
 {
-        if(!pas)
-        {
-                return;
-        }
-
-        //bagage.getPos();
-        setPos(x()+1,y()+1);
+    if(pas == 0)
+    {
+            return;
+    }
+    setPos(bagage->position());
 }
 
 void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    image->render(painter, rect);
     VueElement::paint(painter, 0, 0);
+    image->render(painter, rect);
 }
 
 QRectF VueBagage::boundingRect() const

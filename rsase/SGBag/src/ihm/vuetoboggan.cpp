@@ -1,25 +1,26 @@
 #include "src/ihm/vuetoboggan.h"
 #include "src/ihm/vueconfig.h"
 
+#include "src/noyau/Toboggan.h"
+
 #include <QtSvg/QSvgRenderer>
 
 using namespace vue_config::toboggan;
 
-VueToboggan::VueToboggan():
-        image(new QSvgRenderer(etatNormal))
+VueToboggan::VueToboggan(Toboggan *toboggan):
+        image(new QSvgRenderer(etatNormal)),
+        toboggan(toboggan)
 {
+    setPos(toboggan->position());
 }
 
 
 void VueToboggan::advance(int pas)
 {
-        if(!pas)
+        if(pas == 0)
         {
                 return;
         }
-
-        //bagage.getPos();
-        setPos(x()+1,y()+1);
 }
 
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
