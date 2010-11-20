@@ -14,14 +14,14 @@ VueChariot::VueChariot(Chariot *ptrChariot):
 
 void VueChariot::advance(int pas)
 {
-        if(!pas)
+        if(pas == 0)
         {
                 return;
         }
 
         //setPos(x()+1, y()+1);
         setPos(chariot->position());
-        qDebug() << "position du chariot : " << chariot->position();
+        qDebug() << "position de : vue " << (void*)chariot << " = " << chariot->position();
 }
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)

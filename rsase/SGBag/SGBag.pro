@@ -59,7 +59,8 @@ HEADERS  += ihm/fenetreprincipale.h \
 src/ihm/vueconfig.h \
     src/ihm/vuevol.h \
     src/ihm/vueelement.h \
-    src/ihm/vue.h
+    src/ihm/vue.h \
+    src/ihm/vuevol.h
 FORMS    += fenetreprincipale.ui
 
 

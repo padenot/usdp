@@ -19,7 +19,7 @@ class VueTapisHandler;
 class VueTapis : public VueElement
 {
 public:
-    VueTapis();
+    VueTapis(Tapis *tapis);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;

@@ -79,6 +79,8 @@ void Chariot::avancer()
 
 void Chariot::maj()
 {
+        qDebug() << "position de : " << (void*)this << " = " << _position;
+
     switch (situation())
     {
         case ARRET :                    majArret(); break;

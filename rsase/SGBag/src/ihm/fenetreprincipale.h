@@ -24,7 +24,7 @@ public:
     ~FenetrePrincipale();
 
     void AjouterItem(QGraphicsItem *item);
-    void AjouterItems(XmlConfigFactory::IndexTypesElements elements);
+    void AjouterItems(const XmlConfigFactory::IndexTypesElements &elements);
     void modeAjoutBagage(VueTapis* tapis);
     void traitementAjoutBagage(VueTapis* tapis);
 

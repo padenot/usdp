@@ -3,6 +3,7 @@
 
 #include "src/ihm/vuebagage.h"
 #include "src/ihm/vuechariot.h"
+#include "src/ihm/vuetapis.h"
 
 #include "src/ihm/vueconfig.h"
 
@@ -13,15 +14,18 @@ void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
     scene->addItem(item);
 }
 
-void FenetrePrincipale::AjouterItems(XmlConfigFactory::IndexTypesElements elementsList)
+void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements &elementsList)
 {
-    QGraphicsItem* item;
-    foreach(Element* chariot,
+    foreach(Element *chariot,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
     {
-        item = new VueChariot((Chariot*)chariot);
-        scene->addItem(item);
-        qDebug() << "creation de la vue pour " << chariot << "." << endl;
+            scene->addItem(new VueChariot(dynamic_cast<Chariot*>(chariot)));
+    }
+
+    foreach(Element *tapis,
+            elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
+    {
+            scene->addItem(new VueTapis(dynamic_cast<Tapis*>(tapis)));
     }
 }
 
@@ -53,7 +57,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setScene(scene);
 
     timer.start(vue_config::dt);
-
 }
 
 FenetrePrincipale::~FenetrePrincipale()

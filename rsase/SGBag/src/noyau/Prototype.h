@@ -101,7 +101,7 @@ class Prototype : public QObject
          */
         void changerVitesse(int msec);
 
-        XmlConfigFactory::IndexTypesElements elements();
+        const XmlConfigFactory::IndexTypesElements &elements();
 
     private:
 

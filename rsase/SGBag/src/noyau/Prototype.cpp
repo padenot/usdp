@@ -106,7 +106,7 @@ void Prototype::changerVitesse(int msec)
     _horloge.setInterval(msec);
 }
 
-XmlConfigFactory::IndexTypesElements Prototype::elements()
+const XmlConfigFactory::IndexTypesElements &Prototype::elements()
 {
     return _elementsParType;
 }

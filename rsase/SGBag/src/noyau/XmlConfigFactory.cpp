@@ -108,6 +108,7 @@ void XmlConfigFactory::construireElement(const QMap<QString,QString>& mapParam)
     else if(mapParam[NodeName_String[elementName]] == NodeName_String[chariot])
     {
         nElement = new Chariot(mapParam);
+        qDebug() << "construction d'un chariot : " << nElement;
         types_elements[NodeName_String[chariot]].push_back(nElement);
     }
     else if(mapParam[NodeName_String[elementName]] == NodeName_String[toboggan])

@@ -1,5 +1,8 @@
 #include "Element.h"
 #include "XmlConfigFactory.h"
+
+#include "QDebug"
+
 //Begin section for file Element.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Element.cpp

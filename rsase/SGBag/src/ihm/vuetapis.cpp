@@ -5,7 +5,7 @@
 
 using namespace vue_config::tapis;
 
-VueTapis::VueTapis():
+VueTapis::VueTapis(Tapis *tapis):
         image(new QSvgRenderer(etatNormal))
 {
     handler = new VueTapisHandler(this);
@@ -23,8 +23,7 @@ void VueTapis::advance(int pas)
                 return;
         }
 
-        //bagage.getPos();
-        setPos(x()+1,y()+1);
+        //setPos(tapis->position());
 }
 
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
