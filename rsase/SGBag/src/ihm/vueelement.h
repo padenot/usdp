@@ -1,13 +1,13 @@
 #ifndef VUEELEMENT_H
 #define VUEELEMENT_H
 
-#include <QGraphicsItem>
+#include "vue.h"
 #include <QGraphicsSceneContextMenuEvent>
 #include <QMenu>
 #include <QList>
 #include <QAction>
 
-class VueElement : public QGraphicsItem
+class VueElement : public Vue
 {
 public:
     VueElement();

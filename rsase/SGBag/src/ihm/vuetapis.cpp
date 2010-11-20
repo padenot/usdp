@@ -27,6 +27,11 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     image->render(painter, rect);
 }
 
+void VueTapis::ajoutBagage()
+{
+    //VueGlobale.ajoutBagage(tapis);
+}
+
 QRectF VueTapis::boundingRect() const
 {
     return rect;

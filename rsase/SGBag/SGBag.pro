@@ -35,8 +35,9 @@ SOURCES += ihm/main.cpp\
     src/ihm/vuetoboggan.cpp \
     src/ihm/vuetapis.cpp \
     src/ihm/vuechariot.cpp \
-    src/ihm/vueelement.cpp
-
+    src/ihm/vueelement.cpp \
+    src/ihm/vuevol.cpp \
+    src/ihm/vue.cpp
 HEADERS  += ihm/fenetreprincipale.h \
     ihm/vuebagage.h \
     noyau/Chariot.h \
@@ -55,9 +56,10 @@ HEADERS  += ihm/fenetreprincipale.h \
     src/ihm/vuetoboggan.h \
     src/ihm/vuetapis.h \
     src/ihm/vuechariot.h \
-    src/ihm/vueconfig.h \
-    src/ihm/vueelement.h
-
+src/ihm/vueconfig.h \
+    src/ihm/vuevol.h \
+    src/ihm/vueelement.h \
+    src/ihm/vue.h
 FORMS    += fenetreprincipale.ui
 
 

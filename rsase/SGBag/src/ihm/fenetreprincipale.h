@@ -22,6 +22,11 @@ public:
 
     void AjouterItem(QGraphicsItem *item);
     void AjouterItems(XmlConfigFactory::IndexTypesElements elements);
+    void modeAjoutBagage(Tapis* tapis);
+    void traitementAjoutBagage(Tapis* tapis);
+    void finAjoutBagage(Tapis* tapis, Vol* vol);
+    void annulerAjoutBagage();
+    void verrouAjoutBagage(bool flag);
 
     typedef QVector<QGraphicsItem*> IndexVues;
 

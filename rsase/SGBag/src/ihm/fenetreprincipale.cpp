@@ -40,6 +40,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
+
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
@@ -65,3 +66,31 @@ FenetrePrincipale::~FenetrePrincipale()
     delete scene;
     delete ui;
 }
+
+// declenchement du mode ajoutBagage
+void FenetrePrincipale::modeAjoutBagage(Tapis* tapis)
+{
+    verrouAjoutBagage(true);
+
+    // Préparer fin de l'ajout du bagage
+        // Connecter les avions à FenetrePrincipale::finAjoutBagage(Vol* vol)
+        // Connecter le bouton annuler à FenetrePrincipale::annulerAjoutBagage()
+}
+
+void FenetrePrincipale::finAjoutBagage(Tapis* tapis, Vol* vol)
+{
+       prototype->ajouterBagage(tapis, vol);
+       verrouAjoutBagage(false);
+}
+
+void FenetrePrincipale::annulerAjoutBagage()
+{
+    verrouAjoutBagage(false);
+}
+
+void FenetrePrincipale::verrouAjoutBagage(bool flag)
+{
+
+}
+
+

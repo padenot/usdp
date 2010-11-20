@@ -7,8 +7,6 @@
 #include <string>
 #include <QMap>
 
-#include "Element.h"
-
 class Troncon;
 class Bagage; //Dependency Generated Source:Vol Target:Bagage
 class Toboggan;
@@ -51,7 +49,7 @@ class Vol
         virtual ~Vol();
 
         /** Récupère le toboggan sur lequel doivent être déversés les bagages de ce vol.
-          * Peut être nul si le vol n'est pas associé à un toboggan.
+          * Peut être nul si le vol n'est pas associé �  un toboggan.
           * @return Le toboggan associé au vol, s'il existe.
           */
         Toboggan* tobogganAssocie ();

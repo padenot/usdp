@@ -23,6 +23,7 @@ public:
 
 protected:
     void advance(int step);
+    void ajoutBagage();
 
 private:
     int etat;
