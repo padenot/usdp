@@ -6,6 +6,7 @@
 #include <QTimer>
 
 #include "src/noyau/Prototype.h"
+#include "src/noyau/XmlConfigFactory.h"
 
 namespace Ui {
     class FenetrePrincipale;
@@ -20,6 +21,7 @@ public:
     ~FenetrePrincipale();
 
     void AjouterItem(QGraphicsItem *item);
+    void AjouterItems(XmlConfigFactory::IndexTypesElements elements);
 
 private:
     Ui::FenetrePrincipale *ui;
