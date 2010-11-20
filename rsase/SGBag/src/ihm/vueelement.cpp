@@ -2,5 +2,5 @@
 
 VueElement::VueElement()
 {
-    QGraphicsItem::GraphicsItemFlags = QGraphicsItem::ItemIsSelectable;
+    setFlags(QGraphicsItem::ItemIsSelectable);
 }
