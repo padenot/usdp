@@ -27,7 +27,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-    Bagage *bagage;
+    Tapis *tapis;
 };
 
 #endif // VUETAPIS_H

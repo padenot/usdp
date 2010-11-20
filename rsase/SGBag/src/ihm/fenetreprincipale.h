@@ -23,10 +23,17 @@ public:
     void AjouterItem(QGraphicsItem *item);
     void AjouterItems(XmlConfigFactory::IndexTypesElements elements);
 
+    typedef QVector<QGraphicsItem*> IndexVues;
+
 private:
     Ui::FenetrePrincipale* ui;
     QGraphicsScene* scene;
     Prototype* prototype;
+
+    QTimer timer;
+
+    IndexVues vues;
+
 };
 
 #endif // FENETREPRINCPALE_H

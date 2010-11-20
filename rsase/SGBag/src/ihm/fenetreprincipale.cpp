@@ -1,7 +1,11 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
+
 #include "src/ihm/vuebagage.h"
+#include "src/ihm/vuechariot.h"
+
 #include "src/ihm/vueconfig.h"
+
 #include "src/noyau/XmlConfigFactory.h"
 
 void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
@@ -9,9 +13,16 @@ void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
     scene->addItem(item);
 }
 
-void FenetrePrincipale::AjouterItems(XmlConfigFactory::IndexTypesElements elements)
+void FenetrePrincipale::AjouterItems(XmlConfigFactory::IndexTypesElements elementsList)
 {
-    //foreach
+    QGraphicsItem* item;
+    foreach(Element* chariot,
+            elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
+    {
+        item = new VueChariot((Chariot*)chariot);
+        scene->addItem(item);
+        qDebug() << "creation de la vue pour " << chariot << "." << endl;
+    }
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -24,8 +35,10 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     //TODO Faire des slots, et merger les boutons start/stop
     connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
-    connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(ArreterSimulation()));
+    connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(arreterSimulation()));
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), prototype, SLOT(changerVitesse(int)));
+
+    connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);
@@ -37,10 +50,18 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
+
+    timer.start(vue_config::dt);
+
 }
 
 FenetrePrincipale::~FenetrePrincipale()
 {
+    foreach(QGraphicsItem* item, scene->items())
+    {
+        delete item;
+    }
+
     delete scene;
     delete ui;
 }

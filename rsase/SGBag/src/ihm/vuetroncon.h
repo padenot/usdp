@@ -7,7 +7,7 @@
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
 
-#include "src/noyau/Bagage.h"
+#include "src/noyau/Troncon.h"
 #include "vueelement.h"
 
 
@@ -27,7 +27,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-    Bagage *bagage;
+    Troncon *troncon;
 };
 
 #endif // VUETRONCON_H

@@ -27,7 +27,7 @@ protected:
 private:
     int etat;
     QSvgRenderer *image;
-    Bagage *bagage;
+    Toboggan *toboggan;
 };
 
 #endif // VUETOBOGGAN_H

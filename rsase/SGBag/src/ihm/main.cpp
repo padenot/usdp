@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     Prototype proto("configuration_simple.xml");
 
     FenetrePrincipale w(&proto);
+    w.AjouterItems(proto.elements());
     w.show();
 
 

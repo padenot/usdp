@@ -100,6 +100,7 @@ class Prototype : public QObject
          * @param msec Le temps entre deux ticks d'horloge.
          */
         void changerVitesse(int msec);
+
         XmlConfigFactory::IndexTypesElements elements();
 
     private:

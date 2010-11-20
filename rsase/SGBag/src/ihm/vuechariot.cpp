@@ -5,8 +5,9 @@
 
 using namespace vue_config::chariot;
 
-VueChariot::VueChariot():
-        image(new QSvgRenderer(etatNormal))
+VueChariot::VueChariot(Chariot *ptrChariot):
+        image(new QSvgRenderer(etatNormal)),
+        chariot(ptrChariot)
 {
 }
 
@@ -18,8 +19,10 @@ void VueChariot::advance(int pas)
                 return;
         }
 
-        //bagage.getPos();
-        setPos(x()+1,y()+1);
+        //setPos(x()+1, y()+1);
+
+        setPos(chariot->position());
+        qDebug() << "position du chariot : " << chariot->position();
 }
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)

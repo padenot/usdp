@@ -6,6 +6,7 @@
 
 namespace vue_config
 {
+        const int dt = 500; // rafraichissement en ms
 
     namespace scene
     {
