@@ -18,10 +18,7 @@ void VueChariot::advance(int pas)
         {
                 return;
         }
-
-        //setPos(x()+1, y()+1);
         setPos(chariot->position());
-        qDebug() << "position de : vue " << (void*)chariot << " = " << chariot->position();
 }
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)

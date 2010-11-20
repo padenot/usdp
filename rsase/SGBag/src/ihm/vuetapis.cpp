@@ -6,9 +6,14 @@
 using namespace vue_config::tapis;
 
 VueTapis::VueTapis(Tapis *tapis):
-        image(new QSvgRenderer(etatNormal))
+        image(new QSvgRenderer(etatNormal)),
+        tapis(tapis)
 {
+    setPos(tapis->position());
+
     handler = new VueTapisHandler(this);
+
+
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     contextMenuActionsList.append(ajouterBagageAction);
