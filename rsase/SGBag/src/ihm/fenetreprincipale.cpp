@@ -11,7 +11,7 @@ void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
 
 void FenetrePrincipale::AjouterItems(XmlConfigFactory::IndexTypesElements elements)
 {
-    elements
+    //foreach
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
