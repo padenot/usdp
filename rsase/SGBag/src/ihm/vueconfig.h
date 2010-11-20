@@ -28,7 +28,7 @@ namespace vue_config
         const int longueur = 10;
         const int largeur = 10;
         const QString etatNormal = ":/images/bagage-etatNormal";
-        const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
+        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 
     namespace tapis

@@ -32,6 +32,7 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
     _tronconActuel = dynamic_cast<Troncon*>(fabrique.elementParId(
             indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()
             ));
+    _position = _tronconActuel->position();
     _tapisAssocie = dynamic_cast<Tapis*>(fabrique.elementParId(
             indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapisAssocie]].toInt()
             ));

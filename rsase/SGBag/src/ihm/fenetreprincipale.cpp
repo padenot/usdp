@@ -4,6 +4,7 @@
 #include "src/ihm/vuebagage.h"
 #include "src/ihm/vuechariot.h"
 #include "src/ihm/vuetapis.h"
+#include "src/ihm/vuetroncon.h"
 
 #include "src/ihm/vueconfig.h"
 
@@ -27,6 +28,11 @@ void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements 
     {
             scene->addItem(new VueTapis(dynamic_cast<Tapis*>(tapis)));
     }
+    foreach(Element *troncon,
+            elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::troncon]])
+    {
+            scene->addItem(new VueTroncon(dynamic_cast<Troncon*>(troncon)));
+        }
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -55,6 +61,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
+    ui->vue->scale(5, 5);
 
     timer.start(vue_config::dt);
 }

@@ -64,6 +64,12 @@ Noeud* Troncon::noeudFin()
     return _noeudFin;
 }
 
+Noeud* Troncon::noeudDebut()
+{
+    return _noeudDebut;
+}
+
+
 
 #ifdef DEBUG_ACHEMINEMENT
 QDebug operator<<(QDebug dbg, const Troncon *troncon)
