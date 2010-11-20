@@ -8,10 +8,12 @@
 #include <QFile>
 
 #include "src/noyau/Tapis.h"
+#include "vueelement.h"
+
 
 #define FILEPATH_SVG_ETATNORMAL ":/images/tapis-etatNormal"
 
-class VueTapis : public QGraphicsItem
+class VueTapis : public VueElement
 {
 public:
     VueTapis();

@@ -8,10 +8,12 @@
 #include <QFile>
 
 #include "src/noyau/Bagage.h"
+#include "vueelement.h"
+
 
 #define FILEPATH_SVG_ETATNORMAL ":/images/bagage-etatNormal"
 
-class VueTroncon : public QGraphicsItem
+class VueTroncon : public VueElement
 {
 public:
     VueTroncon();

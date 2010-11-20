@@ -22,7 +22,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 {
     ui->setupUi(this);
 
-
     //TODO Faire des slots, et merger les boutons start/stop
     connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
     connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(ArreterSimulation()));

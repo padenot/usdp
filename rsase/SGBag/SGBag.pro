@@ -11,7 +11,7 @@ TEMPLATE = app
 QT+=xml
 DEPENDPATH += src ui
 
-QMAKE_CXXFLAGS += -Wall -Wextra -ansi -pedantic
+QMAKE_CXXFLAGS += -Wall -Wextra
 
  CONFIG(debug) {
      QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
@@ -34,7 +34,8 @@ SOURCES += ihm/main.cpp\
     src/ihm/vuetroncon.cpp \
     src/ihm/vuetoboggan.cpp \
     src/ihm/vuetapis.cpp \
-    src/ihm/vuechariot.cpp
+    src/ihm/vuechariot.cpp \
+    src/ihm/vueelement.cpp
 
 HEADERS  += ihm/fenetreprincipale.h \
     ihm/vuebagage.h \
@@ -54,7 +55,8 @@ HEADERS  += ihm/fenetreprincipale.h \
     src/ihm/vuetoboggan.h \
     src/ihm/vuetapis.h \
     src/ihm/vuechariot.h \
-    src/ihm/vueconfig.h
+    src/ihm/vueconfig.h \
+    src/ihm/vueelement.h
 
 FORMS    += fenetreprincipale.ui
 

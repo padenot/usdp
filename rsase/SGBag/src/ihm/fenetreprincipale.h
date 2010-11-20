@@ -24,9 +24,9 @@ public:
     void AjouterItems(XmlConfigFactory::IndexTypesElements elements);
 
 private:
-    Ui::FenetrePrincipale *ui;
-    QGraphicsScene *scene;
-    Prototype *prototype;
+    Ui::FenetrePrincipale* ui;
+    QGraphicsScene* scene;
+    Prototype* prototype;
 };
 
 #endif // FENETREPRINCPALE_H

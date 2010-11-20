@@ -7,9 +7,10 @@
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
 
+#include "vueelement.h"
 #include "src/noyau/Chariot.h"
 
-class VueChariot : public QGraphicsItem
+class VueChariot : public VueElement
 {
 public:
     VueChariot();

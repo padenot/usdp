@@ -8,10 +8,12 @@
 #include <QFile>
 
 #include "src/noyau/Toboggan.h"
+#include "vueelement.h"
+
 
 #define FILEPATH_SVG_ETATNORMAL ":/images/toboggan-etatNormal"
 
-class VueToboggan : public QGraphicsItem
+class VueToboggan : public VueElement
 {
 public:
     VueToboggan();

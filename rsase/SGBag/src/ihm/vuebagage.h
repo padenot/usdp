@@ -6,10 +6,11 @@
 #include <QRectF>
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
+#include "vueelement.h"
 
 #include "src/noyau/Bagage.h"
 
-class VueBagage : public QGraphicsItem
+class VueBagage : public VueElement
 {
 public:
     VueBagage();
