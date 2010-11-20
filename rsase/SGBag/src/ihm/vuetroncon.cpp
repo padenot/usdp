@@ -10,6 +10,7 @@ VueTroncon::VueTroncon(Troncon* troncon)
 :image(new QSvgRenderer(etatNormal))
 ,troncon(troncon)
 {
+    setZValue(zIndex);
 }
 
 

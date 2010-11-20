@@ -9,6 +9,7 @@ VueChariot::VueChariot(Chariot *ptrChariot):
         image(new QSvgRenderer(etatNormal)),
         chariot(ptrChariot)
 {
+    setZValue(zIndex);
     setPos(chariot->position());
 }
 

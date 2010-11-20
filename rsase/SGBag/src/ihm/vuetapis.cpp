@@ -9,6 +9,7 @@ VueTapis::VueTapis(Tapis *tapis):
         image(new QSvgRenderer(etatNormal)),
         tapis(tapis)
 {
+    setZValue(zIndex);
     setPos(tapis->position());
 
     handler = new VueTapisHandler(this);

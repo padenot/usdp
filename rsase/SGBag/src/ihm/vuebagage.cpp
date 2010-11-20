@@ -8,6 +8,7 @@ VueBagage::VueBagage(Bagage *bagage):
         image(new QSvgRenderer(etatNormal)),
         bagage(bagage)
 {
+    setZValue(zIndex);
 }
 
 

@@ -11,6 +11,7 @@ VueToboggan::VueToboggan(Toboggan *toboggan):
         image(new QSvgRenderer(etatNormal)),
         toboggan(toboggan)
 {
+    setZValue(zIndex);
     setPos(toboggan->position());
 }
 
