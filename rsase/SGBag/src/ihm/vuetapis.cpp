@@ -8,6 +8,11 @@ using namespace vue_config::tapis;
 VueTapis::VueTapis():
         image(new QSvgRenderer(etatNormal))
 {
+    handler = new VueTapisHandler(this);
+
+    QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
+    contextMenuActionsList.append(ajouterBagageAction);
+    QObject::connect(ajouterBagageAction, SIGNAL(triggered()), this->handler, SLOT(ajouterBagage()));
 }
 
 
@@ -41,4 +46,20 @@ QRectF VueTapis::boundingRect() const
 Tapis* VueTapis::tapisAssocie()
 {
     return tapis;
+}
+
+/**
+ * Constructeur du handler, dit au handler que VueTapis est le parent.
+ */
+VueTapisHandler::VueTapisHandler(VueTapis * parent):
+        vueTapis(parent)
+{
+}
+
+/**
+ * Action quand l'utilisateur veut ajouter un bagage.
+ */
+void VueTapisHandler::ajouterBagage()
+{
+    qDebug() << "tachatte";
 }

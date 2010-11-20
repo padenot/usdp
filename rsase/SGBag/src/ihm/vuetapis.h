@@ -6,12 +6,15 @@
 #include <QRectF>
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
+#include <QObject>
 
 #include "src/noyau/Tapis.h"
 #include "vueelement.h"
 
 
 #define FILEPATH_SVG_ETATNORMAL ":/images/tapis-etatNormal"
+
+class VueTapisHandler;
 
 class VueTapis : public VueElement
 {
@@ -31,6 +34,26 @@ private:
     int etat;
     QSvgRenderer *image;
     Tapis *tapis;
+
+    /**
+     * Instance de VueTapisHandler intégrée à la vue.
+     */
+    VueTapisHandler* handler;
+};
+
+/**
+ * Gestionnnaire d'événements pour VueTapis
+ */
+class VueTapisHandler : public QObject
+{
+    Q_OBJECT
+
+public:
+    VueTapisHandler(VueTapis*);
+public slots:
+    void ajouterBagage();
+protected:
+    VueTapis* vueTapis;
 };
 
 #endif // VUETAPIS_H
