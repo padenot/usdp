@@ -10,7 +10,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
-const int Prototype::INTERVALLE_DEFAUT = 0;
+const int Prototype::INTERVALLE_DEFAUT = 1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

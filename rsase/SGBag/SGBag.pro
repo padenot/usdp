@@ -8,10 +8,14 @@ QT       += core gui svg
 
 TARGET = SGBag
 TEMPLATE = app
+QT+=xml
 DEPENDPATH += src ui
 
+QMAKE_CXXFLAGS += -Wall -Wextra -ansi -pedantic
 
-
+ CONFIG(debug) {
+     QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
+ }
 
 SOURCES += ihm/main.cpp\
     ihm/fenetreprincipale.cpp \
@@ -54,7 +58,6 @@ HEADERS  += ihm/fenetreprincipale.h \
 
 FORMS    += fenetreprincipale.ui
 
-QT+=xml
 
 RESOURCES += \
     images.qrc

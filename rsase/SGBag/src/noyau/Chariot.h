@@ -5,6 +5,9 @@
 //End section for file Chariot.h
 
 #include <QMap>
+#ifdef DEBUG_ACHEMINEMENT
+#include <QDebug>
+#endif
 
 #include "ElementActif.h"
 #include "Bagage.h"
@@ -84,41 +87,41 @@ class Chariot : public ElementActif
          */
         void majArret();
 
+        /** Gère la mise à jour du chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
+         */
+        void majEnChemin();
+
         /** Gère la mise à jour du chariot lorsqu'il atteint le noeud de fin du tronçon.
          */
         void majNoeudAtteint();
+
+        /** Gère la mise à jour du chariot lorsqu'il approche de son objectif final (tapis ou toboggan).
+         */
+        void majApprocheObjectifFinal();
 
         /** Gère la mise à jour du chariot lorsqu'il atteint le toboggan objectif.
          */
         void majTobogganAtteint();
 
-        /** Gère la mise à jour du chariot lorsqu'il est en train de livrer un bagage.
-         */
-        void majLivraisonBagage();
-
         /** Gère la mise à jour du chariot lorsqu'il atteint le tapis objectif.
          */
         void majTapisAtteint();
 
-        /** Gère la mise à jour du chariot lorsqu'il est en train de revenir au tapis.
-         */
-        void majRetourTapis();
 
-        enum Etat
+        enum Situation
         {
                 ARRET,
-                RETOUR_TAPIS,
-                LIVRAISON_BAGAGE,
+                EN_CHEMIN,
                 NOEUD_ATTEINT,
                 TAPIS_ATTEINT,
+                APPROCHE_OBJECTIF_FINAL,
                 TOBOGGAN_ATTEINT
         };
 
-        /** Retourne l'état actuel du chariot.
-         * Utile pour déterminer les actions à effectuer lors d'une mise à jour.
-         * (Un chariot est une machine à états)
+        /** Retourne la situation actuelle du chariot.
+         * Permet de déterminer les actions à effectuer lors d'une mise à jour.
          */
-        Etat etat();
+        Situation situation() const;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_klhKcOybEd-q55IxPzNK8w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -151,5 +154,9 @@ class Chariot : public ElementActif
 
 
 };  //end class Chariot
+
+#ifdef DEBUG_ACHEMINEMENT
+QDebug operator<<(QDebug dbg, const Chariot *chariot);
+#endif
 
 #endif

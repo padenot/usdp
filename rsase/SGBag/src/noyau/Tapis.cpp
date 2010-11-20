@@ -100,7 +100,7 @@ Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
     return positionActuelle->trouverProchainTroncon(_tronconSupport);
 }
 
-bool Tapis::estSupport (const Troncon* troncon)
+bool Tapis::estSupport (const Troncon* troncon) const
 {
     return _tronconSupport == troncon;
 }
@@ -111,8 +111,6 @@ bool Tapis::estSupport (const Troncon* troncon)
 bool Tapis::bagageEstSorti(Bagage *bagage)
 {
     /*
-     * TODO : WTF ????? C'est quoi ça ?
-
     // On teste si la position du bagage est comprise entre la position du tapis et la position
     // du noeud suivant.
 

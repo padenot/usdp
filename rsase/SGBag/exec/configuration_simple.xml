@@ -44,7 +44,7 @@
   <troncon>
     <id>8</id>
     <noeudDebut>7</noeudDebut>
-    <noeudFin>10</noeudFin>
+    <noeudFin>1</noeudFin>
   </troncon>
   <toboggan>
 	<id>15</id>
@@ -56,14 +56,14 @@
   <noeud>
     <id>10</id>
     <x>70</x>
-    <y>10</y>
-    <suivantGauche>9</suivantGauche>
+    <y>20</y>
+    <suivantGauche>11</suivantGauche>
   </noeud>
   <noeud>
     <id>12</id>
     <x>70</x>
-    <y>60</y>
-    <suivantGauche>11</suivantGauche>
+    <y>50</y>
+    <suivantGauche>13</suivantGauche>
   </noeud>
   <troncon>
     <id>9</id>
@@ -81,12 +81,12 @@
 	<!-- Coordonnées du début du tapis, les coordonnées de la fin seront données par le troncon -->
     <x>70</x> 
     <y>35</y>
-	<pos>13</pos>
+	<pos>11</pos>
   </tapis>
   <troncon>
     <id>13</id>
     <noeudDebut>12</noeudDebut>
-    <noeudFin>1</noeudFin>
+    <noeudFin>5</noeudFin>
   </troncon>
   <chariot>
     <id>14</id>

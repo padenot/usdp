@@ -7,6 +7,9 @@
 #include <QMap>
 #include <QVector>
 #include <QPair>
+#ifdef DEBUG_ACHEMINEMENT
+#include <QDebug>
+#endif
 
 #include "Element.h"
 #include "Troncon.h"
@@ -50,5 +53,9 @@ class Noeud : public Element
 
 
 };  //end class Noeud
+
+#ifdef DEBUG_ACHEMINEMENT
+QDebug operator<<(QDebug dbg, const Noeud *noeud);
+#endif
 
 #endif

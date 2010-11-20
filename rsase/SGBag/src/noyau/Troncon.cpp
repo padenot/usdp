@@ -63,3 +63,13 @@ Noeud* Troncon::noeudFin()
 {
     return _noeudFin;
 }
+
+
+#ifdef DEBUG_ACHEMINEMENT
+QDebug operator<<(QDebug dbg, const Troncon *troncon)
+{
+    dbg.nospace() << "Troncon(" << troncon->id() << ")";
+
+    return dbg.space();
+}
+#endif

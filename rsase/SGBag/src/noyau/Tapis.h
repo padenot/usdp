@@ -88,7 +88,7 @@ class Tapis : public ElementActif
          * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
          * @todo commenter la méthode
          */
-        bool estSupport (const Troncon* troncon);
+        bool estSupport (const Troncon* troncon) const;
 
     protected:
 

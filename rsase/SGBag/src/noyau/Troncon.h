@@ -5,6 +5,9 @@
 //End section for file Troncon.h
 
 #include <QMap>
+#ifdef DEBUG_ACHEMINEMENT
+#include <QDebug>
+#endif
 
 #include "Element.h"
 
@@ -61,5 +64,9 @@ protected:
 
     bool _estLibre;
 };  //end class Troncon
+
+#ifdef DEBUG_ACHEMINEMENT
+QDebug operator<<(QDebug dbg, const Troncon *troncon);
+#endif
 
 #endif

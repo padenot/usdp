@@ -37,7 +37,11 @@ class Element : public QObject
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        virtual QPointF position();
+        virtual QPointF position() const;
+
+#ifdef DEBUG_ACHEMINEMENT
+        int id() const;
+#endif
 
     protected:
 
@@ -48,6 +52,10 @@ class Element : public QObject
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_YHgIwPG4Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         QPointF _position;
+
+#ifdef DEBUG_ACHEMINEMENT
+        int _id;
+#endif
 
 };  //end class Element
 

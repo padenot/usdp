@@ -43,7 +43,7 @@ Troncon* Toboggan::trouverObjectifImmediat(Noeud* positionActuelle)
     return positionActuelle->trouverProchainTroncon(_tronconSupport);
 }
 
-bool Toboggan::estSupport (const Troncon* troncon)
+bool Toboggan::estSupport (const Troncon* troncon) const
 {
     return _tronconSupport == troncon;
 }

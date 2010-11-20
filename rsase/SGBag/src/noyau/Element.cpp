@@ -10,6 +10,10 @@
 Element::Element(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         _position(indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]].toFloat(),
                   indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat())
+#ifdef DEBUG_ACHEMINEMENT
+        ,
+        _id (indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]].toInt())
+#endif
 {
     // Vide
 }
@@ -29,7 +33,14 @@ Element::~Element()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-QPointF Element::position()
+QPointF Element::position() const
 {
     return _position;
 }
+
+#ifdef DEBUG_ACHEMINEMENT
+int Element::id() const
+{
+    return _id;
+}
+#endif
