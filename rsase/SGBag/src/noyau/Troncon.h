@@ -10,6 +10,7 @@
 #endif
 
 #include "Element.h"
+#include "XmlConfigFactory.h"
 
 
 class Noeud;

@@ -7,6 +7,14 @@
 namespace vue_config
 {
 
+    namespace scene
+    {
+
+        const int longueur = 300;
+        const int largeur = 300;
+        const QRectF rect = QRectF(0, 0, longueur, largeur);
+    }
+
     namespace bagage
     {
         const int longueur = 10;

@@ -8,6 +8,9 @@
 
 #include "Tapis.h"
 #include "Noeud.h"
+
+#include "XmlConfigFactory.h"
+
 //Begin section for file Tapis.cpp
 //End section for file Tapis.cpp
 

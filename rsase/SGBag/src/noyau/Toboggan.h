@@ -7,6 +7,7 @@
 #include <QMap>
 
 #include "Element.h"
+#include "XmlConfigFactory.h"
 
 class Noeud;
 class Bagage;

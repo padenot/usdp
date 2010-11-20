@@ -1,10 +1,17 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 #include "src/ihm/vuebagage.h"
+#include "src/ihm/vueconfig.h"
+#include "src/noyau/XmlConfigFactory.h"
 
 void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
 {
     scene->addItem(item);
+}
+
+void FenetrePrincipale::AjouterItems(XmlConfigFactory::IndexTypesElements elements)
+{
+    elements
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -19,10 +26,10 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     //TODO Faire des slots, et merger les boutons start/stop
     connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
     connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(ArreterSimulation()));
-    connect(ui->speedSlider, SIGNAL(sliderReleased()), prototype, SLOT(changerVitesse(ui->speedSlider->value())));
+    connect(ui->speedSlider, SIGNAL(valueChanged(int)), prototype, SLOT(changerVitesse(int)));
 
     //TODO ici mettre la taille d la zone de l'aeorport.
-    scene->setSceneRect(0, 0, 300,300);
+    scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
