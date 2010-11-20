@@ -5,7 +5,8 @@
 
 using namespace vue_config::tapis;
 
-VueTapis::VueTapis(Tapis *tapis):
+VueTapis::VueTapis(FenetrePrincipale* _fenetrePrincipale, Tapis *tapis):
+        VueElement(_fenetrePrincipale),
         image(new QSvgRenderer(etatNormal)),
         tapis(tapis)
 {

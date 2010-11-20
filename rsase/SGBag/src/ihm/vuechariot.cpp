@@ -5,7 +5,8 @@
 
 using namespace vue_config::chariot;
 
-VueChariot::VueChariot(Chariot *ptrChariot):
+VueChariot::VueChariot(FenetrePrincipale* _fenetrePrincipale, Chariot *ptrChariot):
+        VueElement(_fenetrePrincipale),
         image(new QSvgRenderer(etatNormal)),
         chariot(ptrChariot)
 {

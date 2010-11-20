@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
-
+#include "fenetreprincipale.h"
 #include "src/noyau/Prototype.h"
 #include "src/noyau/XmlConfigFactory.h"
 
@@ -14,6 +14,7 @@
 namespace Ui {
     class FenetrePrincipale;
 }
+
 
 class FenetrePrincipale : public QMainWindow
 {

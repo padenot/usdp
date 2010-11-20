@@ -6,9 +6,8 @@
 
 using namespace vue_config::troncon;
 
-VueTroncon::VueTroncon(Troncon* troncon)
-:image(new QSvgRenderer(etatNormal))
-,troncon(troncon)
+VueTroncon::VueTroncon(FenetrePrincipale* _fenetrePrincipale, Troncon* troncon):
+        VueElement(_fenetrePrincipale), image(new QSvgRenderer(etatNormal)), troncon(troncon)
 {
     setZValue(zIndex);
 }

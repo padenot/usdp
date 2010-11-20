@@ -2,6 +2,7 @@
 #define VUEELEMENT_H
 
 #include "vue.h"
+
 #include <QGraphicsSceneContextMenuEvent>
 #include <QMenu>
 #include <QList>
@@ -9,10 +10,12 @@
 
 const  Qt::GlobalColor COULEUR_SELECTION = Qt::darkBlue;
 
+class FenetrePrincipale;
+
 class VueElement : public Vue
 {
 public:
-    VueElement();
+    VueElement(FenetrePrincipale* _fenetrePrincipale);
     ~VueElement();
 
 protected:
@@ -32,6 +35,11 @@ protected:
      */
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
+    /**
+     * @var fenetrePrincipale pointeur vers la fenêtre principale.
+     */
+    FenetrePrincipale* fenetrePrincipale;
 };
 
 #endif // VUEELEMENT_H

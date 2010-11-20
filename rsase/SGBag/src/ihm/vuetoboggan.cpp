@@ -7,7 +7,8 @@
 
 using namespace vue_config::toboggan;
 
-VueToboggan::VueToboggan(Toboggan *toboggan):
+VueToboggan::VueToboggan(FenetrePrincipale* _fenetrePrincipale, Toboggan *toboggan):
+        VueElement(_fenetrePrincipale),
         image(new QSvgRenderer(etatNormal)),
         toboggan(toboggan)
 {

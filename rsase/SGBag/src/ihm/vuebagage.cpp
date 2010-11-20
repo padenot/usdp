@@ -4,7 +4,8 @@
 
 using namespace vue_config::bagage;
 
-VueBagage::VueBagage(Bagage *bagage):
+VueBagage::VueBagage(FenetrePrincipale* _fenetrePrincipale, Bagage *bagage):
+        VueElement(_fenetrePrincipale),
         image(new QSvgRenderer(etatNormal)),
         bagage(bagage)
 {

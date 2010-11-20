@@ -13,7 +13,7 @@
 class VueBagage : public VueElement
 {
 public:
-    VueBagage(Bagage *bagage);
+    VueBagage(FenetrePrincipale* _fenetrePrincipale, Bagage *bagage);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;

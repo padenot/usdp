@@ -16,7 +16,7 @@
 class VueTroncon : public VueElement
 {
 public:
-    VueTroncon(Troncon* troncon);
+    VueTroncon(FenetrePrincipale* _fenetrePrincipale, Troncon* troncon);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;

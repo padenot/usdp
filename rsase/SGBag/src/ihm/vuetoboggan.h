@@ -16,7 +16,7 @@
 class VueToboggan : public VueElement
 {
 public:
-    VueToboggan(Toboggan *toboggan);
+    VueToboggan(FenetrePrincipale* _fenetrePrincipale, Toboggan *toboggan);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;

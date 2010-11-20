@@ -3,12 +3,13 @@
 #include <QPainter>
 
 
-VueElement::VueElement(): contextMenu(0), contextMenuActionsList()
+VueElement::VueElement(FenetrePrincipale* _fenetrePrincipale):
+        fenetrePrincipale(_fenetrePrincipale), contextMenu(0), contextMenuActionsList()
 {
 
-    //* Exemple : Ajouter des QAction* au menu
+    /* Exemple : Ajouter des QAction* au menu
     QAction* action = new QAction("Label", 0);
-    //QObject::connect(action, SIGNAL(triggered()), this, SLOT(slotPourMonAction()));
+    //QObject::connect(action, SIGNAL(triggered()), this->handler, SLOT(slotPourMonAction()));
     contextMenuActionsList.append(action);
     //*/
 }
