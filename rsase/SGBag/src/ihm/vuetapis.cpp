@@ -37,3 +37,8 @@ QRectF VueTapis::boundingRect() const
 {
     return rect;
 }
+
+Tapis* VueTapis::tapisAssocie()
+{
+    return tapis;
+}

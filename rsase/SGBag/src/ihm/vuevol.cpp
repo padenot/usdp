@@ -8,12 +8,13 @@
 VueVol::VueVol()
 
 {
-
+    //TODO
 }
 
 void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     //image->render(painter, rect);
+    //TODO
 }
 
 
@@ -21,4 +22,9 @@ QRectF VueVol::boundingRect() const
 {
     return QRectF();
     //TODO
+}
+
+Vol* VueVol::volAssocie()
+{
+    return vol;
 }

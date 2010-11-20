@@ -68,18 +68,19 @@ FenetrePrincipale::~FenetrePrincipale()
 }
 
 // declenchement du mode ajoutBagage
-void FenetrePrincipale::modeAjoutBagage(Tapis* tapis)
+void FenetrePrincipale::modeAjoutBagage(VueTapis* vueTapis)
 {
     verrouAjoutBagage(true);
 
     // Préparer fin de l'ajout du bagage
-        // Connecter les avions à FenetrePrincipale::finAjoutBagage(Vol* vol)
-        // Connecter le bouton annuler à FenetrePrincipale::annulerAjoutBagage()
+    // Connecter les avions à FenetrePrincipale::finAjoutBagage(Vol* vol)
+    connect(this, SIGNAL(volSelectionne(VueVol*)), SLOT(finAjoutBagage(VueVol*)));
+    // Connecter le bouton annuler à FenetrePrincipale::annulerAjoutBagage()
 }
 
-void FenetrePrincipale::finAjoutBagage(Tapis* tapis, Vol* vol)
+void FenetrePrincipale::finAjoutBagage(VueVol* vueVol)
 {
-       prototype->ajouterBagage(tapis, vol);
+       prototype->ajouterBagage(vueTapisSelectionne->tapisAssocie(), vueVol->volAssocie());
        verrouAjoutBagage(false);
 }
 
@@ -92,5 +93,3 @@ void FenetrePrincipale::verrouAjoutBagage(bool flag)
 {
 
 }
-
-
