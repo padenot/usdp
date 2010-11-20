@@ -7,6 +7,8 @@
 #include <QList>
 #include <QAction>
 
+const  Qt::GlobalColor COULEUR_SELECTION = Qt::darkBlue;
+
 class VueElement : public Vue
 {
 public:
@@ -29,6 +31,7 @@ protected:
      * @param *event Evenement utilisateur
      */
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // VUEELEMENT_H

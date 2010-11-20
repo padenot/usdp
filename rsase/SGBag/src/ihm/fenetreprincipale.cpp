@@ -1,4 +1,4 @@
-#include "fenetreprincipale.h"
+    #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
 #include "src/ihm/vuebagage.h"

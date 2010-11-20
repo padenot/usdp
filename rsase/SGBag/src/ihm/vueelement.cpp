@@ -1,12 +1,14 @@
 #include "vueelement.h"
+#include <QDebug>
+#include <QPainter>
+
 
 VueElement::VueElement(): contextMenu(0), contextMenuActionsList()
 {
-    setFlags(QGraphicsItem::ItemIsSelectable);
 
-    /* Exemple : Ajouter des QAction* au menu
-    QAction* action = new QAction("Label", this);
-    QObject::connect(action, SIGNAL(triggered()), this, SLOT(slotPourMonAction()));
+    //* Exemple : Ajouter des QAction* au menu
+    QAction* action = new QAction("Label", 0);
+    //QObject::connect(action, SIGNAL(triggered()), this, SLOT(slotPourMonAction()));
     contextMenuActionsList.append(action);
     //*/
 }
@@ -28,6 +30,7 @@ VueElement::~VueElement()
  */
 void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
+    qDebug() << isSelected();
     // Si des actions sont définies pour le menu contextuel
     if(!contextMenuActionsList.empty())
     {
@@ -40,3 +43,18 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         contextMenu.exec(event->screenPos());
     }
 }
+
+void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    if(isSelected())
+    {
+        painter->setPen(Qt::red);
+        // painter->setOpacity(0.4);
+        QRectF rect = boundingRect();
+        rect.setTopLeft(rect.topLeft() - QPoint(2,2));
+        rect.setBottomRight(rect.bottomRight() + QPoint(2,2));
+        painter->drawRoundedRect(rect,2,2);
+        qDebug() << boundingRect();
+    }
+}
+

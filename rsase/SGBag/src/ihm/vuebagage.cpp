@@ -24,6 +24,7 @@ void VueBagage::advance(int pas)
 void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     image->render(painter, rect);
+    VueElement::paint(painter, 0, 0);
 }
 
 QRectF VueBagage::boundingRect() const

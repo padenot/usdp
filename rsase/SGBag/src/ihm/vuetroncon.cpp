@@ -24,6 +24,7 @@ void VueTroncon::advance(int pas)
 
 void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    VueElement::paint(painter,0,0);
     image->render(painter, rect);
 }
 

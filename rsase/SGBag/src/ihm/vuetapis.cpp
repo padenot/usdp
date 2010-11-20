@@ -24,6 +24,7 @@ void VueTapis::advance(int pas)
 
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    VueElement::paint(painter, 0, 0);
     image->render(painter, rect);
 }
 

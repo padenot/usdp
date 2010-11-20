@@ -24,6 +24,7 @@ void VueToboggan::advance(int pas)
 
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    VueElement::paint(painter, 0, 0);
     image->render(painter, rect);
 }
 
