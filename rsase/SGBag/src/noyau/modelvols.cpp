@@ -61,7 +61,7 @@ QVariant ModelVols::headerData ( int section, Qt::Orientation orientation, int r
 
 Vol* ModelVols::at(int index)
 {
-    if(index > _data.size())
+    if(index < _data.size())
         return _data[index];
 }
 

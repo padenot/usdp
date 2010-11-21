@@ -202,6 +202,7 @@ void Prototype::ajouterVol(Vol* vol)
 
 Vol* Prototype::vol(int index)
 {
+    qDebug() << "index in model :" << index;
     return _modelVols.at(index);
 }
 

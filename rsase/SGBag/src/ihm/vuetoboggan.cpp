@@ -28,6 +28,8 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
 void VueToboggan::associerVol(Vol* vol)
 {
     _toboggan.associerVol(vol);
+    qDebug() << _toboggan;
+    vol->associer(&_toboggan);
 }
 
 
