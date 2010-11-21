@@ -187,7 +187,8 @@
 		<x>160</x>
 		<y>90</y>
 		<suivantGauche>38</suivantGauche>
-		<!-- suivantDroit>?</suivantDroit -->
+		<!-- Jointure Circuit B -->
+		<suivantDroit>43</suivantDroit>
 	</noeud>
 	<noeud>
 		<id>32</id>
@@ -239,23 +240,262 @@
 		<noeudFin>32</noeudFin>
 	</troncon>
   <!-- Circuit B TODO-->
-  
+	<!-- Colone 12 x=180 -->
+	<noeud>
+		<id>41</id>
+		<x>180</x>
+		<y>90</y>
+		<suivantGauche>46</suivantGauche>
+		<suivantDroit>61</suivantDroit>
+	</noeud>
+	<noeud>
+		<id>42</id>
+		<x>180</x>
+		<y>310</y>
+		<suivantGauche>44</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>43</id>
+		<noeudDebut>31</noeudDebut>
+		<noeudFin>41</noeudFin>
+	</troncon>
+	<troncon>
+		<id>44</id>
+		<noeudDebut>42</noeudDebut>
+		<noeudFin>32</noeudFin>
+	</troncon>
+	<!-- Colone 13 x=190 -->
+	<noeud>
+		<id>45</id>
+		<x>190</x>
+		<y>80</y>
+		<suivantGauche>48</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>46</id>
+		<noeudDebut>41</noeudDebut>
+		<noeudFin>45</noeudFin>
+	</troncon>
+	<!-- Colone 14 x=200 -->
+	<noeud>
+		<id>47</id>
+		<x>200</x>
+		<y>80</y>
+		<suivantGauche>51</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>48</id>
+		<noeudDebut>45</noeudDebut>
+		<noeudFin>47</noeudFin>
+	</troncon>
+	<!-- Colone 15 x=210 -->
+	<noeud>
+		<id>49</id>
+		<x>210</x>
+		<y>80</y>
+		<suivantGauche>54</suivantGauche>
+	</noeud>
+	<noeud>
+		<id>50</id>
+		<x>210</x>
+		<y>310</y>
+		<suivantGauche>52</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>51</id>
+		<noeudDebut>47</noeudDebut>
+		<noeudFin>49</noeudFin>
+	</troncon>
+	<troncon>
+		<id>52</id>
+		<noeudDebut>50</noeudDebut>
+		<noeudFin>42</noeudFin>
+	</troncon>
+	<!-- Colone 16 x=270 -->
+	<noeud>
+		<id>53</id>
+		<x>270</x>
+		<y>80</y>
+		<suivantGauche>56</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>54</id>
+		<noeudDebut>49</noeudDebut>
+		<noeudFin>53</noeudFin>
+	</troncon>
+	<!-- Colone 17 x=280 -->
+	<noeud>
+		<id>55</id>
+		<x>280</x>
+		<y>80</y>
+		<suivantGauche>58</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>56</id>
+		<noeudDebut>53</noeudDebut>
+		<noeudFin>55</noeudFin>
+	</troncon>
+	<!--  Colone 18 x=290 -->
+	<noeud>
+		<id>57</id>
+		<x>290</x>
+		<y>80</y>
+		<suivantGauche>60</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>58</id>
+		<noeudDebut>55</noeudDebut>
+		<noeudFin>57</noeudFin>
+	</troncon>
+	<!-- Colone 19 x=300 -->
+	<noeud>
+		<id>59</id>
+		<x>300</x>
+		<y>90</y>
+		<suivantGauche>64</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>60</id>
+		<noeudDebut>57</noeudDebut>
+		<noeudFin>59</noeudFin>
+	</troncon>
+	<troncon>
+		<id>61</id>
+		<noeudDebut>41</noeudDebut>
+		<noeudFin>59</noeudFin>
+	</troncon>
+	<!-- Colone 20 x=310 -->
+	<noeud>
+		<id>62</id>
+		<x>310</x>
+		<y>90</y>
+		<suivantGauche>69</suivantGauche>
+	</noeud>
+	<noeud>
+		<id>63</id>
+		<x>310</x>
+		<y>210</y>
+		<suivantGauche>65</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>64</id>
+		<noeudDebut>59</noeudDebut>
+		<noeudFin>62</noeudFin>
+	</troncon>
+	<troncon>
+		<id>65</id>
+		<noeudDebut>63</noeudDebut>
+		<!-- Jointure circuit A -->
+		<noeudFin>32</noeudFin>
+	</troncon>
+	<troncon>
+		<id>66</id>
+		<noeudDebut>63</noeudDebut>
+		<noeudFin>50</noeudFin>
+	</troncon>
+	<!-- Colone 21 x=320 -->
+	<noeud>
+		<id>67</id>
+		<x>320</x>
+		<y>100</y>
+		<suivantGauche>70</suivantGauche>
+	</noeud>
+	<noeud>
+		<id>68</id>
+		<x>320</x>
+		<y>200</y>
+		<suivantGauche>71</suivantGauche>
+	</noeud>
+	<troncon>
+		<id>69</id>
+		<noeudDebut>62</noeudDebut>
+		<noeudFin>67</noeudFin>
+	</troncon>
+	<troncon>
+		<id>70</id>
+		<noeudDebut>67</noeudDebut>
+		<noeudFin>68</noeudFin>
+	</troncon>
+	<troncon>
+		<id>71</id>
+		<noeudDebut>68</noeudDebut>
+		<noeudFin>63</noeudFin>
+	</troncon>
   <!-- Objets -->
+  	<!-- A -->
   	<tapis>
-  		<id>200</id>
+  		<id>101</id>
   		<x>100</x>
   		<y>50</y>
   		<pos>23</pos>
   	</tapis>
-	<chariot>
-		<id>201</id>
-		<pos>39</pos>
-		<tapisAssocie>200</tapisAssocie>
-	</chariot>
 	<toboggan>
-		<id>202</id>
+		<id>102</id>
 		<x>25</x>
 		<y>300</y>
 		<pos>17</pos>
 	</toboggan>
+	<!-- B -->
+	<tapis>
+		<id>103</id>
+		<x>240</x>
+		<y>50</y>
+		<pos>54</pos>
+	</tapis>
+	<toboggan>
+		<id>104</id>
+		<x>190</x>
+		<y>300</y>
+		<pos>52</pos>
+	</toboggan>
+	
+	<!-- Chariots -->
+	<!-- A vers A -->
+	<chariot>
+		<id>201</id>
+		<pos>39</pos>
+		<tapisAssocie>101</tapisAssocie>
+	</chariot>
+	<chariot>
+		<id>202</id>
+		<pos>11</pos>
+		<tapisAssocie>101</tapisAssocie>
+	</chariot>
+	
+	<!-- B vers B -->
+	<chariot>
+		<id>203</id>
+		<pos>69</pos>
+		<tapisAssocie>103</tapisAssocie>
+	</chariot>
+	<chariot>
+		<id>204</id>
+		<pos>52</pos>
+		<tapisAssocie>103</tapisAssocie>
+	</chariot>
+	
+	<!-- B vers A -->
+	<chariot>
+		<id>205</id>
+		<pos>71</pos>
+		<tapisAssocie>101</tapisAssocie>
+	</chariot>
+	
+	<chariot>
+		<id>206</id>
+		<pos>61</pos>
+		<tapisAssocie>101</tapisAssocie>
+	</chariot>
+	
+	<!-- A vers B -->
+	<chariot>
+		<id>207</id>
+		<pos>29</pos>
+		<tapisAssocie>103</tapisAssocie>
+	</chariot>
+	<chariot>
+		<id>208</id>
+		<pos>9</pos>
+		<tapisAssocie>103</tapisAssocie>
+	</chariot>
 </config>
