@@ -73,9 +73,16 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="VitesseLabel">
           <property name="text">
-           <string>Vitesse</string>
+           <string>Vitesse :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="vitesse">
+          <property name="text">
+           <string/>
           </property>
          </widget>
         </item>
@@ -85,6 +92,9 @@
            <number>1</number>
           </property>
           <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
            <number>100</number>
           </property>
           <property name="orientation">

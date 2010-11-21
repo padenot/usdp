@@ -122,6 +122,11 @@ void Prototype::changerVitesse(int percent)
     _horloge.setInterval( (INTERVALLE_MAX-INTERVALLE_MIN+1)/(percent*10) );
 }
 
+int Prototype::getVitesse()
+{
+    return _horloge.interval();
+}
+
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()
 {
     return _elementsParType;

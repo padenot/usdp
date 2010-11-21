@@ -107,6 +107,11 @@ class Prototype : public QObject
          */
         void changerVitesse(int percent);
 
+        /**
+         * @brief connaitre la vitesse actuelle de la simulation
+         */
+        int getVitesse();
+
         const XmlConfigFactory::IndexTypesElements &elements();
 
     private:

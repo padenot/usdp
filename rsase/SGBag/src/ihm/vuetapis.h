@@ -34,7 +34,7 @@ protected:
 private:
     int _etat;
     QSvgRenderer *_image;
-    Tapis *_tapis;
+    Tapis &_tapis;
 
     /**
      * Instance de VueTapisHandler intégrée à la vue.

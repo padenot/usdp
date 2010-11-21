@@ -9,7 +9,7 @@ using namespace vue_config::tapis;
 
 VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         VueElement(fenetrePrincipale),
-        _image(*new QSvgRenderer(etatNormal)),
+        _image(new QSvgRenderer(etatNormal)),
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
@@ -24,7 +24,7 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
 VueTapis::~VueTapis()
 {
     delete &_handler;
-    delete &_image;
+    delete _image;
 }
 
 
@@ -41,7 +41,7 @@ void VueTapis::advance(int pas)
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    _image.render(painter, rect);
+    _image->render(painter, rect);
 }
 
 void VueTapis::ajouterBagage()
