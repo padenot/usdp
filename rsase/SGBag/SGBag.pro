@@ -88,4 +88,5 @@ OTHER_FILES += \
     ui/images/sacsport.svg \
     ui/images/saccuir.svg \
     ui/images/homard.svg \
-    ui/images/chariot.svg
+    ui/images/chariot.svg \
+    ui/images/avion.svg

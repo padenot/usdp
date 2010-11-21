@@ -13,9 +13,6 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
         _image(new QSvgRenderer(etatNormal)),
         _toboggan(toboggan)
 {
-    QLineF ligneDirection(QPointF(0,0), _toboggan.pointConnexion() - _toboggan.position());
-    ligneDirection.setLength(ligneDirection.length()-vue_config::chariot::largeur/2);
-
     QLineF direction = QLineF(QPoint(0, 0), _toboggan.pointConnexion() - _toboggan.position());
     QVector2D vecteurDir = QVector2D(_toboggan.pointConnexion() - _toboggan.position());
 
@@ -23,8 +20,7 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
 
     setZValue(zIndex);
     setPos(_toboggan.position() - (vecteurDir.normalized().toPointF() * (vue_config::chariot::largeur/2)));
-    setRotation(-ligneDirection.angle());
-
+    setRotation(-direction.angle());
 }
 
 void VueToboggan::associerVol(Vol* vol)

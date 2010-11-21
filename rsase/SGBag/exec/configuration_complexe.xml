@@ -431,8 +431,8 @@
   	</tapis>
 	<toboggan>
 		<id>102</id>
-		<x>25</x>
-		<y>300</y>
+		<x>35</x>
+		<y>320</y>
 		<pos>17</pos>
 	</toboggan>
 	<!-- B -->
@@ -444,8 +444,8 @@
 	</tapis>
 	<toboggan>
 		<id>104</id>
-		<x>190</x>
-		<y>300</y>
+		<x>195</x>
+		<y>320</y>
 		<pos>52</pos>
 	</toboggan>
 	

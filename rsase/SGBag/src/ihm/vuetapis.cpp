@@ -14,15 +14,14 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
-    QLineF ligneDirection(_tapis.position(),_tapis.pointConnexion());
-    ligneDirection.setLength(ligneDirection.length()-vue_config::chariot::largeur/2);
+    QLineF direction = QLineF(QPoint(0, 0), _tapis.pointConnexion() - _tapis.position());
+    QVector2D vecteurDir = QVector2D(_tapis.pointConnexion() - _tapis.position());
 
-    _rect = QRectF(0,largeur/2,ligneDirection.length(),largeur);
+    _rect = QRectF(0,-largeur/2,direction.length(), largeur);
 
     setZValue(zIndex);
-    setPos(_tapis.position());
-    setTransformOriginPoint(0,largeur/2);
-    setRotation(-ligneDirection.angle());
+    setPos(_tapis.position() - (vecteurDir.normalized().toPointF() * (vue_config::chariot::largeur/2)));
+    setRotation(-direction.angle());
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
