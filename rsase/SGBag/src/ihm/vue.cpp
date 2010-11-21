@@ -6,3 +6,11 @@ Vue::Vue(FenetrePrincipale& fenetrePrincipale) :
 {
     setFlags(QGraphicsItem::ItemIsSelectable);
 }
+
+const QMap<QString, QString>* Vue::ackParametres()
+{
+    QMap<QString, QString> *map = new QMap<QString, QString>();
+    map->insert("tachatte","tachatte");
+
+    return map;
+}

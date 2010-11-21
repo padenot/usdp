@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
+#include <QMap>
+
 #include "fenetreprincipale.h"
 #include "src/noyau/Prototype.h"
 #include "src/noyau/XmlConfigFactory.h"
@@ -40,7 +42,11 @@ protected slots :
     void finAjoutBagage(VueVol* vol);
     void annulerAjoutBagage();
 
+    void afficherSelection();
+
 private:
+    void afficherParametres(const QMap<QString, QString> *parametres);
+
     Ui::FenetrePrincipale* ui;
     QGraphicsScene* scene;
     Prototype* prototype;

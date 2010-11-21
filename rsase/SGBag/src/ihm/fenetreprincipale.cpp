@@ -1,8 +1,11 @@
 #include <QDebug>
+#include <QTableView>
+#include <QTableWidgetItem>
 
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
+#include "vue.h"
 #include "vuebagage.h"
 #include "vuechariot.h"
 #include "vuetapis.h"
@@ -61,6 +64,8 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
+    connect(scene, SIGNAL(selectionChanged()), this, SLOT(afficherSelection()));
+
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
@@ -72,6 +77,8 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
     ui->vue->scale(7, 7);
+
+    ui->TableParametres->setColumnCount(2);
 
     timer.start(vue_config::dt);
 }
@@ -116,6 +123,48 @@ void FenetrePrincipale::annulerAjoutBagage()
     this->disconnect(SIGNAL(volSelectionne(VueVol*)));
 }
 
+void FenetrePrincipale::afficherSelection()
+{
+    QList<QGraphicsItem*> selectedItems= scene->selectedItems();
+
+    switch (selectedItems.count())
+    {
+        case 0:
+        {
+            // Aucun élement selectionné, on efface les paramètres.
+            ui->TableParametres->setRowCount(0);
+            return;
+        }
+        case 1:
+        {
+            afficherParametres(dynamic_cast<Vue*>(selectedItems.first())->ackParametres());
+            return;
+        }
+    }
+    return;
+}
+
+void FenetrePrincipale::afficherParametres(const QMap<QString, QString> *parametres)
+{
+    ui->TableParametres->setRowCount(parametres->count());
+
+    int i=0;
+    foreach(const QString key , parametres->keys())
+    {
+        QTableWidgetItem *description = new QTableWidgetItem();
+        description->setData(0, key);
+        description->setFlags(description->flags() &= !~Qt::ItemIsEditable);
+        ui->TableParametres->setItem(i++, 0, description);
+    }
+
+    i=0;
+    foreach(const QString value, parametres->values())
+    {
+        QTableWidgetItem *parametre = new QTableWidgetItem();
+        parametre->setData(2, value);
+        ui->TableParametres->setItem(i++, 1, parametre);
+    }
+}
 
 void FenetrePrincipale::verrouAjoutBagage(bool flag)
 {

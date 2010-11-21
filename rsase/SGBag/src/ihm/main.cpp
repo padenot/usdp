@@ -15,7 +15,5 @@ int main(int argc, char *argv[])
     w.AjouterItems(proto.elements());
     w.show();
 
-
-
     return a.exec();
 }
