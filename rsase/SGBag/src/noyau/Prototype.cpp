@@ -15,10 +15,10 @@ const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 1000;
 
 const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
-const qreal Prototype::INTERVALLE_SIMULATION_DEFAUT =
+const double Prototype::INTERVALLE_SIMULATION_DEFAUT =
         1.0 / Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE;
-const qreal Prototype::INTERVALLE_SIMULATION_MAX = Prototype::INTERVALLE_SIMULATION_DEFAUT*2;
-const qreal Prototype::INTERVALLE_SIMULATION_MIN = Prototype::INTERVALLE_SIMULATION_DEFAUT/2;
+const double Prototype::INTERVALLE_SIMULATION_MAX = Prototype::INTERVALLE_SIMULATION_DEFAUT*2;
+const double Prototype::INTERVALLE_SIMULATION_MIN = Prototype::INTERVALLE_SIMULATION_DEFAUT/2;
 const int Prototype::ID_BAGAGE_GENERE_INITIAL = 1000;
 
 
@@ -164,7 +164,7 @@ void Prototype::changerVitesse(int pourcentage)
           (INTERVALLE_SIMULATION_MAX-INTERVALLE_SIMULATION_MIN)*(pourcentage);
 }
 
-const int Prototype::acqVitesse()
+int Prototype::acqVitesse()
 {
     return _dt;
 }

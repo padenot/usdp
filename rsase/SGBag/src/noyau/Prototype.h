@@ -114,7 +114,7 @@ class Prototype : public QObject
         /**
          * @brief Récupérer l'intervalle de temps dt entre deux états simulés.
          */
-        const int acqVitesse();
+        int acqVitesse();
 
         /**
          * @brief Récupérer la liste des éléments présents.
@@ -169,12 +169,12 @@ class Prototype : public QObject
          * Intervalle de temps donné au modèle à chaque tick d'horloge
          * lors de la simulation.
          */
-        qreal _dt;
+        double _dt;
 
         static const int INTERVALLE_RAFRAICHISSEMENT_MODELE;
-        static const qreal INTERVALLE_SIMULATION_DEFAUT;
-        static const qreal INTERVALLE_SIMULATION_MAX;
-        static const qreal INTERVALLE_SIMULATION_MIN;
+        static const double INTERVALLE_SIMULATION_DEFAUT;
+        static const double INTERVALLE_SIMULATION_MAX;
+        static const double INTERVALLE_SIMULATION_MIN;
 
         static const int ID_BAGAGE_GENERE_INITIAL;
 };  //end class Prototype

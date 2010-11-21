@@ -55,7 +55,7 @@ class Tapis : public ElementActif
          * Opération de mise à jour en cascade de l'objet.
          * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
          */
-        void maj(qreal dt);
+        void maj(double dt);
 
         /**
          * Ajoute le bagage bagageEntrant sur le tapis.
@@ -103,7 +103,7 @@ class Tapis : public ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void deroulerTapis(qreal dt);
+        void deroulerTapis(double dt);
 
         /**
          * Teste si le bagage bagage est sorti du tapis.
@@ -123,7 +123,7 @@ class Tapis : public ElementActif
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Troncon * _tronconSupport;
 
-        static const qreal RAYON_PROXIMITE_TRONCON;
+        static const double RAYON_PROXIMITE_TRONCON;
 
 };  //end class Tapis
 

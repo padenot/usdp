@@ -42,7 +42,7 @@ class Noeud : public Element
          */
         Troncon* trouverProchainTroncon(Troncon* destination);
 
-        QPair<Troncon*, qreal> calculChemin(Troncon* destination);
+        QPair<Troncon*, double> calculChemin(Troncon* destination);
 
         Troncon* trouverProchainTroncon(Direction direction);
 

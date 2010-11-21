@@ -16,7 +16,7 @@ StrategiePilotageManuel::StrategiePilotageManuel(const StrategiePilotage& modele
 {
 }
 
-void StrategiePilotageManuel::pilotageNoeudAtteint(qreal dt,Direction directionConseillee,
+void StrategiePilotageManuel::pilotageNoeudAtteint(double dt,Direction directionConseillee,
                                                    Bagage* bagage)
 {
     Troncon* nouveauTroncon = _tronconActuel->noeudFin()

@@ -16,7 +16,7 @@ StrategiePilotageAuto::StrategiePilotageAuto(const StrategiePilotage& modele) :
 {
 }
 
-void StrategiePilotageAuto::pilotageNoeudAtteint(qreal dt, Direction directionConseillee, Bagage* bagage)
+void StrategiePilotageAuto::pilotageNoeudAtteint(double dt, Direction directionConseillee, Bagage* bagage)
 {
     Troncon* nouveauTroncon = 0;
 

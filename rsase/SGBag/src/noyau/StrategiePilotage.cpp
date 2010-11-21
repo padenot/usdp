@@ -5,9 +5,9 @@
 #include "Tapis.h"
 #include "Noeud.h"
 
-const qreal StrategiePilotage::RAYON_PROXIMITE_NOEUD = 0.5;
-const qreal StrategiePilotage::RAYON_PROXIMITE_TAPIS = 0.5;
-const qreal StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 0.5;
+const double StrategiePilotage::RAYON_PROXIMITE_NOEUD = 0.5;
+const double StrategiePilotage::RAYON_PROXIMITE_TAPIS = 0.5;
+const double StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 0.5;
 
 StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
                                      Tapis* tapisAssocie) :
@@ -24,7 +24,7 @@ StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :
 {
 }
 
-void StrategiePilotage::piloter(qreal dt, Direction directionConseillee, Bagage* bagageTransporte)
+void StrategiePilotage::piloter(double dt, Direction directionConseillee, Bagage* bagageTransporte)
 {
     switch (situation(bagageTransporte))
     {
@@ -86,7 +86,7 @@ void StrategiePilotage::pilotageArret()
 #endif
 }
 
-void StrategiePilotage::pilotageEnChemin(qreal dt)
+void StrategiePilotage::pilotageEnChemin(double dt)
 {
 #ifdef DEBUG_ACHEMINEMENT
     //qDebug() << _chariot << "avance avec" << _bagage;

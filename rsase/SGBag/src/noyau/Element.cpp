@@ -25,8 +25,8 @@ Element::Element(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
     // Vide
 }
 
-void Element::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
+void Element::init (const XmlConfigFactory::IndexParamValeur& /*indexParamValeur*/,
+                   XmlConfigFactory& /*fabrique*/)
 {
     // Vide
 }

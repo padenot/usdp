@@ -8,12 +8,17 @@ VueParametresChariot::VueParametresChariot(Chariot& chariot, QWidget *parent) :
     _chariot(chariot)
 {
     ui->setupUi(this);
+
     connect(ui->vitesseMax,SIGNAL(valueChanged(double)),
             &_chariot,SLOT(modifierVitesseMax(double)));
+    // TODO
+    //ui->vitesseMax->setValue(_chariot->vitesseMax());
     connect(ui->modePilotage, SIGNAL(valueChanged(int)),
             this,SLOT(modifierTypePilotage(int)));
+
     connect(ui->directionConseillee, SIGNAL(valueChanged(int)),
             this,SLOT(modifierDirectionConseillee(int)));
+    ui->directionConseillee->setValue(_chariot.directionConseillee());
 }
 
 VueParametresChariot::~VueParametresChariot()

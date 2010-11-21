@@ -3,8 +3,8 @@
 //TODO: Add definitions that you want preserved
 //End section for file ElementActif.cpp
 
-const qreal ElementActif::VITESSE_DEFAUT = 0.05;
-const qreal ElementActif::VITESSE_MAX_DEFAUT = 0.1;
+const double ElementActif::VITESSE_DEFAUT = 0.05;
+const double ElementActif::VITESSE_MAX_DEFAUT = 0.1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -30,7 +30,7 @@ ElementActif::~ElementActif()
     //TODO Auto-generated method stub
 }
 
-/*void ElementActif::modifierVitesse(qreal nouvelleVitesse)
+/*void ElementActif::modifierVitesse(double nouvelleVitesse)
 {
     _vitesse = nouvelleVitesse;
 }*/
@@ -41,7 +41,7 @@ void ElementActif::arreter()
     _estActif = false;
 }
 
-void ElementActif::modifierVitesseMax(qreal nouvelleVitesseMax)
+void ElementActif::modifierVitesseMax(double nouvelleVitesseMax)
 {
     _vitesseMax = nouvelleVitesseMax;
 }

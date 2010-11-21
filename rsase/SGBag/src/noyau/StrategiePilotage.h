@@ -14,7 +14,7 @@ class StrategiePilotage
     public:
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotage(const StrategiePilotage& modele);
-        void piloter (qreal dt, Direction directionConseillee, Bagage* bagageTransporte);
+        void piloter (double dt, Direction directionConseillee, Bagage* bagageTransporte);
 
     protected:
 
@@ -25,14 +25,14 @@ class StrategiePilotage
 
         /** Pilote le chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
          */
-        virtual void pilotageEnChemin(qreal dt);
+        virtual void pilotageEnChemin(double dt);
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
          * @param[in] bagage TODO
          */
         virtual void pilotageNoeudAtteint(
-                qreal dt, Direction directionConseillee, Bagage* bagage) = 0;
+                double dt, Direction directionConseillee, Bagage* bagage) = 0;
 
         /** Pilote le chariot lorsqu'il atteint le toboggan objectif.
          */
@@ -67,15 +67,15 @@ class StrategiePilotage
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
 
-        static const qreal RAYON_PROXIMITE_NOEUD;
+        static const double RAYON_PROXIMITE_NOEUD;
         /// Distance avec un noeud en dessous de laquelle le chariot est
         /// considéré comme étant sur le noeud.
 
-        static const qreal RAYON_PROXIMITE_TAPIS;
+        static const double RAYON_PROXIMITE_TAPIS;
         /// Distance avec un tapis en dessous de laquelle le chariot est
         /// considéré comme étant à portée du tapis.
 
-        static const qreal RAYON_PROXIMITE_TOBOGGAN;
+        static const double RAYON_PROXIMITE_TOBOGGAN;
         /// Distance avec un toboggan en dessous de laquelle le chariot est
         /// considéré comme étant à portée du toboggan.
 

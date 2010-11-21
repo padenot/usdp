@@ -100,7 +100,7 @@ Troncon* Noeud::trouverProchainTroncon(Direction direction)
 }
 
 
-QPair<Troncon*, qreal> Noeud::calculChemin(Troncon* destination)
+QPair<Troncon*, double> Noeud::calculChemin(Troncon* destination)
 {
     // TODO : implémenter un algorithme plus efficace
     // TODO : calculer tout le chemin plutôt que déterminer seulement le prochain tronçon
@@ -113,11 +113,11 @@ QPair<Troncon*, qreal> Noeud::calculChemin(Troncon* destination)
     if(_visite)
     {
         return qMakePair(reinterpret_cast<Troncon*>(0),
-                         std::numeric_limits<qreal>::infinity());
+                         std::numeric_limits<double>::infinity());
     }
     else
     {
-        qreal tailleCheminMin = std::numeric_limits<qreal>::infinity();
+        double tailleCheminMin = std::numeric_limits<double>::infinity();
         Troncon* tronconMin = 0;
 
         _visite = true;
@@ -134,8 +134,8 @@ QPair<Troncon*, qreal> Noeud::calculChemin(Troncon* destination)
                 }
                 else
                 {
-                    QPair<Troncon*, qreal> paireRetour = troncon->noeudFin()->calculChemin(destination);
-                    qreal tailleChemin = paireRetour.second + QVector2D(troncon->noeudFin()->position()
+                    QPair<Troncon*, double> paireRetour = troncon->noeudFin()->calculChemin(destination);
+                    double tailleChemin = paireRetour.second + QVector2D(troncon->noeudFin()->position()
                                                                        - _position).length();
 
                     if(tailleChemin < tailleCheminMin)

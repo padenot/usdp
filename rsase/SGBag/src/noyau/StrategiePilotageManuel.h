@@ -11,7 +11,7 @@ class StrategiePilotageManuel : public StrategiePilotage
 
     protected :
         virtual void pilotageNoeudAtteint(
-                qreal dt, Direction directionConseillee, Bagage *bagage);
+                double dt, Direction directionConseillee, Bagage *bagage);
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H

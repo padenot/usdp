@@ -72,7 +72,7 @@ void Chariot::dechargerBatterie()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Chariot::avancer(qreal dt, QPointF destination)
+void Chariot::avancer(double dt, QPointF destination)
 {
     QVector2D deplacement(destination - _position);
     deplacement.normalize();
@@ -85,7 +85,7 @@ void Chariot::avancer(qreal dt, QPointF destination)
     }
 }
 
-void Chariot::maj(qreal dt)
+void Chariot::maj(double dt)
 {
     _pilote->piloter(dt,_directionConseillee,_bagage);
 }

@@ -14,7 +14,7 @@
 //Begin section for file Tapis.cpp
 //End section for file Tapis.cpp
 
-const qreal Tapis::RAYON_PROXIMITE_TRONCON = 0.5;
+const double Tapis::RAYON_PROXIMITE_TRONCON = 0.5;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -45,7 +45,7 @@ Tapis::~Tapis()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::maj(qreal dt)
+void Tapis::maj(double dt)
 {
     // si un chariot est connecté au tapis
     if(_chariotConnecte != 0)
@@ -65,7 +65,7 @@ void Tapis::ajouterBagage(Bagage* bagageEntrant)
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::deroulerTapis(qreal dt)
+void Tapis::deroulerTapis(double dt)
 {
     QVector2D deplacement(_tronconSupport->position() - _position);
     deplacement *= _vitesse*dt;
@@ -123,7 +123,7 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
     // On teste si la position du bagage est comprise entre la position du tapis et la position
     // du noeud suivant.
 
-    qreal posGauche, posDroite;
+    double posGauche, posDroite;
     QPointF posBagage(bagage->position());
 
     // Milieu du tronçon

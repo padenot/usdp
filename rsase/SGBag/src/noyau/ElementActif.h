@@ -37,12 +37,12 @@ class ElementActif : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_M4WU0PIdEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //virtual void modifierVitesse(qreal nouvelleVitesse);
+        //virtual void modifierVitesse(double nouvelleVitesse);
 
         virtual bool estActif ();
 
     public slots :
-        virtual void modifierVitesseMax(qreal nouvelleVitesseMax);
+        virtual void modifierVitesseMax(double nouvelleVitesseMax);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -50,17 +50,17 @@ class ElementActif : public Element
         /** Met à jour l'élément actif (position, ...)
          * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
          */
-        virtual void maj(qreal dt) = 0;
+        virtual void maj(double dt) = 0;
 
     protected:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_je1NYPG4Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        qreal _vitesse;
-        qreal _vitesseMax;
+        double _vitesse;
+        double _vitesseMax;
 
-        static const qreal VITESSE_DEFAUT;
-        static const qreal VITESSE_MAX_DEFAUT;
+        static const double VITESSE_DEFAUT;
+        static const double VITESSE_MAX_DEFAUT;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_UiLRIPIWEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
