@@ -73,8 +73,9 @@ class Prototype : public QObject
          * Le bagage est crée, et est placé sur le tapis.
          * @param tapis Le tapis d'origine du bagage : là où il apparaitra.
          * @param vol Le vol de destination du bagage : là où il sortira.
+         * @return Le bagage effectivement ajouté.
          */
-        void ajouterBagage(Tapis* tapis, Vol* vol);
+        Bagage* ajouterBagage(Tapis* tapis, Vol* vol);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

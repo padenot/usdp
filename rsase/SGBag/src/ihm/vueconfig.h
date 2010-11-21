@@ -10,8 +10,8 @@ namespace vue_config
 
     namespace scene
     {
-        const int longueur = 70;
-        const int largeur = 70;
+        const int longueur = 90;
+        const int largeur = 90;
         const QRectF rect = QRectF(0, 0, longueur, largeur);
     }
 
@@ -66,10 +66,11 @@ namespace vue_config
     namespace vol
     {
         const int zIndex = 10;
-        const int longueur = 10;
-        const int largeur = 10;
+        const int longueur = 20;
+        const int largeur = 20;
+        const int ecartToboggan = 20;
         const QString etatNormal = ":/images/avion";
-        const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
+        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 }
 

@@ -110,8 +110,10 @@ void FenetrePrincipale::changementSelection()
         VueVol* vueVol = dynamic_cast<VueVol*>(selectedItems.first());
         if(vueVol != 0)
         {
+            qDebug() << "hop";
             if (_etat == AJOUTBAGAGE)
             {
+                qDebug() << "hup";
                 finAjoutBagage(vueVol);
             }
             // TODO : autres états + paramètres
@@ -179,7 +181,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));
     connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
     connect(ui->volAnnulerButton, SIGNAL(clicked()), this, SLOT(annulerAssociation()));
-    //ui->TableParametres->setColumnCount(2);
 
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
@@ -199,14 +200,14 @@ FenetrePrincipale::~FenetrePrincipale()
 
 void FenetrePrincipale::ajouterVol()
 {
-       bool ok;
-       QString text = QInputDialog::getText(this, tr("Choix du nom du vol"),
-                                            tr("Nom du vol ?"), QLineEdit::Normal);
-       if (ok && !text.isEmpty())
-       {
-            Vol* vol = new Vol(text);
-            prototype->ajouterVol(vol);
-       }
+    bool ok;
+    QString text = QInputDialog::getText(this, tr("Choix du nom du vol"),
+                                         tr("Nom du vol ?"), QLineEdit::Normal);
+    if (ok && !text.isEmpty())
+    {
+         Vol* vol = new Vol(text);
+         prototype->ajouterVol(vol);
+    }
 }
 
 // declenchement du mode ajoutBagage
@@ -218,8 +219,11 @@ void FenetrePrincipale::ajoutBagage(VueTapis* vueTapis)
 
 void FenetrePrincipale::finAjoutBagage(VueVol* vueVol)
 {
+    Bagage* bagage = prototype->ajouterBagage(_vueTapisAjoutBagage->tapisAssocie(), vueVol->volAssocie());
+    scene->addItem(new VueBagage(*this, *bagage));
+
     qDebug() << "Bagage ajouté";
-    prototype->ajouterBagage(_vueTapisAjoutBagage->tapisAssocie(), vueVol->volAssocie());
+
     changementEtat(NORMAL);
 }
 
@@ -286,13 +290,12 @@ void FenetrePrincipale::changementEtat(Etat etat)
     case SELECTIONTOBOGGAN:
         qDebug() << "On passe en selection toboggan";
         ui->volAssocierButton->setText("&Annuler");
-        _etat = SELECTIONTOBOGGAN;
         break;
     case NORMAL:
         qDebug() << "On passe en mode normal";
         ui->volAssocierButton->setText("&Associer");
-        _etat = NORMAL;
         break;
     };
+    _etat = etat;
 }
 

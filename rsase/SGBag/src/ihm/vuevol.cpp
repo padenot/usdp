@@ -13,11 +13,15 @@ using namespace vue_config::vol;
 VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
         Vue(fenetrePrincipale),
         _vol (vol),
-        _image(new QSvgRenderer(etatNormal)),
-        _handler (*new VueVolHandler(*this, fenetrePrincipale))
+        _image(new QSvgRenderer(etatNormal))
 {
     //TODO
-    setPos(2*_vol.tobogganAssocie()->position() - -vol.tobogganAssocie()->pointConnexion());
+    setPos(_vol.tobogganAssocie()->position() +
+           QVector2D(_vol.tobogganAssocie()->position()
+                     - vol.tobogganAssocie()->pointConnexion())
+           .normalized().toPointF()*ecartToboggan);
+    //setPos(2*_vol.tobogganAssocie()->position() - -vol.tobogganAssocie()->pointConnexion());
+    //setPos(0,0);
 }
 
 void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
@@ -26,30 +30,12 @@ void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
     //TODO
 }
 
-void VueVol::mousePressEvent(QGraphicsSceneMouseEvent *event)
-{
-    _handler.estSelectionne();
-}
-
 QRectF VueVol::boundingRect() const
 {
-    return QRectF();
-    //TODO
+    return rect;
 }
 
 Vol* VueVol::volAssocie()
 {
     return &_vol;
-}
-
-VueVolHandler::VueVolHandler(VueVol& _vueVol, FenetrePrincipale& fenetrePrincipale):
-        _vueVol(_vueVol),
-        _fenetrePrincipale(fenetrePrincipale)
-{
-    connect(this, SIGNAL(estSelection(VueVol*)), &fenetrePrincipale, SIGNAL(volSelectionne(VueVol*)));
-}
-
-void VueVolHandler::estSelectionne()
-{
-    emit estSelection(&_vueVol);
 }

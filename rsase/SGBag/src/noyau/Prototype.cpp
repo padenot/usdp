@@ -82,8 +82,24 @@ void Prototype::changementMode(ModeSimulation mode)
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void    Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
+Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
+    Bagage* bagage = new Bagage(vol);
+    XmlConfigFactory::IndexParamValeur parametres;
+    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]] = QString().setNum(tapis->position().x());
+    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]] = QString().setNum(tapis->position().y());
+    qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]];
+    qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]];
+
+#ifdef DEBUG_ACHEMINENEMENT
+    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]] = XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage];
+    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]] = _id_bagage_genere++;
+#endif
+    tapis->ajouterBagage(bagage);
+
+    _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append(bagage);
+
+    return bagage;
 }
 
 void Prototype::ajouterBagageAleatoire()
@@ -109,20 +125,8 @@ void Prototype::ajouterBagageAleatoire()
             int nbtapis = _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].size();
             Tapis* tapis = dynamic_cast<Tapis*>(_elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]][qrand()%nbtapis]);
 
-            Bagage* bagage = new Bagage(vol);
-            XmlConfigFactory::IndexParamValeur parametres;
-            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]] = QString().setNum(tapis->position().x());
-            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]] = QString().setNum(tapis->position().y());
-            qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]];
-            qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]];
-
-#ifdef DEBUG_ACHEMINENEMENT
-            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]] = XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage];
-            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]] = _id_bagage_genere++;
-#endif
-            tapis->ajouterBagage(bagage);
-
-            _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append(bagage);
+            ajouterBagage(tapis,vol);
+            // TODO : ajouter la vue... ?
         }
     }
     */
