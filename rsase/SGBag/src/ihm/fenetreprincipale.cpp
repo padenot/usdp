@@ -1,6 +1,7 @@
 #include <QDebug>
 #include <QTableView>
 #include <QTableWidgetItem>
+#include <QInputDialog>
 
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
@@ -17,8 +18,6 @@
 
 #include "vueconfig.h"
 
-#include <QInputDialog>
-#include <QDir>
 #include "src/noyau/XmlConfigFactory.h"
 
 void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
@@ -69,28 +68,33 @@ void FenetrePrincipale::changementSelection()
     }
     else
     {
+        if (_vueParametres != 0)
+        {
+            ui->layoutParametres->removeWidget(_vueParametres);
+            delete _vueParametres;
+            _vueParametres = 0;
+        }
+
         VueChariot* vueChariot = dynamic_cast<VueChariot*>(selectedItems.first());
         if (vueChariot != 0)
         {
-            if (_vueParametres != 0)
-            {
-                ui->layoutParametres->removeWidget(_vueParametres);
-                delete _vueParametres;
-            }
-
             _vueParametres = new VueParametresChariot(vueChariot->chariot(),this);
 
             ui->layoutParametres->addWidget(_vueParametres);
         }
+
         VueToboggan* vueToboggan = dynamic_cast<VueToboggan*>(selectedItems.first());
         if(vueToboggan != 0)
         {
-            QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
-            QModelIndexList listIndex = selectionmodel->selectedIndexes();
-            vueToboggan->associerVol(prototype->vol(listIndex.at(0).row()));
-            // L'association a été faite : on rechange l'état des boutons, et on rend
-            // tout selectionnable.
-            annulerAssociation();
+            if (_etat == SELECTIONTOBOGGAN)
+            {
+                QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
+                QModelIndexList listIndex = selectionmodel->selectedIndexes();
+                vueToboggan->associerVol(prototype->vol(listIndex.at(0).row()));
+                // L'association a été faite : on rechange l'état des boutons, et on rend
+                // tout selectionnable.
+                annulerAssociation();
+            }
         }
 
         // TODO : autres types

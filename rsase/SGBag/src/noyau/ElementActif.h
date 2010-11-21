@@ -42,7 +42,6 @@ class ElementActif : public Element
         virtual bool estActif ();
 
     public slots :
-
         virtual void modifierVitesseMax(qreal nouvelleVitesseMax);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"

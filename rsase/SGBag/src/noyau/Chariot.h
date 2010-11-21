@@ -88,9 +88,9 @@ class Chariot : public ElementActif
         TypePilotage typePilotage();
         Direction directionConseillee();
 
-    protected slots :
-        void modifierTypePilotage(TypePilotage type);
-        void modifierDirectionConseillee(Direction direction);
+    public slots :
+            void modifierTypePilotage(TypePilotage type);
+            void modifierDirectionConseillee(Direction direction);
 
     //Begin section for Chariot
     //TODO: Add attributes that you want preserved
