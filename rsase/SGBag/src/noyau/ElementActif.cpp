@@ -3,7 +3,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file ElementActif.cpp
 
-const qreal ElementActif::VITESSE_DEFAUT = 0.01;
+const qreal ElementActif::VITESSE_DEFAUT = 0.05;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

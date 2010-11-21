@@ -14,7 +14,7 @@
 //Begin section for file Tapis.cpp
 //End section for file Tapis.cpp
 
-const qreal Tapis::RAYON_PROXIMITE_TRONCON = 1.0;
+const qreal Tapis::RAYON_PROXIMITE_TRONCON = 0.5;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -45,13 +45,13 @@ Tapis::~Tapis()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::maj()
+void Tapis::maj(qreal dt)
 {
     // si un chariot est connecté au tapis
     if(_chariotConnecte != 0)
     {
         // Déroule le tapis (fait avancer les objets).
-        deroulerTapis();
+        deroulerTapis(dt);
     }
 }
 
@@ -65,8 +65,11 @@ void Tapis::ajouterBagage(Bagage* bagageEntrant)
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::deroulerTapis()
+void Tapis::deroulerTapis(qreal dt)
 {
+    QVector2D deplacement(_tronconSupport->position() - _position);
+    deplacement *= _vitesse*dt;
+
     // Pour chaque bagage sur le tapis
     Bagage* b;
     for(unsigned int i = 0; i < _bagages.size(); ++i)
@@ -75,7 +78,7 @@ void Tapis::deroulerTapis()
 
         // TODO faut vérifier, le modèle est pas clair, je calcule la direction en prenant
         // _position pour point de départ et la position du "noeudFin" comme point final.
-        b->simulerDeplacement(QVector2D(_tronconSupport->position() - _position*_vitesse));
+        b->simulerDeplacement(deplacement);
 
         if(bagageEstSorti(b))
         {

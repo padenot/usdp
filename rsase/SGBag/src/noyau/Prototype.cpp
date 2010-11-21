@@ -13,17 +13,21 @@
 
 const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 10000;
 
-const int Prototype::INTERVALLE_MAX = 1000;
-const int Prototype::INTERVALLE_MIN = 1;
+const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
-const int Prototype::INTERVALLE_DEFAUT = 1;
+const qreal Prototype::INTERVALLE_SIMULATION_DEFAUT =
+        1.0 / Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE;
+const qreal Prototype::INTERVALLE_SIMULATION_MAX = Prototype::INTERVALLE_SIMULATION_DEFAUT*2;
+const qreal Prototype::INTERVALLE_SIMULATION_MIN = Prototype::INTERVALLE_SIMULATION_DEFAUT/2;
+
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::Prototype(const QString& xmlfilepath) :
         QObject(0),
         _elementsParType(),
-        _mode_generation_bagage(AUTOMATIQUE)
+        _mode_generation_bagage(AUTOMATIQUE),
+        _dt (INTERVALLE_SIMULATION_DEFAUT)
 {
     // Désérialise le fichier XML.
     // Extrait et classe par type des pointeurs d'éléments.
@@ -44,25 +48,13 @@ Prototype::Prototype(const QString& xmlfilepath) :
     {
         _elementsParType = handler.resultat();
 
-        foreach(Element* chariot,
-                _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
-        {
-            connect(&_horloge,SIGNAL(timeout()),chariot,SLOT(maj()));
-        }
-
-        foreach(Element* tapis,
-                _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
-        {
-            connect(&_horloge,SIGNAL(timeout()),tapis,SLOT(maj()));
-        }
-
-        connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
-
         qDebug() << _elementsParType;
     }
 
-    _horloge.setInterval(INTERVALLE_DEFAUT);
-    //commencerSimulation();
+    _horloge.setInterval(INTERVALLE_RAFRAICHISSEMENT_MODELE);
+
+    connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
+    connect(&_horloge, SIGNAL(timeout()), this, SLOT(maj()));
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DESTRUCTOR"
@@ -117,14 +109,19 @@ void Prototype::arreterSimulation()
     _horloge.stop();
 }
 
-void Prototype::changerVitesse(int percent)
+void Prototype::changerVitesse(int pourcentage)
 {
-    _horloge.setInterval( (INTERVALLE_MAX-INTERVALLE_MIN+1)/(percent*10) );
-}
+    if (pourcentage > 100)
+    {
+        pourcentage = 100;
+    }
+    else if (pourcentage < 0)
+    {
+        pourcentage = 0;
+    }
 
-int Prototype::getVitesse()
-{
-    return _horloge.interval();
+    _dt = INTERVALLE_SIMULATION_MIN +
+          (INTERVALLE_SIMULATION_MAX-INTERVALLE_SIMULATION_MIN)*(pourcentage);
 }
 
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()
@@ -132,3 +129,17 @@ const XmlConfigFactory::IndexTypesElements &Prototype::elements()
     return _elementsParType;
 }
 
+void Prototype::maj()
+{
+    foreach(Element* chariot,
+            _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
+    {
+        dynamic_cast<Chariot*>(chariot)->maj(_dt);
+    }
+
+    foreach(Element* tapis,
+            _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
+    {
+        dynamic_cast<Tapis*>(tapis)->maj(_dt);
+    }
+}

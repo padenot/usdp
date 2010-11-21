@@ -11,7 +11,7 @@ StrategiePilotageAuto::StrategiePilotageAuto(Chariot& chariot, Troncon* tronconA
 {
 }
 
-void StrategiePilotageAuto::pilotageNoeudAtteint(Bagage* bagage)
+void StrategiePilotageAuto::pilotageNoeudAtteint(qreal dt, Bagage* bagage)
 {
     Troncon* nouveauTroncon = 0;
 
@@ -32,7 +32,7 @@ void StrategiePilotageAuto::pilotageNoeudAtteint(Bagage* bagage)
     {
         _tronconActuel->liberer();
         _tronconActuel = nouveauTroncon;
-        pilotageEnChemin();
+        pilotageEnChemin(dt);
 #ifdef DEBUG_ACHEMINEMENT
         qDebug() << _chariot << "passe sur" << *nouveauTroncon;
 #endif

@@ -102,20 +102,22 @@ class Prototype : public QObject
         void arreterSimulation();
         /**
          * @brief Changer la vitesse de la simulation, sans arrêter la
-         * simulation
-         * @param msec Le temps entre deux ticks d'horloge.
+         *        simulation.
+         * @param pourcentage Pourcentage de la vitesse maximale.
+         *                    Si hors bornes (<0 ou >100), il est ramené à
+         *                    la borne la plus proche.
          */
-        void changerVitesse(int percent);
-
-        /**
-         * @brief connaitre la vitesse actuelle de la simulation
-         */
-        int getVitesse();
+        void changerVitesse(int pourcentage);
 
         const XmlConfigFactory::IndexTypesElements &elements();
 
-    private:
+    protected slots:
+        /**
+         * Met à jour le modèle.
+         */
+        void maj();
 
+    protected:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
@@ -137,9 +139,16 @@ class Prototype : public QObject
          */
         ModeSimulation _mode_generation_bagage;
 
-        static const int INTERVALLE_DEFAUT;
-        static const int INTERVALLE_MAX;
-        static const int INTERVALLE_MIN;
+        /**
+         * Intervalle de temps donné au modèle à chaque tick d'horloge
+         * lors de la simulation.
+         */
+        qreal _dt;
+
+        static const int INTERVALLE_RAFRAICHISSEMENT_MODELE;
+        static const qreal INTERVALLE_SIMULATION_DEFAUT;
+        static const qreal INTERVALLE_SIMULATION_MAX;
+        static const qreal INTERVALLE_SIMULATION_MIN;
 };  //end class Prototype
 
 #endif

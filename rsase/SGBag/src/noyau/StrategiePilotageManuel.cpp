@@ -11,7 +11,7 @@ StrategiePilotageManuel::StrategiePilotageManuel(Chariot& chariot, Troncon* tron
 }
 
 
-void StrategiePilotageManuel::pilotageNoeudAtteint(Bagage* bagage)
+void StrategiePilotageManuel::pilotageNoeudAtteint(qreal dt, Bagage* bagage)
 {
     // TODO
 }

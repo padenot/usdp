@@ -65,8 +65,9 @@ class Chariot : public ElementActif
          *  - Décharge le bagage
          *  - Change de tronçon
          *  - ...
+         * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
          */
-        virtual void maj();
+        virtual void maj(qreal dt);
 
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
@@ -76,7 +77,7 @@ class Chariot : public ElementActif
          * Ne vérifie pas si le chariot est à l'arrêt. TODO : changer, décrémentation de la vitesse
          * @param[in] destination Point vers lequel avancera le chariot
          */
-        void avancer(QPointF destination);
+        void avancer(qreal dt, QPointF destination);
 
 
     //Begin section for Chariot

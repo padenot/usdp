@@ -5,9 +5,9 @@
 #include "Tapis.h"
 #include "Noeud.h"
 
-const qreal StrategiePilotage::RAYON_PROXIMITE_NOEUD = 0.1;
-const qreal StrategiePilotage::RAYON_PROXIMITE_TAPIS = 0.1;
-const qreal StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 0.1;
+const qreal StrategiePilotage::RAYON_PROXIMITE_NOEUD = 0.5;
+const qreal StrategiePilotage::RAYON_PROXIMITE_TAPIS = 0.5;
+const qreal StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 0.5;
 
 StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
                                      Tapis* tapisAssocie) :
@@ -17,13 +17,13 @@ StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
 {
 }
 
-void StrategiePilotage::piloter(Bagage* bagageTransporte)
+void StrategiePilotage::piloter(qreal dt, Bagage* bagageTransporte)
 {
     switch (situation(bagageTransporte))
     {
         case ARRET :                    pilotageArret(); break;
-        case EN_CHEMIN :                pilotageEnChemin(); break;
-        case NOEUD_ATTEINT :            pilotageNoeudAtteint(bagageTransporte); break;
+        case EN_CHEMIN :                pilotageEnChemin(dt); break;
+        case NOEUD_ATTEINT :            pilotageNoeudAtteint(dt, bagageTransporte); break;
         case TOBOGGAN_ATTEINT :         pilotageTobogganAtteint(bagageTransporte); break;
         case TAPIS_ATTEINT :            pilotageTapisAtteint(); break;
     }
@@ -79,12 +79,12 @@ void StrategiePilotage::pilotageArret()
 #endif
 }
 
-void StrategiePilotage::pilotageEnChemin()
+void StrategiePilotage::pilotageEnChemin(qreal dt)
 {
 #ifdef DEBUG_ACHEMINEMENT
     //qDebug() << _chariot << "avance avec" << _bagage;
 #endif
-    _chariot.avancer(_tronconActuel->noeudFin()->position());
+    _chariot.avancer(dt,_tronconActuel->noeudFin()->position());
 }
 
 void StrategiePilotage::pilotageTobogganAtteint(Bagage* bagage)

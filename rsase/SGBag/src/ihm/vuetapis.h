@@ -18,28 +18,28 @@ class VueTapisHandler;
 
 class VueTapis : public VueElement
 {
-public:
-    VueTapis(FenetrePrincipale& _fenetrePrincipale, Tapis &tapis);
-    virtual ~VueTapis();
+    public:
+        VueTapis(FenetrePrincipale& _fenetrePrincipale, Tapis &tapis);
+        virtual ~VueTapis();
 
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    QRectF boundingRect() const;
+        void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+        QRectF boundingRect() const;
 
-    Tapis* tapisAssocie();
-    void ajouterBagage();
+        Tapis* tapisAssocie();
+        void ajouterBagage();
 
-protected:
-    void advance(int step);
+    protected:
+        void advance(int step);
 
-private:
-    int _etat;
-    QSvgRenderer *_image;
-    Tapis &_tapis;
+    private:
+        int _etat;
+        QSvgRenderer *_image;
+        Tapis &_tapis;
 
-    /**
-     * Instance de VueTapisHandler intégrée à la vue.
-     */
-    VueTapisHandler& _handler;
+        /**
+         * Instance de VueTapisHandler intégrée à la vue.
+         */
+        VueTapisHandler& _handler;
 };
 
 /**
@@ -49,13 +49,13 @@ class VueTapisHandler : public QObject
 {
     Q_OBJECT
 
-public:
-    VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetrePrincipale);
-public slots:
-    void ajouterBagage();
-protected:
-    VueTapis& _vueTapis;
-    FenetrePrincipale& _fenetrePrincipale;
+    public:
+        VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetrePrincipale);
+    public slots:
+        void ajouterBagage();
+    protected:
+        VueTapis& _vueTapis;
+        FenetrePrincipale& _fenetrePrincipale;
 };
 
 #endif // VUETAPIS_H

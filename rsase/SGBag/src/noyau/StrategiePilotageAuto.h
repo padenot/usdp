@@ -9,7 +9,7 @@ class StrategiePilotageAuto : public StrategiePilotage
         StrategiePilotageAuto(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
 
     protected :
-        virtual void pilotageNoeudAtteint(Bagage *bagage);
+        virtual void pilotageNoeudAtteint(qreal dt, Bagage *bagage);
 };
 
 #endif // STRATEGIEPILOTAGEAUTO_H

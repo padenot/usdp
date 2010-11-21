@@ -25,12 +25,12 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                    XmlConfigFactory& fabrique)
 {
     ElementActif::init(indexParamValeur,fabrique);
-	Troncon* tronconActuel = 0;
-	Tapis* tapisAssocie = 0;
-    
-	tronconActuel = dynamic_cast<Troncon*>(fabrique.elementParId(
-            indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()
-            ));
+    Troncon* tronconActuel = 0;
+    Tapis* tapisAssocie = 0;
+
+    tronconActuel = dynamic_cast<Troncon*>(fabrique.elementParId(
+        indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()
+        ));
     tapisAssocie = dynamic_cast<Tapis*>(fabrique.elementParId(
             indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapisAssocie]].toInt()));
 
@@ -70,11 +70,11 @@ void Chariot::dechargerBatterie()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Chariot::avancer(QPointF destination)
+void Chariot::avancer(qreal dt, QPointF destination)
 {
     QVector2D deplacement(destination - _position);
     deplacement.normalize();
-    deplacement *= _vitesse;
+    deplacement *= _vitesse * dt;
 
     _position += deplacement.toPointF();
     if (_bagage != 0)
@@ -83,8 +83,8 @@ void Chariot::avancer(QPointF destination)
     }
 }
 
-void Chariot::maj()
+void Chariot::maj(qreal dt)
 {
-    _pilote->piloter(_bagage);
+    _pilote->piloter(dt,_bagage);
 }
 

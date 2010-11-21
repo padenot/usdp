@@ -12,7 +12,7 @@ class StrategiePilotage : public QObject
 {
     public:
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
-        void piloter (Bagage* bagageTransporte);
+        void piloter (qreal dt, Bagage* bagageTransporte);
 
     protected:
 
@@ -23,13 +23,13 @@ class StrategiePilotage : public QObject
 
         /** Pilote le chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
          */
-        virtual void pilotageEnChemin();
+        virtual void pilotageEnChemin(qreal dt);
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
          * @param[in] bagage TODO
          */
-        virtual void pilotageNoeudAtteint(Bagage* bagage) = 0;
+        virtual void pilotageNoeudAtteint(qreal dt, Bagage* bagage) = 0;
 
         /** Pilote le chariot lorsqu'il atteint le toboggan objectif.
          */

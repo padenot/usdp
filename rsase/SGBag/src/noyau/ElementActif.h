@@ -44,8 +44,11 @@ class ElementActif : public Element
     public slots :
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        virtual void maj() = 0;
 
+        /** Met à jour l'élément actif (position, ...)
+         * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
+         */
+        virtual void maj(qreal dt) = 0;
 
     protected:
 

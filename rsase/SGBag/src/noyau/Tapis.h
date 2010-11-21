@@ -48,12 +48,14 @@ class Tapis : public ElementActif
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual ~Tapis();
 
-        /**
-         * Opération de mise à jour en cascade de l'objet.
-         */
+
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void maj();
+        /**
+         * Opération de mise à jour en cascade de l'objet.
+         * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
+         */
+        void maj(qreal dt);
 
         /**
          * Ajoute le bagage bagageEntrant sur le tapis.
@@ -95,10 +97,12 @@ class Tapis : public ElementActif
 
         /**
          * Met le tapis en action (déplace les bagages).
+         * @param[in] dt Intervalle de temps. Permet de calculer la longueur du déplacement
+         *               à l'aide de la vitesse du tapis.
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void deroulerTapis();
+        void deroulerTapis(qreal dt);
 
         /**
          * Teste si le bagage bagage est sorti du tapis.

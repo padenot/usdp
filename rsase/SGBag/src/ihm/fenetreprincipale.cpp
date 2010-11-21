@@ -3,13 +3,13 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
-#include "src/ihm/vuebagage.h"
-#include "src/ihm/vuechariot.h"
-#include "src/ihm/vuetapis.h"
-#include "src/ihm/vuetoboggan.h"
-#include "src/ihm/vuetroncon.h"
+#include "vuebagage.h"
+#include "vuechariot.h"
+#include "vuetapis.h"
+#include "vuetoboggan.h"
+#include "vuetroncon.h"
 
-#include "src/ihm/vueconfig.h"
+#include "vueconfig.h"
 
 #include "src/noyau/XmlConfigFactory.h"
 
@@ -57,6 +57,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
     connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(arreterSimulation()));
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), prototype, SLOT(changerVitesse(int)));
+    ui->speedSlider->setValue(50);
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
