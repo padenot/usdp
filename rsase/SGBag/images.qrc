@@ -8,6 +8,7 @@
         <file alias="sacsport">ui/images/sacsport.svg</file>
         <file alias="valise">ui/images/valise.svg</file>
         <file alias="homard">ui/images/homard.svg</file>
+        <file alias="avion">ui/images/avion.svg</file>
     </qresource>
     <qresource prefix="/icones">
         <file alias="pause">ui/icones/pause.svg</file>

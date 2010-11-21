@@ -29,6 +29,7 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 private:
+    QSvgRenderer *_image;
     Vol& _vol;
     VueVolHandler& _handler;
 };

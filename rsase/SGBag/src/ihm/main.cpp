@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     srand(time(NULL));
 
-    Prototype proto("configuration_simple.xml");
+    Prototype proto("configuration_complexe.xml");
 
     FenetrePrincipale w(&proto);
     w.AjouterItems(proto.elements());

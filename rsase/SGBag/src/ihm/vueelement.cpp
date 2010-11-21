@@ -51,12 +51,13 @@ void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 {
     if(isSelected())
     {
-        painter->setPen(Qt::red);
-        // painter->setOpacity(0.4);
+        painter->setPen(Qt::white);
+        painter->setOpacity(0.4);
         QRectF rect = boundingRect();
         rect.setTopLeft(rect.topLeft() - QPoint(2,2));
         rect.setBottomRight(rect.bottomRight() + QPoint(2,2));
         painter->drawRoundedRect(rect,2,2);
+        painter->setOpacity(1);
     }
 }
 

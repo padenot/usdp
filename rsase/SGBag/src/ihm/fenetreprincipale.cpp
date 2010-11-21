@@ -150,7 +150,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
-    ui->vue->scale(7, 7);
+    //ui->vue->scale(7, 7);
     ui->volTableView->setModel(prototype->modelVols());
 
     connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));

@@ -4,6 +4,7 @@
 #include "src/noyau/Toboggan.h"
 
 #include <QtSvg/QSvgRenderer>
+#include <QVector2D>
 
 using namespace vue_config::toboggan;
 
@@ -12,17 +13,18 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
         _image(new QSvgRenderer(etatNormal)),
         _toboggan(toboggan)
 {
-    QLineF ligneDirection(_toboggan.position(),_toboggan.pointConnexion());
+    QLineF ligneDirection(QPointF(0,0), _toboggan.pointConnexion() - _toboggan.position());
     ligneDirection.setLength(ligneDirection.length()-vue_config::chariot::largeur/2);
 
-    _rect = QRectF(0,largeur/2,ligneDirection.length(),largeur);
+    QLineF direction = QLineF(QPoint(0, 0), _toboggan.pointConnexion() - _toboggan.position());
+    QVector2D vecteurDir = QVector2D(_toboggan.pointConnexion() - _toboggan.position());
 
-    qDebug() << ligneDirection << _rect;
+    _rect = QRectF(0,-largeur/2,direction.length(), largeur);
 
     setZValue(zIndex);
-    setPos(_toboggan.position());
-    setTransformOriginPoint(0,largeur/2);
+    setPos(_toboggan.position() - (vecteurDir.normalized().toPointF() * (vue_config::chariot::largeur/2)));
     setRotation(-ligneDirection.angle());
+
 }
 
 void VueToboggan::associerVol(Vol* vol)

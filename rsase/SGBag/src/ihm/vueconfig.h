@@ -43,12 +43,11 @@ namespace vue_config
         const int longueur = 10;
         const int largeur = 10;
         const QString etatNormal = ":/images/tapis-roulant";
-        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 
     namespace toboggan
     {
-        const int zIndex = 7;
+        const int zIndex = 10;
         const int longueur = 10;
         const int largeur = 10;
         const QString etatNormal = ":/images/toboggan";
@@ -57,10 +56,19 @@ namespace vue_config
 
     namespace troncon
     {
-        const int zIndex = 6;
+        const int zIndex = 5;
         const int longueur = 10;
         const int largeur = 10;
         const QString etatNormal = ":/images/bagage-etatNormal";
+        const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
+    }
+
+    namespace vol
+    {
+        const int zIndex = 10;
+        const int longueur = 10;
+        const int largeur = 10;
+        const QString etatNormal = ":/images/avion";
         const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
     }
 }
