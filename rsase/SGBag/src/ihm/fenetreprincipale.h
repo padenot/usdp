@@ -13,6 +13,7 @@
 
 #include "vuevol.h"
 #include "vuetapis.h"
+#include "vueparametreschariot.h"
 
 namespace Ui {
     class FenetrePrincipale;
@@ -34,7 +35,7 @@ public:
 
     void verrouAjoutBagage(bool flag);
 
-     typedef QVector<QGraphicsItem*> IndexVues;
+    typedef QVector<QGraphicsItem*> IndexVues;
 
 signals:
     void volSelectionne(VueVol* vueVol);
@@ -46,6 +47,8 @@ protected slots :
     void associerVolToboggan();
 
     void changerVitesse(int pourcentage);
+
+    void changementSelection();
 
     void changerEtat();
 
@@ -63,6 +66,7 @@ private:
     IndexVues vues;
 
     VueTapis* vueTapisSelectionne;
+    QWidget* _vueParametres;
     /* Dialog pour l'ajout de vol */
     QDialog* _dialog;
 

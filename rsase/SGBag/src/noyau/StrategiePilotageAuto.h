@@ -7,9 +7,11 @@ class StrategiePilotageAuto : public StrategiePilotage
 {
     public:
         StrategiePilotageAuto(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
+        StrategiePilotageAuto(const StrategiePilotage& modele);
 
     protected :
-        virtual void pilotageNoeudAtteint(qreal dt, Bagage *bagage);
+        virtual void pilotageNoeudAtteint(
+                qreal dt, Direction directionConseillee, Bagage *bagage);
 };
 
 #endif // STRATEGIEPILOTAGEAUTO_H

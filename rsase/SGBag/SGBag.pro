@@ -69,7 +69,8 @@ src/ihm/vueconfig.h \
     src/noyau/StrategiePilotageAuto.h \
     src/noyau/StrategiePilotageManuel.h \
     src/noyau/modelvols.h \
-    src/ihm/vueparametreschariot.h
+    src/ihm/vueparametreschariot.h \
+    src/noyau/Direction.h
 FORMS    += fenetreprincipale.ui \
     gestionVol.ui \
     ajouterVol.ui \

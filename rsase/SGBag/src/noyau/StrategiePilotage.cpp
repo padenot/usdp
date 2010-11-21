@@ -17,13 +17,20 @@ StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
 {
 }
 
-void StrategiePilotage::piloter(qreal dt, Bagage* bagageTransporte)
+StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :
+        _chariot(modele._chariot),
+        _tronconActuel(modele._tronconActuel),
+        _tapisAssocie(modele._tapisAssocie)
+{
+}
+
+void StrategiePilotage::piloter(qreal dt, Direction directionConseillee, Bagage* bagageTransporte)
 {
     switch (situation(bagageTransporte))
     {
         case ARRET :                    pilotageArret(); break;
         case EN_CHEMIN :                pilotageEnChemin(dt); break;
-        case NOEUD_ATTEINT :            pilotageNoeudAtteint(dt, bagageTransporte); break;
+        case NOEUD_ATTEINT :            pilotageNoeudAtteint(dt, directionConseillee, bagageTransporte); break;
         case TOBOGGAN_ATTEINT :         pilotageTobogganAtteint(bagageTransporte); break;
         case TAPIS_ATTEINT :            pilotageTapisAtteint(); break;
     }

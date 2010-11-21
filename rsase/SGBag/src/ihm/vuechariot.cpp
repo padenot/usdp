@@ -14,7 +14,6 @@ VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
     setPos(chariot.position());
 }
 
-
 void VueChariot::advance(int pas)
 {
         if(pas == 0)
@@ -33,4 +32,9 @@ void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
 QRectF VueChariot::boundingRect() const
 {
     return rect;
+}
+
+Chariot& VueChariot::chariot()
+{
+    return _chariot;
 }

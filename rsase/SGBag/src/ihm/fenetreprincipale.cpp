@@ -13,6 +13,8 @@
 #include "vuetoboggan.h"
 #include "vuetroncon.h"
 
+#include "vueparametreschariot.h"
+
 #include "vueconfig.h"
 
 #include <QInputDialog>
@@ -57,6 +59,34 @@ void FenetrePrincipale::changerVitesse(int pourcentage)
     ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
 }
 
+void FenetrePrincipale::changementSelection()
+{
+    QList<QGraphicsItem*> selectedItems= scene->selectedItems();
+
+    if (selectedItems.empty())
+    {
+        return;
+    }
+    else
+    {
+        VueChariot* vueChariot = dynamic_cast<VueChariot*>(selectedItems.first());
+        if (vueChariot != 0)
+        {
+            if (_vueParametres != 0)
+            {
+                ui->layoutParametres->removeWidget(_vueParametres);
+                delete _vueParametres;
+            }
+
+            _vueParametres = new VueParametresChariot(vueChariot->chariot(),this);
+
+            ui->layoutParametres->addWidget(_vueParametres);
+        }
+
+        // TODO : autres types
+    }
+}
+
 void FenetrePrincipale::changerEtat()
 {
 static bool etat = false;
@@ -80,7 +110,8 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FenetrePrincipale),
     scene(new QGraphicsScene()),
-    prototype(proto)
+    prototype(proto),
+    _vueParametres(0)
 {
     ui->setupUi(this);
 
@@ -92,7 +123,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
-    connect(scene, SIGNAL(selectionChanged()), this, SLOT(afficherSelection()));
+    connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
 
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);

@@ -8,7 +8,7 @@
 
 #include "ElementActif.h"
 #include "Bagage.h"
-
+#include "Direction.h"
 
 class StrategiePilotage;
 class Troncon; //Dependency Generated Source:Chariot Target:Troncon
@@ -24,6 +24,12 @@ class Chariot : public ElementActif
     Q_OBJECT
 
     public:
+
+        enum TypePilotage
+        {
+            AUTOMATIQUE,
+            MANUEL
+        };
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -79,6 +85,12 @@ class Chariot : public ElementActif
          */
         void avancer(qreal dt, QPointF destination);
 
+        TypePilotage typePilotage();
+        Direction directionConseillee();
+
+    protected slots :
+        void modifierTypePilotage(TypePilotage type);
+        void modifierDirectionConseillee(Direction direction);
 
     //Begin section for Chariot
     //TODO: Add attributes that you want preserved
@@ -94,6 +106,8 @@ class Chariot : public ElementActif
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Bagage * _bagage; /// Bagage transporté par le chariot.
 
+        Direction _directionConseillee;
+        TypePilotage _typePilotage;
         StrategiePilotage * _pilote; /// Pilote du chariot
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_alMHUO5DEd-dcpIgUje6-w"

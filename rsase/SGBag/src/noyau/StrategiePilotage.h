@@ -1,18 +1,20 @@
 #ifndef STATEGIEPILOTAGE_H
 #define STATEGIEPILOTAGE_H
 
-#include <QObject>
+#include <QtGlobal>
+#include "Direction.h"
 
 class Chariot;
 class Bagage;
 class Troncon;
 class Tapis;
 
-class StrategiePilotage : public QObject
+class StrategiePilotage
 {
     public:
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
-        void piloter (qreal dt, Bagage* bagageTransporte);
+        StrategiePilotage(const StrategiePilotage& modele);
+        void piloter (qreal dt, Direction directionConseillee, Bagage* bagageTransporte);
 
     protected:
 
@@ -29,7 +31,8 @@ class StrategiePilotage : public QObject
          * "bagage" doit être nul s'il n'y en a pas.
          * @param[in] bagage TODO
          */
-        virtual void pilotageNoeudAtteint(qreal dt, Bagage* bagage) = 0;
+        virtual void pilotageNoeudAtteint(
+                qreal dt, Direction directionConseillee, Bagage* bagage) = 0;
 
         /** Pilote le chariot lorsqu'il atteint le toboggan objectif.
          */

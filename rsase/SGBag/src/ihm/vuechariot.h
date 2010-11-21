@@ -18,6 +18,8 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
 
+    Chariot& chariot();
+
 protected:
     void advance(int step);
 

@@ -10,6 +10,7 @@
 
 #include "Element.h"
 #include "Troncon.h"
+#include "Direction.h"
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -42,6 +43,8 @@ class Noeud : public Element
         Troncon* trouverProchainTroncon(Troncon* destination);
 
         QPair<Troncon*, qreal> calculChemin(Troncon* destination);
+
+        Troncon* trouverProchainTroncon(Direction direction);
 
     private:
 

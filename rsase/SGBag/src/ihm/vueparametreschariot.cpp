@@ -8,6 +8,7 @@ VueParametresChariot::VueParametresChariot(Chariot& chariot, QWidget *parent) :
     _chariot(chariot)
 {
     ui->setupUi(this);
+    connect(ui->vitesseMax,SIGNAL(valueChanged(double)),&_chariot,SLOT(modifierVitesseMax(double)));
 }
 
 VueParametresChariot::~VueParametresChariot()

@@ -17,6 +17,8 @@
 Chariot::Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
     ElementActif(indexParamValeur),
     _bagage (0),
+    _directionConseillee (GAUCHE),
+    _typePilotage (AUTOMATIQUE),
     _pilote (0)
 {
 }
@@ -85,6 +87,42 @@ void Chariot::avancer(qreal dt, QPointF destination)
 
 void Chariot::maj(qreal dt)
 {
-    _pilote->piloter(dt,_bagage);
+    _pilote->piloter(dt,_directionConseillee,_bagage);
 }
 
+
+Chariot::TypePilotage Chariot::typePilotage()
+{
+    return _typePilotage;
+}
+
+Direction Chariot::directionConseillee()
+{
+    return _directionConseillee;
+}
+
+void Chariot::modifierTypePilotage(TypePilotage type)
+{
+    StrategiePilotage* ancienPilote = _pilote;
+    if (type != _typePilotage)
+    {
+        switch(type)
+        {
+            case AUTOMATIQUE :
+                _pilote = new StrategiePilotageAuto(*_pilote);
+                break;
+            case MANUEL :
+                _pilote = new StrategiePilotageManuel(*_pilote);
+                break;
+        }
+
+        _typePilotage = type;
+
+        delete ancienPilote;
+    }
+}
+
+void Chariot::modifierDirectionConseillee(Direction direction)
+{
+    _directionConseillee = direction;
+}

@@ -69,6 +69,36 @@ Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
     }
 }
 
+Troncon* Noeud::trouverProchainTroncon(Direction direction)
+{
+    if (_tronconsSuivants.size() == 1)
+    {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << *this << "dit : aucun choix possible, continuer";
+#endif
+        return _tronconsSuivants.first();
+    }
+    else
+    {
+        if (direction == GAUCHE)
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << *this << "dit : tu veux aller à gauche, va sur"
+                    << *_tronconsSuivants[0];
+#endif
+            return _tronconsSuivants[0];
+        }
+        else
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << *this << "dit : tu veux aller à droite, va sur"
+                    << *_tronconsSuivants[1];
+#endif
+            return _tronconsSuivants[1];
+        }
+    }
+}
+
 
 QPair<Troncon*, qreal> Noeud::calculChemin(Troncon* destination)
 {
