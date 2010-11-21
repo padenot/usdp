@@ -57,7 +57,6 @@ void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
         rect.setTopLeft(rect.topLeft() - QPoint(2,2));
         rect.setBottomRight(rect.bottomRight() + QPoint(2,2));
         painter->drawRoundedRect(rect,2,2);
-        qDebug() << boundingRect();
     }
 }
 

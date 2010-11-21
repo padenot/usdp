@@ -25,6 +25,12 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
     setRotation(-ligneDirection.angle());
 }
 
+void VueToboggan::associerVol(Vol* vol)
+{
+    _toboggan.associerVol(vol);
+}
+
+
 
 void VueToboggan::advance(int pas)
 {

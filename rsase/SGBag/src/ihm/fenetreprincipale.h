@@ -23,6 +23,16 @@ namespace Ui {
 class FenetrePrincipale : public QMainWindow
 {
     Q_OBJECT
+private:
+    /**
+     * Etat de la vue.
+     */
+    enum Etat
+    {
+        NORMAL,
+        SELECTIONTOBOGGAN,
+        AJOUTBAGAGE
+    };
 
 public:
     explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
@@ -53,6 +63,12 @@ protected slots :
     void changerEtat();
 
     void afficherSelection();
+    void desactiverToutSaufToboggans();
+    void changementEtat(Etat etat);
+    void activerSelection();
+    void annulerAssociation();
+
+
 
 private:
     void afficherParametres(const QMap<QString, QString> *parametres);
@@ -70,6 +86,9 @@ private:
     /* Dialog pour l'ajout de vol */
     QDialog* _dialog;
 
+    bool enTrainDeSelectionnerUnToboggan;
+
+    Etat _etat;
 };
 
 #endif // FENETREPRINCPALE_H

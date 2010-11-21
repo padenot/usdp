@@ -124,6 +124,7 @@ class Prototype : public QObject
          */
         ModelVols* modelVols();
         void ajouterVol(Vol* vol);
+        Vol* vol(int index);
 
     protected slots:
         /**

@@ -82,6 +82,16 @@ void FenetrePrincipale::changementSelection()
 
             ui->layoutParametres->addWidget(_vueParametres);
         }
+        VueToboggan* vueToboggan = dynamic_cast<VueToboggan*>(selectedItems.first());
+        if(vueToboggan != 0)
+        {
+            QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
+            QModelIndexList listIndex = selectionmodel->selectedIndexes();
+            vueToboggan->associerVol(prototype->vol(listIndex.at(0).row()));
+            // L'association a été faite : on rechange l'état des boutons, et on rend
+            // tout selectionnable.
+            annulerAssociation();
+        }
 
         // TODO : autres types
     }
@@ -110,6 +120,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FenetrePrincipale),
     scene(new QGraphicsScene()),
+    _etat(NORMAL),
     prototype(proto),
     _vueParametres(0)
 {
@@ -140,6 +151,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));
     connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
+    connect(ui->volAnnulerButton, SIGNAL(clicked()), this, SLOT(annulerAssociation()));
     //ui->TableParametres->setColumnCount(2);
 
     timer.start(vue_config::dt);
@@ -155,6 +167,7 @@ FenetrePrincipale::~FenetrePrincipale()
 
     delete scene;
     delete ui;
+    delete _dialog;
 }
 
 void FenetrePrincipale::ajouterVol()
@@ -249,8 +262,69 @@ void FenetrePrincipale::verrouAjoutBagage(bool flag)
 
 void FenetrePrincipale::associerVolToboggan()
 {
-    QItemSelectionModel* model = ui->volTableView->selectionModel();
-    QModelIndexList listIndex = model->selectedIndexes();
-   // listIndex.at(0).row() permet d'avoir la row dans le model
+    if(_etat == NORMAL)
+    {
+        qDebug() << __func__ << " Etat : normal";
+        QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
+        QModelIndexList listIndex = selectionmodel->selectedIndexes();
+        if( ! listIndex.empty())
+        {
+            changementEtat(SELECTIONTOBOGGAN);
+            desactiverToutSaufToboggans();
+            // listIndex.at(0).row() permet d'avoir la row dans le model
+            ui->volAssocierButton->setEnabled(false);
+            ui->volAnnulerButton->setEnabled(true);
+        }
+    }
+}
+
+void FenetrePrincipale::annulerAssociation()
+{
+    qDebug() << __func__ << " Etat : SELECTIONTOBOGGAN";
+    ui->volAnnulerButton->setEnabled(false);
+    ui->volAssocierButton->setEnabled(true);
+    activerSelection();
+    changementEtat(NORMAL);
+}
+
+void FenetrePrincipale::desactiverToutSaufToboggans()
+{
+    QList<QGraphicsItem *> gilist = scene->items();
+    foreach(QGraphicsItem* item, gilist)
+    {
+        VueToboggan* tob = dynamic_cast<VueToboggan*>(item);
+        if(tob == 0)
+        {
+           item->setFlags(0);
+        }
+    }
+}
+
+void FenetrePrincipale::activerSelection()
+{
+    QList<QGraphicsItem *> gilist = scene->items();
+    foreach(QGraphicsItem* item, gilist)
+    {
+        qDebug() << "selection";
+        item->setFlags(QGraphicsItem::ItemIsSelectable);
+    }
+}
+
+void FenetrePrincipale::changementEtat(Etat etat)
+{
+    qDebug() << "Changement d'etat vers : " << etat;
+    switch(etat)
+    {
+    case SELECTIONTOBOGGAN:
+        qDebug() << "On passe en selection toboggan";
+        ui->volAssocierButton->setText("&Annuler");
+        _etat = SELECTIONTOBOGGAN;
+        break;
+    case NORMAL:
+        qDebug() << "On passe en mode normal";
+        ui->volAssocierButton->setText("&Associer");
+        _etat = NORMAL;
+        break;
+    };
 }
 

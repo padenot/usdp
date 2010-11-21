@@ -6,8 +6,10 @@
 
 #include <QMap>
 
+
 #include "Element.h"
 #include "XmlConfigFactory.h"
+#include "Vol.h"
 
 class Noeud;
 class Bagage;
@@ -53,12 +55,13 @@ class Toboggan : public Element
         bool estSupport (const Troncon* troncon) const;
 
         QPointF pointConnexion() const;
+        void associerVol(Vol* vol);
 
     private:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_luU7wfCwEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //Vol * _vol;
+        Vol * _vol;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_hBPwkOspEd-oy8D834IawQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

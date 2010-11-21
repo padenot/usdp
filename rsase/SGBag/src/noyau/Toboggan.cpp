@@ -52,3 +52,9 @@ QPointF Toboggan::pointConnexion() const
 {
     return _tronconSupport->position();
 }
+
+void Toboggan::associerVol(Vol* vol)
+{
+    _vol = vol;
+}
+

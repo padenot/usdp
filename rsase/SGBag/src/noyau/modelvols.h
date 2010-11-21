@@ -45,6 +45,11 @@ public:
      * Données pour les entetes.
      */
     QVariant headerData ( int section, Qt::Orientation orientation, int role = Qt::DisplayRole ) const;
+    /**
+     * Prendre le index-ieme element du model.
+     */
+    Vol* at(int index);
+
 signals:
 
 public slots:

@@ -98,7 +98,7 @@
      <x>0</x>
      <y>0</y>
      <width>1146</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -117,10 +117,10 @@
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
+     <item row="0" column="1">
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="Vols">
         <attribute name="title">
@@ -190,11 +190,25 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QPushButton" name="volAssocierButton">
-           <property name="text">
-            <string>&amp;Associer</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="volAnnulerButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>&amp;Annuler</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="volAssocierButton">
+             <property name="text">
+              <string>&amp;Associer</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>

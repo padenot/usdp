@@ -82,7 +82,7 @@ void Prototype::changementMode(ModeSimulation mode)
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
+void    Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
 }
 
@@ -199,6 +199,14 @@ void Prototype::ajouterVol(Vol* vol)
 {
     _modelVols.ajouterVol(vol);
 }
+
+Vol* Prototype::vol(int index)
+{
+    return _modelVols.at(index);
+}
+
+
+
 
 
 

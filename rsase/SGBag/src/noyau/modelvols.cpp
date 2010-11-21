@@ -29,7 +29,6 @@ int ModelVols::columnCount(const QModelIndex&) const
 
 QVariant ModelVols::data(const QModelIndex & index, int role) const
 {
-    qDebug() << role;
     if(index.column() == Nom)
         return QVariant(_data[index.row()]->nom());
     if(index.column() == Toboggan)
@@ -57,8 +56,13 @@ QVariant ModelVols::headerData ( int section, Qt::Orientation orientation, int r
         return QVariant(LABEL_ENTETE[Nom]);
     if(section == Toboggan)
         return QVariant(LABEL_ENTETE[Toboggan]);
-    qDebug() << "plop";
     return QVariant();
+}
+
+Vol* ModelVols::at(int index)
+{
+    if(index > _data.size())
+        return _data[index];
 }
 
 
