@@ -35,6 +35,8 @@ class ElementActif : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual void demarrer();
 
+        virtual void modifierVitesseMax(qreal nouvelleVitesseMax);
+
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_M4WU0PIdEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         //virtual void modifierVitesse(qreal nouvelleVitesse);
@@ -55,8 +57,10 @@ class ElementActif : public Element
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_je1NYPG4Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         qreal _vitesse;
+        qreal _vitesseMax;
 
         static const qreal VITESSE_DEFAUT;
+        static const qreal VITESSE_MAX_DEFAUT;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_UiLRIPIWEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

@@ -1,9 +1,10 @@
+#include <QtSvg/QSvgRenderer>
+#include <QLineF>
+
 #include "src/ihm/vuetapis.h"
 #include "src/ihm/vueconfig.h"
 #include "src/noyau/Troncon.h"
 #include "src/ihm/fenetreprincipale.h"
-
-#include <QtSvg/QSvgRenderer>
 
 using namespace vue_config::tapis;
 
@@ -13,8 +14,15 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
+    QLineF ligneDirection(_tapis.position(),_tapis.pointConnexion());
+    ligneDirection.setLength(ligneDirection.length()-vue_config::chariot::largeur/2);
+
+    _rect = QRectF(0,largeur/2,ligneDirection.length(),largeur);
+
     setZValue(zIndex);
     setPos(_tapis.position());
+    setTransformOriginPoint(0,largeur/2);
+    setRotation(-ligneDirection.angle());
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
@@ -41,7 +49,7 @@ void VueTapis::advance(int pas)
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    _image->render(painter, rect);
+    _image->render(painter, _rect);
 }
 
 void VueTapis::ajouterBagage()
@@ -52,7 +60,7 @@ void VueTapis::ajouterBagage()
 
 QRectF VueTapis::boundingRect() const
 {
-    return rect;
+    return _rect;
 }
 
 Tapis* VueTapis::tapisAssocie()
@@ -76,3 +84,4 @@ void VueTapisHandler::ajouterBagage()
 {
     _fenetrePrincipale.modeAjoutBagage(&_vueTapis);
 }
+

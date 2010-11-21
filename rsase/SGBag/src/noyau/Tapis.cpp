@@ -164,7 +164,7 @@ bool Tapis::bagageEstSorti(Bagage *bagage)
             < RAYON_PROXIMITE_TRONCON;
 }
 
-Troncon* Tapis::troncon()
+QPointF Tapis::pointConnexion() const
 {
-    return _tronconSupport;
+    return _tronconSupport->position();
 }

@@ -35,6 +35,7 @@ class VueTapis : public VueElement
         int _etat;
         QSvgRenderer *_image;
         Tapis &_tapis;
+        QRectF _rect;
 
         /**
          * Instance de VueTapisHandler intégrée à la vue.

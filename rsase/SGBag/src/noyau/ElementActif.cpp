@@ -4,12 +4,14 @@
 //End section for file ElementActif.cpp
 
 const qreal ElementActif::VITESSE_DEFAUT = 0.05;
+const qreal ElementActif::VITESSE_MAX_DEFAUT = 0.1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 ElementActif::ElementActif(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
         _vitesse (VITESSE_DEFAUT),
+        _vitesseMax (VITESSE_MAX_DEFAUT),
         _estActif(true)
 {
     //TODO Auto-generated method stub
@@ -37,6 +39,11 @@ void ElementActif::arreter()
 {
     // TODO : gérer la décrémentation progressive de la vitesse
     _estActif = false;
+}
+
+void ElementActif::modifierVitesseMax(qreal nouvelleVitesseMax)
+{
+    _vitesseMax = nouvelleVitesseMax;
 }
 
 void ElementActif::demarrer()

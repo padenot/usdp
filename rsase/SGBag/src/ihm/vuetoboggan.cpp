@@ -12,8 +12,17 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
         _image(new QSvgRenderer(etatNormal)),
         _toboggan(toboggan)
 {
+    QLineF ligneDirection(_toboggan.position(),_toboggan.pointConnexion());
+    ligneDirection.setLength(ligneDirection.length()-vue_config::chariot::largeur/2);
+
+    _rect = QRectF(0,largeur/2,ligneDirection.length(),largeur);
+
+    qDebug() << ligneDirection << _rect;
+
     setZValue(zIndex);
-    setPos(toboggan.position());
+    setPos(_toboggan.position());
+    setTransformOriginPoint(0,largeur/2);
+    setRotation(-ligneDirection.angle());
 }
 
 
@@ -28,10 +37,10 @@ void VueToboggan::advance(int pas)
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    _image->render(painter, rect);
+    _image->render(painter, _rect);
 }
 
 QRectF VueToboggan::boundingRect() const
 {
-    return rect;
+    return _rect;
 }

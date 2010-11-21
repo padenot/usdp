@@ -49,7 +49,7 @@
   <toboggan>
 	<id>15</id>
 	<x>0</x>
-	<y>0</y>
+	<y>20</y>
 	<pos>8</pos>
   </toboggan>
   <!-- Bifurcation pour le tapis -->
@@ -79,7 +79,7 @@
   <tapis>
     <id>16</id>
 	<!-- Coordonnées du début du tapis, les coordonnées de la fin seront données par le troncon -->
-    <x>70</x> 
+    <x>90</x> 
     <y>35</y>
 	<pos>11</pos>
   </tapis>

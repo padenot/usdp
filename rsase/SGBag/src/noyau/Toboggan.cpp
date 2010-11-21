@@ -47,3 +47,8 @@ bool Toboggan::estSupport (const Troncon* troncon) const
 {
     return _tronconSupport == troncon;
 }
+
+QPointF Toboggan::pointConnexion() const
+{
+    return _tronconSupport->position();
+}

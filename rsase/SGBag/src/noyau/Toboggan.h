@@ -52,6 +52,8 @@ class Toboggan : public Element
          */
         bool estSupport (const Troncon* troncon) const;
 
+        QPointF pointConnexion() const;
+
     private:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_luU7wfCwEd-54vpurc77FA"

@@ -84,7 +84,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setScene(scene);
     ui->vue->scale(7, 7);
 
-    ui->TableParametres->setColumnCount(2);
+    //ui->TableParametres->setColumnCount(2);
 
     timer.start(vue_config::dt);
 }
@@ -131,6 +131,7 @@ void FenetrePrincipale::annulerAjoutBagage()
 
 void FenetrePrincipale::afficherSelection()
 {
+    /*
     QList<QGraphicsItem*> selectedItems= scene->selectedItems();
 
     switch (selectedItems.count())
@@ -147,11 +148,11 @@ void FenetrePrincipale::afficherSelection()
             return;
         }
     }
-    return;
+    return;*/
 }
 
 void FenetrePrincipale::afficherParametres(const QMap<QString, QString> *parametres)
-{
+{/*
     ui->TableParametres->setRowCount(parametres->count());
 
     int i=0;
@@ -169,7 +170,7 @@ void FenetrePrincipale::afficherParametres(const QMap<QString, QString> *paramet
         QTableWidgetItem *parametre = new QTableWidgetItem();
         parametre->setData(2, value);
         ui->TableParametres->setItem(i++, 1, parametre);
-    }
+    }*/
 }
 
 void FenetrePrincipale::verrouAjoutBagage(bool flag)
