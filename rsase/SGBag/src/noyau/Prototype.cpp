@@ -158,6 +158,11 @@ void Prototype::changerVitesse(int pourcentage)
           (INTERVALLE_SIMULATION_MAX-INTERVALLE_SIMULATION_MIN)*(pourcentage);
 }
 
+const int Prototype::acqVitesse()
+{
+    return 0;
+}
+
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()
 {
     return _elementsParType;

@@ -109,6 +109,14 @@ class Prototype : public QObject
          */
         void changerVitesse(int pourcentage);
 
+        /**
+         * @brief Récupérer l'intervalle de temps dt entre deux états simulés.
+         */
+        const int acqVitesse();
+
+        /**
+         * @brief Récupérer la liste des éléments présents.
+         */
         const XmlConfigFactory::IndexTypesElements &elements();
 
     protected slots:

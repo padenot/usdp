@@ -42,6 +42,8 @@ protected slots :
     void finAjoutBagage(VueVol* vol);
     void annulerAjoutBagage();
 
+    void changerVitesse(int pourcentage);
+
     void afficherSelection();
 
 private:

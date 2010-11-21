@@ -9,7 +9,7 @@ class Vue: public QGraphicsItem
 {
 public:
     Vue(FenetrePrincipale& fenetrePrincipale);
-    virtual const QMap<QString, QString>* ackParametres();
+    virtual const QMap<QString, QString>* parametres();
 
 protected :
 

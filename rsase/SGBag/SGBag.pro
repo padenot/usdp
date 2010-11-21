@@ -76,4 +76,11 @@ RESOURCES += \
     images.qrc
 
 OTHER_FILES += \
-    ui/images/bagage.svg
+    ui/images/bagage.svg \
+    ui/images/valise.svg \
+    ui/images/toboggan.svg \
+    ui/images/tapis-roulant.svg \
+    ui/images/sacsport.svg \
+    ui/images/saccuir.svg \
+    ui/images/homard.svg \
+    ui/images/chariot.svg

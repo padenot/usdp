@@ -48,6 +48,12 @@ void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements 
     }
 }
 
+void FenetrePrincipale::changerVitesse(int pourcentage)
+{
+    prototype->changerVitesse(pourcentage);
+    //ui->vitesse->setText(prototype->);
+}
+
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FenetrePrincipale),
@@ -59,7 +65,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     //TODO Faire des slots, et merger les boutons start/stop
     connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
     connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(arreterSimulation()));
-    connect(ui->speedSlider, SIGNAL(valueChanged(int)), prototype, SLOT(changerVitesse(int)));
+    connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
     ui->speedSlider->setValue(50);
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
@@ -137,7 +143,7 @@ void FenetrePrincipale::afficherSelection()
         }
         case 1:
         {
-            afficherParametres(dynamic_cast<Vue*>(selectedItems.first())->ackParametres());
+            afficherParametres(dynamic_cast<Vue*>(selectedItems.first())->parametres());
             return;
         }
     }
