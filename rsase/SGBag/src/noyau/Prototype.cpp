@@ -160,7 +160,7 @@ void Prototype::changerVitesse(int pourcentage)
 
 const int Prototype::acqVitesse()
 {
-    return 0;
+    return _dt;
 }
 
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()

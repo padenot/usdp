@@ -44,6 +44,8 @@ protected slots :
 
     void changerVitesse(int pourcentage);
 
+    void changerEtat();
+
     void afficherSelection();
 
 private:

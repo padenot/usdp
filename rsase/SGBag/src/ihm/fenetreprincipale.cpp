@@ -51,7 +51,26 @@ void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements 
 void FenetrePrincipale::changerVitesse(int pourcentage)
 {
     prototype->changerVitesse(pourcentage);
-    //ui->vitesse->setText(prototype->);
+    ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
+}
+
+void FenetrePrincipale::changerEtat()
+{
+static bool etat = false;
+
+    if(etat)
+    {
+        prototype->commencerSimulation();
+        ui->startStopButton->setIcon(QIcon(":/icones/pause"));
+    }
+    else
+    {
+        prototype->arreterSimulation();
+        ui->startStopButton->setIcon(QIcon(":/icones/play"));
+    }
+
+    etat = !etat;
+
 }
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -63,10 +82,10 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->setupUi(this);
 
     //TODO Faire des slots, et merger les boutons start/stop
-    connect(ui->startButton, SIGNAL(clicked()), prototype, SLOT(commencerSimulation()));
-    connect(ui->stopButton, SIGNAL(clicked()), prototype, SLOT(arreterSimulation()));
+    connect(ui->startStopButton, SIGNAL(clicked()), this, SLOT(changerEtat()));
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
     ui->speedSlider->setValue(50);
+    ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
