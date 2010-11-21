@@ -128,9 +128,9 @@
         </attribute>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <layout class="QHBoxLayout" name="volTopLayout">
            <item>
-            <spacer name="horizontalSpacer_2">
+            <spacer name="volSpacerButtons">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -143,14 +143,14 @@
             </spacer>
            </item>
            <item>
-            <widget class="QToolButton" name="toolButton">
+            <widget class="QToolButton" name="volAjouterToolButton">
              <property name="text">
               <string>+</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QToolButton" name="toolButton_2">
+            <widget class="QToolButton" name="volSupprimertoolButton">
              <property name="text">
               <string>-</string>
              </property>
@@ -159,7 +159,42 @@
           </layout>
          </item>
          <item row="1" column="0">
-          <widget class="QTableView" name="tableView"/>
+          <widget class="QTableView" name="volTableView">
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="showDropIndicator" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="showGrid">
+            <bool>false</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::NoPen</enum>
+           </property>
+           <property name="cornerButtonEnabled">
+            <bool>false</bool>
+           </property>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="volAssocierButton">
+           <property name="text">
+            <string>&amp;Associer</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

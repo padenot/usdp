@@ -72,6 +72,7 @@ src/ihm/vueconfig.h \
     src/ihm/vueparametreschariot.h
 FORMS    += fenetreprincipale.ui \
     gestionVol.ui \
+    ajouterVol.ui \
     ui/vueparametreschariot.ui
 
 

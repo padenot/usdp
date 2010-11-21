@@ -4,7 +4,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file Vol.h
 
-#include <string>
+#include <QString>
 #include <QMap>
 
 class Troncon;
@@ -36,13 +36,13 @@ class Vol
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_O3of4PG4Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::string _nom;
+        const QString _nom;
 
     public:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Vol();
+        Vol(const QString& nom);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -53,6 +53,10 @@ class Vol
           * @return Le toboggan associé au vol, s'il existe.
           */
         Toboggan* tobogganAssocie ();
+        void associer(Toboggan* toboggan);
+
+
+        QString nom();
 
 
 };  //end class Vol

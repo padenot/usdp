@@ -4,6 +4,7 @@
 
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
+#include "ui_ajouterVol.h"
 
 #include "vue.h"
 #include "vuebagage.h"
@@ -14,6 +15,8 @@
 
 #include "vueconfig.h"
 
+#include <QInputDialog>
+#include <QDir>
 #include "src/noyau/XmlConfigFactory.h"
 
 void FenetrePrincipale::AjouterItem(QGraphicsItem *item)
@@ -102,10 +105,14 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
     ui->vue->scale(7, 7);
+    ui->volTableView->setModel(prototype->modelVols());
 
+    connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));
+    connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
     //ui->TableParametres->setColumnCount(2);
 
     timer.start(vue_config::dt);
+    _dialog = new QDialog(this);
 }
 
 FenetrePrincipale::~FenetrePrincipale()
@@ -117,6 +124,18 @@ FenetrePrincipale::~FenetrePrincipale()
 
     delete scene;
     delete ui;
+}
+
+void FenetrePrincipale::ajouterVol()
+{
+       bool ok;
+       QString text = QInputDialog::getText(this, tr("Choix du nom du vol"),
+                                            tr("Nom du vol ?"), QLineEdit::Normal);
+       if (ok && !text.isEmpty())
+       {
+            Vol* vol = new Vol(text);
+            prototype->ajouterVol(vol);
+       }
 }
 
 // declenchement du mode ajoutBagage
@@ -196,3 +215,11 @@ void FenetrePrincipale::verrouAjoutBagage(bool flag)
 {
 
 }
+
+void FenetrePrincipale::associerVolToboggan()
+{
+    QItemSelectionModel* model = ui->volTableView->selectionModel();
+    QModelIndexList listIndex = model->selectedIndexes();
+   // listIndex.at(0).row() permet d'avoir la row dans le model
+}
+

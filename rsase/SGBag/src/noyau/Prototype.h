@@ -7,6 +7,7 @@
 #include <QObject>
 #include "Tapis.h"
 #include "Vol.h"
+#include "modelvols.h"
 
 //Begin section for file Prototype.h
 //TODO: Add definitions that you want preserved
@@ -118,12 +119,19 @@ class Prototype : public QObject
          * @brief Récupérer la liste des éléments présents.
          */
         const XmlConfigFactory::IndexTypesElements &elements();
+        /**
+         * Donner le model aux vues.
+         */
+        ModelVols* modelVols();
+        void ajouterVol(Vol* vol);
 
     protected slots:
         /**
          * Met à jour le modèle.
          */
         void maj();
+
+        void retirerVol(int i);
 
     protected:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"
@@ -136,8 +144,7 @@ class Prototype : public QObject
         /**
          * Tous les vols présents dans la simulation sont dans ce vector.
          */
-        QVector<Vol*> _vols;
-
+        ModelVols _modelVols;
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         //int _vitesseSimulation;

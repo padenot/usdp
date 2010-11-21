@@ -9,6 +9,7 @@
 #include "fenetreprincipale.h"
 #include "src/noyau/Prototype.h"
 #include "src/noyau/XmlConfigFactory.h"
+#include <QDialog>
 
 #include "vuevol.h"
 #include "vuetapis.h"
@@ -41,6 +42,8 @@ signals:
 protected slots :
     void finAjoutBagage(VueVol* vol);
     void annulerAjoutBagage();
+    void ajouterVol();
+    void associerVolToboggan();
 
     void changerVitesse(int pourcentage);
 
@@ -60,6 +63,8 @@ private:
     IndexVues vues;
 
     VueTapis* vueTapisSelectionne;
+    /* Dialog pour l'ajout de vol */
+    QDialog* _dialog;
 
 };
 

@@ -88,6 +88,7 @@ void Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 
 void Prototype::ajouterBagageAleatoire()
 {
+    /*
     // Un bagage doit être généré
     int generated = qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
     if( ! generated)
@@ -97,7 +98,7 @@ void Prototype::ajouterBagageAleatoire()
         {
             // Le nouveau bagage choisi un vol au hasard.
             Vol* vol = 0;
-            while( ! (vol = _vols[qrand() % _vols.size()]))
+            while( ! (vol = _modelVols[qrand() % _vols.size()]))
             {
                 if(vol->tobogganAssocie())
                 {
@@ -124,6 +125,7 @@ void Prototype::ajouterBagageAleatoire()
             _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append(bagage);
         }
     }
+    */
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
@@ -182,3 +184,22 @@ void Prototype::maj()
         dynamic_cast<Tapis*>(tapis)->maj(_dt);
     }
 }
+
+ModelVols* Prototype::modelVols()
+{
+    return &_modelVols;
+}
+
+void Prototype::retirerVol(int i)
+{
+    _modelVols.retirerVol(i);
+}
+
+void Prototype::ajouterVol(Vol* vol)
+{
+    _modelVols.ajouterVol(vol);
+}
+
+
+
+
