@@ -33,6 +33,10 @@ public:
      */
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
     /**
+     * Accesseur en ecriture pour les données.
+     */
+    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole);
+    /**
      * Ajouter un vol au model
      */
     void ajouterVol(Vol* vol);
@@ -57,8 +61,8 @@ public slots:
 protected:
     static const char* LABEL_ENTETE[2];
     enum {
-        Nom,
-        Toboggan,
+        kNom,
+        kToboggan,
         _COUNT
     } _header_index;
     /**

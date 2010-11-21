@@ -2,6 +2,9 @@
 #include <QTableView>
 #include <QTableWidgetItem>
 #include <QInputDialog>
+#include <QMetaClassInfo>
+
+#include <iostream>
 
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
@@ -13,6 +16,8 @@
 #include "vuetapis.h"
 #include "vuetoboggan.h"
 #include "vuetroncon.h"
+
+#include <typeinfo>
 
 #include "vueparametreschariot.h"
 
@@ -62,6 +67,7 @@ void FenetrePrincipale::changementSelection()
 {
     QList<QGraphicsItem*> selectedItems= scene->selectedItems();
 
+
     if (selectedItems.empty())
     {
         return;
@@ -96,6 +102,7 @@ void FenetrePrincipale::changementSelection()
                 // L'association a été faite : on rechange l'état des boutons, et on rend
                 // tout selectionnable.
                 annulerAssociation();
+                ui->statusBar->showMessage(trUtf8("Toboggan associé"), 2000);
             }
             // TODO : autres états + paramètres
         }

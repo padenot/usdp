@@ -9,12 +9,8 @@ const char* ModelVols::LABEL_ENTETE[ModelVols::_COUNT] = {
 ModelVols::ModelVols(QObject *parent)
 :QAbstractTableModel(parent)
 {
-    _header.push_back(LABEL_ENTETE[Nom]);
-    _header.push_back(LABEL_ENTETE[Toboggan]);
-//    setHeaderData(0, Qt::Horizontal, _header[0]);
-//    setHeaderData(1, Qt::Horizontal, _header[1]);
-    ajouterVol(new Vol("plop"));
-    ajouterVol(new Vol("plap"));
+
+    _header.push_back(LABEL_ENTETE[kNom]);
 }
 
 int ModelVols::rowCount(const QModelIndex&) const
@@ -29,11 +25,18 @@ int ModelVols::columnCount(const QModelIndex&) const
 
 QVariant ModelVols::data(const QModelIndex & index, int role) const
 {
-    if(index.column() == Nom)
-        return QVariant(_data[index.row()]->nom());
-    if(index.column() == Toboggan)
-        return QVariant(_data[index.row()] ? false : true);
+    if(role == Qt::DisplayRole)
+    {
+        if(index.column() == kNom)
+            return QVariant(_data[index.row()]->nom());
+    }
     return QVariant();
+}
+
+bool ModelVols::setData(const QModelIndex & index, const QVariant & value, int role)
+{
+//    if(index.column() == kToboggan)
+//        _data[index.row()]->associer(value);
 }
 
 void ModelVols::ajouterVol(Vol* vol)
@@ -52,10 +55,8 @@ void ModelVols::retirerVol(int index)
 
 QVariant ModelVols::headerData ( int section, Qt::Orientation orientation, int role) const
 {
-    if(section == Nom)
-        return QVariant(LABEL_ENTETE[Nom]);
-    if(section == Toboggan)
-        return QVariant(LABEL_ENTETE[Toboggan]);
+    if(section == kNom)
+        return QVariant(LABEL_ENTETE[kNom]);
     return QVariant();
 }
 
