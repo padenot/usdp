@@ -105,7 +105,7 @@ class Prototype : public QObject
          * simulation
          * @param msec Le temps entre deux ticks d'horloge.
          */
-        void changerVitesse(int msec);
+        void changerVitesse(int percent);
 
         const XmlConfigFactory::IndexTypesElements &elements();
 
@@ -133,6 +133,8 @@ class Prototype : public QObject
         ModeSimulation _mode_generation_bagage;
 
         static const int INTERVALLE_DEFAUT;
+        static const int INTERVALLE_MAX;
+        static const int INTERVALLE_MIN;
 };  //end class Prototype
 
 #endif

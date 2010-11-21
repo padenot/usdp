@@ -32,9 +32,9 @@ protected:
     void advance(int step);
 
 private:
-    int etat;
-    QSvgRenderer &_image;
-    Tapis &_tapis;
+    int _etat;
+    QSvgRenderer *_image;
+    Tapis *_tapis;
 
     /**
      * Instance de VueTapisHandler intégrée à la vue.

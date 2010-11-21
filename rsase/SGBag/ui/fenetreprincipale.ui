@@ -81,6 +81,12 @@
         </item>
         <item>
          <widget class="QSlider" name="speedSlider">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -101,7 +107,7 @@
      <x>0</x>
      <y>0</y>
      <width>819</width>
-     <height>25</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>

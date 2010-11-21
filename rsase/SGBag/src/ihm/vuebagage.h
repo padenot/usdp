@@ -22,7 +22,7 @@ protected:
     void advance(int step);
 
 private:
-    int etat;
+    int _etat;
     QSvgRenderer *_image;
     Bagage &_bagage;
 };

@@ -12,6 +12,10 @@
 //End section for file Prototype.cpp
 
 const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 10000;
+
+const int Prototype::INTERVALLE_MAX = 1000;
+const int Prototype::INTERVALLE_MIN = 1;
+
 const int Prototype::INTERVALLE_DEFAUT = 1;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
@@ -58,7 +62,7 @@ Prototype::Prototype(const QString& xmlfilepath) :
     }
 
     _horloge.setInterval(INTERVALLE_DEFAUT);
-    commencerSimulation();
+    //commencerSimulation();
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DESTRUCTOR"
@@ -113,9 +117,9 @@ void Prototype::arreterSimulation()
     _horloge.stop();
 }
 
-void Prototype::changerVitesse(int msec)
+void Prototype::changerVitesse(int percent)
 {
-    _horloge.setInterval(msec);
+    _horloge.setInterval( (INTERVALLE_MAX-INTERVALLE_MIN+1)/(percent*10) );
 }
 
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()
