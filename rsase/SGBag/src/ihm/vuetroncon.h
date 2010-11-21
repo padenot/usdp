@@ -25,9 +25,9 @@ protected:
     void advance(int step);
 
 private:
-    int etat;
-    QSvgRenderer *image;
-    Troncon *troncon;
+    int _etat;
+    QSvgRenderer *_image;
+    Troncon *_troncon;
 };
 
 #endif // VUETRONCON_H

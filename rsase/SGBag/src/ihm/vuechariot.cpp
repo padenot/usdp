@@ -5,13 +5,13 @@
 
 using namespace vue_config::chariot;
 
-VueChariot::VueChariot(FenetrePrincipale* _fenetrePrincipale, Chariot *ptrChariot):
+VueChariot::VueChariot(FenetrePrincipale* fenetrePrincipale, Chariot *Chariot):
         VueElement(_fenetrePrincipale),
-        image(new QSvgRenderer(etatNormal)),
-        chariot(ptrChariot)
+        _image(new QSvgRenderer(etatNormal)),
+        _chariot(Chariot)
 {
     setZValue(zIndex);
-    setPos(chariot->position());
+    setPos(_chariot->position());
 }
 
 
@@ -21,13 +21,13 @@ void VueChariot::advance(int pas)
         {
                 return;
         }
-        setPos(chariot->position());
+        setPos(_chariot->position());
 }
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    image->render(painter, rect);
+    _image->render(painter, rect);
 }
 
 QRectF VueChariot::boundingRect() const

@@ -4,7 +4,7 @@
 
 
 VueElement::VueElement(FenetrePrincipale* _fenetrePrincipale):
-        fenetrePrincipale(_fenetrePrincipale), contextMenu(0), contextMenuActionsList()
+        _fenetrePrincipale(_fenetrePrincipale), _contextMenu(0), _contextMenuActionsList()
 {
 
     /* Exemple : Ajouter des QAction* au menu
@@ -18,7 +18,7 @@ VueElement::~VueElement()
 {
     // Détruire les QAction*
     QList<QAction*>::iterator it;
-    for(it = contextMenuActionsList.begin(); it != contextMenuActionsList.end(); ++it)
+    for(it = _contextMenuActionsList.begin(); it != _contextMenuActionsList.end(); ++it)
     {
         delete *it;
     }
@@ -33,15 +33,15 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
     qDebug() << isSelected();
     // Si des actions sont définies pour le menu contextuel
-    if(!contextMenuActionsList.empty())
+    if(!_contextMenuActionsList.empty())
     {
         // On a pas encore renseigné les actions, il faut les ajouter
-        if(contextMenu.actions().empty())
-            contextMenu.addActions(contextMenuActionsList);
+        if(_contextMenu.actions().empty())
+            _contextMenu.addActions(_contextMenuActionsList);
 
         // On affiche
         // TODO il faut peut-être faire une conversion vers la "global pos"
-        contextMenu.exec(event->screenPos());
+        _contextMenu.exec(event->screenPos());
     }
 }
 

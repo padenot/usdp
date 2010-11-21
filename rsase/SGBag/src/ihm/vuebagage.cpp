@@ -4,10 +4,10 @@
 
 using namespace vue_config::bagage;
 
-VueBagage::VueBagage(FenetrePrincipale* _fenetrePrincipale, Bagage *bagage):
-        VueElement(_fenetrePrincipale),
-        image(new QSvgRenderer(resBagage[rand() % nbrRes])),
-        bagage(bagage)
+VueBagage::VueBagage(FenetrePrincipale* fenetrePrincipale, Bagage *bagage):
+        VueElement(fenetrePrincipale),
+        _image(new QSvgRenderer(resBagage[rand() % nbrRes])),
+        _bagage(bagage)
 {
     setZValue(zIndex);
 }
@@ -19,13 +19,13 @@ void VueBagage::advance(int pas)
     {
             return;
     }
-    setPos(bagage->position());
+    setPos(_bagage->position());
 }
 
 void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    image->render(painter, rect);
+    _image->render(painter, rect);
 }
 
 QRectF VueBagage::boundingRect() const

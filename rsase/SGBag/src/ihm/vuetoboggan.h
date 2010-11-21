@@ -25,9 +25,9 @@ protected:
     void advance(int step);
 
 private:
-    int etat;
-    QSvgRenderer *image;
-    Toboggan *toboggan;
+    int _etat;
+    QSvgRenderer *_image;
+    Toboggan *_toboggan;
 };
 
 #endif // VUETOBOGGAN_H

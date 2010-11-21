@@ -29,8 +29,8 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 private:
-    Vol* vol;
-    VueVolHandler* handler;
+    Vol* _vol;
+    VueVolHandler* _handler;
 };
 
 class VueVolHandler: public QObject
@@ -45,7 +45,7 @@ signals:
     void estSelection(VueVol*);
 
 private:
-    VueVol* vueVol;
+    VueVol* _vueVol;
 };
 
 #endif // VUEVOL_H

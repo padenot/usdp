@@ -9,19 +9,19 @@ using namespace vue_config::tapis;
 
 VueTapis::VueTapis(FenetrePrincipale* _fenetrePrincipale, Tapis *tapis):
         VueElement(_fenetrePrincipale),
-        image(new QSvgRenderer(etatNormal)),
-        tapis(tapis)
+        _image(new QSvgRenderer(etatNormal)),
+        _tapis(tapis)
 {
     setZValue(zIndex);
     setPos(tapis->position());
 
-    handler = new VueTapisHandler(this);
+    _handler = new VueTapisHandler(this);
 
 
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
-    contextMenuActionsList.append(ajouterBagageAction);
-    QObject::connect(ajouterBagageAction, SIGNAL(triggered()), this->handler, SLOT(ajouterBagage()));
+    _contextMenuActionsList.append(ajouterBagageAction);
+    QObject::connect(ajouterBagageAction, SIGNAL(triggered()), this->_handler, SLOT(ajouterBagage()));
 }
 
 
@@ -38,12 +38,12 @@ void VueTapis::advance(int pas)
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    image->render(painter, rect);
+    _image->render(painter, rect);
 }
 
 void VueTapis::ajouterBagage()
 {
-    fenetrePrincipale->modeAjoutBagage(this);
+    _fenetrePrincipale->modeAjoutBagage(this);
     //VueGlobale.ajoutBagage(tapis);
 }
 
@@ -54,7 +54,7 @@ QRectF VueTapis::boundingRect() const
 
 Tapis* VueTapis::tapisAssocie()
 {
-    return tapis;
+    return _tapis;
 }
 
 /**

@@ -9,8 +9,8 @@ using namespace vue_config::toboggan;
 
 VueToboggan::VueToboggan(FenetrePrincipale* _fenetrePrincipale, Toboggan *toboggan):
         VueElement(_fenetrePrincipale),
-        image(new QSvgRenderer(etatNormal)),
-        toboggan(toboggan)
+        _image(new QSvgRenderer(etatNormal)),
+        _toboggan(toboggan)
 {
     setZValue(zIndex);
     setPos(toboggan->position());
@@ -28,7 +28,7 @@ void VueToboggan::advance(int pas)
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    image->render(painter, rect);
+    _image->render(painter, rect);
 }
 
 QRectF VueToboggan::boundingRect() const
