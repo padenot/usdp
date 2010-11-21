@@ -48,7 +48,7 @@ class Vol
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual ~Vol();
 
-        /** Récupère le toboggan sur lequel doivent être déversés les bagages de ce vol.
+        /** R�cup�re le toboggan sur lequel doivent être déversés les bagages de ce vol.
           * Peut être nul si le vol n'est pas associé �  un toboggan.
           * @return Le toboggan associé au vol, s'il existe.
           */

@@ -125,6 +125,11 @@ class Prototype : public QObject
          */
         XmlConfigFactory::IndexTypesElements _elementsParType;
 
+        /**
+         * Tous les vols présents dans la simulation sont dans ce vector.
+         */
+        QVector<Vol*> _vols;
+
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qtglIPG5Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         //int _vitesseSimulation;
@@ -133,11 +138,15 @@ class Prototype : public QObject
          * Cette horloge règle la vitesse de la simulation, il envoie un évènement à chaque tick.
          */
         QTimer _horloge;
-
         /**
          * Mode de la génération de bagage : automatique ou manuel.
          */
         ModeSimulation _mode_generation_bagage;
+
+        /**
+         * ID des bagages générés. Commence à 1000 et est incrémenté pour chaque bagage.
+         */
+        int _id_bagage_genere;
 
         /**
          * Intervalle de temps donné au modèle à chaque tick d'horloge
@@ -149,6 +158,8 @@ class Prototype : public QObject
         static const qreal INTERVALLE_SIMULATION_DEFAUT;
         static const qreal INTERVALLE_SIMULATION_MAX;
         static const qreal INTERVALLE_SIMULATION_MIN;
+
+        static const int ID_BAGAGE_GENERE_INITIAL;
 };  //end class Prototype
 
 #endif

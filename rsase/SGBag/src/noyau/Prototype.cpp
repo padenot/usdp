@@ -11,7 +11,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
-const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 10000;
+const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 1000;
 
 const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
@@ -19,6 +19,7 @@ const qreal Prototype::INTERVALLE_SIMULATION_DEFAUT =
         1.0 / Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE;
 const qreal Prototype::INTERVALLE_SIMULATION_MAX = Prototype::INTERVALLE_SIMULATION_DEFAUT*2;
 const qreal Prototype::INTERVALLE_SIMULATION_MIN = Prototype::INTERVALLE_SIMULATION_DEFAUT/2;
+const int Prototype::ID_BAGAGE_GENERE_INITIAL = 1000;
 
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
@@ -27,8 +28,10 @@ Prototype::Prototype(const QString& xmlfilepath) :
         QObject(0),
         _elementsParType(),
         _mode_generation_bagage(AUTOMATIQUE),
+        _id_bagage_genere(ID_BAGAGE_GENERE_INITIAL),
         _dt (INTERVALLE_SIMULATION_DEFAUT)
 {
+    qsrand(42);
     // Désérialise le fichier XML.
     // Extrait et classe par type des pointeurs d'éléments.
     XmlConfigFactory handler;
@@ -85,10 +88,41 @@ void Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 
 void Prototype::ajouterBagageAleatoire()
 {
-    if( ! qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK)
+    // Un bagage doit être généré
+    int generated = qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
+    if( ! generated)
     {
-        // Bagage* bagage = new Bagage(0);
-        // _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append()
+        qDebug() << "Ajout de bagage !";
+        if( ! _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].empty())
+        {
+            // Le nouveau bagage choisi un vol au hasard.
+            Vol* vol = 0;
+            while( ! (vol = _vols[qrand() % _vols.size()]))
+            {
+                if(vol->tobogganAssocie())
+                {
+                    break;
+                }
+            }
+            // Et un tapis au hasard aussi
+            int nbtapis = _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].size();
+            Tapis* tapis = dynamic_cast<Tapis*>(_elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]][qrand()%nbtapis]);
+
+            Bagage* bagage = new Bagage(vol);
+            XmlConfigFactory::IndexParamValeur parametres;
+            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]] = QString().setNum(tapis->position().x());
+            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]] = QString().setNum(tapis->position().y());
+            qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]];
+            qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]];
+
+#ifdef DEBUG_ACHEMINENEMENT
+            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]] = XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage];
+            parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]] = _id_bagage_genere++;
+#endif
+            tapis->ajouterBagage(bagage);
+
+            _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append(bagage);
+        }
     }
 }
 
