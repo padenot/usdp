@@ -91,10 +91,23 @@ void FenetrePrincipale::changementSelection()
                 QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
                 QModelIndexList listIndex = selectionmodel->selectedIndexes();
                 vueToboggan->associerVol(prototype->vol(listIndex.at(0).row()));
+                scene->addItem(new VueVol(*this, *prototype->vol(listIndex.at(0).row())));
+                // TODO : détruire la vue en même temps que le vol
                 // L'association a été faite : on rechange l'état des boutons, et on rend
                 // tout selectionnable.
                 annulerAssociation();
             }
+            // TODO : autres états + paramètres
+        }
+
+        VueVol* vueVol = dynamic_cast<VueVol*>(selectedItems.first());
+        if(vueVol != 0)
+        {
+            if (_etat == AJOUTBAGAGE)
+            {
+                finAjoutBagage(vueVol);
+            }
+            // TODO : autres états + paramètres
         }
 
         // TODO : autres types
@@ -105,7 +118,7 @@ void FenetrePrincipale::changerEtat()
 {
 static bool etat = false;
 
-    if(etat)
+    if(!etat)
     {
         prototype->commencerSimulation();
         ui->startStopButton->setIcon(QIcon(":/icones/pause"));
@@ -190,79 +203,20 @@ void FenetrePrincipale::ajouterVol()
 }
 
 // declenchement du mode ajoutBagage
-void FenetrePrincipale::modeAjoutBagage(VueTapis* vueTapis)
+void FenetrePrincipale::ajoutBagage(VueTapis* vueTapis)
 {
-    verrouAjoutBagage(true);
-
-    // Prparer fin de l'ajout du bagage
-    // Connecter les avions  FenetrePrincipale::finAjoutBagage(Vol* vol)
-    connect(this, SIGNAL(volSelectionne(VueVol*)), SLOT(finAjoutBagage(VueVol*)));
-    // Connecter le bouton annuler  FenetrePrincipale::annulerAjoutBagage()
+    _vueTapisAjoutBagage = vueTapis;
+    changementEtat(AJOUTBAGAGE);
 }
 
 void FenetrePrincipale::finAjoutBagage(VueVol* vueVol)
 {
-    for(int i = 0; i<100; ++i)
-        qDebug() << "Bagage ajouté";
-
-       prototype->ajouterBagage(vueTapisSelectionne->tapisAssocie(), vueVol->volAssocie());
-       verrouAjoutBagage(false);
-       // Fin ajout bagage : déconnexion du signal
-       this->disconnect(SIGNAL(volSelectionne(VueVol*)));
+    qDebug() << "Bagage ajouté";
+    prototype->ajouterBagage(_vueTapisAjoutBagage->tapisAssocie(), vueVol->volAssocie());
+    changementEtat(NORMAL);
 }
 
 void FenetrePrincipale::annulerAjoutBagage()
-{
-    verrouAjoutBagage(false);
-    // Fin ajout bagage : déconnexion du signal.
-    this->disconnect(SIGNAL(volSelectionne(VueVol*)));
-}
-
-void FenetrePrincipale::afficherSelection()
-{
-    /*
-    QList<QGraphicsItem*> selectedItems= scene->selectedItems();
-
-    switch (selectedItems.count())
-    {
-        case 0:
-        {
-            // Aucun élement selectionné, on efface les paramètres.
-            ui->TableParametres->setRowCount(0);
-            return;
-        }
-        case 1:
-        {
-            afficherParametres(dynamic_cast<Vue*>(selectedItems.first())->parametres());
-            return;
-        }
-    }
-    return;*/
-}
-
-void FenetrePrincipale::afficherParametres(const QMap<QString, QString> *parametres)
-{/*
-    ui->TableParametres->setRowCount(parametres->count());
-
-    int i=0;
-    foreach(const QString key , parametres->keys())
-    {
-        QTableWidgetItem *description = new QTableWidgetItem();
-        description->setData(0, key);
-        description->setFlags(description->flags() &= !~Qt::ItemIsEditable);
-        ui->TableParametres->setItem(i++, 0, description);
-    }
-
-    i=0;
-    foreach(const QString value, parametres->values())
-    {
-        QTableWidgetItem *parametre = new QTableWidgetItem();
-        parametre->setData(2, value);
-        ui->TableParametres->setItem(i++, 1, parametre);
-    }*/
-}
-
-void FenetrePrincipale::verrouAjoutBagage(bool flag)
 {
 
 }

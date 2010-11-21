@@ -40,10 +40,8 @@ public:
 
     void AjouterItem(QGraphicsItem *item);
     void AjouterItems(const XmlConfigFactory::IndexTypesElements &elements);
-    void modeAjoutBagage(VueTapis* tapis);
-    void traitementAjoutBagage(VueTapis* tapis);
 
-    void verrouAjoutBagage(bool flag);
+    void ajoutBagage(VueTapis* tapis);
 
     typedef QVector<QGraphicsItem*> IndexVues;
 
@@ -53,8 +51,10 @@ signals:
 protected slots :
     void finAjoutBagage(VueVol* vol);
     void annulerAjoutBagage();
+
     void ajouterVol();
     void associerVolToboggan();
+    void annulerAssociation();
 
     void changerVitesse(int pourcentage);
 
@@ -62,13 +62,10 @@ protected slots :
 
     void changerEtat();
 
-    void afficherSelection();
     void desactiverToutSaufToboggans();
+
     void changementEtat(Etat etat);
     void activerSelection();
-    void annulerAssociation();
-
-
 
 private:
     void afficherParametres(const QMap<QString, QString> *parametres);
@@ -81,7 +78,7 @@ private:
 
     IndexVues vues;
 
-    VueTapis* vueTapisSelectionne;
+    VueTapis* _vueTapisAjoutBagage;
     QWidget* _vueParametres;
     /* Dialog pour l'ajout de vol */
     QDialog* _dialog;

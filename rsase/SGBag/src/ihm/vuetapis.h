@@ -26,7 +26,6 @@ class VueTapis : public VueElement
         QRectF boundingRect() const;
 
         Tapis* tapisAssocie();
-        void ajouterBagage();
 
     protected:
         void advance(int step);

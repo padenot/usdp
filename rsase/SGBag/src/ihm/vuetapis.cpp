@@ -51,12 +51,6 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     _image->render(painter, _rect);
 }
 
-void VueTapis::ajouterBagage()
-{
-    _fenetrePrincipale.modeAjoutBagage(this);
-    //VueGlobale.ajoutBagage(tapis);
-}
-
 QRectF VueTapis::boundingRect() const
 {
     return _rect;
@@ -81,6 +75,6 @@ VueTapisHandler::VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetreP
  */
 void VueTapisHandler::ajouterBagage()
 {
-    _fenetrePrincipale.modeAjoutBagage(&_vueTapis);
+    _fenetrePrincipale.ajoutBagage(&_vueTapis);
 }
 
