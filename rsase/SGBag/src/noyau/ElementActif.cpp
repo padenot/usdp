@@ -28,18 +28,24 @@ ElementActif::~ElementActif()
     //TODO Auto-generated method stub
 }
 
-void ElementActif::modifierVitesse(qreal nouvelleVitesse)
+/*void ElementActif::modifierVitesse(qreal nouvelleVitesse)
 {
     _vitesse = nouvelleVitesse;
-}
+}*/
 
 void ElementActif::arreter()
 {
+    // TODO : gérer la décrémentation progressive de la vitesse
     _estActif = false;
 }
 
 void ElementActif::demarrer()
 {
     _estActif = true;
+}
+
+bool ElementActif::estActif ()
+{
+    return _estActif;
 }
 

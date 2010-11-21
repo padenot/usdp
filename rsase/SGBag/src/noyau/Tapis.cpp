@@ -78,7 +78,10 @@ void Tapis::deroulerTapis()
         b->simulerDeplacement(QVector2D(_tronconSupport->position() - _position*_vitesse));
 
         if(bagageEstSorti(b))
+        {
             _chariotConnecte->chargerBagage(b);
+            deconnecter();
+        }
     }
 }
 

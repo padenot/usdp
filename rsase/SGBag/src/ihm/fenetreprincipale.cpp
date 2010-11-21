@@ -1,3 +1,5 @@
+#include <QDebug>
+
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
@@ -21,25 +23,25 @@ void FenetrePrincipale::AjouterItems(const XmlConfigFactory::IndexTypesElements 
     foreach(Element *chariot,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
     {
-            scene->addItem(new VueChariot(this, dynamic_cast<Chariot*>(chariot)));
+            scene->addItem(new VueChariot(*this, *dynamic_cast<Chariot*>(chariot)));
     }
 
     foreach(Element *tapis,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
     {
-            scene->addItem(new VueTapis(this, dynamic_cast<Tapis*>(tapis)));
+            scene->addItem(new VueTapis(*this, *dynamic_cast<Tapis*>(tapis)));
     }
 
     foreach(Element *toboggan,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::toboggan]])
     {
-            scene->addItem(new VueToboggan(this, dynamic_cast<Toboggan*>(toboggan)));
+            scene->addItem(new VueToboggan(*this, *dynamic_cast<Toboggan*>(toboggan)));
     }
 
    foreach(Element *troncon,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::troncon]])
     {
-            scene->addItem(new VueTroncon(this, dynamic_cast<Troncon*>(troncon)));
+            scene->addItem(new VueTroncon(*this, *dynamic_cast<Troncon*>(troncon)));
     }
 }
 

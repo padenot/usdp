@@ -11,7 +11,8 @@ Troncon::Troncon(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
         _noeudDebut(0),
         _noeudFin(0),
-        _estLibre(true)
+        _estLibre(true),
+        _estHorsService(false)
 {
     //TODO Auto-generated method stub
 }
@@ -69,13 +70,18 @@ Noeud* Troncon::noeudDebut()
     return _noeudDebut;
 }
 
-
-
-#ifdef DEBUG_ACHEMINEMENT
-QDebug operator<<(QDebug dbg, const Troncon *troncon)
+Troncon::EtatTroncon Troncon::etat()
 {
-    dbg.nospace() << "Troncon(" << troncon->id() << ")";
-
-    return dbg.space();
+    if (_estHorsService)
+    {
+        return HORS_SERVICE;
+    }
+    else if (_estLibre)
+    {
+        return LIBRE;
+    }
+    else
+    {
+        return OCCUPE;
+    }
 }
-#endif

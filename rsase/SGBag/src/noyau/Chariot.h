@@ -5,13 +5,12 @@
 //End section for file Chariot.h
 
 #include <QMap>
-#ifdef DEBUG_ACHEMINEMENT
-#include <QDebug>
-#endif
 
 #include "ElementActif.h"
 #include "Bagage.h"
 
+
+class StrategiePilotage;
 class Troncon; //Dependency Generated Source:Chariot Target:Troncon
 class Tapis; //Dependency Generated Source:Chariot Target:Tapis
 
@@ -40,28 +39,44 @@ class Chariot : public ElementActif
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-		/**
-		 * @todo TODO Destructeur de chariot
-		 */
+        /**
+         * @todo TODO Destructeur de chariot
+         */
         virtual ~Chariot();
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-		/** Charge un bagage sur le chariot.
-                 * Déconnecte automatiquement le chariot du tapis.
-                 * Ne doit être appelé que si le chariot ne contient pas déjà un bagage.
-		 * Etant donné que le chariot se déconnecte du tapis dès qu'il reçoit un bagage,
-		 * on ne devrait jamais recevoir de deuxième bagage de toute façon.
-		 */
+        /** Charge un bagage sur le chariot.
+         * Déconnecte automatiquement le chariot du tapis.
+         * Ne doit être appelé que si le chariot ne contient pas déjà un bagage.
+         * Etant donné que le chariot se déconnecte du tapis dès qu'il reçoit un bagage,
+         * on ne devrait jamais recevoir de deuxième bagage de toute façon.
+         */
         void chargerBagage(Bagage* bagage);
 
-		/**
-		 * Met à jour le chariot.
-		 * Selon la situation :
-		 *  - Avance sur le tronçon
-		 *  - Décharge le bagage
-		 *  - Change de tronçon
-		 *  - ...
-		 */
+
+        /** Décharge le bagage du chariot.
+         * @return 0 si le chariot ne contient pas de bagage, un pointeur vers le bagage déchargé sinon.
+         */
+        Bagage* dechargerBagage();
+
+        /**
+         * Met à jour le chariot.
+         * Selon la situation :
+         *  - Avance sur le tronçon
+         *  - Décharge le bagage
+         *  - Change de tronçon
+         *  - ...
+         */
         virtual void maj();
+
+
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /** Fait avancer le chariot vers la destination donnée.
+         * Prend en compte la vitesse.
+         * Ne vérifie pas si le chariot est à l'arrêt. TODO : changer, décrémentation de la vitesse
+         * @param[in] destination Point vers lequel avancera le chariot
+         */
+        void avancer(QPointF destination);
 
 
     //Begin section for Chariot
@@ -74,89 +89,20 @@ class Chariot : public ElementActif
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         void dechargerBatterie();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-		/** Fait avancer le chariot vers le bout du tronçon.
-		 * Prend en compte la vitesse.
-		 * Ne vérifie pas si le chariot est à l'arrêt.
-		 */
-        void avancer();
-
-        /** Gère la mise à jour du chariot lorsqu'il est à l'arrêt
-         * (Ne fait donc a priori rien).
-         */
-        void majArret();
-
-        /** Gère la mise à jour du chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
-         */
-        void majEnChemin();
-
-        /** Gère la mise à jour du chariot lorsqu'il atteint le noeud de fin du tronçon.
-         */
-        void majNoeudAtteint();
-
-        /** Gère la mise à jour du chariot lorsqu'il approche de son objectif final (tapis ou toboggan).
-         */
-        void majApprocheObjectifFinal();
-
-        /** Gère la mise à jour du chariot lorsqu'il atteint le toboggan objectif.
-         */
-        void majTobogganAtteint();
-
-        /** Gère la mise à jour du chariot lorsqu'il atteint le tapis objectif.
-         */
-        void majTapisAtteint();
-
-
-        enum Situation
-        {
-                ARRET,
-                EN_CHEMIN,
-                NOEUD_ATTEINT,
-                TAPIS_ATTEINT,
-                APPROCHE_OBJECTIF_FINAL,
-                TOBOGGAN_ATTEINT
-        };
-
-        /** Retourne la situation actuelle du chariot.
-         * Permet de déterminer les actions à effectuer lors d'une mise à jour.
-         */
-        Situation situation() const;
-
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_klhKcOybEd-q55IxPzNK8w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Bagage * _bagage; /// Bagage transporté par le chariot.
 
+        StrategiePilotage * _pilote; /// Pilote du chariot
+
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_alMHUO5DEd-dcpIgUje6-w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon * _tronconActuel;
-        /// Troncon sur lequel se déplace actuellement le chariot.
-        /// Ne doit jamais être nul.
+        //Troncon * _tronconActuel;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1bIQYPDzEd-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Tapis * _tapisAssocie;
-        /// Tapis auquel le chariot devra revenir.
-        /// Ne doit jamais être nul.
-
-
-        static const qreal RAYON_PROXIMITE_NOEUD;
-        /// Distance avec un noeud en dessous de laquelle le chariot est
-        /// considéré comme étant sur le noeud.
-
-        static const qreal RAYON_PROXIMITE_TAPIS;
-        /// Distance avec un tapis en dessous de laquelle le chariot est
-        /// considéré comme étant à portée du tapis.
-
-        static const qreal RAYON_PROXIMITE_TOBOGGAN;
-        /// Distance avec un toboggan en dessous de laquelle le chariot est
-        /// considéré comme étant à portée du toboggan.
-
+        //Tapis * _tapisAssocie;
 
 };  //end class Chariot
-
-#ifdef DEBUG_ACHEMINEMENT
-QDebug operator<<(QDebug dbg, const Chariot *chariot);
-#endif
 
 #endif

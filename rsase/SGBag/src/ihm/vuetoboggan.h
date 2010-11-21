@@ -10,13 +10,10 @@
 #include "src/noyau/Toboggan.h"
 #include "vueelement.h"
 
-
-#define FILEPATH_SVG_ETATNORMAL ":/images/toboggan-etatNormal"
-
 class VueToboggan : public VueElement
 {
 public:
-    VueToboggan(FenetrePrincipale* _fenetrePrincipale, Toboggan *toboggan);
+    VueToboggan(FenetrePrincipale& _fenetrePrincipale, Toboggan &toboggan);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -27,7 +24,7 @@ protected:
 private:
     int _etat;
     QSvgRenderer *_image;
-    Toboggan *_toboggan;
+    Toboggan &_toboggan;
 };
 
 #endif // VUETOBOGGAN_H

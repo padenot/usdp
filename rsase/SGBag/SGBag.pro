@@ -37,7 +37,10 @@ SOURCES += ihm/main.cpp\
     src/ihm/vuechariot.cpp \
     src/ihm/vueelement.cpp \
     src/ihm/vuevol.cpp \
-    src/ihm/vue.cpp
+    src/ihm/vue.cpp \
+    src/noyau/StrategiePilotage.cpp \
+    src/noyau/StrategiePilotageAuto.cpp \
+    src/noyau/StrategiePilotageManuel.cpp
 HEADERS  += ihm/fenetreprincipale.h \
     ihm/vuebagage.h \
     noyau/Chariot.h \
@@ -60,7 +63,9 @@ src/ihm/vueconfig.h \
     src/ihm/vuevol.h \
     src/ihm/vueelement.h \
     src/ihm/vue.h \
-    src/ihm/vuevol.h
+    src/noyau/StrategiePilotage.h \
+    src/noyau/StrategiePilotageAuto.h \
+    src/noyau/StrategiePilotageManuel.h
 FORMS    += fenetreprincipale.ui
 
 

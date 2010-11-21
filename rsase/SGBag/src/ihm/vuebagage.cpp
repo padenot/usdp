@@ -4,7 +4,7 @@
 
 using namespace vue_config::bagage;
 
-VueBagage::VueBagage(FenetrePrincipale* fenetrePrincipale, Bagage *bagage):
+VueBagage::VueBagage(FenetrePrincipale& fenetrePrincipale, Bagage &bagage):
         VueElement(fenetrePrincipale),
         _image(new QSvgRenderer(resBagage[rand() % nbrRes])),
         _bagage(bagage)
@@ -19,7 +19,7 @@ void VueBagage::advance(int pas)
     {
             return;
     }
-    setPos(_bagage->position());
+    setPos(_bagage.position());
 }
 
 void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)

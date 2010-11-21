@@ -5,7 +5,7 @@
 
 const char* XmlConfigFactory::NodeName_String[] = {
     "config", /// Racine du fichier
-    "elementName", /// Nom de l'élément
+    "typeElement", /// Nom de l'élément
     "id", /// L'ID d'un élément
     "x", /// Coordonnée en abscisse
     "y", /// Coordonnée en ordonnée
@@ -57,7 +57,7 @@ bool XmlConfigFactory::endElement(const QString &/*namespaceURI*/,
 {
     if(element_list.contains(qname))
     {
-        mapParam[NodeName_String[elementName]] = qname;
+        mapParam[NodeName_String[typeElement]] = qname;
         noeudInterne = false;
         construireElement(mapParam);
         mapParam.clear();
@@ -95,29 +95,29 @@ Element* XmlConfigFactory::elementParId(int id)
 void XmlConfigFactory::construireElement(const QMap<QString,QString>& mapParam)
 {
     Element* nElement = 0;
-    //  printElement(mapParam[NodeName_String[elementName]]);
-    if(mapParam[NodeName_String[elementName]] == NodeName_String[troncon])
+    //  printElement(mapParam[NodeName_String[typeElement]]);
+    if(mapParam[NodeName_String[typeElement]] == NodeName_String[troncon])
     {
         nElement = new Troncon(mapParam);
         types_elements[NodeName_String[troncon]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == NodeName_String[noeud])
+    else if(mapParam[NodeName_String[typeElement]] == NodeName_String[noeud])
     {
         nElement = new Noeud(mapParam);
         types_elements[NodeName_String[noeud]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == NodeName_String[chariot])
+    else if(mapParam[NodeName_String[typeElement]] == NodeName_String[chariot])
     {
         nElement = new Chariot(mapParam);
         qDebug() << "construction d'un chariot : " << nElement;
         types_elements[NodeName_String[chariot]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == NodeName_String[toboggan])
+    else if(mapParam[NodeName_String[typeElement]] == NodeName_String[toboggan])
     {
         nElement = new Toboggan(mapParam);
         types_elements[NodeName_String[toboggan]].push_back(nElement);
     }
-    else if(mapParam[NodeName_String[elementName]] == NodeName_String[tapis])
+    else if(mapParam[NodeName_String[typeElement]] == NodeName_String[tapis])
     {
         nElement = new Tapis(mapParam);
         types_elements[NodeName_String[tapis]].push_back(nElement);

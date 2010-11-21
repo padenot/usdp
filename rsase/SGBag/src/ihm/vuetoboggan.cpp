@@ -7,13 +7,13 @@
 
 using namespace vue_config::toboggan;
 
-VueToboggan::VueToboggan(FenetrePrincipale* _fenetrePrincipale, Toboggan *toboggan):
-        VueElement(_fenetrePrincipale),
+VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &toboggan):
+        VueElement(fenetrePrincipale),
         _image(new QSvgRenderer(etatNormal)),
         _toboggan(toboggan)
 {
     setZValue(zIndex);
-    setPos(toboggan->position());
+    setPos(toboggan.position());
 }
 
 

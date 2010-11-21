@@ -7,9 +7,6 @@
 #include <QMap>
 #include <QVector>
 #include <QPair>
-#ifdef DEBUG_ACHEMINEMENT
-#include <QDebug>
-#endif
 
 #include "Element.h"
 #include "Troncon.h"
@@ -37,25 +34,23 @@ class Noeud : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /** Tente de trouver le troncon offrant le plus court chemin vers la destination en partant de ce noeud.
+         * @param[in] destination Le troncon à atteindre en une distance minimale. Si le pointeur est nul, le troncon
+         *                        est considéré comme inaccessible.
+         * @return Le troncon optimal, ou 0 si aucun troncon n'est accessible.
+         */
         Troncon* trouverProchainTroncon(Troncon* destination);
 
         QPair<Troncon*, qreal> calculChemin(Troncon* destination);
-
 
     private:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5utnsOtcEd-6Qct7MaUvyw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-    QVector<Troncon *> _tronconsSuivants;
+        QVector<Troncon *> _tronconsSuivants;
 
-    bool _visite;
-
-
+        bool _visite;
 
 };  //end class Noeud
-
-#ifdef DEBUG_ACHEMINEMENT
-QDebug operator<<(QDebug dbg, const Noeud *noeud);
-#endif
 
 #endif

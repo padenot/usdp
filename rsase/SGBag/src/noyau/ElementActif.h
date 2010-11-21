@@ -37,7 +37,9 @@ class ElementActif : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_M4WU0PIdEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        virtual void modifierVitesse(qreal nouvelleVitesse);
+        //virtual void modifierVitesse(qreal nouvelleVitesse);
+
+        virtual bool estActif ();
 
     public slots :
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"

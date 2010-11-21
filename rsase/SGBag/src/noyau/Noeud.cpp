@@ -50,17 +50,17 @@ Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
     else if (_tronconsSuivants.size()==1)
     {
 #ifdef DEBUG_ACHEMINEMENT
-        qDebug() << this << "Aucun choix possible, continuer";
+        qDebug() << *this << "dit : aucun choix possible, continuer";
 #endif
         return _tronconsSuivants.first();
     }
     else
     {
-
 #ifdef DEBUG_ACHEMINEMENT
         Troncon* resultat = calculChemin(destination).first;
-        qDebug() << this << "Il faut aller a"
-                << (resultat == _tronconsSuivants.first() ? "gauche" : "droite");
+        qDebug() << *this << "dit : il faut aller a"
+                << (resultat == _tronconsSuivants.first() ? "gauche" : "droite")
+                << ", sur" << *resultat;
         return resultat;
 #else
         return calculChemin(destination).first;
@@ -72,72 +72,55 @@ Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
 
 QPair<Troncon*, qreal> Noeud::calculChemin(Troncon* destination)
 {
-    QPair<Troncon*, qreal> paireRetour;
+    // TODO : implémenter un algorithme plus efficace
+    // TODO : calculer tout le chemin plutôt que déterminer seulement le prochain tronçon
+    //        (tenir une liste des tronçons à emprunter)
+    // TODO : Proposition à discuter (pas forcément idéal) :
+    //        Lorsqu'un tronçon est inaccessible (à cause de tronçons hors service), continuer
+    //        à avancer jusqu'à être VRAIMENT bloqué, pour libérer les voies. Actuellement on
+    //        s'arrête dès qu'on détecte que le chemin est bloqué.
 
     if(_visite)
     {
-        paireRetour.first = 0;
-        paireRetour.second = std::numeric_limits<qreal>::infinity();
-        return paireRetour;
+        return qMakePair(reinterpret_cast<Troncon*>(0),
+                         std::numeric_limits<qreal>::infinity());
     }
     else
     {
-#ifdef DEBUG_ACHEMINEMENT
-        int noNoeud = 0, noNoeudMin = 0;
-#endif
-        _visite = true;
         qreal tailleCheminMin = std::numeric_limits<qreal>::infinity();
-        qreal tailleChemin = 0;
         Troncon* tronconMin = 0;
+
+        _visite = true;
 
         foreach(Troncon* troncon, _tronconsSuivants)
         {
-            if(troncon == destination)
+            if (troncon->etat() != Troncon::HORS_SERVICE)
             {
-                paireRetour.first = troncon;
-                paireRetour.second = 0;
+                if (troncon == destination)
+                {
+                    tronconMin = troncon;
+                    tailleCheminMin = 0;
+                    break;
+                }
+                else
+                {
+                    QPair<Troncon*, qreal> paireRetour = troncon->noeudFin()->calculChemin(destination);
+                    qreal tailleChemin = paireRetour.second + QVector2D(troncon->noeudFin()->position()
+                                                                       - _position).length();
 
-#ifdef DEBUG_ACHEMINEMENT
-                qDebug() << this << "Troncon destination atteint :" << (noNoeud == 0 ? "Gauche" : "Droite");
-#endif
-                _visite = false;
-                return paireRetour;
+                    if(tailleChemin < tailleCheminMin)
+                    {
+                        tronconMin = troncon;
+                        tailleCheminMin = tailleChemin;
+                    }
+                }
             }
-
-            paireRetour = troncon->noeudFin()->calculChemin(destination);
-            tailleChemin = paireRetour.second + QVector2D(troncon->noeudFin()->position() - troncon->position()).length();
-
-            if(tailleCheminMin>tailleChemin)
-            {
-                tronconMin = troncon;
-                tailleCheminMin = tailleChemin;
-#ifdef DEBUG_ACHEMINEMENT
-                int noNoeudMin = noNoeud;
-#endif
-            }
-
-#ifdef DEBUG_ACHEMINEMENT
-            ++noNoeud;
-#endif
         }
 
         _visite = false;
 
-
-
-        paireRetour.first = tronconMin;
-        paireRetour.second = tailleCheminMin;
-        return paireRetour;
+        return qMakePair(tronconMin,tailleCheminMin);
     }
 
 }
 
-
-#ifdef DEBUG_ACHEMINEMENT
-QDebug operator<<(QDebug dbg, const Noeud *noeud)
-{
-    dbg.nospace() << "Noeud(" << noeud->id() << ")";
-
-    return dbg.space();
-}
-#endif

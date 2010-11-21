@@ -15,7 +15,7 @@ class FenetrePrincipale;
 class VueElement : public Vue
 {
 public:
-    VueElement(FenetrePrincipale* _fenetrePrincipale);
+    VueElement(FenetrePrincipale& fenetrePrincipale);
     ~VueElement();
 
 protected:
@@ -35,11 +35,6 @@ protected:
      */
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
-    /**
-     * @var fenetrePrincipale pointeur vers la fenêtre principale.
-     */
-    FenetrePrincipale* _fenetrePrincipale;
 };
 
 #endif // VUEELEMENT_H

@@ -1,6 +1,8 @@
 #include "vue.h"
+#include "fenetreprincipale.h"
 
-Vue::Vue()
+Vue::Vue(FenetrePrincipale& fenetrePrincipale) :
+    _fenetrePrincipale(fenetrePrincipale)
 {
     setFlags(QGraphicsItem::ItemIsSelectable);
 }

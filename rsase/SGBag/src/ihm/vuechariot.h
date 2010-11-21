@@ -13,7 +13,7 @@
 class VueChariot : public VueElement
 {
 public:
-    VueChariot(FenetrePrincipale* fenetrePrincipale, Chariot *chariot);
+    VueChariot(FenetrePrincipale& _fenetrePrincipale, Chariot &chariot);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -24,7 +24,7 @@ protected:
 private:
     int _etat;
     QSvgRenderer *_image;
-    Chariot *_chariot;
+    Chariot &_chariot;
 };
 
 #endif // VUECHARIOT_H

@@ -1,7 +1,10 @@
 #include "Element.h"
 #include "XmlConfigFactory.h"
 
+#ifdef DEBUG_ACHEMINEMENT
 #include "QDebug"
+#include "QString"
+#endif
 
 //Begin section for file Element.cpp
 //TODO: Add definitions that you want preserved
@@ -15,7 +18,8 @@ Element::Element(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
                   indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat())
 #ifdef DEBUG_ACHEMINEMENT
         ,
-        _id (indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]].toInt())
+        _id (indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]].toInt()),
+        _typeElement(indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]])
 #endif
 {
     // Vide
@@ -42,8 +46,10 @@ QPointF Element::position() const
 }
 
 #ifdef DEBUG_ACHEMINEMENT
-int Element::id() const
+QDebug operator<<(QDebug dbg, const Element &element)
 {
-    return _id;
+    dbg.nospace() << element._typeElement.toAscii().data() << "(" << element._id << ")";
+
+    return dbg.space();
 }
 #endif

@@ -6,10 +6,11 @@
 
 //using namespace vue_config::vol;
 
-VueVol::VueVol(FenetrePrincipale* fenetrePrincipale):
-        Vue()
+VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
+        Vue(fenetrePrincipale),
+        _vol (vol),
+        _handler (*new VueVolHandler(*this, fenetrePrincipale))
 {
-    _handler = new VueVolHandler(this, fenetrePrincipale);
     //TODO
 }
 
@@ -21,7 +22,7 @@ void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
 
 void VueVol::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    _handler->estSelectionne();
+    _handler.estSelectionne();
 }
 
 QRectF VueVol::boundingRect() const
@@ -32,16 +33,17 @@ QRectF VueVol::boundingRect() const
 
 Vol* VueVol::volAssocie()
 {
-    return _vol;
+    return &_vol;
 }
 
-VueVolHandler::VueVolHandler(VueVol* vueVol, FenetrePrincipale* fenetrePrincipale):
-        _vueVol(vueVol)
+VueVolHandler::VueVolHandler(VueVol& _vueVol, FenetrePrincipale& fenetrePrincipale):
+        _vueVol(_vueVol),
+        _fenetrePrincipale(fenetrePrincipale)
 {
-    connect(this, SIGNAL(estSelection(VueVol*)), fenetrePrincipale, SIGNAL(volSelectionne(VueVol*)));
+    connect(this, SIGNAL(estSelection(VueVol*)), &fenetrePrincipale, SIGNAL(volSelectionne(VueVol*)));
 }
 
 void VueVolHandler::estSelectionne()
 {
-    emit estSelection(_vueVol);
+    emit estSelection(&_vueVol);
 }

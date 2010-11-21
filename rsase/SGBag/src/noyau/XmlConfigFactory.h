@@ -25,7 +25,7 @@ public:
     enum NodeName
     {
         config, /// Racine du fichier
-        elementName, /// Nom de l'élément
+        typeElement, /// Type de l'élément
         id, /// L'ID d'un élément
         x, /// Coordonnée en abscisse
         y, /// Coordonnée en ordonnée

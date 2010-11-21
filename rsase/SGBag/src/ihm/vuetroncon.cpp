@@ -6,8 +6,8 @@
 
 using namespace vue_config::troncon;
 
-VueTroncon::VueTroncon(FenetrePrincipale* _fenetrePrincipale, Troncon* troncon):
-        VueElement(_fenetrePrincipale),
+VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
+        VueElement(fenetrePrincipale),
         _image(new QSvgRenderer(etatNormal)),
         _troncon(troncon)
 {
@@ -29,7 +29,7 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
 {
     VueElement::paint(painter,0,0);
     painter->setBrush(Qt::black);
-    painter->drawLine(_troncon->noeudDebut()->position(), _troncon->noeudFin()->position());
+    painter->drawLine(_troncon.noeudDebut()->position(), _troncon.noeudFin()->position());
 }
 
 QRectF VueTroncon::boundingRect() const

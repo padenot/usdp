@@ -18,7 +18,7 @@ class FenetrePrincipale;
 class VueVol : public Vue
 {
 public:
-    VueVol(FenetrePrincipale* fenetrePrincipale);
+    VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
@@ -29,8 +29,8 @@ protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 private:
-    Vol* _vol;
-    VueVolHandler* _handler;
+    Vol& _vol;
+    VueVolHandler& _handler;
 };
 
 class VueVolHandler: public QObject
@@ -38,14 +38,15 @@ class VueVolHandler: public QObject
     Q_OBJECT
 
 public:
-    VueVolHandler(VueVol*, FenetrePrincipale*);
+    VueVolHandler(VueVol&, FenetrePrincipale&);
     void estSelectionne();
 
 signals:
     void estSelection(VueVol*);
 
 private:
-    VueVol* _vueVol;
+    VueVol& _vueVol;
+    FenetrePrincipale& _fenetrePrincipale;
 };
 
 #endif // VUEVOL_H

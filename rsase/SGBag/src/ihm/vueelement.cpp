@@ -3,8 +3,10 @@
 #include <QPainter>
 
 
-VueElement::VueElement(FenetrePrincipale* _fenetrePrincipale):
-        _fenetrePrincipale(_fenetrePrincipale), _contextMenu(0), _contextMenuActionsList()
+VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):
+        Vue(fenetrePrincipale),
+		_contextMenu(0),
+		_contextMenuActionsList()
 {
 
     /* Exemple : Ajouter des QAction* au menu

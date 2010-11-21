@@ -7,6 +7,10 @@
 #define ELEMENT_H
 
 #include <QPointF>
+#ifdef DEBUG_ACHEMINEMENT
+#include <QDebug>
+#endif
+
 
 #include "XmlConfigFactory.h"
 
@@ -40,7 +44,7 @@ class Element : public QObject
         virtual QPointF position() const;
 
 #ifdef DEBUG_ACHEMINEMENT
-        int id() const;
+        friend QDebug operator<<(QDebug dbg, const Element &element);
 #endif
 
     protected:
@@ -55,8 +59,8 @@ class Element : public QObject
 
 #ifdef DEBUG_ACHEMINEMENT
         int _id;
+        QString _typeElement;
 #endif
 
 };  //end class Element
-
 #endif

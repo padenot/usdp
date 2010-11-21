@@ -5,9 +5,6 @@
 //End section for file Troncon.h
 
 #include <QMap>
-#ifdef DEBUG_ACHEMINEMENT
-#include <QDebug>
-#endif
 
 #include "Element.h"
 #include "XmlConfigFactory.h"
@@ -51,6 +48,14 @@ class Troncon : public Element
 
         Noeud* noeudDebut();
 
+        enum EtatTroncon
+        {
+            LIBRE,
+            OCCUPE,
+            HORS_SERVICE
+        };
+
+        EtatTroncon etat();
 
 protected:
     //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5u8RMOtcEd-6Qct7MaUvyw"
@@ -66,10 +71,8 @@ protected:
     //unsigned long longueur;
 
     bool _estLibre;
-};  //end class Troncon
 
-#ifdef DEBUG_ACHEMINEMENT
-QDebug operator<<(QDebug dbg, const Troncon *troncon);
-#endif
+    bool _estHorsService;
+};  //end class Troncon
 
 #endif
