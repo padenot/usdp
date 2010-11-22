@@ -5,10 +5,11 @@
 #include "Tapis.h"
 #include "Noeud.h"
 
+#include <cmath>
 
 
-const double StrategiePilotage::RAYON_PROXIMITE_TAPIS = 2.0;
-const double StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 2.0;
+const double StrategiePilotage::RAYON_PROXIMITE_TAPIS = 4.0;
+const double StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 4.0;
 const double StrategiePilotage::RAYON_ACTION_NOEUD = 2.0;
 const double StrategiePilotage::RAYON_ACTION_TAPIS = 0.5;
 const double StrategiePilotage::RAYON_ACTION_TOBOGGAN = 0.5;
@@ -84,11 +85,19 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
         {
             double distance = QVector2D(_chariot.position() -
                               _tronconActuel->position()).length();
+
+            double vitesse = _chariot.vitesse();
+            double stopDistance = 0.0;
+            while(vitesse > _chariot.VITESSE_NULLE) {
+                stopDistance += vitesse;
+                vitesse -= _chariot.DECELERATION_CHARIOT;
+            }
+
             if (distance < RAYON_ACTION_TAPIS)
             {
                 return TAPIS_ATTEINT;
             }
-            else if (distance < RAYON_PROXIMITE_TAPIS)
+            else if (distance - stopDistance < RAYON_PROXIMITE_TAPIS)
             {
                 return TAPIS_PROCHE;
             }
@@ -102,6 +111,7 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
             return EN_CHEMIN;
         }
     }
+
 }
 
 bool StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)

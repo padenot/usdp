@@ -41,6 +41,7 @@ class ElementActif : public Element
 
         virtual bool estActif ();
 
+        virtual double vitesse();
         virtual double vitesseMax ();
 
     public slots :

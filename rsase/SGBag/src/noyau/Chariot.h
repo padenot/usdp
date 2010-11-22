@@ -24,6 +24,9 @@ class Chariot : public ElementActif
     Q_OBJECT
 
     public:
+        static const double ACCELERATION_CHARIOT;
+        static const double DECELERATION_CHARIOT;
+        static const double VITESSE_NULLE;
 
         enum TypePilotage
         {
@@ -109,10 +112,6 @@ class Chariot : public ElementActif
         Direction _directionConseillee;
         TypePilotage _typePilotage;
         StrategiePilotage * _pilote; /// Pilote du chariot
-
-        static const double ACCELERATION_CHARIOT;
-        static const double DECELERATION_CHARIOT;
-        static const double VITESSE_NULLE;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_alMHUO5DEd-dcpIgUje6-w"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
