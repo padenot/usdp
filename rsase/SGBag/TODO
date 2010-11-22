@@ -1,12 +1,14 @@
 CORE :
-- Implémenter le chargement d'un autre fichier durant l'exécution (gérer la taille de la configuration/de la scène)
-- Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
-- Dérouler le chariot de manière à transporter les bagages jusqu'au bout
-- Empêcher l'ajout de deux bagages simultanément sur le même tapis
+PAUL : - Implémenter le chargement d'un autre fichier durant l'exécution (gérer la taille de la configuration/de la scène)
+MAXIME : - Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
+- Dérouler le tapis de manière à transporter les bagages jusqu'au bout
+MARTIN : - Empêcher l'ajout de deux bagages simultanément sur le même tapis
 
 IHM :
 - Implémenter le zoom
 - Permettre l'annulation de l'ajout de bagage
+- Permettre la suppression de vols en gérant les attributions
+- Empêcher 
 - Mieux utiliser la statusbar (plus souvent)
 - Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
 - Implémenter les différentes vues de paramètres
