@@ -72,9 +72,9 @@ src/ihm/vueconfig.h \
     src/ihm/vueparametreschariot.h \
     src/noyau/Direction.h
 FORMS    += fenetreprincipale.ui \
-    gestionVol.ui \
     ajouterVol.ui \
-    ui/vueparametreschariot.ui
+    ui/vueparametreschariot.ui \
+    ui/about.ui
 
 
 RESOURCES += \

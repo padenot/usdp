@@ -79,6 +79,10 @@ class FenetrePrincipale : public QMainWindow
         void activerSelection();
 
         void changementRatio(int ratio);
+        void changementCircuit();
+        void quitterApplication();
+        void aPropos();
+        void aProposQt();
 
     private:
         void selectionChariot(VueChariot& vueChariot);

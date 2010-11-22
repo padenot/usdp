@@ -10,10 +10,10 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     //Prototype proto("configuration_complexe.xml");
-    Prototype proto("configuration_simple.xml");
+    Prototype* proto = new Prototype("configuration_simple.xml");
 
-    FenetrePrincipale w(&proto);
-    w.extraireVuesCanevas(proto.elements());
+    FenetrePrincipale w(proto);
+    w.extraireVuesCanevas(proto->elements());
     w.show();
 
     return a.exec();

@@ -30,7 +30,9 @@ Bagage::~Bagage()
 void Bagage::simulerDeplacement(const QVector2D& deplacement)
 {
     _position += deplacement.toPointF();
+    #ifdef DEBUG_ACHEMINEMENT
     qDebug() << "Nouvelle position du bagage "<< _position;
+    #endif
     //TODO Auto-generated method stub
 }
 

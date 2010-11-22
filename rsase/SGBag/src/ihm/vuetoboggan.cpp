@@ -26,7 +26,9 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
 void VueToboggan::associerVol(Vol* vol)
 {
     _toboggan.associerVol(vol);
+    #ifdef DEBUG_ACHEMINEMENT
     qDebug() << _toboggan;
+    #endif
     vol->associer(&_toboggan);
 }
 

@@ -3,10 +3,14 @@
 #include <QTableWidgetItem>
 #include <QInputDialog>
 #include <QMetaClassInfo>
+#include <QMessageBox>
+#include <QFileDialog>
 
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 #include "ui_ajouterVol.h"
+#include "ui_about.h"
+
 
 #include "vueconfig.h"
 #include "vuecanevas.h"
@@ -66,6 +70,10 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));
     connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
     connect(ui->volAnnulerButton, SIGNAL(clicked()), this, SLOT(annulerAssociation()));
+    connect(ui->action_Changer_de_circuit, SIGNAL(triggered()), this, SLOT(changementCircuit()));
+    connect(ui->action_propos_de_Qt, SIGNAL(triggered()), this, SLOT(aProposQt()));
+    connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitterApplication()));
+    connect(ui->action_propos, SIGNAL(triggered()), this, SLOT(aPropos()));
 
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
@@ -81,7 +89,38 @@ FenetrePrincipale::~FenetrePrincipale()
     delete scene;
     delete ui;
     delete _dialog;
+    delete prototype;
 }
+
+void FenetrePrincipale::changementCircuit()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Choisissez un nouveau fichier de circuit"), ".", tr("*.xml"));
+    scene->clear();
+    delete prototype;
+    prototype = new Prototype(fileName);
+    extraireVuesCanevas(prototype->elements());
+}
+
+void FenetrePrincipale::quitterApplication()
+{
+    QApplication::exit(0);
+}
+
+void FenetrePrincipale::aPropos()
+{
+    Ui::About aboutt;
+    QDialog dialog;
+    aboutt.setupUi(&dialog);
+    dialog.exec();
+}
+
+void FenetrePrincipale::aProposQt()
+{
+    QMessageBox().aboutQt(this);
+}
+
+
 
 void FenetrePrincipale::changementRatio(int valeur)
 {

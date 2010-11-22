@@ -141,6 +141,22 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_Fichier">
+    <property name="title">
+     <string>&amp;Fichier</string>
+    </property>
+    <addaction name="action_Changer_de_circuit"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menu_propos">
+    <property name="title">
+     <string>&amp;Aide</string>
+    </property>
+    <addaction name="action_propos"/>
+    <addaction name="action_propos_de_Qt"/>
+   </widget>
+   <addaction name="menu_Fichier"/>
+   <addaction name="menu_propos"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -276,6 +292,26 @@
     </layout>
    </widget>
   </widget>
+  <action name="action_Changer_de_circuit">
+   <property name="text">
+    <string>&amp;Changer de circuit</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>&amp;Quitter</string>
+   </property>
+  </action>
+  <action name="action_propos">
+   <property name="text">
+    <string>À propos</string>
+   </property>
+  </action>
+  <action name="action_propos_de_Qt">
+   <property name="text">
+    <string>À propos de Qt</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
