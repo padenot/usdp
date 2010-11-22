@@ -62,10 +62,20 @@ void Tapis::maj(double dt)
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::ajouterBagage(Bagage* bagageEntrant)
+bool Tapis::ajouterBagage(Bagage* bagageEntrant)
 {
+    bagageEntrant->positionInitiale(*this);
+    if(!_bagages.empty())
+    {
+        Bagage* dernierBagage = _bagages.last();
+        // Vérifier la présence d'un bagage juste devant...
+        if(QVector2D(dernierBagage->position()-bagageEntrant->position()).length() < Bagage::TAILLE)
+            return false;
+    }
+
     // Connexion du bagage
     _bagages.push_back(bagageEntrant);
+    return true;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
@@ -129,47 +139,6 @@ bool Tapis::estSupport (const Troncon* troncon) const
  */
 bool Tapis::bagageEstSorti(Bagage *bagage)
 {
-    /*
-    // On teste si la position du bagage est comprise entre la position du tapis et la position
-    // du noeud suivant.
-
-    double posGauche, posDroite;
-    QPointF posBagage(bagage->position());
-
-    // Milieu du tronçon
-    QPointF posFin(_milieuTroncon());
-
-    if(posFin.x() > _position.x())
-    {
-        posGauche = _position.x();
-        posDroite = posFin.x();
-    }
-    else
-    {
-        posGauche = posFin.x();
-        posDroite = _position.x();
-    }
-
-    if(posBagage.x() <= posGauche && posBagage.x() >= posDroite)
-        return true;
-
-    if(posFin.y() > _position.y())
-    {
-        posGauche = _position.y();
-        posDroite = posFin.y();
-    }
-    else
-    {
-        posGauche = posFin.y();
-        posDroite = _position.y();
-    }
-
-    if(posBagage.y() <= posGauche && posBagage.y() >= posDroite)
-        return true;
-
-    return false;
-    */
-
     return QVector2D(bagage->position() - _tronconSupport->position()).length()
             < RAYON_PROXIMITE_TRONCON;
 }

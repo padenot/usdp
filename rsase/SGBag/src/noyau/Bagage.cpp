@@ -5,6 +5,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file Bagage.cpp
 
+const double Bagage::TAILLE = 0.5;
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -40,6 +41,14 @@ void Bagage::simulerDeplacement(const QVector2D& deplacement)
 Toboggan* Bagage::objectifFinal()
 {
     return _vol->tobogganAssocie();
+}
+
+/**
+ * Met à jour la position d'après la position de l'élément de départ.
+ */
+void Bagage::positionInitiale(Element &elementDepart)
+{
+    _position = elementDepart.position();
 }
 
 Vol* Bagage::volAssocie()

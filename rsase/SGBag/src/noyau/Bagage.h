@@ -20,6 +20,7 @@ class Bagage : public Element
     Q_OBJECT
 
     public:
+        static const double TAILLE;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -44,6 +45,11 @@ class Bagage : public Element
          */
         Vol* volAssocie();
 
+        /**
+         * Met à jour la position d'après la position de l'élément de départ.
+         * @param Element& tapis de départ
+         */
+        void positionInitiale(Element&);
 
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"

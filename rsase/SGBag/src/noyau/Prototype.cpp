@@ -85,8 +85,6 @@ void Prototype::changementMode(ModeSimulation mode)
 Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
     Bagage* bagage = new Bagage(vol,tapis->position());
-    connect(bagage,SIGNAL(destroyed(QObject*)),
-            this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
 
 #ifdef DEBUG_ACHEMINENEMENT
     // TODO : sert à quoi ?
@@ -94,7 +92,15 @@ Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]] = XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage];
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]] = _id_bagage_genere++;
 #endif
-    tapis->ajouterBagage(bagage);
+
+    if(!tapis->ajouterBagage(bagage))
+    {
+        delete bagage;
+        return 0;
+    }
+
+    connect(bagage,SIGNAL(destroyed(QObject*)),
+            this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
 
     _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].append(bagage);
 
@@ -232,10 +238,3 @@ Vol* Prototype::vol(int index)
 {
     return _modelVols.at(index);
 }
-
-
-
-
-
-
-

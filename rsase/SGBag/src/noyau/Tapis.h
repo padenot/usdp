@@ -60,10 +60,11 @@ class Tapis : public ElementActif
         /**
          * Ajoute le bagage bagageEntrant sur le tapis.
          * @param[in] bagageEntrant
+         * @return true si le bagage a été accepté sur le tapis
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        void ajouterBagage(Bagage* bagageEntrant);
+        bool ajouterBagage(Bagage* bagageEntrant);
 
         /**
          * Connecte un chariot au tapis.

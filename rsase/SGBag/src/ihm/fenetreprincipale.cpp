@@ -261,13 +261,22 @@ void FenetrePrincipale::supprimerVol()
 void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 {
     Bagage* bagage = prototype->ajouterBagage(_vueTapisAjoutBagage->tapisAssocie(), vueVol.volAssocie());
-    connect(bagage,SIGNAL(destroyed(QObject*)),
-            this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
+    if(bagage != 0)
+    {
+        connect(bagage,SIGNAL(destroyed(QObject*)),
+                this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
 
-    ajouterVueCanevas(new VueBagage(*this, *bagage));
+        ajouterVueCanevas(new VueBagage(*this, *bagage));
 
-    qDebug() << "Bagage ajouté";
-
+        // TODO déutf8izer ?
+        ui->statusBar->showMessage(trUtf8("Bagage ajouté"), 5000);
+    }
+    else
+    {
+        // Pas de bagage créé, afficher erreur dans la status bar
+        // TODO déutf8izer ?
+        ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas été ajouté"), 5000);
+    }
     changementEtat(NORMAL);
 }
 
