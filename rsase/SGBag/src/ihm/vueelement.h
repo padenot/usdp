@@ -15,7 +15,8 @@ class FenetrePrincipale;
 class VueElement : public VueCanevas
 {
 public:
-    VueElement(FenetrePrincipale& fenetrePrincipale);
+    explicit VueElement(FenetrePrincipale& fenetrePrincipale);
+    VueElement(FenetrePrincipale& fenetrePrincipale, QRectF boundingBox);
     ~VueElement();
 
 protected:
@@ -34,7 +35,7 @@ protected:
      * @param *event Evenement utilisateur
      */
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) = 0;
 };
 
 #endif // VUEELEMENT_H

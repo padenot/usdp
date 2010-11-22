@@ -16,7 +16,6 @@ public:
     VueChariot(FenetrePrincipale& _fenetrePrincipale, Chariot &chariot);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    QRectF boundingRect() const;
 
     Chariot& chariot();
 

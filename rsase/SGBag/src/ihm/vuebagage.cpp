@@ -6,7 +6,7 @@
 using namespace vue_config::bagage;
 
 VueBagage::VueBagage(FenetrePrincipale& fenetrePrincipale, Bagage &bagage):
-        VueElement(fenetrePrincipale),
+        VueElement(fenetrePrincipale,rect),
         //_image(new QSvgRenderer(resBagage[rand() % nbrRes])),
         _image(new QSvgRenderer(bagageSimple)), // TODO : restaurer le rand
         _bagage(bagage)
@@ -31,12 +31,6 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
     _image->render(painter, rect);
 }
-
-QRectF VueBagage::boundingRect() const
-{
-    return rect;
-}
-
 
 Bagage* VueBagage::bagageAssocie()
 {

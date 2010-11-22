@@ -84,6 +84,7 @@ void Chariot::avancer(double dt, QPointF destination)
         if (_vitesse < _vitesseMax)
         {
             _vitesse += ACCELERATION_CHARIOT*dt;
+            emit vitesseModifiee(_vitesse);
         }
     }
     else
@@ -91,6 +92,7 @@ void Chariot::avancer(double dt, QPointF destination)
         if (_vitesse > VITESSE_NULLE)
         {
             _vitesse -= DECELERATION_CHARIOT*dt;
+            emit vitesseModifiee(_vitesse);
         }
     }
 

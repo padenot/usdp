@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>249</width>
+    <width>258</width>
     <height>300</height>
    </rect>
   </property>
@@ -32,7 +32,7 @@
         <item>
          <widget class="QDoubleSpinBox" name="vitesseMax">
           <property name="suffix">
-           <string>TODO</string>
+           <string>m/s</string>
           </property>
           <property name="minimum">
            <double>0.010000000000000</double>
@@ -60,6 +60,9 @@
          <widget class="QDoubleSpinBox" name="vitesseActuelle">
           <property name="enabled">
            <bool>false</bool>
+          </property>
+          <property name="suffix">
+           <string>m/s</string>
           </property>
          </widget>
         </item>

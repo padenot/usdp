@@ -25,6 +25,7 @@ Fait :- Permettre la suppression de vols en gérant les attributions
 
 INDISPENSABLE, mais plus tard :
 - Commenter
+- METTRE DES DESTRUCTEURS (virtuels)
 - Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
 
 BONUS :

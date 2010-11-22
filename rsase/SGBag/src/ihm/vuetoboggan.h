@@ -16,7 +16,6 @@ public:
     VueToboggan(FenetrePrincipale& _fenetrePrincipale, Toboggan &toboggan);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    QRectF boundingRect() const;
     void associerVol(Vol* vol);
 protected:
     void advance(int step);
@@ -25,8 +24,6 @@ private:
     int _etat;
     QSvgRenderer *_image;
     Toboggan &_toboggan;
-
-    QRectF _rect;
 };
 
 #endif // VUETOBOGGAN_H

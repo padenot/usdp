@@ -2,11 +2,24 @@
 #include <QDebug>
 #include <QPainter>
 
-
 VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):
         VueCanevas(fenetrePrincipale),
-		_contextMenu(0),
-		_contextMenuActionsList()
+        _contextMenu(0),
+        _contextMenuActionsList()
+{
+
+    /* Exemple : Ajouter des QAction* au menu
+    QAction* action = new QAction("Label", 0);
+    //QObject::connect(action, SIGNAL(triggered()), this->handler, SLOT(slotPourMonAction()));
+    contextMenuActionsList.append(action);
+    //*/
+}
+
+VueElement::VueElement(FenetrePrincipale& fenetrePrincipale,
+                       QRectF rect):
+        VueCanevas(fenetrePrincipale,rect),
+        _contextMenu(0),
+        _contextMenuActionsList()
 {
 
     /* Exemple : Ajouter des QAction* au menu
@@ -33,7 +46,6 @@ VueElement::~VueElement()
  */
 void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    qDebug() << isSelected();
     // Si des actions sont définies pour le menu contextuel
     if(!_contextMenuActionsList.empty())
     {

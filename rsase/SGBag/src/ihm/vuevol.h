@@ -20,7 +20,6 @@ public:
     VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    QRectF boundingRect() const;
 
     Vol* volAssocie();
 

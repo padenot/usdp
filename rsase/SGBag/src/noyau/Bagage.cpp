@@ -23,7 +23,9 @@ Bagage::Bagage(Vol* vol, QPointF positionInitiale) :
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Bagage::~Bagage()
 {
-    qDebug() << "Supprimé";
+#ifdef DEBUG_ACHEMINEMENT
+    qDebug() << "Bagage supprimé";
+#endif
     //TODO Auto-generated method stub
 }
 

@@ -40,7 +40,7 @@ Troncon::~Troncon()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 bool Troncon::occuper()
 {
-    if (_estLibre)
+    if (_estLibre && !_estHorsService)
     {
         _estLibre = false;
         return true;
@@ -56,6 +56,16 @@ bool Troncon::occuper()
 void Troncon::liberer()
 {
     _estLibre = true;
+}
+
+void Troncon::mettreHorsService()
+{
+    _estHorsService = true;
+}
+
+void Troncon::reparer()
+{
+    _estHorsService = false;
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"

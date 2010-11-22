@@ -6,7 +6,7 @@
 using namespace vue_config::chariot;
 
 VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
-        VueElement(fenetrePrincipale),
+        VueElement(fenetrePrincipale,rect),
         _image(new QSvgRenderer(etatNormal)),
         _chariot(chariot)
 {
@@ -43,11 +43,6 @@ void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     painter->setFont (f);
 
     painter->drawText(QRectF(5,5,100,100), Qt::AlignLeft, "Ici, la description d'un chariot\n sur plusieurs lignes");
-}
-
-QRectF VueChariot::boundingRect() const
-{
-    return rect;
 }
 
 Chariot& VueChariot::chariot()

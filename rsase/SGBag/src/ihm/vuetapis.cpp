@@ -14,14 +14,9 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
-    QLineF direction = QLineF(QPoint(0, 0), _tapis.pointConnexion() - _tapis.position());
-    QVector2D vecteurDir = QVector2D(_tapis.pointConnexion() - _tapis.position());
-
-    _rect = QRectF(0,-largeur/2,direction.length(), largeur);
-
     setZValue(zIndex);
-    setPos(_tapis.position() - (vecteurDir.normalized().toPointF() * (vue_config::chariot::largeur/2)));
-    setRotation(-direction.angle());
+    definirCoordonnees(_tapis.position(),_tapis.pointConnexion(),
+                       largeur,vue_config::chariot::largeur);
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
@@ -53,11 +48,6 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     _image->render(painter, _rect);
 }
 
-QRectF VueTapis::boundingRect() const
-{
-    return _rect;
-}
-
 Tapis* VueTapis::tapisAssocie()
 {
     return &_tapis;
@@ -66,7 +56,8 @@ Tapis* VueTapis::tapisAssocie()
 /**
  * Constructeur du handler, dit au handler que VueTapis est le parent.
  */
-VueTapisHandler::VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetrePrincipale):
+VueTapisHandler::VueTapisHandler(VueTapis& vueTapis,
+                                 FenetrePrincipale& fenetrePrincipale):
         _vueTapis(vueTapis),
         _fenetrePrincipale(fenetrePrincipale)
 {

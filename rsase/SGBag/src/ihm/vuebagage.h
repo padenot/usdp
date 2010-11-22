@@ -16,7 +16,6 @@ public:
     VueBagage(FenetrePrincipale& _fenetrePrincipale, Bagage &bagage);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    QRectF boundingRect() const;
 
     Bagage* bagageAssocie();
 
