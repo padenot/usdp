@@ -6,6 +6,7 @@
 #include <QRectF>
 #include <QtSvg/QSvgRenderer>
 #include <QFile>
+#include <QVector2D>
 
 #include "src/noyau/Troncon.h"
 #include "vueelement.h"
@@ -27,6 +28,15 @@ protected:
 private:
     int _etat;
     Troncon &_troncon;
+
+    QVector2D _vecteurDirection;
+    QLineF _lignePerpendiculaire;
+
+    QPointF point1;
+    QPointF point2;
+    QPointF point3;
+    QPointF point4;
+    QPointF _fond[4];
 };
 
 #endif // VUETRONCON_H
