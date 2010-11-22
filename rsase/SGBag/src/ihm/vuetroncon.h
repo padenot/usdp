@@ -26,7 +26,6 @@ protected:
 
 private:
     int _etat;
-    QSvgRenderer *_image;
     Troncon &_troncon;
 };
 

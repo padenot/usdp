@@ -26,8 +26,8 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
 
 void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
     _image->render(painter, rect);
-    //TODO
 }
 
 QRectF VueVol::boundingRect() const

@@ -34,6 +34,7 @@ Toboggan::~Toboggan()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Toboggan::transfererBagage(Bagage* bagage)
 {
+    // TODO : faire avancer le bagage ?
     delete bagage;
 }
 

@@ -78,6 +78,36 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
     }
 }
 
+bool StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
+{
+    if(nouveauTroncon != 0)
+    {
+        if (nouveauTroncon->occuper())
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << _chariot << "passe sur" << *nouveauTroncon;
+#endif
+            _tronconActuel->liberer();
+            _tronconActuel = nouveauTroncon;
+            return true;
+        }
+        else
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
+#endif
+            return false;
+        }
+    }
+    else
+    {
+#ifdef DEBUG_ACHEMINEMENT
+        qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
+#endif
+        return false;
+    }
+}
+
 void StrategiePilotage::pilotageArret()
 {
     // Rien à faire

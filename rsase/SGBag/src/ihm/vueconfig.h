@@ -25,8 +25,9 @@ namespace vue_config
         const QString saccuir = ":/images/saccuir";
         const QString valise = ":/images/valise";
         const QString homard = ":/images/homard";
+        const QString bagageSimple = ":/images/bagageSimple";
         const QString resBagage[nbrRes] = { sacsport, saccuir, valise, homard };
-        const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
+        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
     namespace chariot
     {
@@ -59,7 +60,6 @@ namespace vue_config
         const int zIndex = 5;
         const int longueur = 10;
         const int largeur = 10;
-        const QString etatNormal = ":/images/bagage-etatNormal";
         const QRectF rect = QRectF(longueur/2, largeur/2, longueur, largeur);
     }
 

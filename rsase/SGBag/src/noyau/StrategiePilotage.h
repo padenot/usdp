@@ -17,6 +17,12 @@ class StrategiePilotage
         void piloter (double dt, Direction directionConseillee, Bagage* bagageTransporte);
 
     protected:
+        /** Tente de faire passer le chariot sur un autre troncon.
+         * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
+         *                           rien ne se passera.
+         * @return Vrai si le passage a pu se faire, faux sinon.
+         */
+        bool changerTroncon(Troncon* nouveauTroncon);
 
         /** Pilote le chariot lorsqu'il est à l'arrêt
          * (Ne fait donc a priori rien).

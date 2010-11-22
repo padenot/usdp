@@ -58,9 +58,16 @@ Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
     {
 #ifdef DEBUG_ACHEMINEMENT
         Troncon* resultat = calculChemin(destination).first;
-        qDebug() << *this << "dit : il faut aller a"
-                << (resultat == _tronconsSuivants.first() ? "gauche" : "droite")
-                << ", sur" << *resultat;
+        if (resultat == 0)
+        {
+            qDebug() << *this << "Aucun chemin !";
+        }
+        else
+        {
+            qDebug() << *this << "dit : il faut aller a"
+                    << (resultat == _tronconsSuivants.first() ? "gauche" : "droite")
+                    << ", sur" << *resultat;
+        }
         return resultat;
 #else
         return calculChemin(destination).first;
@@ -83,7 +90,7 @@ Troncon* Noeud::trouverProchainTroncon(Direction direction)
         if (direction == GAUCHE)
         {
 #ifdef DEBUG_ACHEMINEMENT
-            qDebug() << *this << "dit : tu veux aller à gauche, va sur"
+            qDebug() << *this << ": tu veux aller à gauche, va sur"
                     << *_tronconsSuivants[0];
 #endif
             return _tronconsSuivants[0];
@@ -91,7 +98,7 @@ Troncon* Noeud::trouverProchainTroncon(Direction direction)
         else
         {
 #ifdef DEBUG_ACHEMINEMENT
-            qDebug() << *this << "dit : tu veux aller à droite, va sur"
+            qDebug() << *this << ": tu veux aller à droite, va sur"
                     << *_tronconsSuivants[1];
 #endif
             return _tronconsSuivants[1];
@@ -106,7 +113,7 @@ QPair<Troncon*, double> Noeud::calculChemin(Troncon* destination)
     // TODO : calculer tout le chemin plutôt que déterminer seulement le prochain tronçon
     //        (tenir une liste des tronçons à emprunter)
     // TODO : Proposition à discuter (pas forcément idéal) :
-    //        Lorsqu'un tronçon est inaccessible (à cause de tronçons hors service), continuer
+    //        Lorsqu'un tapis/toboggan est inaccessible (à cause de tronçons hors service), continuer
     //        à avancer jusqu'à être VRAIMENT bloqué, pour libérer les voies. Actuellement on
     //        s'arrête dès qu'on détecte que le chemin est bloqué.
 

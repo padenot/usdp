@@ -7,7 +7,7 @@
 #define TAPIS_H
 //Begin section for file Tapis.h
 //TODO: Add definitions that you want preserved
-#include <vector>
+#include <QVector>
 //End section for file Tapis.h
 
 #include "ElementActif.h"
@@ -113,7 +113,7 @@ class Tapis : public ElementActif
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tziQ8eshEd-oy8D834IawQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        std::vector<Bagage*> _bagages;
+        QVector<Bagage*> _bagages;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_fSJGQeswEd-oy8D834IawQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

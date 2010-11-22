@@ -47,6 +47,11 @@ Tapis::~Tapis()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Tapis::maj(double dt)
 {
+    // TODO : dérouler même si aucun chariot n'est connecté, en évitant de faire sortir le bagage ?
+    //        Faisable avec deux rayons de proximité : un pour "bagage sur le bord" et l'autre pour
+    //        "bagage sorti"
+
+
     // si un chariot est connecté au tapis
     if(_chariotConnecte != 0)
     {
@@ -68,21 +73,26 @@ void Tapis::ajouterBagage(Bagage* bagageEntrant)
 void Tapis::deroulerTapis(double dt)
 {
     QVector2D deplacement(_tronconSupport->position() - _position);
+    deplacement.normalize();
     deplacement *= _vitesse*dt;
 
     // Pour chaque bagage sur le tapis
-    Bagage* b;
-    for(unsigned int i = 0; i < _bagages.size(); ++i)
+    for (QVector<Bagage*>::iterator it = _bagages.begin() ;
+        it != _bagages.end() && _chariotConnecte != 0;
+        ++it)
     {
-        b = _bagages[i];
+        (*it)->simulerDeplacement(deplacement);
 
-        // TODO faut vérifier, le modèle est pas clair, je calcule la direction en prenant
-        // _position pour point de départ et la position du "noeudFin" comme point final.
-        b->simulerDeplacement(deplacement);
-
-        if(bagageEstSorti(b))
+        // TODO : gérer le cas où deux bagages sont ajoutés en même temps
+        //        Ils auront alors la même position et sortiront en même temps.
+        //        Même avec la condition _chariotConnecte != 0 plus haut, on risque
+        //        de faire avancer certains bagages plus que d'autres sur le tapis,
+        //        et donc de leur donner une position différente sur le chariot.
+        //        L'interdire ?
+        if(bagageEstSorti(*it))
         {
-            _chariotConnecte->chargerBagage(b);
+            _chariotConnecte->chargerBagage(*it);
+            _bagages.erase(it);
             deconnecter();
         }
     }

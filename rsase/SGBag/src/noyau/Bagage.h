@@ -23,12 +23,7 @@ class Bagage : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Bagage(Vol* vol);
-
-        /** Initialise les membres privés de l'élément
-          */
-        virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                           XmlConfigFactory& fabrique);
+        Bagage(Vol* vol, QPointF positionInitiale);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DESTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

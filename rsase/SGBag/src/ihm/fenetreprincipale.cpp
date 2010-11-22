@@ -150,6 +150,22 @@ void FenetrePrincipale::ajouterVol()
     }
 }
 
+void FenetrePrincipale::destructionBagage(QObject* bagage)
+{
+    // TODO : gérer autrement, c'est pas le même thread.
+    QList<QGraphicsItem *> listeObjetsGraphiques = scene->items();
+    foreach(QGraphicsItem* objet, listeObjetsGraphiques)
+    {
+        VueBagage* vueBagage = dynamic_cast<VueBagage*>(objet);
+        if (vueBagage != 0 && vueBagage->bagageAssocie() == bagage)
+        {
+            scene->removeItem(vueBagage);
+            delete vueBagage;
+            break;
+        }
+    }
+}
+
 // declenchement du mode ajoutBagage
 void FenetrePrincipale::ajoutBagage(VueTapis& vueTapis)
 {
@@ -169,14 +185,13 @@ void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 
 void FenetrePrincipale::annulerAjoutBagage()
 {
-
+    // TODO
 }
 
 void FenetrePrincipale::associerVolToboggan()
 {
     if(_etat == NORMAL)
     {
-        qDebug() << __func__ << " Etat : normal";
         QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         if( ! listIndex.empty())
@@ -192,7 +207,6 @@ void FenetrePrincipale::associerVolToboggan()
 
 void FenetrePrincipale::annulerAssociation()
 {
-    qDebug() << __func__ << " Etat : SELECTIONTOBOGGAN";
     ui->volAnnulerButton->setEnabled(false);
     ui->volAssocierButton->setEnabled(true);
     activerSelection();
@@ -217,7 +231,6 @@ void FenetrePrincipale::activerSelection()
     QList<QGraphicsItem *> gilist = scene->items();
     foreach(QGraphicsItem* item, gilist)
     {
-        qDebug() << "selection";
         item->setFlags(QGraphicsItem::ItemIsSelectable);
     }
 }

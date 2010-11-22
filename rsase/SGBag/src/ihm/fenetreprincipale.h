@@ -50,6 +50,8 @@ class FenetrePrincipale : public QMainWindow
         };
 
     protected slots :
+        void destructionBagage(QObject* bagage);
+
         void finAjoutBagage(VueVol& vol);
         void annulerAjoutBagage();
 

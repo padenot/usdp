@@ -33,19 +33,8 @@ void StrategiePilotageAuto::pilotageNoeudAtteint(double dt, Direction directionC
         nouveauTroncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
     }
 
-    if(nouveauTroncon != 0 && nouveauTroncon->occuper())
+    if (changerTroncon(nouveauTroncon))
     {
-        _tronconActuel->liberer();
-        _tronconActuel = nouveauTroncon;
         pilotageEnChemin(dt);
-#ifdef DEBUG_ACHEMINEMENT
-        qDebug() << _chariot << "passe sur" << *nouveauTroncon;
-#endif
     }
-#ifdef DEBUG_ACHEMINEMENT
-    else
-    {
-        qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
-    }
-#endif
 }

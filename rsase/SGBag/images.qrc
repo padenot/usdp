@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/images">
-        <file alias="bagage-etatNormal">ui/images/bagage.svg</file>
+        <file alias="bagageSimple">ui/images/bagage.svg</file>
         <file alias="tapis-roulant">ui/images/tapis-roulant.svg</file>
         <file alias="toboggan">ui/images/toboggan.svg</file>
         <file alias="chariot">ui/images/chariot.svg</file>

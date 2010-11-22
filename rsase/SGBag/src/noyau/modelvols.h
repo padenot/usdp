@@ -6,7 +6,9 @@
 #include "Vol.h"
 
 
-
+/**
+ * @todo TODO : Renommer en français.
+ */
 class ModelVols : public QAbstractTableModel
 {
     Q_OBJECT

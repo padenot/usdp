@@ -84,7 +84,7 @@ void Prototype::changementMode(ModeSimulation mode)
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
-    Bagage* bagage = new Bagage(vol);
+    Bagage* bagage = new Bagage(vol,tapis->position());
     XmlConfigFactory::IndexParamValeur parametres;
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]] = QString().setNum(tapis->position().x());
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]] = QString().setNum(tapis->position().y());

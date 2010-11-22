@@ -8,16 +8,14 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Bagage::Bagage(Vol* vol) :
-        Element( XmlConfigFactory::IndexParamValeur()),_vol(vol)
+Bagage::Bagage(Vol* vol, QPointF positionInitiale) :
+        Element(XmlConfigFactory::IndexParamValeur()), // TODO : réfléchir à ce problème
+        _vol(vol)
 {
-    //TODO Auto-generated method stub
-}
-
-void Bagage::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
-                   XmlConfigFactory& fabrique)
-{
-    Element::init(indexParamValeur,fabrique);
+    _position = positionInitiale;
+#ifdef DEBUG_ACHEMINEMENT
+        _typeElement = "bagage";
+#endif
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ?DESTRUCTOR"
