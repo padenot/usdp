@@ -1,0 +1,37 @@
+CORE :
+- Implémenter le chargement d'un autre fichier durant l'exécution (gérer la taille de la configuration/de la scène)
+- Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
+- Dérouler le chariot de manière à transporter les bagages jusqu'au bout
+- Empêcher l'ajout de deux bagages simultanément sur le même tapis
+
+IHM :
+- Implémenter le zoom
+- Permettre l'annulation de l'ajout de bagage
+- Mieux utiliser la statusbar (plus souvent)
+- Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
+- Implémenter les différentes vues de paramètres
+- Implémenter le clic droit -> "rendre indisponible" sur les tronçons (ne pas permettre lorsque le tronçon est occupé)
+- Modifier l'apparence du tronçon en fonction de sa disponibilité (cassé ou pas)
+- Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
+- TESTER
+- TESTER
+- TESTER
+- TESTER
+- TESTER
+- TESTER
+- TESTER
+
+
+INDISPENSABLE, mais plus tard :
+- Commenter
+- Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
+
+BONUS :
+- Lors de la sélection d'un bagage, entourer de bleu le vol associé
+- Lors de la sélection d'un chariot, entourer de bleu la destination
+- Amélioration de la gestion des collisions (zone de sécurité, cf. sujet)
+- Amélioration de l'algorithme de calcul du plus court chemin (gestion de la congestion)
+
+VRAIMENT BONUS :
+- Ombre portée des chariots en fonction de l'orientation du soleil (drag & drop)
+- Tapis défilant

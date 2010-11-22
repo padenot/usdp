@@ -37,7 +37,6 @@ ElementActif::~ElementActif()
 
 void ElementActif::arreter()
 {
-    // TODO : gérer la décrémentation progressive de la vitesse
     _estActif = false;
 }
 

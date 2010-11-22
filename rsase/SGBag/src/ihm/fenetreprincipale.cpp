@@ -152,7 +152,6 @@ void FenetrePrincipale::ajouterVol()
 
 void FenetrePrincipale::destructionBagage(QObject* bagage)
 {
-    // TODO : gérer autrement, c'est pas le même thread.
     QList<QGraphicsItem *> listeObjetsGraphiques = scene->items();
     foreach(QGraphicsItem* objet, listeObjetsGraphiques)
     {
