@@ -27,6 +27,8 @@ class Chariot : public ElementActif
         static const double ACCELERATION_CHARIOT;
         static const double DECELERATION_CHARIOT;
         static const double VITESSE_NULLE;
+        static const double MAX_DEPASSEMENT_VITESSEMAX;
+
 
         enum TypePilotage
         {

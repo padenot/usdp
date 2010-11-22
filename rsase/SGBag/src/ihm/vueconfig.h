@@ -8,7 +8,7 @@
 namespace vue_config
 {
     const double ZOOM_ELEMENTS = 10.0;
-    const int dt = 10; // rafraichissement en ms
+    const int dt = 1000/30; // rafraichissement en ms
 
     namespace bagage
     {

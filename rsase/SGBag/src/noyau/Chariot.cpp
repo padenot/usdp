@@ -10,6 +10,8 @@
 const double Chariot::ACCELERATION_CHARIOT = 0.001; // m/s²
 const double Chariot::DECELERATION_CHARIOT = 0.002; // m/s²
 const double Chariot::VITESSE_NULLE = 0.001; // m/s
+const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.002;
+
 //Begin section for file Chariot.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Chariot.cpp
@@ -84,6 +86,11 @@ void Chariot::avancer(double dt, QPointF destination)
         if (_vitesse < _vitesseMax)
         {
             _vitesse += ACCELERATION_CHARIOT*dt;
+            emit vitesseModifiee(_vitesse);
+        }
+        else if(_vitesse > _vitesseMax + MAX_DEPASSEMENT_VITESSEMAX)
+        {
+            _vitesse -= DECELERATION_CHARIOT*dt;
             emit vitesseModifiee(_vitesse);
         }
     }

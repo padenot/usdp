@@ -86,24 +86,28 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
             double distance = QVector2D(_chariot.position() -
                               _tronconActuel->position()).length();
 
-            double vitesse = _chariot.vitesse();
-            double stopDistance = 0.0;
-            while(vitesse > _chariot.VITESSE_NULLE) {
-                stopDistance += vitesse;
-                vitesse -= _chariot.DECELERATION_CHARIOT;
-            }
 
             if (distance < RAYON_ACTION_TAPIS)
             {
                 return TAPIS_ATTEINT;
             }
-            else if (distance - stopDistance < RAYON_PROXIMITE_TAPIS)
-            {
-                return TAPIS_PROCHE;
-            }
             else
             {
-                return EN_CHEMIN;
+                double vitesse = _chariot.vitesse();
+                double stopDistance = 0.0;
+                while(vitesse > _chariot.VITESSE_NULLE) {
+                    stopDistance += vitesse;
+                    vitesse -= _chariot.DECELERATION_CHARIOT;
+                }
+
+                if ((distance - stopDistance) < RAYON_ACTION_TAPIS)
+                {
+                    return TAPIS_PROCHE;
+                }
+                else
+                {
+                    return EN_CHEMIN;
+                }
             }
         }
         else
@@ -151,14 +155,14 @@ void StrategiePilotage::pilotageArret()
 {
     // Rien à faire
 #ifdef DEBUG_ACHEMINEMENT
-    //qDebug() << _chariot << "à l'arrêt.";
+    qDebug() << _chariot << "à l'arrêt.";
 #endif
 }
 
 void StrategiePilotage::pilotageEnChemin()
 {
 #ifdef DEBUG_ACHEMINEMENT
-    //qDebug() << _chariot << "avance avec" << _bagage;
+    qDebug() << _chariot << "avance avec";
 #endif
 }
 
