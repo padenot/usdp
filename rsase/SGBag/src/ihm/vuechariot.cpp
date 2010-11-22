@@ -28,13 +28,16 @@ void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     VueElement::paint(painter, 0, 0);
 
     // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
-    _image->render(painter, rect);
+    //_image->render(painter, rect);
 
-    /*QPixmap *pixmap = new QPixmap();
-    QPainter paintPixmap(pixmap);
-    _image->render(paintPixmap);
+    QPixmap pixmap(200, 200);
+    QPainter paintPixmap(&pixmap);
 
-    painter->drawPixmap(pixmap);*/
+    paintPixmap.fillRect(QRectF(10,10,30,30), Qt::green);
+
+    //_image->render(&paintPixmap);
+
+    painter->drawPixmap(QRectF(-5,-5,10,10), pixmap, QRectF(0, 0, 200, 200));
 
     QFont f ("Courier", 2, QFont::Normal);
     painter->setFont (f);

@@ -41,6 +41,46 @@
          </widget>
         </item>
         <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="TailleLabel">
+          <property name="text">
+           <string>Taille :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="ratio">
+          <property name="text">
+           <string>1x</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="ratioSlider">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>10</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -63,7 +103,7 @@
         <item>
          <widget class="QLabel" name="vitesse">
           <property name="text">
-           <string/>
+           <string>7x</string>
           </property>
          </widget>
         </item>
@@ -98,7 +138,7 @@
      <x>0</x>
      <y>0</y>
      <width>1146</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -10,6 +10,8 @@
 #include "src/noyau/Prototype.h"
 #include "src/noyau/XmlConfigFactory.h"
 
+#include <QtGlobal>
+
 class VueCanevas;
 class VueVol;
 class VueBagage;
@@ -76,6 +78,8 @@ class FenetrePrincipale : public QMainWindow
         void changementEtat(Etat etat);
         void activerSelection();
 
+        void changementRatio(int ratio);
+
     private:
         void selectionChariot(VueChariot& vueChariot);
         void selectionToboggan(VueToboggan& vueToboggan);
@@ -97,6 +101,8 @@ class FenetrePrincipale : public QMainWindow
         QDialog* _dialog;
 
         bool enTrainDeSelectionnerUnToboggan;
+
+        qreal ratioActuel;
 
         Etat _etat;
 };

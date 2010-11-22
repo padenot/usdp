@@ -30,7 +30,8 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     scene(new QGraphicsScene()),
     prototype(proto),
     _vueParametres(0),
-    _etat(NORMAL)
+    _etat(NORMAL),
+    ratioActuel(1)
 {
     ui->setupUi(this);
 
@@ -38,11 +39,13 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
     ui->speedSlider->setValue(50);
+    ui->ratioSlider->setValue(1);
     ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
 
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
+    connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
     //TODO ici mettre la taille d la zone de l'aeorport.
     scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
@@ -56,7 +59,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
-    ui->vue->scale(7, 7);
 
     ui->volTableView->setModel(prototype->modelVols());
 
@@ -78,6 +80,20 @@ FenetrePrincipale::~FenetrePrincipale()
     delete scene;
     delete ui;
     delete _dialog;
+}
+
+void FenetrePrincipale::changementRatio(int valeur)
+{
+    if(valeur > 0)
+    {
+        qreal ratio = valeur;
+
+        ratio /= ratioActuel;
+        ratioActuel *= ratio;
+        ui->vue->scale(ratio, ratio);
+
+        ui->ratio->setText(QString::number(ratioActuel)+"x");
+    }
 }
 
 void FenetrePrincipale::basculerMarcheArret()
