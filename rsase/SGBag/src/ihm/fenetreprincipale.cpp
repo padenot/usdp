@@ -59,6 +59,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
+    ui->vue->setAlignment(Qt::AlignCenter);
 
     ui->volTableView->setModel(prototype->modelVols());
 
@@ -93,6 +94,10 @@ void FenetrePrincipale::changementRatio(int valeur)
         ui->vue->scale(ratio, ratio);
 
         ui->ratio->setText(QString::number(ratioActuel)+"x");
+
+        //mapToScene(ui->vue->rect())
+
+        qDebug() << ui->vue->rect().center();
     }
 }
 
