@@ -2,6 +2,7 @@
 #define STATEGIEPILOTAGE_H
 
 #include <QtGlobal>
+#include <QPointF>
 #include "Direction.h"
 
 class Chariot;
@@ -14,7 +15,8 @@ class StrategiePilotage
     public:
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotage(const StrategiePilotage& modele);
-        void piloter (double dt, Direction directionConseillee, Bagage* bagageTransporte);
+
+        QPointF piloter (Direction directionConseillee, Bagage* bagageTransporte);
 
     protected:
         /** Tente de faire passer le chariot sur un autre troncon.
@@ -31,18 +33,26 @@ class StrategiePilotage
 
         /** Pilote le chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
          */
-        virtual void pilotageEnChemin(double dt);
+        virtual void pilotageEnChemin();
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
          * @param[in] bagage TODO
          */
         virtual void pilotageNoeudAtteint(
-                double dt, Direction directionConseillee, Bagage* bagage) = 0;
+                Direction directionConseillee, Bagage* bagage) = 0;
+
+        /** Pilote le chariot lorsqu'il est proche du toboggan objectif.
+         */
+        virtual void pilotageTobogganProche(Bagage* bagage);
 
         /** Pilote le chariot lorsqu'il atteint le toboggan objectif.
          */
         virtual void pilotageTobogganAtteint(Bagage* bagage);
+
+        /** Pilote le chariot lorsqu'il est proche du tapis objectif.
+         */
+        virtual void pilotageTapisProche();
 
         /** Pilote le chariot lorsqu'il atteint le tapis objectif.
          */
@@ -50,10 +60,12 @@ class StrategiePilotage
 
         enum Situation
         {
-                ARRET,
+                //ARRET,
                 EN_CHEMIN,
                 NOEUD_ATTEINT,
+                TAPIS_PROCHE,
                 TAPIS_ATTEINT,
+                TOBOGGAN_PROCHE,
                 TOBOGGAN_ATTEINT
         };
 
@@ -73,17 +85,27 @@ class StrategiePilotage
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
 
-        static const double RAYON_PROXIMITE_NOEUD;
-        /// Distance avec un noeud en dessous de laquelle le chariot est
-        /// considéré comme étant sur le noeud.
-
         static const double RAYON_PROXIMITE_TAPIS;
         /// Distance avec un tapis en dessous de laquelle le chariot est
-        /// considéré comme étant à portée du tapis.
+        /// considéré comme étant proche du tapis (début du ralentissement).
 
         static const double RAYON_PROXIMITE_TOBOGGAN;
         /// Distance avec un toboggan en dessous de laquelle le chariot est
+        /// considéré comme étant proche du toboggan (début du ralentissement).
+
+
+        static const double RAYON_ACTION_NOEUD;
+        /// Distance avec un noeud en dessous de laquelle le chariot est
+        /// considéré comme étant sur le noeud.
+
+        static const double RAYON_ACTION_TAPIS;
+        /// Distance avec un tapis en dessous de laquelle le chariot est
+        /// considéré comme étant à portée du tapis.
+
+        static const double RAYON_ACTION_TOBOGGAN;
+        /// Distance avec un toboggan en dessous de laquelle le chariot est
         /// considéré comme étant à portée du toboggan.
+
 
 };
 

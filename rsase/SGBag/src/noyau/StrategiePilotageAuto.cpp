@@ -16,7 +16,7 @@ StrategiePilotageAuto::StrategiePilotageAuto(const StrategiePilotage& modele) :
 {
 }
 
-void StrategiePilotageAuto::pilotageNoeudAtteint(double dt, Direction directionConseillee, Bagage* bagage)
+void StrategiePilotageAuto::pilotageNoeudAtteint(Direction /*directionConseillee*/, Bagage* bagage)
 {
     Troncon* nouveauTroncon = 0;
 
@@ -35,6 +35,6 @@ void StrategiePilotageAuto::pilotageNoeudAtteint(double dt, Direction directionC
 
     if (changerTroncon(nouveauTroncon))
     {
-        pilotageEnChemin(dt);
+        pilotageEnChemin();
     }
 }

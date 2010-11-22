@@ -4,12 +4,11 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
-#include <QMap>
+#include <QDialog>
 
 #include "fenetreprincipale.h"
 #include "src/noyau/Prototype.h"
 #include "src/noyau/XmlConfigFactory.h"
-#include <QDialog>
 
 class VueCanevas;
 class VueVol;
@@ -24,6 +23,9 @@ namespace Ui {
 }
 
 
+/**
+ * @todo TODO implémenter le zoom
+ */
 class FenetrePrincipale : public QMainWindow
 {
     Q_OBJECT

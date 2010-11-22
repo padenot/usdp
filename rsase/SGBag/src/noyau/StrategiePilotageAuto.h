@@ -11,7 +11,7 @@ class StrategiePilotageAuto : public StrategiePilotage
 
     protected :
         virtual void pilotageNoeudAtteint(
-                double dt, Direction directionConseillee, Bagage *bagage);
+                Direction directionConseillee, Bagage *bagage);
 };
 
 #endif // STRATEGIEPILOTAGEAUTO_H

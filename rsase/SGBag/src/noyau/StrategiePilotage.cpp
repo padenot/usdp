@@ -5,9 +5,13 @@
 #include "Tapis.h"
 #include "Noeud.h"
 
-const double StrategiePilotage::RAYON_PROXIMITE_NOEUD = 0.5;
-const double StrategiePilotage::RAYON_PROXIMITE_TAPIS = 0.5;
-const double StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 0.5;
+
+
+const double StrategiePilotage::RAYON_PROXIMITE_TAPIS = 2.0;
+const double StrategiePilotage::RAYON_PROXIMITE_TOBOGGAN = 2.0;
+const double StrategiePilotage::RAYON_ACTION_NOEUD = 2.0;
+const double StrategiePilotage::RAYON_ACTION_TAPIS = 0.5;
+const double StrategiePilotage::RAYON_ACTION_TOBOGGAN = 0.5;
 
 StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
                                      Tapis* tapisAssocie) :
@@ -24,26 +28,26 @@ StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :
 {
 }
 
-void StrategiePilotage::piloter(double dt, Direction directionConseillee, Bagage* bagageTransporte)
+QPointF StrategiePilotage::piloter(Direction directionConseillee, Bagage* bagageTransporte)
 {
     switch (situation(bagageTransporte))
     {
-        case ARRET :                    pilotageArret(); break;
-        case EN_CHEMIN :                pilotageEnChemin(dt); break;
-        case NOEUD_ATTEINT :            pilotageNoeudAtteint(dt, directionConseillee, bagageTransporte); break;
+        //case ARRET :                    pilotageArret(); break;
+        case EN_CHEMIN :                pilotageEnChemin(); break;
+        case NOEUD_ATTEINT :            pilotageNoeudAtteint(directionConseillee, bagageTransporte); break;
+        case TOBOGGAN_PROCHE :          pilotageTobogganProche(bagageTransporte); break;
         case TOBOGGAN_ATTEINT :         pilotageTobogganAtteint(bagageTransporte); break;
+        case TAPIS_PROCHE :             pilotageTapisProche(); break;
         case TAPIS_ATTEINT :            pilotageTapisAtteint(); break;
     }
+
+    return _tronconActuel->noeudFin()->position();
 }
 
 StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
 {
-    if (!_chariot.estActif())
-    {
-        return ARRET;
-    }
-    else if (QVector2D(_chariot.position() - _tronconActuel->noeudFin()->position()).length()
-        < RAYON_PROXIMITE_NOEUD)
+    if (QVector2D(_chariot.position() - _tronconActuel->noeudFin()->position()).length()
+        < RAYON_ACTION_NOEUD)
     {
         // On est sur le noeud de fin du tronçon actuel
         return NOEUD_ATTEINT;
@@ -51,11 +55,22 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
     else if (bagage != 0)
     {
         // Livraison de bagage en cours
-        if (bagage->objectifFinal()->estSupport(_tronconActuel)
-            && QVector2D(_chariot.position() - _tronconActuel->position()).length()
-            < RAYON_PROXIMITE_TOBOGGAN)
+        if (bagage->objectifFinal()->estSupport(_tronconActuel))
         {
-            return TOBOGGAN_ATTEINT;
+            double distance = QVector2D(_chariot.position() -
+                             _tronconActuel->position()).length();
+            if (distance < RAYON_ACTION_TOBOGGAN)
+            {
+                return TOBOGGAN_ATTEINT;
+            }
+            else if (distance < RAYON_PROXIMITE_TOBOGGAN)
+            {
+                return TOBOGGAN_PROCHE;
+            }
+            else
+            {
+                return EN_CHEMIN;
+            }
         }
         else
         {
@@ -65,11 +80,22 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagage) const
     else
     {
         // Retour au tapis en cours
-        if (_tapisAssocie->estSupport(_tronconActuel)
-            && QVector2D(_chariot.position() - _tronconActuel->position()).length()
-            < RAYON_PROXIMITE_TAPIS)
+        if (_tapisAssocie->estSupport(_tronconActuel))
         {
-            return TAPIS_ATTEINT;
+            double distance = QVector2D(_chariot.position() -
+                              _tronconActuel->position()).length();
+            if (distance < RAYON_ACTION_TAPIS)
+            {
+                return TAPIS_ATTEINT;
+            }
+            else if (distance < RAYON_PROXIMITE_TAPIS)
+            {
+                return TAPIS_PROCHE;
+            }
+            else
+            {
+                return EN_CHEMIN;
+            }
         }
         else
         {
@@ -89,6 +115,7 @@ bool StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
 #endif
             _tronconActuel->liberer();
             _tronconActuel = nouveauTroncon;
+            _chariot.demarrer();
             return true;
         }
         else
@@ -96,6 +123,7 @@ bool StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
 #ifdef DEBUG_ACHEMINEMENT
             qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
 #endif
+            _chariot.arreter();
             return false;
         }
     }
@@ -104,6 +132,7 @@ bool StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
 #ifdef DEBUG_ACHEMINEMENT
         qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
 #endif
+        _chariot.arreter();
         return false;
     }
 }
@@ -116,12 +145,16 @@ void StrategiePilotage::pilotageArret()
 #endif
 }
 
-void StrategiePilotage::pilotageEnChemin(double dt)
+void StrategiePilotage::pilotageEnChemin()
 {
 #ifdef DEBUG_ACHEMINEMENT
     //qDebug() << _chariot << "avance avec" << _bagage;
 #endif
-    _chariot.avancer(dt,_tronconActuel->noeudFin()->position());
+}
+
+void StrategiePilotage::pilotageTobogganProche(Bagage* bagage)
+{
+    _chariot.arreter();
 }
 
 void StrategiePilotage::pilotageTobogganAtteint(Bagage* bagage)
@@ -131,6 +164,12 @@ void StrategiePilotage::pilotageTobogganAtteint(Bagage* bagage)
 #endif
     _chariot.dechargerBagage(); // Renvoie le même pointeur que "bagage"
     bagage->objectifFinal()->transfererBagage(bagage);
+    _chariot.demarrer();
+}
+
+void StrategiePilotage::pilotageTapisProche()
+{
+    _chariot.arreter();
 }
 
 void StrategiePilotage::pilotageTapisAtteint()
@@ -139,6 +178,5 @@ void StrategiePilotage::pilotageTapisAtteint()
     qDebug() << _chariot << "a atteint" << *_tapisAssocie;
 #endif
     _tapisAssocie->connecter(&_chariot);
-    _chariot.arreter();
 }
 

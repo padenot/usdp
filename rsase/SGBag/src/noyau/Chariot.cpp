@@ -7,7 +7,9 @@
 #include "StrategiePilotageAuto.h"
 #include "StrategiePilotageManuel.h"
 
-
+const double Chariot::ACCELERATION_CHARIOT = 0.001; // m/s²
+const double Chariot::DECELERATION_CHARIOT = 0.002; // m/s²
+const double Chariot::VITESSE_NULLE = 0.001; // m/s
 //Begin section for file Chariot.cpp
 //TODO: Add definitions that you want preserved
 //End section for file Chariot.cpp
@@ -53,7 +55,7 @@ void Chariot::chargerBagage(Bagage* bagage)
 {
     _bagage = bagage;
     // TODO : positionner le bagage exactement sur le chariot
-    demarrer();
+    demarrer(); // TODO : déplacer dans stratégie pilotage
 }
 
 Bagage* Chariot::dechargerBagage()
@@ -76,18 +78,36 @@ void Chariot::avancer(double dt, QPointF destination)
 {
     QVector2D deplacement(destination - _position);
     deplacement.normalize();
-    deplacement *= _vitesse * dt;
 
-    _position += deplacement.toPointF();
-    if (_bagage != 0)
+    if (_estActif)
     {
-        _bagage->simulerDeplacement(deplacement);
+        if (_vitesse < _vitesseMax)
+        {
+            _vitesse += ACCELERATION_CHARIOT*dt;
+        }
+    }
+    else
+    {
+        if (_vitesse > VITESSE_NULLE)
+        {
+            _vitesse -= DECELERATION_CHARIOT*dt;
+        }
+    }
+
+    if (_vitesse > VITESSE_NULLE)
+    {
+        deplacement *= _vitesse * dt;
+        _position += deplacement.toPointF();
+        if (_bagage != 0)
+        {
+            _bagage->simulerDeplacement(deplacement);
+        }
     }
 }
 
 void Chariot::maj(double dt)
 {
-    _pilote->piloter(dt,_directionConseillee,_bagage);
+    avancer(dt,_pilote->piloter(_directionConseillee,_bagage));
 }
 
 

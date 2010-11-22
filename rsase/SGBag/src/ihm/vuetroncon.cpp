@@ -57,6 +57,7 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
 
 QRectF VueTroncon::boundingRect() const
 {
+    // TODO : renvoyer un QRectF correct
     return QRectF(0,0,1,1);
     //return QRectF(point1,point3);
 }

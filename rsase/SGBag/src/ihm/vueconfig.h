@@ -7,20 +7,21 @@
 
 namespace vue_config
 {
-        const int dt = 10; // rafraichissement en ms
+    const double ZOOM_ELEMENTS = 10.0;
+    const int dt = 10; // rafraichissement en ms
 
     namespace scene
     {
-        const int longueur = 380;
-        const int largeur = 380;
+        const double longueur = 380;
+        const double largeur = 380;
         const QRectF rect = QRectF(0, 0, longueur, largeur);
     }
 
     namespace bagage
     {
         const int zIndex = 10;
-        const int longueur = 10;
-        const int largeur = 10;
+        const double longueur = 0.3*ZOOM_ELEMENTS;
+        const double largeur = 0.5*ZOOM_ELEMENTS;
         const int nbrRes = 4;
         const QString sacsport = ":/images/sacsport";
         const QString saccuir = ":/images/saccuir";
@@ -33,8 +34,8 @@ namespace vue_config
     namespace chariot
     {
         const int zIndex = 9;
-        const int longueur = 10;
-        const int largeur = 10;
+        const double longueur = 1*ZOOM_ELEMENTS;
+        const double largeur = 1*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/chariot";
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
@@ -42,18 +43,15 @@ namespace vue_config
     namespace tapis
     {
         const int zIndex = 8;
-        const int longueur = 10;
-        const int largeur = 10;
+        const double largeur = 1*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/tapis-roulant";
     }
 
     namespace toboggan
     {
         const int zIndex = 10;
-        const int longueur = 10;
-        const int largeur = 10;
+        const double largeur = 1*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/toboggan";
-        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 
     namespace troncon
@@ -72,9 +70,9 @@ namespace vue_config
     namespace vol
     {
         const int zIndex = 10;
-        const int longueur = 20;
-        const int largeur = 20;
-        const int ecartToboggan = 20;
+        const double longueur = 3*ZOOM_ELEMENTS;
+        const double largeur = 3*ZOOM_ELEMENTS;
+        const double ecartToboggan = 3*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/avion";
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
