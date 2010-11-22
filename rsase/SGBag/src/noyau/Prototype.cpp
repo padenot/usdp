@@ -101,6 +101,7 @@ Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
     return bagage;
 }
 
+
 void Prototype::ajouterBagageAleatoire()
 {
     /*
@@ -207,8 +208,18 @@ ModelVols* Prototype::modelVols()
     return &_modelVols;
 }
 
+// retire aussi les bagages du vol, hein.
 void Prototype::retirerVol(int i)
 {
+    foreach(Element* b, _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]])
+    {
+        Bagage* bagage = dynamic_cast<Bagage*>(b);
+        if(bagage   ->volAssocie() == modelVols()->at(i))
+        {
+            delete b;
+        }
+    }
+
     _modelVols.retirerVol(i);
 }
 
@@ -219,7 +230,6 @@ void Prototype::ajouterVol(Vol* vol)
 
 Vol* Prototype::vol(int index)
 {
-    qDebug() << "index in model :" << index;
     return _modelVols.at(index);
 }
 

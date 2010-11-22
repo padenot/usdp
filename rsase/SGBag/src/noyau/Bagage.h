@@ -38,6 +38,12 @@ class Bagage : public Element
          * @return Le toboggan sur lequel doit être déposé le bagage.
          */
         Toboggan* objectifFinal();
+        /**
+         * Donne le vol associé à ce bagage.
+         * @return Le vol associé à ce bagage.
+         */
+        Vol* volAssocie();
+
 
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_yl4N8PIZEd-TbK1o_cJlKw"

@@ -126,6 +126,8 @@ class Prototype : public QObject
         ModelVols* modelVols();
         void ajouterVol(Vol* vol);
         Vol* vol(int index);
+        void retirerVol(int i);
+
 
     protected slots:
         void destructionBagage(QObject* bagage);
@@ -135,7 +137,6 @@ class Prototype : public QObject
          */
         void maj();
 
-        void retirerVol(int i);
 
     protected:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pf5ngOygEd-0NvPstdZN1w"

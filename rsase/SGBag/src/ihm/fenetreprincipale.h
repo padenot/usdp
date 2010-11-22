@@ -63,6 +63,8 @@ class FenetrePrincipale : public QMainWindow
         void annulerAjoutBagage();
 
         void ajouterVol();
+        void supprimerVol();
+
         // TODO : supprimer vol
         void associerVolToboggan();
         void annulerAssociation();

@@ -21,11 +21,6 @@ class Vol
     //End section for Vol
 
     private:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_j91OhPCwEd-54vpurc77FA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Bagage * _bagage;
-
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_c8bTgPG8Ed-XFOLnxrkHLA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         unsigned  long _dateDepart;

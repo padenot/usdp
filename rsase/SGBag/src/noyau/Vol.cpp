@@ -6,7 +6,7 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_gpyD0PCwEd-54vpurc77FA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Vol::Vol(const QString& nom) : _bagage(0), _dateDepart(0), _toboggan(0), _nom(nom)
+Vol::Vol(const QString& nom) : _dateDepart(0), _toboggan(0), _nom(nom)
 {
     //TODO Auto-generated method stub
 }

@@ -22,6 +22,7 @@ Bagage::Bagage(Vol* vol, QPointF positionInitiale) :
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Bagage::~Bagage()
 {
+    qDebug() << "Supprimé";
     //TODO Auto-generated method stub
 }
 
@@ -39,5 +40,10 @@ void Bagage::simulerDeplacement(const QVector2D& deplacement)
 Toboggan* Bagage::objectifFinal()
 {
     return _vol->tobogganAssocie();
+}
+
+Vol* Bagage::volAssocie()
+{
+    return _vol;
 }
 

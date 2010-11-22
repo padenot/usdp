@@ -74,6 +74,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->action_propos_de_Qt, SIGNAL(triggered()), this, SLOT(aProposQt()));
     connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitterApplication()));
     connect(ui->action_propos, SIGNAL(triggered()), this, SLOT(aPropos()));
+    connect(ui->volSupprimertoolButton, SIGNAL(clicked()), this, SLOT(supprimerVol()));
 
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
@@ -230,6 +231,31 @@ void FenetrePrincipale::ajoutBagage(VueTapis& vueTapis)
 {
     _vueTapisAjoutBagage = &vueTapis;
     changementEtat(AJOUTBAGAGE);
+}
+
+void FenetrePrincipale::supprimerVol()
+{
+    if(_etat == NORMAL)
+    {
+        QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
+        QModelIndexList listIndex = selectionmodel->selectedIndexes();
+        if( ! listIndex.empty())
+        {
+            // On supprime le vol dans le model, la vueVol, les bagages qui ont ce vol.
+            QList<QGraphicsItem*> list =  scene->items();
+            foreach(QGraphicsItem* item, list)
+            {
+                VueBagage* vueBagage = dynamic_cast<VueBagage*>(item);
+                if(vueBagage != 0)
+                {
+                    scene->removeItem(vueBagage);
+                    break;
+                }
+            }
+
+            prototype->retirerVol(listIndex.at(0).row());
+        }
+    }
 }
 
 void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
