@@ -44,7 +44,7 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Chariot::~Chariot()
 {
-    delete _bagage;
+    // _bagage est détruit par le prototype
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg"

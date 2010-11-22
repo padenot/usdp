@@ -85,13 +85,12 @@ void Prototype::changementMode(ModeSimulation mode)
 Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
     Bagage* bagage = new Bagage(vol,tapis->position());
-    XmlConfigFactory::IndexParamValeur parametres;
-    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]] = QString().setNum(tapis->position().x());
-    parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]] = QString().setNum(tapis->position().y());
-    qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]];
-    qDebug() << parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]];
+    connect(bagage,SIGNAL(destroyed(QObject*)),
+            this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
 
 #ifdef DEBUG_ACHEMINENEMENT
+    // TODO : sert à quoi ?
+    XmlConfigFactory::IndexParamValeur parametres;
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]] = XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage];
     parametres[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]] = _id_bagage_genere++;
 #endif
@@ -172,6 +171,20 @@ int Prototype::acqVitesse()
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()
 {
     return _elementsParType;
+}
+
+void Prototype::destructionBagage(QObject* bagage)
+{
+    int index = _elementsParType
+          [XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]].indexOf(
+                  reinterpret_cast<Bagage*>(bagage));
+
+    if (index >= 0)
+    {
+        _elementsParType
+                  [XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]]
+                  .remove(index);
+    }
 }
 
 void Prototype::maj()

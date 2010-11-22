@@ -128,6 +128,8 @@ class Prototype : public QObject
         Vol* vol(int index);
 
     protected slots:
+        void destructionBagage(QObject* bagage);
+
         /**
          * Met à jour le modèle.
          */

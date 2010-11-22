@@ -100,36 +100,36 @@ void FenetrePrincipale::basculerMarcheArret()
     etat = !etat;
 }
 
-void FenetrePrincipale::ajouterObjetGraphique(QGraphicsItem *item)
+void FenetrePrincipale::ajouterVueCanevas(VueCanevas *vue)
 {
-    scene->addItem(item);
+    scene->addItem(vue);
 }
 
-void FenetrePrincipale::extraireObjetsGraphiques(
+void FenetrePrincipale::extraireVuesCanevas(
         const XmlConfigFactory::IndexTypesElements &elementsList)
 {
     foreach(Element *chariot,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
     {
-            ajouterObjetGraphique(new VueChariot(*this, *dynamic_cast<Chariot*>(chariot)));
+            ajouterVueCanevas(new VueChariot(*this, *dynamic_cast<Chariot*>(chariot)));
     }
 
     foreach(Element *tapis,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
     {
-            ajouterObjetGraphique(new VueTapis(*this, *dynamic_cast<Tapis*>(tapis)));
+            ajouterVueCanevas(new VueTapis(*this, *dynamic_cast<Tapis*>(tapis)));
     }
 
     foreach(Element *toboggan,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::toboggan]])
     {
-            ajouterObjetGraphique(new VueToboggan(*this, *dynamic_cast<Toboggan*>(toboggan)));
+            ajouterVueCanevas(new VueToboggan(*this, *dynamic_cast<Toboggan*>(toboggan)));
     }
 
     foreach(Element *troncon,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::troncon]])
     {
-            ajouterObjetGraphique(new VueTroncon(*this, *dynamic_cast<Troncon*>(troncon)));
+            ajouterVueCanevas(new VueTroncon(*this, *dynamic_cast<Troncon*>(troncon)));
     }
 }
 
@@ -176,7 +176,10 @@ void FenetrePrincipale::ajoutBagage(VueTapis& vueTapis)
 void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 {
     Bagage* bagage = prototype->ajouterBagage(_vueTapisAjoutBagage->tapisAssocie(), vueVol.volAssocie());
-    ajouterObjetGraphique(new VueBagage(*this, *bagage));
+    connect(bagage,SIGNAL(destroyed(QObject*)),
+            this,SLOT(destructionBagage(QObject*))/*,Qt::BlockingQueuedConnection*/);
+
+    ajouterVueCanevas(new VueBagage(*this, *bagage));
 
     qDebug() << "Bagage ajouté";
 
@@ -327,7 +330,7 @@ void FenetrePrincipale::selectionToboggan(VueToboggan& vueToboggan)
         QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         vueToboggan.associerVol(prototype->vol(listIndex.at(0).row()));
-        ajouterObjetGraphique(new VueVol(*this, *prototype->vol(listIndex.at(0).row())));
+        ajouterVueCanevas(new VueVol(*this, *prototype->vol(listIndex.at(0).row())));
         // TODO : détruire la vue en même temps que le vol
         // L'association a été faite : on rechange l'état des boutons, et on rend
         // tout selectionnable.

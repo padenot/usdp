@@ -11,6 +11,7 @@
 #include "src/noyau/XmlConfigFactory.h"
 #include <QDialog>
 
+class VueCanevas;
 class VueVol;
 class VueBagage;
 class VueToboggan;
@@ -31,14 +32,16 @@ class FenetrePrincipale : public QMainWindow
         explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
         ~FenetrePrincipale();
 
-        void ajouterObjetGraphique(QGraphicsItem *item);
-        void extraireObjetsGraphiques(const XmlConfigFactory::IndexTypesElements &elements);
+        void extraireVuesCanevas(const XmlConfigFactory::IndexTypesElements &elements);
 
         void ajoutBagage(VueTapis& tapis);
 
         typedef QVector<QGraphicsItem*> IndexVues;
 
     private:
+
+        void ajouterVueCanevas(VueCanevas *vue);
+
         /**
          * Etat de la vue.
          */
