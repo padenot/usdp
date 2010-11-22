@@ -29,6 +29,17 @@ void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
 
     // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
     _image->render(painter, rect);
+
+    /*QPixmap *pixmap = new QPixmap();
+    QPainter paintPixmap(pixmap);
+    _image->render(paintPixmap);
+
+    painter->drawPixmap(pixmap);*/
+
+    QFont f ("Courier", 2, QFont::Normal);
+    painter->setFont (f);
+
+    painter->drawText(QRectF(5,5,100,100), Qt::AlignLeft, "Ici, la description d'un chariot\n sur plusieurs lignes");
 }
 
 QRectF VueChariot::boundingRect() const
