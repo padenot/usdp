@@ -29,13 +29,13 @@ const int INDEX_ONGLET_PARAMETRES = 0;
 
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::FenetrePrincipale),
-    scene(new QGraphicsScene()),
-    prototype(proto),
-    _vueParametres(0),
-    _etat(NORMAL),
-    ratioActuel(1)
+        QMainWindow(parent),
+        ui(new Ui::FenetrePrincipale),
+        scene(new QGraphicsScene()),
+        prototype(proto),
+        _vueParametres(0),
+        _etat(NORMAL),
+        ratioActuel(1)
 {
     ui->setupUi(this);
 
@@ -96,11 +96,12 @@ FenetrePrincipale::~FenetrePrincipale()
 void FenetrePrincipale::changementCircuit()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-        tr("Choisissez un nouveau fichier de circuit"), ".", tr("*.xml"));
+                                                    tr("Choisissez un nouveau fichier de circuit"), ".", tr("*.xml"));
     scene->clear();
     delete prototype;
     prototype = new Prototype(fileName);
     extraireVuesCanevas(prototype->elements());
+    ui->volTableView->setModel(prototype->modelVols());
 }
 
 void FenetrePrincipale::quitterApplication()
@@ -172,25 +173,25 @@ void FenetrePrincipale::extraireVuesCanevas(
     foreach(Element *chariot,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::chariot]])
     {
-            ajouterVueCanevas(new VueChariot(*this, *dynamic_cast<Chariot*>(chariot)));
+        ajouterVueCanevas(new VueChariot(*this, *dynamic_cast<Chariot*>(chariot)));
     }
 
     foreach(Element *tapis,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]])
     {
-            ajouterVueCanevas(new VueTapis(*this, *dynamic_cast<Tapis*>(tapis)));
+        ajouterVueCanevas(new VueTapis(*this, *dynamic_cast<Tapis*>(tapis)));
     }
 
     foreach(Element *toboggan,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::toboggan]])
     {
-            ajouterVueCanevas(new VueToboggan(*this, *dynamic_cast<Toboggan*>(toboggan)));
+        ajouterVueCanevas(new VueToboggan(*this, *dynamic_cast<Toboggan*>(toboggan)));
     }
 
     foreach(Element *troncon,
             elementsList[XmlConfigFactory::NodeName_String[XmlConfigFactory::troncon]])
     {
-            ajouterVueCanevas(new VueTroncon(*this, *dynamic_cast<Troncon*>(troncon)));
+        ajouterVueCanevas(new VueTroncon(*this, *dynamic_cast<Troncon*>(troncon)));
     }
 }
 
@@ -206,8 +207,8 @@ void FenetrePrincipale::ajouterVol()
                                          tr("Nom du vol ?"), QLineEdit::Normal);
     if (!text.isEmpty())
     {
-         Vol* vol = new Vol(text);
-         prototype->ajouterVol(vol);
+        Vol* vol = new Vol(text);
+        prototype->ajouterVol(vol);
     }
 }
 
@@ -241,19 +242,19 @@ void FenetrePrincipale::supprimerVol()
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         if( ! listIndex.empty())
         {
-            // On supprime le vol dans le model, la vueVol, les bagages qui ont ce vol.
-            QList<QGraphicsItem*> list =  scene->items();
-            foreach(QGraphicsItem* item, list)
+            // On cherche si ce vol a des bagages en attente.
+            if(prototype->retirerVol(listIndex.at(0).row()))
             {
-                VueBagage* vueBagage = dynamic_cast<VueBagage*>(item);
-                if(vueBagage != 0)
+                QList<QGraphicsItem*> list =  scene->items();
+                foreach(QGraphicsItem* item, list)
                 {
-                    scene->removeItem(vueBagage);
-                    break;
+                    VueVol* vueVol = dynamic_cast<VueVol*>(item);
+                    if(vueVol != 0)
+                        scene->removeItem(vueVol);
                 }
             }
-
-            prototype->retirerVol(listIndex.at(0).row());
+            else
+                ui->statusBar->showMessage("Retrait du vol impossible, bagages en attente.", 2000);
         }
     }
 }
@@ -318,7 +319,7 @@ void FenetrePrincipale::desactiverToutSaufToboggans()
         VueToboggan* tob = dynamic_cast<VueToboggan*>(item);
         if(tob == 0)
         {
-           item->setFlags(0);
+            item->setFlags(0);
         }
     }
 }

@@ -49,6 +49,7 @@ void ModelVols::ajouterVol(Vol* vol)
 void ModelVols::retirerVol(int index)
 {
     beginRemoveRows(QModelIndex(), index, index);
+    qDebug() << "Retirer Vol :)";
     _data.remove(index);
     endRemoveRows();
 }

@@ -126,7 +126,7 @@ class Prototype : public QObject
         ModelVols* modelVols();
         void ajouterVol(Vol* vol);
         Vol* vol(int index);
-        void retirerVol(int i);
+        bool retirerVol(int i);
 
 
     protected slots:

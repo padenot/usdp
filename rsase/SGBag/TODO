@@ -7,7 +7,7 @@ MARTIN : - Empêcher l'ajout de deux bagages simultanément sur le même tapis
 IHM :
 Fait : - Implémenter le zoom
 - Permettre l'annulation de l'ajout de bagage
-- Permettre la suppression de vols en gérant les attributions
+Fait :- Permettre la suppression de vols en gérant les attributions
 - Mieux utiliser la statusbar (plus souvent)
 - Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
 - Implémenter les différentes vues de paramètres

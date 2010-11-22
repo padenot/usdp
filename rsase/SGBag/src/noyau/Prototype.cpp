@@ -214,19 +214,20 @@ ModelVols* Prototype::modelVols()
     return &_modelVols;
 }
 
-// retire aussi les bagages du vol, hein.
-void Prototype::retirerVol(int i)
+// Return false si y'a toujours des bagage
+bool Prototype::retirerVol(int i)
 {
     foreach(Element* b, _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::bagage]])
     {
         Bagage* bagage = dynamic_cast<Bagage*>(b);
-        if(bagage   ->volAssocie() == modelVols()->at(i))
+        if(bagage->volAssocie() == modelVols()->at(i))
         {
-            delete b;
+            return false;
         }
     }
 
     _modelVols.retirerVol(i);
+    return true;
 }
 
 void Prototype::ajouterVol(Vol* vol)
