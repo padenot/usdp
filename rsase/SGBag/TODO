@@ -2,7 +2,7 @@ CORE :
 Fait : PAUL : - Implémenter le chargement d'un autre fichier durant l'exécution (gérer la taille de la configuration/de la scène)
 MAXIME : - Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
 - Dérouler le tapis de manière à transporter les bagages jusqu'au bout
-MARTIN : - Empêcher l'ajout de deux bagages simultanément sur le même tapis
+Fait : MARTIN : - Empêcher l'ajout de deux bagages simultanément sur le même tapis
 
 IHM :
 Fait : - Implémenter le zoom

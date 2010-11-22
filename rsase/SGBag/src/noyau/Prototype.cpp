@@ -31,7 +31,7 @@ Prototype::Prototype(const QString& xmlfilepath) :
         _id_bagage_genere(ID_BAGAGE_GENERE_INITIAL),
         _dt (INTERVALLE_SIMULATION_DEFAUT)
 {
-    qsrand(42);
+    qsrand(time(0));
     // Désérialise le fichier XML.
     // Extrait et classe par type des pointeurs d'éléments.
     XmlConfigFactory handler;

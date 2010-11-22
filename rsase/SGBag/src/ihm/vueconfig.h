@@ -10,13 +10,6 @@ namespace vue_config
     const double ZOOM_ELEMENTS = 10.0;
     const int dt = 10; // rafraichissement en ms
 
-    namespace scene
-    {
-        const double longueur = 380;
-        const double largeur = 380;
-        const QRectF rect = QRectF(0, 0, longueur, largeur);
-    }
-
     namespace bagage
     {
         const int zIndex = 10;

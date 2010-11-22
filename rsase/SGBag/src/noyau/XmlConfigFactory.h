@@ -44,6 +44,8 @@ public:
             date, /// La date d'un vol, en secondes depuis l'epoch UNIX.
             nom, /// Le nom d'un vol
         bagage,
+        tailleSceneX,
+        tailleSceneY,
         _COUNT
     };
 

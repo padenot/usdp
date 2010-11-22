@@ -50,8 +50,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
     connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
-    //TODO ici mettre la taille d la zone de l'aeorport.
-    scene->setSceneRect(vue_config::scene::rect);
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
@@ -274,8 +272,6 @@ void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
     }
     else
     {
-        // Pas de bagage créé, afficher erreur dans la status bar
-        // TODO déutf8izer ?
         ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas été ajouté"), 5000);
     }
     changementEtat(NORMAL);
