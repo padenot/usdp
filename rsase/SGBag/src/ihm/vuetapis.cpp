@@ -75,6 +75,6 @@ VueTapisHandler::VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetreP
  */
 void VueTapisHandler::ajouterBagage()
 {
-    _fenetrePrincipale.ajoutBagage(&_vueTapis);
+    _fenetrePrincipale.ajoutBagage(_vueTapis);
 }
 

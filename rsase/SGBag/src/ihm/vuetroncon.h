@@ -10,6 +10,9 @@
 #include "src/noyau/Troncon.h"
 #include "vueelement.h"
 
+/**
+ * @todo TODO : gestion de la mise en panne du tronçon (clic droit -> simuler l'indisponibilité)
+ */
 class VueTroncon : public VueElement
 {
 public:

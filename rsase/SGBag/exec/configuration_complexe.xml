@@ -74,7 +74,7 @@
 		<x>40</x>
 		<y>90</y>
 		<suivantGauche>16</suivantGauche>
-		<suivantDroit>?</suivantDroit>
+		<suivantDroit>34</suivantDroit>
 	</noeud>
 	<troncon>
 		<id>13</id>

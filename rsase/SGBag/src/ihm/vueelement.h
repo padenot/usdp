@@ -1,7 +1,7 @@
 #ifndef VUEELEMENT_H
 #define VUEELEMENT_H
 
-#include "vue.h"
+#include "vuecanevas.h"
 
 #include <QGraphicsSceneContextMenuEvent>
 #include <QMenu>
@@ -12,7 +12,7 @@ const  Qt::GlobalColor COULEUR_SELECTION = Qt::darkBlue;
 
 class FenetrePrincipale;
 
-class VueElement : public Vue
+class VueElement : public VueCanevas
 {
 public:
     VueElement(FenetrePrincipale& fenetrePrincipale);

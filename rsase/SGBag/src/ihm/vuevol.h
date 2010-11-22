@@ -8,13 +8,13 @@
 #include <QFile>
 #include <QObject>
 
-#include "vue.h"
+#include "vuecanevas.h"
 #include "src/noyau/Vol.h"
 
 //#define FILEPATH_SVG_ETATNORMAL ":/images/tapis-etatNormal"
 class FenetrePrincipale;
 
-class VueVol : public Vue
+class VueVol : public VueCanevas
 {
 public:
     VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol);

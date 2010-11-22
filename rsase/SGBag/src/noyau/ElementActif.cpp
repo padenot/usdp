@@ -56,3 +56,7 @@ bool ElementActif::estActif ()
     return _estActif;
 }
 
+double ElementActif::vitesseMax ()
+{
+    return _vitesseMax;
+}

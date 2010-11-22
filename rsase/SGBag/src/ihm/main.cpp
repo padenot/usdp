@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     Prototype proto("configuration_complexe.xml");
 
     FenetrePrincipale w(&proto);
-    w.AjouterItems(proto.elements());
+    w.extraireObjetsGraphiques(proto.elements());
     w.show();
 
     return a.exec();

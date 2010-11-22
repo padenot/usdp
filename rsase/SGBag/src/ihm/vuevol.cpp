@@ -11,9 +11,9 @@
 using namespace vue_config::vol;
 
 VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
-        Vue(fenetrePrincipale),
-        _vol (vol),
-        _image(new QSvgRenderer(etatNormal))
+        VueCanevas(fenetrePrincipale),
+        _image(new QSvgRenderer(etatNormal)),
+        _vol (vol)
 {
     //TODO
     setPos(_vol.tobogganAssocie()->position() +

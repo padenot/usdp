@@ -1,15 +1,14 @@
-#ifndef VUE_H
-#define VUE_H
+#ifndef VUE_CANEVAS_H
+#define VUE_CANEVAS_H
 
 #include <QGraphicsItem>
 
 class FenetrePrincipale;
 
-class Vue: public QGraphicsItem
+class VueCanevas: public QGraphicsItem
 {
 public:
-    Vue(FenetrePrincipale& fenetrePrincipale);
-    virtual const QMap<QString, QString>* parametres();
+    VueCanevas(FenetrePrincipale& fenetrePrincipale);
 
 protected :
 
@@ -19,4 +18,4 @@ protected :
     FenetrePrincipale& _fenetrePrincipale;
 };
 
-#endif // VUE_H
+#endif // VUE_CANEVAS_H

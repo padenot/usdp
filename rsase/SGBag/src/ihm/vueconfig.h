@@ -10,8 +10,8 @@ namespace vue_config
 
     namespace scene
     {
-        const int longueur = 90;
-        const int largeur = 90;
+        const int longueur = 380;
+        const int largeur = 380;
         const QRectF rect = QRectF(0, 0, longueur, largeur);
     }
 

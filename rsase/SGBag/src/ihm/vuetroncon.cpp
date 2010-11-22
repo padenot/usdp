@@ -28,7 +28,7 @@ void VueTroncon::advance(int pas)
 void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter,0,0);
-    painter->setBrush(Qt::black);
+    painter->setPen(Qt::black);
     painter->drawLine(_troncon.noeudDebut()->position(), _troncon.noeudFin()->position());
 }
 

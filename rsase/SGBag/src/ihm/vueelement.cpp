@@ -4,7 +4,7 @@
 
 
 VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):
-        Vue(fenetrePrincipale),
+        VueCanevas(fenetrePrincipale),
 		_contextMenu(0),
 		_contextMenuActionsList()
 {
@@ -49,9 +49,10 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    // TODO mettre en place des constantes (static const dans la classe, par exemple)
     if(isSelected())
     {
-        painter->setPen(Qt::white);
+        painter->setPen(Qt::red);
         painter->setOpacity(0.4);
         QRectF rect = boundingRect();
         rect.setTopLeft(rect.topLeft() - QPoint(2,2));

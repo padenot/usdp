@@ -11,9 +11,12 @@
 #include "src/noyau/XmlConfigFactory.h"
 #include <QDialog>
 
-#include "vuevol.h"
-#include "vuetapis.h"
-#include "vueparametreschariot.h"
+class VueVol;
+class VueBagage;
+class VueToboggan;
+class VueChariot;
+class VueTapis;
+class VueParametresChariot;
 
 namespace Ui {
     class FenetrePrincipale;
@@ -23,69 +26,72 @@ namespace Ui {
 class FenetrePrincipale : public QMainWindow
 {
     Q_OBJECT
-private:
-    /**
-     * Etat de la vue.
-     */
-    enum Etat
-    {
-        NORMAL,
-        SELECTIONTOBOGGAN,
-        AJOUTBAGAGE
-    };
 
-public:
-    explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
-    ~FenetrePrincipale();
+    public:
+        explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
+        ~FenetrePrincipale();
 
-    void AjouterItem(QGraphicsItem *item);
-    void AjouterItems(const XmlConfigFactory::IndexTypesElements &elements);
+        void ajouterObjetGraphique(QGraphicsItem *item);
+        void extraireObjetsGraphiques(const XmlConfigFactory::IndexTypesElements &elements);
 
-    void ajoutBagage(VueTapis* tapis);
+        void ajoutBagage(VueTapis& tapis);
 
-    typedef QVector<QGraphicsItem*> IndexVues;
+        typedef QVector<QGraphicsItem*> IndexVues;
 
-signals:
-    void volSelectionne(VueVol* vueVol);
+    private:
+        /**
+         * Etat de la vue.
+         */
+        enum Etat
+        {
+            NORMAL,
+            SELECTIONTOBOGGAN,
+            AJOUTBAGAGE
+        };
 
-protected slots :
-    void finAjoutBagage(VueVol* vol);
-    void annulerAjoutBagage();
+    protected slots :
+        void finAjoutBagage(VueVol& vol);
+        void annulerAjoutBagage();
 
-    void ajouterVol();
-    void associerVolToboggan();
-    void annulerAssociation();
+        void ajouterVol();
+        // TODO : supprimer vol
+        void associerVolToboggan();
+        void annulerAssociation();
 
-    void changerVitesse(int pourcentage);
+        void changerVitesse(int pourcentage);
 
-    void changementSelection();
+        void changementSelection();
 
-    void changerEtat();
+        void basculerMarcheArret();
 
-    void desactiverToutSaufToboggans();
+        void desactiverToutSaufToboggans();
 
-    void changementEtat(Etat etat);
-    void activerSelection();
+        void changementEtat(Etat etat);
+        void activerSelection();
 
-private:
-    void afficherParametres(const QMap<QString, QString> *parametres);
+    private:
+        void selectionChariot(VueChariot& vueChariot);
+        void selectionToboggan(VueToboggan& vueToboggan);
+        void selectionVol(VueVol& vueVol);
+        void selectionTapis(VueTapis& vueTapis);
+        void selectionBagage(VueBagage& vueBagage);
 
-    Ui::FenetrePrincipale* ui;
-    QGraphicsScene* scene;
-    Prototype* prototype;
+        Ui::FenetrePrincipale* ui;
+        QGraphicsScene* scene;
+        Prototype* prototype;
 
-    QTimer timer;
+        QTimer timer;
 
-    IndexVues vues;
+        IndexVues vues;
 
-    VueTapis* _vueTapisAjoutBagage;
-    QWidget* _vueParametres;
-    /* Dialog pour l'ajout de vol */
-    QDialog* _dialog;
+        VueTapis* _vueTapisAjoutBagage;
+        QWidget* _vueParametres;
+        /* Dialog pour l'ajout de vol */
+        QDialog* _dialog;
 
-    bool enTrainDeSelectionnerUnToboggan;
+        bool enTrainDeSelectionnerUnToboggan;
 
-    Etat _etat;
+        Etat _etat;
 };
 
 #endif // FENETREPRINCPALE_H
