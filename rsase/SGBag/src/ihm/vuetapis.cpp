@@ -49,8 +49,8 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
 {
     VueElement::paint(painter, 0, 0);
 
-    //painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
-    _image->render(painter);
+    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
+    //_image->render(painter);
 }
 
 Tapis* VueTapis::tapisAssocie()
