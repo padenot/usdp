@@ -36,12 +36,7 @@ void VueChariot::advance(int pas)
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    timeval val1;
-    timeval val2;
-
     VueElement::paint(painter, 0, 0);
-
-    gettimeofday(&val1, 0);
 
         _image->renderer()->render(painter, rect);
 
@@ -57,8 +52,6 @@ void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
         painter->setPen(couleurTexte);
         painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_chariot.id()));
         painter->setTransform(matriceActuelle);*/
-
-    gettimeofday(&val2, 0);
 }
 
 Chariot& VueChariot::chariot()

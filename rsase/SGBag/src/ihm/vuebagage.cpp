@@ -35,7 +35,6 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 {
     VueElement::paint(painter, 0, 0);
 
-    // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
     _image->renderer()->render(painter, rect);
 }
 
