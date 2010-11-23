@@ -1,3 +1,4 @@
+#include <QDebug>
 #include <QtSvg/QSvgRenderer>
 #include <QLineF>
 
