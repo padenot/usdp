@@ -13,8 +13,10 @@
 class Noeud;
 class Chariot; //Dependency Generated Source:Troncon Target:Chariot
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @class Troncon
+  * @brief Classe conteneur regroupant les différentes propriétés d'un tronçon
+  */
 class Troncon : public Element
 {
     Q_OBJECT
@@ -34,30 +36,37 @@ class Troncon : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual ~Troncon();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/** @param[in] chariotCandidat : Chariot voulant occuper le tronçon
+	* @return Vrai si un chariot peut devenir "propriétaire du troncon", faux sinon (e.g. si le tronçon ets hors service ou déjà occupé).	
+	*/
         bool occuper(Chariot* chariotCandidat);
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/** Libère le tronçon du chariot propriétaire de celui-ci. */
         void liberer();
 
+	/** Met le troçon hors service, i.e. que plus aucun chariot ne pourra circuler sur celui-ci.
+	   */
         bool mettreHorsService();
+	
+	/** Remet le troçon en service, i.e. que les chariots pourront à nouveau circuler sur celui-ci.
+	   */
         void reparer();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/** Accesseur sur le noeud de fin du tronçon */
         Noeud* noeudFin();
 
+	/** Accessur sur le noeud de début du tronçon */
         Noeud* noeudDebut();
 
-        enum EtatTroncon
+        /** Décrit l'état du tronçons, i.e. En service : libre, occupé, ou Hors-service. */
+	enum EtatTroncon
         {
             LIBRE,
             OCCUPE,
             HORS_SERVICE
         };
 
+	/** Accesseur sur l'état du tronçon. */
         EtatTroncon etat();
 
 protected:

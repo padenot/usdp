@@ -10,6 +10,10 @@ class Bagage;
 class Troncon;
 class Tapis;
 
+/**
+  * @class StrategiePilotage
+  * @brief Régie les différentes stratégie de pilotage, prend les décision de marche ou d'arrêt des élément dynamique.
+  */
 class StrategiePilotage
 {
     public:
@@ -37,15 +41,15 @@ class StrategiePilotage
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] bagage TODO
-         * @param TODO
+         * @param[in] directionConseillee : diretion dans laquelle le bagage doit être piloté.
+	 * @param[in] bagage : Bagage à piloter
          */
         virtual void pilotageNoeudProche(
                 Direction directionConseillee, Bagage* bagage) = 0;
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] bagage TODO
+         * @param[in] bagage 
          * @param TODO
          */
         virtual void pilotageNoeudAtteint(
