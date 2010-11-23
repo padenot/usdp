@@ -20,6 +20,7 @@
 #include "vuetroncon.h"
 #include "vuevol.h"
 #include "vueparametreschariot.h"
+#include "vueparametrestoboggan.h"
 
 #include "src/noyau/XmlConfigFactory.h"
 
@@ -420,6 +421,13 @@ void FenetrePrincipale::changementSelection()
             selectionBagage(*vueBagage);
             return;
         }
+
+        VueTroncon* vueTroncon = dynamic_cast<VueTroncon*>(selectedItems.first());
+        if(vueTroncon != 0)
+        {
+            selectionTroncon(*vueTroncon);
+            return;
+        }
     }
 }
 
@@ -444,7 +452,11 @@ void FenetrePrincipale::selectionToboggan(VueToboggan& vueToboggan)
         annulerAssociation();
         ui->statusBar->showMessage(trUtf8("Toboggan associé"), 2000);
     }
+
     // TODO : autres états + paramètres
+    _vueParametres = new VueParametresToboggan(vueToboggan.toboggan(), this);
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 void FenetrePrincipale::selectionVol(VueVol& vueVol)
@@ -454,17 +466,36 @@ void FenetrePrincipale::selectionVol(VueVol& vueVol)
         finAjoutBagage(vueVol);
     }
     // TODO : autres états + paramètres
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 
 void FenetrePrincipale::selectionTapis(VueTapis& vueTapis)
 {
-    // TODO
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 void FenetrePrincipale::selectionBagage(VueBagage& vueBagage)
 {
-    // TODO
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
+}
+
+void FenetrePrincipale::selectionTroncon(VueTroncon&)
+{
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
+}
+
+void FenetrePrincipale::vueParametresDefaut()
+{
+    _vueParametres = new QLabel(trUtf8("Pas de paramètres pour cet objet"), this);
 }
 
 void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)

@@ -1,3 +1,4 @@
+#include <QGraphicsSvgItem>
 #include <QtSvg/QSvgRenderer>
 
 #include "src/ihm/vuebagage.h"
@@ -5,12 +6,18 @@
 
 using namespace vue_config::bagage;
 
+QSvgRenderer *VueBagage::_renderer = new QSvgRenderer(bagageSimple);
+
 VueBagage::VueBagage(FenetrePrincipale& fenetrePrincipale, Bagage &bagage):
         VueElement(fenetrePrincipale,rect),
-        //_image(new QSvgRenderer(resBagage[rand() % nbrRes])),
-        _image(new QSvgRenderer(bagageSimple)), // TODO : restaurer le rand
+        _image(new QGraphicsSvgItem()),
         _bagage(bagage)
 {
+    _image->setSharedRenderer(_renderer);
+
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
     setZValue(zIndex);
 }
 
@@ -29,7 +36,7 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     VueElement::paint(painter, 0, 0);
 
     // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
-    _image->render(painter, rect);
+    _image->renderer()->render(painter, rect);
 }
 
 Bagage* VueBagage::bagageAssocie()

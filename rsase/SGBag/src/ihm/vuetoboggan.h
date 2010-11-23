@@ -21,6 +21,7 @@ public:
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void associerVol(Vol* vol);
+    Toboggan& toboggan() const;
 protected:
     void advance(int step);
 

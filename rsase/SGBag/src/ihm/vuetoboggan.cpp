@@ -52,3 +52,8 @@ void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWi
     //painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
     _image->renderer()->render(painter, _rect);
 }
+
+Toboggan& VueToboggan::toboggan() const
+{
+    return _toboggan;
+}

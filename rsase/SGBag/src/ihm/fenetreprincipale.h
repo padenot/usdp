@@ -19,6 +19,7 @@ class VueToboggan;
 class VueChariot;
 class VueTapis;
 class VueParametresChariot;
+class VueTroncon;
 
 namespace Ui {
     class FenetrePrincipale;
@@ -95,6 +96,8 @@ class FenetrePrincipale : public QMainWindow
         void selectionVol(VueVol& vueVol);
         void selectionTapis(VueTapis& vueTapis);
         void selectionBagage(VueBagage& vueBagage);
+        void selectionTroncon(VueTroncon&);
+        void vueParametresDefaut();
 
         Ui::FenetrePrincipale* ui;
         QGraphicsScene* scene;
