@@ -1,0 +1,61 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT config ((noeud|troncon)+,(tapis|toboggan)+,chariot+)>
+<!ATTLIST config
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT noeud (id,x,y,suivantGauche,suivantDroit?)>
+<!ATTLIST noeud
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT troncon (id,noeudDebut,noeudFin)>
+<!ATTLIST troncon
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT tapis (id,x,y,pos)>
+<!ATTLIST tapis
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT toboggan (id,x,y,pos)>
+<!ATTLIST toboggan
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT chariot (id,pos,tapisAssocie)>
+<!ATTLIST chariot
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT suivantGauche (#PCDATA)>
+<!ATTLIST suivantGauche
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT suivantDroit (#PCDATA)>
+<!ATTLIST suivantDroit
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT noeudDebut (#PCDATA)>
+<!ATTLIST noeudDebut
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT noeudFin (#PCDATA)>
+<!ATTLIST noeudFin
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT tapisAssocie (#PCDATA)>
+<!ATTLIST tapisAssocie
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT id (#PCDATA)>
+<!ATTLIST id
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT x (#PCDATA)>
+<!ATTLIST x
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT y (#PCDATA)>
+<!ATTLIST y
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT pos (#PCDATA)>
+<!ATTLIST pos
+  xmlns CDATA #FIXED ''>
