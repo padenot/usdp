@@ -49,8 +49,7 @@ void VueToboggan::advance(int pas)
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    //painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
-    _image->renderer()->render(painter, _rect);
+    _image->renderer()->render(painter, boundingRect());
 }
 
 Toboggan& VueToboggan::toboggan() const

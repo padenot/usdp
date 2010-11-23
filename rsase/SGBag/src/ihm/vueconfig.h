@@ -76,11 +76,11 @@ namespace vue_config
         /**
          * La longueur d'un bagage.
          */
-        const double longueur = 0.3*ZOOM_ELEMENTS;
+        const double longueur = 0.4*ZOOM_ELEMENTS;
         /**
          * La largeur d'un élément.
          */
-        const double largeur = 0.5*ZOOM_ELEMENTS;
+        const double largeur = 0.4*ZOOM_ELEMENTS;
         /**
          * Nombre de ressources utilisées pour les bagages.
          */
