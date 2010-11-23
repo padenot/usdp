@@ -1,3 +1,3 @@
 all:
-	doxygen dox.config
+	doxygen
 	cd Rapport && scons

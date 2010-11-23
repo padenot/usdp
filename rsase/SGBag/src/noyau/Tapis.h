@@ -18,7 +18,7 @@
 class Troncon; //Dependency Generated Source:Tapis Target:Troncon
 
 /**
- * Un tapis est un point d'entrée de bagages dans le circuit SGBag.
+ * \brief Un tapis est un point d'entrée de bagages dans le circuit SGBag.
  *
  */
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ"
