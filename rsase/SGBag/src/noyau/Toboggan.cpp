@@ -10,7 +10,8 @@
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Toboggan::Toboggan(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
-        _tronconSupport(0)
+        _tronconSupport(0),
+        _nombreBagages(0)
 {
     //TODO Auto-generated method stub
 }
@@ -34,8 +35,10 @@ Toboggan::~Toboggan()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Toboggan::transfererBagage(Bagage* bagage)
 {
+    ++_nombreBagages;
     // TODO : faire avancer le bagage ?
     delete bagage;
+    emit nombreDeBagages(_nombreBagages);
 }
 
 
@@ -57,5 +60,10 @@ QPointF Toboggan::pointConnexion() const
 void Toboggan::associerVol(Vol* vol)
 {
     _vol = vol;
+}
+
+int Toboggan::nombreDeBagages() const
+{
+    return _nombreBagages;
 }
 

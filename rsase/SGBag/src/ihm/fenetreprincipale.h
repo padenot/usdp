@@ -19,6 +19,7 @@ class VueToboggan;
 class VueChariot;
 class VueTapis;
 class VueParametresChariot;
+class VueTroncon;
 
 namespace Ui {
     class FenetrePrincipale;
@@ -224,6 +225,8 @@ class FenetrePrincipale : public QMainWindow
          * @param vueBagage [in] - la vue de l'objet bagage qu'on veut sélectionner
          */
         void selectionBagage(VueBagage& vueBagage);
+        void selectionTroncon(VueTroncon&);
+        void vueParametresDefaut();
 
         /**
          * L'objet qui correspond à la fenêtre principale

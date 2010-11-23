@@ -57,7 +57,16 @@ class Toboggan : public Element
         QPointF pointConnexion() const;
         void associerVol(Vol* vol);
 
+        int nombreDeBagages() const;
+
+    signals:
+        void nombreDeBagages(int);
+
     private:
+        /**
+         * @var compteur de bagages
+         */
+        int _nombreBagages;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_luU7wfCwEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
