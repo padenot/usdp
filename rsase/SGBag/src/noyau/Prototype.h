@@ -20,7 +20,8 @@ class Element; //Dependency Generated Source:Prototype Target:Element
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 
 /**
- * Prototype de la simulation : classe d'entrée de la simulation.
+ * @class Prototype
+ * @brief Prototype de la simulation : classe d'entrée de la simulation.
  */
 class Prototype : public QObject
 {
@@ -62,7 +63,7 @@ class Prototype : public QObject
          * Les bagages peuvent être générés par le prototype, ou alors
          * ajoutés manuellement. Cette méthode permet de changer le
          * comportement du système.
-         * @param mode Le nouveau mode de fonctionnement d'arrivée des bagages.
+         * @param mode : Le nouveau mode de fonctionnement d'arrivée des bagages.
          */
         void changementModeAjoutBagage(ModeSimulation mode);
 
@@ -72,20 +73,24 @@ class Prototype : public QObject
          * @brief Ajout d'un bagage dans la simulation.
          * Le bagage est crée, et est placé sur le tapis.
          * @param tapis Le tapis d'origine du bagage : là où il apparaitra.
-         * @param vol Le vol de destination du bagage : là où il sortira.
+         * @param vol : Le vol de destination du bagage : là où il sortira.
          * @return Le bagage effectivement ajouté.
          */
         Bagage* ajouterBagage(Tapis* tapis, Vol* vol);
 
         /**
          * @brief Changer la vitesse de la simulation.
-         * @param pourcentage Pourcentage de la vitesse réelle.
+         * @param pourcentage : Pourcentage de la vitesse réelle.
          *                    Si inférieur à 0, il est ramené à 0.
          * @return Le pourcentage effectivement appliqué (potentiellement
          *         élevé à 0, s'il était négatif).
          */
         int changerVitesse(int pourcentage);
 
+	/**
+	  * Accesseur sur l'état du prototype.
+	  * @return Vrai si le prototype est en marche, faux sinon.
+	  */
         bool estEnMarche();
 
     public slots:

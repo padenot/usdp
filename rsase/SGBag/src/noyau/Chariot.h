@@ -12,7 +12,8 @@ class Troncon;
 class Tapis;
 
 /**
- * Modèle de données du chariot.
+ * \class Chariot
+ * \brief Modèle de données du chariot. Contient aussi toutes les fonctions associées aux déplacement de celui-ci.
  */
 class Chariot : public ElementActif
 {
@@ -32,7 +33,7 @@ class Chariot : public ElementActif
         };
 
         /**
-         * @todo TODO Constructeur de chariot
+         * \param indexParamValeur : 
          */
         Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
@@ -51,6 +52,7 @@ class Chariot : public ElementActif
          * Ne doit être appelé que si le chariot ne contient pas déjà un bagage.
          * Etant donné que le chariot se déconnecte du tapis dès qu'il reçoit un bagage,
          * on ne devrait jamais recevoir de deuxième bagage de toute façon.
+	 * @param[int] bagage : Bagage à charger dans le chariot. 
          */
         void chargerBagage(Bagage* bagage);
 
@@ -67,7 +69,7 @@ class Chariot : public ElementActif
          *  - Décharge le bagage
          *  - Change de tronçon
          *  - ...
-         * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
+         * @param[in] dt : Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
          */
         virtual void maj(double dt);
 
@@ -82,9 +84,19 @@ class Chariot : public ElementActif
          */
         void avancer(double dt, QPointF destination);
 
+	/**
+	  * Accesseur sur le type de pilotage du chariot.
+	  */
         TypePilotage typePilotage();
+
+	/**
+	  * Accesseur sur la direction conseillée du chariot.
+	  */
         Direction directionConseillee();
 
+	/**
+	  * Accesseur sur la distance d'arrêt du chariot.
+	  */
         double distanceArret();
 
         void connecter (Tapis* tapis);

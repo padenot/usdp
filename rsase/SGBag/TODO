@@ -1,26 +1,14 @@
 CORE :
-Fait : PAUL : - Implémenter le chargement d'un autre fichier durant l'exécution (gérer la taille de la configuration/de la scène)
 Fait ? MAXIME : - Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
-Fait : MARTIN : - Empêcher l'ajout de deux bagages simultanément sur le même tapis
-
-- Occuper le troncon à la construction du chariot
-- Dérouler le tapis de manière à transporter les bagages jusqu'au bout
 
 IHM :
-Fait :- Permettre la suppression de vols en gérant les attributions
-Fait : - Implémenter le zoom
-Fait : - Gestion correcte des unités
+YOANN : - Résoudre le bug du chariot bloqué lorsqu'il démarre en manuel après un tapis (sans bagage)
+YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel il était arrêté est réparé
+- Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
+- Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
+- Idem pour l'association vol-toboggan
+PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
 
-Fait : - Implémenter le clic droit -> "rendre indisponible" sur les tronçons (ne pas permettre lorsque le tronçon est occupé)
-Fait : - Modifier l'apparence du tronçon en fonction de sa disponibilité (cassé ou pas)
-
-- Résoudre le bug lorsqu'un chariot passe sur un noeud
-- Gestion correcte des dés-association de vols avec des toboggans
-Fait : - Permettre l'annulation de l'ajout de bagage
-Fait : - Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
-- Implémenter les différentes vues de paramètres
-- Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
-- Fait : Empêcher l'ajout de bagages quand aucun vol n'est disponible
 - TESTER
 - TESTER
 - TESTER
@@ -31,7 +19,7 @@ Fait : - Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
 
 
 INDISPENSABLE, mais plus tard :
-- Commenter
+Commencé ? TOUT LE MONDE : - Commenter
 - METTRE DES DESTRUCTEURS (virtuels)
 - Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
 
@@ -40,8 +28,8 @@ BONUS :
 - Lors de la sélection d'un bagage, entourer de bleu le vol associé
 - Lors de la sélection d'un chariot, entourer de bleu la destination
 - Amélioration de la gestion des collisions (zone de sécurité, cf. sujet)
-- Amélioration de l'algorithme de calcul du plus court chemin (gestion de la congestion)
 
 VRAIMENT BONUS :
 - Ombre portée des chariots en fonction de l'orientation du soleil (drag & drop)
-- Tapis défilant
+Fait : - Tapis défilant
+

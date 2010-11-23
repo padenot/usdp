@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="noeud"/>
+          <xs:element ref="troncon"/>
+        </xs:choice>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="tapis"/>
+          <xs:element ref="toboggan"/>
+        </xs:choice>
+        <xs:element maxOccurs="unbounded" ref="chariot"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noeud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="suivantGauche"/>
+        <xs:element minOccurs="0" ref="suivantDroit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suivantGauche" type="xs:integer"/>
+  <xs:element name="suivantDroit" type="xs:integer"/>
+  <xs:element name="troncon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="noeudDebut"/>
+        <xs:element ref="noeudFin"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="noeudDebut" type="xs:integer"/>
+  <xs:element name="noeudFin" type="xs:integer"/>
+  <xs:element name="tapis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="toboggan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="x"/>
+        <xs:element ref="y"/>
+        <xs:element ref="pos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="chariot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="pos"/>
+        <xs:element ref="tapisAssocie"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tapisAssocie" type="xs:integer"/>
+  <xs:element name="id" type="xs:integer"/>
+  <xs:element name="x" type="xs:integer"/>
+  <xs:element name="y" type="xs:integer"/>
+  <xs:element name="pos" type="xs:integer"/>
+</xs:schema>

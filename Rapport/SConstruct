@@ -12,6 +12,7 @@ srcPath = ""
 tmpPath = "tmp/"
 
 buildRes = env.PDF(target = tmpPath + texName + ".pdf", source = srcPath + texName + ".tex") 
+env.AddPreAction(buildRes, 'python scripts/exportSources.py "../rsase/SGBag/src/" > code_listing.tex')
 env.AddPostAction(buildRes, "cp " + tmpPath + texName + ".pdf " +  binPath + outputName + ".pdf") 
 
 sconsFiles = ["ListeBesoins/", "UseCases/Descriptions/", "UseCases/Scenarios/"]

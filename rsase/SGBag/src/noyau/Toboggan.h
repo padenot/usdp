@@ -1,9 +1,5 @@
 #ifndef TOBOGGAN_H
 #define TOBOGGAN_H
-//Begin section for file Toboggan.h
-//TODO: Add definitions that you want preserved
-//End section for file Toboggan.h
-
 #include <QMap>
 
 
@@ -16,8 +12,10 @@ class Bagage;
 class Vol; //Dependency Generated Source:Toboggan Target:Vol
 class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_slcjoOsVEd-oy8D834IawQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @class Toboggan
+  * @brief Classe gérant l'ensemble des opérations associées aux taboggans (e.g transfert de bagages)
+  */
 class Toboggan : public Element
 {
     Q_OBJECT

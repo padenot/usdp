@@ -8,6 +8,10 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @class ElementActif
+  * @brief Classe mère de tous les éléments dynamiques ( Chariot et Tapis)
+  */
 class ElementActif : public Element
 {
     Q_OBJECT
@@ -22,25 +26,42 @@ class ElementActif : public Element
 
         virtual ~ElementActif();
 
-        // TODO
-        // Émet le signal "activationModifiee" si c'est le cas.
+		/**
+		  * @brief Ordonne à l'élément dynamique de décélérer autant que possible
+		  * en respectant les contraintes physiques liées au mobile (décélération
+		  * maximale)
+		  * Émet le signal "activationModifiee" si l'élément n'était pas déjà
+		  * en train de décélérer.
+		  */
         virtual void freiner();
 
-        // TODO
-        // Émet le signal "activationModifiee" si c'est le cas.
+		/**
+		  * @brief Ordonne à l'élément dynamique d'accélérer autant que possible
+		  * en respectant les contraintes physiques liées au mobile (accélération
+		  * maximale)
+		  * Émet le signal "activationModifiee" si l'élément n'était pas déjà
+		  * en train d'accélérer.
+		  */
         virtual void accelerer();
 
-        virtual bool estActif();
+	/**
+	  * @brief Accesseur sur l'état ( en mouvement ou pas) de l'élément dynamique
+	  */
+        virtual bool estActif ();
 
+	/**
+	  * @brief Accesseur sur la vitesse de l'élément dynamique
+	  */
         virtual double vitesse();
+
+	/**
+	  * @brief Accesseur sur la vitesse maximale de l'élément dynamique
+	  */
         virtual double vitesseMax ();
 
     public slots :
         virtual void definirActivation (bool estActif);
         virtual void modifierVitesseMax(double nouvelleVitesseMax);
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 
         /** Met à jour l'élément actif (position, ...)
          * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
@@ -53,16 +74,12 @@ class ElementActif : public Element
 
     protected:
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_je1NYPG4Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         double _vitesse;
         double _vitesseMax;
 
         static const double VITESSE_DEFAUT;
         static const double VITESSE_MAX_DEFAUT;
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_UiLRIPIWEd-TbK1o_cJlKw"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         bool _estActif;
 
 };  //end class ElementActif

@@ -26,8 +26,8 @@ void StrategiePilotageManuel::calculerNouveauChemin()
 
 void StrategiePilotageManuel::pilotageNoeudAtteint()
 {
-    mettreAJourChemin(); // Opération peu gourmande, on ne
-                         // fait que demander le tronçon
-                         // de gauche/droite
     StrategiePilotage::pilotageNoeudAtteint();
+    mettreAJourChemin(); // Opération peu gourmande, on ne
+                        // fait que demander le tronçon
+                        // de gauche/droite
 }

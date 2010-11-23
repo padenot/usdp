@@ -11,10 +11,6 @@ const double Chariot::ACCELERATION_CHARIOT = 20; // m/s²
 const double Chariot::DECELERATION_CHARIOT = 70; // m/s²
 const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.3; // m/s
 
-//Begin section for file Chariot.cpp
-//TODO: Add definitions that you want preserved
-//End section for file Chariot.cpp
-
 Chariot::Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
     ElementActif(indexParamValeur),
     _bagage (0),
