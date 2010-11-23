@@ -20,7 +20,7 @@
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 /**
   * @class Element
-  * @brief 
+  * @brief Classe mère de l'ensemble des éléments dynamique et statique du SGBag.
   */
 class Element : public QObject
 {
@@ -43,12 +43,18 @@ class Element : public QObject
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_h21_IPD4Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/**
+	  * Accesseur sur la position de l'élément
+	  */
         virtual QPointF position() const;
 
 #ifdef DEBUG_ACHEMINEMENT
         friend QDebug operator<<(QDebug dbg, const Element &element);
 #endif
 
+	/**
+	  * Accesseur sur la clef primaire de l'élément 
+	  */
         int id();
 
     protected:
