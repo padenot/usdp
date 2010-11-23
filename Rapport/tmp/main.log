@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  23 NOV 2010 20:15
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  23 NOV 2010 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,23 +613,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 13.
-(./main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 5.
- [1
-
-{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.4521pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[2])
+(./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3]
+ [1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 ! LaTeX Error: File `Definitions/src/commands.tex' not found.
 
@@ -646,11 +636,11 @@ l.17 	\input{Definitions/src/commands.tex}
 
  
 Here is how much of TeX's memory you used:
- 6496 strings out of 493738
- 96276 string characters out of 3143023
- 197961 words of memory out of 3000000
- 9582 multiletter control sequences out of 15000+200000
- 10079 words of font info for 35 fonts, out of 3000000 for 9000
+ 6307 strings out of 493738
+ 93479 string characters out of 3143023
+ 180536 words of memory out of 3000000
+ 9478 multiletter control sequences out of 15000+200000
+ 8495 words of font info for 30 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 33i,12n,43p,258b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,7n,43p,258b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
