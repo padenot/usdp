@@ -15,7 +15,7 @@ VueParametresChariot::VueParametresChariot(Chariot& chariot, QWidget *parent) :
 
     connect(&chariot,SIGNAL(vitesseModifiee(double)),
             ui->vitesseActuelle,SLOT(setValue(double)));
-    ui->vitesseActuelle->setValue(chariot.vitesse());
+    ui->vitesseActuelle->setValue(_chariot.vitesse());
 
     connect(ui->modePilotage, SIGNAL(valueChanged(int)),
             this,SLOT(modifierTypePilotage(int)));
