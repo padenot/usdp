@@ -31,6 +31,9 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
     QObject::connect(ajouterBagageAction, SIGNAL(triggered()), &(this->_handler), SLOT(ajouterBagage()));
 
     _image->renderer()->setFramesPerSecond(vue_config::fps);
+#ifdef DEBUG_ACHEMINEMENT
+    qDebug() << _image->renderer()->isValid();
+#endif
 }
 
 VueTapis::~VueTapis()

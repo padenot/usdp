@@ -10,12 +10,6 @@ VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):
         _contextMenu(0),
         _contextMenuActionsList()
 {
-
-    /* Exemple : Ajouter des QAction* au menu
-    QAction* action = new QAction("Label", 0);
-    //QObject::connect(action, SIGNAL(triggered()), this->handler, SLOT(slotPourMonAction()));
-    contextMenuActionsList.append(action);
-    //*/
 }
 
 VueElement::VueElement(FenetrePrincipale& fenetrePrincipale,
@@ -24,12 +18,6 @@ VueElement::VueElement(FenetrePrincipale& fenetrePrincipale,
         _contextMenu(0),
         _contextMenuActionsList()
 {
-
-    /* Exemple : Ajouter des QAction* au menu
-    QAction* action = new QAction("Label", 0);
-    //QObject::connect(action, SIGNAL(triggered()), this->handler, SLOT(slotPourMonAction()));
-    contextMenuActionsList.append(action);
-    //*/
 }
 
 VueElement::~VueElement()
@@ -63,7 +51,6 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    // TODO mettre en place des constantes (static const dans la classe, par exemple)
     if(isSelected())
     {
         painter->setBrush(brushSelection);

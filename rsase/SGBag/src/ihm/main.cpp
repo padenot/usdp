@@ -7,10 +7,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    /* Initialisation du générateur de nombre aléatoire,
+     * sur le temps actuel
+     */
     srand(time(NULL));
 
     Prototype* proto= new Prototype("configuration_complexe.xml");
-    //Prototype* proto = new Prototype("configuration_simple.xml");
 
     FenetrePrincipale w(proto);
     w.extraireVuesCanevas(proto->elements());

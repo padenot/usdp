@@ -7,7 +7,6 @@ VueParametresToboggan::VueParametresToboggan(Toboggan& toboggan, QWidget *parent
     ui(new Ui::VueParametresToboggan)
 {
     ui->setupUi(this);
-    nombreDeBagages(toboggan.nombreDeBagages());
     connect(&_toboggan, SIGNAL(nombreDeBagages(int)), this, SLOT(nombreDeBagages(int)));
 }
 
