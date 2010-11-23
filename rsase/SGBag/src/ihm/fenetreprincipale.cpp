@@ -49,7 +49,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
-    // TODO : enlever ça, ça ne sert qu'à Etienne ?
+    // TODO : enlever ça, ça ne sert qu'�  Etienne ?
     scene->setBackgroundBrush(Qt::white);
 
     ui->vue->setRenderHints( QPainter::Antialiasing |
@@ -137,9 +137,14 @@ void FenetrePrincipale::changementRatio(int valeur)
     {
         qreal ratio = valeur;
 
+
         ratio /= ratioActuel;
         ratioActuel *= ratio;
         ui->vue->scale(ratio, ratio);
+
+        /* ce que Etienne devait faire:
+            ui->vue->scale(ratio/ratioActuel, ratio/ratioActuel);
+            ratioActuel = ratio;*/
 
         ui->ratio->setText(QString::number(ratioActuel)+"x");
 
