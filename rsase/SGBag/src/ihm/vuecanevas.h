@@ -14,8 +14,9 @@ public:
 
 protected :
     void definirCoordonnees(QPointF positionDebut,
-                            QPointF positionFin, double largeur,
-                            double largeurSecurite = 0);
+                                    QPointF positionFin, double largeur,
+                                    double ajoutLongueurApresFin = 0,
+                                    double ajoutLongueurAvantDebut = 0);
     /**
      * @var fenetrePrincipale Référence vers la fenêtre principale.
      */

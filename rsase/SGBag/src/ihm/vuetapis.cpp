@@ -18,7 +18,7 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
 {
     setZValue(zIndex);
     definirCoordonnees(_tapis.position(),_tapis.pointConnexion(),
-                       largeur,vue_config::chariot::largeur/2);
+                       largeur,-vue_config::chariot::largeur/2);
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);

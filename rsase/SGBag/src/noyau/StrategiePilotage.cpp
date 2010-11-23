@@ -15,6 +15,7 @@ StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
         _tronconActuel(tronconActuel),
         _tapisAssocie(tapisAssocie)
 {
+    _tronconActuel->occuper();
 }
 
 StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :

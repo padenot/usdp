@@ -70,7 +70,7 @@ namespace vue_config
         const int zIndex = 5;
 
         const double largeur = 0.5; //Demi largeur d'un rail à l'affichage
-        const double largeurEspaceBrise = 0.3;
+        const double rayonNoeud = largeur*1.3;
 
         const QBrush brushGray(Qt::gray); //couleur de fond du rail
         const QPen penLight(Qt::gray, 0); //affichage du fond du rail

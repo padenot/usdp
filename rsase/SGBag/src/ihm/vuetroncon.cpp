@@ -17,7 +17,7 @@ VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
 
     definirCoordonnees(_troncon.noeudDebut()->position(),
                        _troncon.noeudFin()->position(),
-                       largeur);
+                       2*largeur);
 
     QAction* mettreEnPanneAction = new QAction(QObject::trUtf8("Mettre en panne"), 0);
     QAction* reparerAction = new QAction(QObject::trUtf8("Réparer"), 0);
@@ -25,14 +25,6 @@ VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
     _contextMenuActionsList.append(reparerAction);
     QObject::connect(mettreEnPanneAction, SIGNAL(triggered()), &_handler, SLOT(mettreHorsService()));
     QObject::connect(reparerAction, SIGNAL(triggered()), &_handler, SLOT(reparer()));
-
-    double longueur = QVector2D(_troncon.noeudDebut()->position() -
-                                    _troncon.noeudFin()->position()).length();
-
-    _fond[0] = QPointF(largeur, largeur);
-    _fond[1] = QPointF(longueur-largeur,  largeur);
-    _fond[2] = QPointF(longueur-largeur, -largeur);
-    _fond[3] = QPointF(largeur, -largeur);
 
 }
 
@@ -63,17 +55,9 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     double longueur = QVector2D(_troncon.noeudDebut()->position() -
                                     _troncon.noeudFin()->position()).length();
 
-
     VueElement::paint(painter,0,0);
 
-    painter->setBrush(brushGray);
-
-    painter->setPen(penDark);
-    // Dessin du noeud de début
-    painter->drawEllipse(QPointF(0,0), largeur*1.3, largeur*1.3);
-    // Dessin du noeud de fin
-    painter->drawEllipse(QPointF(longueur, 0), largeur*1.3, largeur*1.3);
-
+    //------------ Choix des couleurs du tronçon
     if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         painter->setPen(penRedLight);
@@ -84,9 +68,11 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
         painter->setPen(penLight);
         painter->setBrush(brushGray);
     }
-    painter->drawPolygon(_fond, 4);
 
+    //------------ Dessin du tronçon
+    painter->drawRect(QRectF(0,-largeur,longueur,2.0*largeur));
 
+    //------------ Choix des couleurs des noeuds
     if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         painter->setPen(penRedDark);
@@ -96,35 +82,18 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
         painter->setPen(penDark);
     }
 
-    painter->drawLine( _fond[0], _fond[1]);
-    painter->drawLine( _fond[3], _fond[2]);
+    painter->drawLine(QPointF(0,-largeur),QPointF(longueur,-largeur));
+    painter->drawLine(QPointF(0,largeur),QPointF(longueur,largeur));
 
-    /*if (_troncon.etat() == Troncon::HORS_SERVICE)
-    {
-        double espaceBrise = qMin(largeurEspaceBrise,longueur/4);
-        painter->setPen(penLight);
-        painter->drawPolygon(_fond, 4);
-
-        painter->setPen(penDark);
-        // Dessin de la ligne brisée n° 1
-        painter->drawLine(0,-largeur,longueur/2-espaceBrise,-largeur);
-        painter->drawLine(longueur/2+espaceBrise,-largeur,longueur,-largeur);
-        // Dessin du bris de la ligne 1
-        // TODO
-        // Dessin de la ligne brisée n° 2
-        painter->drawLine(0,largeur,longueur/2-espaceBrise,largeur);
-        painter->drawLine(longueur/2+espaceBrise,largeur,longueur,largeur);
-        // Dessin du bris de la ligne 2
-        // TODO
-    }
-    else
-    {
-        painter->setPen(penDark);
-        // Dessin des deux lignes du rail
-        //painter->drawLine(0,-largeur,longueur,-largeur);
-        //painter->drawLine(0,largeur,longueur,largeur);
-
-    }*/
+    //------------ Dessin des noeuds
+    painter->setBrush(brushGray);
+    painter->setPen(penDark);
+    // Dessin du noeud de début
+    painter->drawEllipse(QPointF(0,0),
+                         rayonNoeud, rayonNoeud);
+    // Dessin du noeud de fin
+    painter->drawEllipse(QPointF(longueur, 0),
+                         rayonNoeud, rayonNoeud);
 }
 
 /**

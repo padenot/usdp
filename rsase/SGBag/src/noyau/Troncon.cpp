@@ -58,9 +58,17 @@ void Troncon::liberer()
     _estLibre = true;
 }
 
-void Troncon::mettreHorsService()
+bool Troncon::mettreHorsService()
 {
-    _estHorsService = true;
+    if (_estLibre)
+    {
+        _estHorsService = true;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void Troncon::reparer()

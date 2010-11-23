@@ -42,7 +42,7 @@ class Troncon : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         void liberer();
 
-        void mettreHorsService();
+        bool mettreHorsService();
         void reparer();
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"

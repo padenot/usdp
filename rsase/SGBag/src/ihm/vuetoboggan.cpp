@@ -17,7 +17,7 @@ VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &tobogga
 {
     setZValue(zIndex);
     definirCoordonnees(_toboggan.position(),_toboggan.pointConnexion(),
-                       largeur,vue_config::chariot::largeur/2);
+                       largeur,-vue_config::chariot::largeur/2);
 
     //_image->render(&_paintPixmap);
     _image->setFramesPerSecond(vue_config::fps);

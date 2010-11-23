@@ -28,9 +28,10 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
                             - directionVol.toPointF() * longueur/2;
     QPointF positionFin = positionDebut + directionVol.toPointF() * longueur;
 
+    // TODO
     definirCoordonnees(positionDebut, positionFin,
                        largeur,
-                       10);
+                       -10);
     /*setPos(_vol.tobogganAssocie()->position() +
            QVector2D(_vol.tobogganAssocie()->position()
                      - vol.tobogganAssocie()->pointConnexion())
