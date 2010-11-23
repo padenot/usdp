@@ -39,14 +39,6 @@ private:
      * Instance de VueTronconHandler intégrée à la vue.
      */
     VueTronconHandler& _handler;
-
-    QVector2D _vecteurDirection;
-    QLineF _lignePerpendiculaire;
-
-    QPointF point1;
-    QPointF point2;
-    QPointF point3;
-    QPointF point4;
     QPointF _fond[4];
 };
 

@@ -11,6 +11,15 @@ namespace vue_config
     const double ZOOM_ELEMENTS = 10.0;
     const int dt = 1000/30; // rafraichissement en ms
 
+    namespace element
+    {
+        const QBrush brushSelection(Qt::lightGray);
+        const QPen penSelection(Qt::darkGray);
+        const double opacite = 0.7;
+        const double marge = 2;
+        const double arrondis = 1;
+    }
+
     namespace bagage
     {
         const int zIndex = 10;
@@ -58,12 +67,16 @@ namespace vue_config
     namespace troncon
     {
         const int zIndex = 5;
-        const double largeur = 1; //Demi largeur d'un rail à l'affichage
+        const double largeur = 0.5; //Demi largeur d'un rail à l'affichage
         const double largeurEspaceBrise = 2;
 
         const QBrush brushGray(Qt::gray); //couleur de fond du rail
         const QPen penLight(Qt::gray, 0); //affichage du fond du rail
         const QPen penDark(Qt::darkGray, 0.3); //affichage des bords du rail
+
+        const QBrush brushRed(Qt::red); //couleur de fond du rail
+        const QPen penRedLight(Qt::red, 0); //affichage du fond du rail
+        const QPen penRedDark(Qt::darkRed, 0.3); //affichage des bords du rail
     }
 
     namespace vol

@@ -11,8 +11,6 @@ using namespace vue_config::troncon;
 VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
         VueElement(fenetrePrincipale),
         _troncon(troncon),
-        _vecteurDirection(_troncon.noeudDebut()->position() - _troncon.noeudFin()->position()),
-        _lignePerpendiculaire(QPointF(0,0), _vecteurDirection.toPointF()),
         _handler(*new VueTronconHandler(*this,fenetrePrincipale))
 {
     setZValue(zIndex);
@@ -27,6 +25,15 @@ VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
     _contextMenuActionsList.append(reparerAction);
     QObject::connect(mettreEnPanneAction, SIGNAL(triggered()), &_handler, SLOT(mettreHorsService()));
     QObject::connect(reparerAction, SIGNAL(triggered()), &_handler, SLOT(reparer()));
+
+    double longueur = QVector2D(_troncon.noeudDebut()->position() -
+                                    _troncon.noeudFin()->position()).length();
+
+    _fond[0] = QPointF(largeur, largeur);
+    _fond[1] = QPointF(longueur-largeur,  largeur);
+    _fond[2] = QPointF(longueur-largeur, -largeur);
+    _fond[3] = QPointF(largeur, -largeur);
+
 }
 
 VueTroncon::~VueTroncon()
@@ -37,32 +44,62 @@ VueTroncon::~VueTroncon()
 void VueTroncon::mettreHorsService()
 {
     _troncon.mettreHorsService();
+    update();
 }
 
 void VueTroncon::reparer()
 {
     _troncon.reparer();
+    update();
 }
 
 void VueTroncon::advance(int pas)
 {
+
 }
 
 void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     double longueur = QVector2D(_troncon.noeudDebut()->position() -
-                                _troncon.noeudFin()->position()).length();
+                                    _troncon.noeudFin()->position()).length();
+
+
     VueElement::paint(painter,0,0);
 
     painter->setBrush(brushGray);
 
     painter->setPen(penDark);
     // Dessin du noeud de début
-    painter->drawEllipse(QPointF(), largeur*1.2, largeur*1.2);
+    painter->drawEllipse(QPointF(0,0), largeur*1.3, largeur*1.3);
     // Dessin du noeud de fin
-    painter->drawEllipse(QPointF(longueur, 0), largeur*1.2, largeur*1.2);
+    painter->drawEllipse(QPointF(longueur, 0), largeur*1.3, largeur*1.3);
 
     if (_troncon.etat() == Troncon::HORS_SERVICE)
+    {
+        painter->setPen(penRedLight);
+        painter->setBrush(brushRed);
+    }
+    else
+    {
+        painter->setPen(penLight);
+        painter->setBrush(brushGray);
+    }
+    painter->drawPolygon(_fond, 4);
+
+
+    if (_troncon.etat() == Troncon::HORS_SERVICE)
+    {
+        painter->setPen(penRedDark);
+    }
+    else
+    {
+        painter->setPen(penDark);
+    }
+
+    painter->drawLine( _fond[0], _fond[1]);
+    painter->drawLine( _fond[3], _fond[2]);
+
+    /*if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         double espaceBrise = qMin(largeurEspaceBrise,longueur/4);
         //painter->setPen(penLight);
@@ -82,14 +119,12 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     }
     else
     {
-        //painter->setPen(penLight);
-        //painter->drawPolygon(_fond, 4);
-
         painter->setPen(penDark);
         // Dessin des deux lignes du rail
-        painter->drawLine(0,-largeur,longueur,-largeur);
-        painter->drawLine(0,largeur,longueur,largeur);
-    }
+        //painter->drawLine(0,-largeur,longueur,-largeur);
+        //painter->drawLine(0,largeur,longueur,largeur);
+
+    }*/
 }
 
 /**

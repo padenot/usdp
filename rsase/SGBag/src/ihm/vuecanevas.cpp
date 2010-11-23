@@ -26,7 +26,7 @@ void VueCanevas::definirCoordonnees(QPointF positionDebut,
 
     _rect = QRectF(0,-largeur/2,direction.length(), largeur);
 
-    setPos(positionDebut - (vecteurDir.normalized().toPointF() * (largeurSecurite/2)));
+    setPos(positionDebut); // + (vecteurDir.normalized().toPointF() * (largeurSecurite/2)));
     setRotation(-direction.angle());
 }
 

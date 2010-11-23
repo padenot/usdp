@@ -61,7 +61,7 @@ HEADERS  += ihm/fenetreprincipale.h \
     src/ihm/vuetoboggan.h \
     src/ihm/vuetapis.h \
     src/ihm/vuechariot.h \
-src/ihm/vueconfig.h \
+    src/ihm/vueconfig.h \
     src/ihm/vuevol.h \
     src/ihm/vueelement.h \
     src/ihm/vuecanevas.h \

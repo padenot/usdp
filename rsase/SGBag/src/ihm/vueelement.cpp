@@ -1,5 +1,9 @@
 #include "vueelement.h"
+#include "vueconfig.h"
+
 #include <QPainter>
+
+using namespace vue_config::element;
 
 VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):
         VueCanevas(fenetrePrincipale),
@@ -63,12 +67,13 @@ void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
     // TODO mettre en place des constantes (static const dans la classe, par exemple)
     if(isSelected())
     {
-        painter->setPen(Qt::red);
-        painter->setOpacity(0.4);
+        painter->setBrush(brushSelection);
+        painter->setPen(penSelection);
+        painter->setOpacity(opacite);
         QRectF rect = boundingRect();
-        rect.setTopLeft(rect.topLeft() - QPoint(2,2));
-        rect.setBottomRight(rect.bottomRight() + QPoint(2,2));
-        painter->drawRoundedRect(rect,2,2);
+        rect.setTopLeft(rect.topLeft() - QPoint(marge,marge));
+        rect.setBottomRight(rect.bottomRight() + QPoint(marge,marge));
+        painter->drawRoundedRect(rect,arrondis,arrondis);
         painter->setOpacity(1);
     }
 }

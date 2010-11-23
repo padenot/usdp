@@ -73,7 +73,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     // Initialisations liées au prototype
     ui->volTableView->setModel(prototype->modelVols());
     ui->speedSlider->setValue(100);
-    ui->ratioSlider->setValue(10);
+    ui->ratioSlider->setValue(5);
     ui->vitesse->setText("100%");
 }
 
