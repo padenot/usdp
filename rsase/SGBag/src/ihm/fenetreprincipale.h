@@ -4,7 +4,7 @@
   * \brief Classe gérant la vue de la fenêtre principale
   */
 
-ifndef FENETREPRINCPALE_H
+#ifndef FENETREPRINCPALE_H
 #define FENETREPRINCPALE_H
 
 #include <QMainWindow>

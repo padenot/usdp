@@ -19,7 +19,8 @@
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Y1tCkOsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 /**
-  * @todo
+  * @class Element
+  * @brief 
   */
 class Element : public QObject
 {
