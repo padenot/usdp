@@ -29,7 +29,6 @@ private:
 
     QPixmap _pixmap;
     QPainter _paintPixmap;
-    QFont _font;
 };
 
 #endif // VUECHARIOT_H

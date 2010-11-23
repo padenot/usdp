@@ -12,6 +12,8 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         VueElement(fenetrePrincipale),
         _image(new QSvgRenderer(etatNormal)),
         _tapis(tapis),
+        _pixmap(200, 200),
+        _paintPixmap(&_pixmap),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
     setZValue(zIndex);
@@ -21,6 +23,8 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
     QObject::connect(ajouterBagageAction, SIGNAL(triggered()), &(this->_handler), SLOT(ajouterBagage()));
+
+    _image->render(&_paintPixmap);
 }
 
 VueTapis::~VueTapis()
@@ -44,8 +48,7 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
 {
     VueElement::paint(painter, 0, 0);
 
-    // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
-    _image->render(painter, _rect);
+    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
 }
 
 Tapis* VueTapis::tapisAssocie()

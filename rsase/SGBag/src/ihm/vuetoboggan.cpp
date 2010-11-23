@@ -11,11 +11,15 @@ using namespace vue_config::toboggan;
 VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &toboggan):
         VueElement(fenetrePrincipale),
         _image(new QSvgRenderer(etatNormal)),
-        _toboggan(toboggan)
+        _toboggan(toboggan),
+        _pixmap(200, 200),
+        _paintPixmap(&_pixmap)
 {
     setZValue(zIndex);
     definirCoordonnees(_toboggan.position(),_toboggan.pointConnexion(),
                        largeur,vue_config::chariot::largeur);
+
+    _image->render(&_paintPixmap);
 }
 
 void VueToboggan::associerVol(Vol* vol)
@@ -40,7 +44,5 @@ void VueToboggan::advance(int pas)
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-
-    // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
-    _image->render(painter, _rect);
+    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
 }

@@ -24,6 +24,9 @@ private:
     int _etat;
     QSvgRenderer *_image;
     Toboggan &_toboggan;
+
+    QPixmap _pixmap;
+    QPainter _paintPixmap;
 };
 
 #endif // VUETOBOGGAN_H

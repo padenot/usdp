@@ -34,6 +34,9 @@ class VueTapis : public VueElement
         QSvgRenderer *_image;
         Tapis &_tapis;
 
+        QPixmap _pixmap;
+        QPainter _paintPixmap;
+
         /**
          * Instance de VueTapisHandler intégrée à la vue.
          */

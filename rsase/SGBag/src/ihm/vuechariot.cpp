@@ -10,16 +10,25 @@ VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
         _image(new QSvgRenderer(etatNormal)),
         _chariot(chariot),
         _pixmap(200, 200),
-        _paintPixmap(&_pixmap),
-        _font("SansSerif", 120, QFont::Normal)
+        _paintPixmap(&_pixmap)
 {
     setZValue(zIndex);
     setPos(chariot.position());
 
     _image->render(&_paintPixmap);
 
-    _paintPixmap.setFont (_font);
+    /* Affichage de l'id du chariot
+       Valable avec les nouveaux rendus.
+
+    _paintPixmap.setFont (font);
+    QTransform matriceActuelle = _paintPixmap.transform();
+    QTransform matriceTexte;
+    matriceTexte.translate(dxTexte,dyTexte);
+    matriceTexte.rotate(rotationTexte);
+    _paintPixmap.setTransform(matriceTexte);
+    _paintPixmap.setPen(couleurTexte);
     _paintPixmap.drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_chariot.id()));
+    _paintPixmap.setTransform(matriceActuelle);*/
 }
 
 void VueChariot::advance(int pas)

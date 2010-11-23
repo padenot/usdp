@@ -4,6 +4,7 @@
 #include <QString>
 #include <QRectF>
 #include <QPen>
+#include <QFont>
 
 namespace vue_config
 {
@@ -31,6 +32,13 @@ namespace vue_config
         const double largeur = 1*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/chariot";
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
+
+        const QFont font = QFont("SansSerif", 40, QFont::Normal);
+        const QColor couleurTexte = QColor(35,35,35);
+        const qreal rotationTexte = -15;
+        const qreal dxTexte = 45;
+        const qreal dyTexte = 97;
+
     }
 
     namespace tapis
