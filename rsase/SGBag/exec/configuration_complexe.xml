@@ -376,6 +376,7 @@
 		<x>310</x>
 		<y>210</y>
 		<suivantGauche>65</suivantGauche>
+		<suivantDroit>66</suivantDroit>
 	</noeud>
 	<troncon>
 		<id>64</id>
