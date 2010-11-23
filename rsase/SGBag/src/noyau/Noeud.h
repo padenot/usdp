@@ -7,6 +7,7 @@
 #include <QMap>
 #include <QVector>
 #include <QPair>
+#include <QStack>
 
 #include "Element.h"
 #include "Troncon.h"
@@ -19,6 +20,7 @@ class Noeud : public Element
     Q_OBJECT
 
     public:
+        typedef QStack<Troncon*> Chemin;
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -36,15 +38,16 @@ class Noeud : public Element
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /** Tente de trouver le troncon offrant le plus court chemin vers la destination en partant de ce noeud.
-         * @param[in] destination Le troncon à atteindre en une distance minimale. Si le pointeur est nul, le troncon
+          TODO
+         * @param[in] destination Le troncon à atteindre en une distance minimale.
+         *                        Si le pointeur est nul, le troncon
          *                        est considéré comme inaccessible.
-         * @return Le troncon optimal, ou 0 si aucun troncon n'est accessible.
          */
-        Troncon* trouverProchainTroncon(Troncon* destination);
+        Chemin trouverChemin(Troncon* destination);
 
-        QPair<Troncon*, double> calculChemin(Troncon* destination);
+        QPair<Chemin, double> calculChemin(Troncon* destination);
 
-        Troncon* trouverProchainTroncon(Direction direction);
+        Chemin trouverChemin(Direction direction);
 
     private:
 

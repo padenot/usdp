@@ -10,8 +10,7 @@ class StrategiePilotageManuel : public StrategiePilotage
         StrategiePilotageManuel(const StrategiePilotage& modele);
 
     protected :
-        virtual void pilotageNoeudAtteint(
-                Direction directionConseillee, Bagage *bagage);
+        virtual void calculerNouveauChemin();
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H

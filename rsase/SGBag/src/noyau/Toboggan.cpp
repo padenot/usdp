@@ -39,9 +39,9 @@ void Toboggan::transfererBagage(Bagage* bagage)
 }
 
 
-Troncon* Toboggan::trouverObjectifImmediat(Noeud* positionActuelle)
+Noeud::Chemin Toboggan::trouverChemin(Noeud* positionActuelle)
 {
-    return positionActuelle->trouverProchainTroncon(_tronconSupport);
+    return positionActuelle->trouverChemin(_tronconSupport);
 }
 
 bool Toboggan::estSupport (const Troncon* troncon) const

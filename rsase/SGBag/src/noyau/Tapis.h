@@ -13,6 +13,7 @@
 #include "ElementActif.h"
 #include "Bagage.h"
 #include "Chariot.h"
+#include "Noeud.h"
 
 
 class Troncon; //Dependency Generated Source:Tapis Target:Troncon
@@ -85,7 +86,7 @@ class Tapis : public ElementActif
          */
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
+        Noeud::Chemin trouverChemin(Noeud* positionActuelle);
 
         /**
          * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)

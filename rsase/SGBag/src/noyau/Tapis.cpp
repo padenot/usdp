@@ -124,9 +124,9 @@ void Tapis::deconnecter()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon* Tapis::trouverObjectifImmediat(Noeud* positionActuelle)
+Noeud::Chemin Tapis::trouverChemin(Noeud* positionActuelle)
 {
-    return positionActuelle->trouverProchainTroncon(_tronconSupport);
+    return positionActuelle->trouverChemin(_tronconSupport);
 }
 
 bool Tapis::estSupport (const Troncon* troncon) const

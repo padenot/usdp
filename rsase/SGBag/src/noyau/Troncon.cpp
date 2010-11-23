@@ -9,9 +9,9 @@
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon::Troncon(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
+        _chariotProprietaire(0),
         _noeudDebut(0),
         _noeudFin(0),
-        _estLibre(true),
         _estHorsService(false)
 {
     //TODO Auto-generated method stub
@@ -38,16 +38,24 @@ Troncon::~Troncon()
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-bool Troncon::occuper()
+bool Troncon::occuper(Chariot* chariotCandidat)
 {
-    if (_estLibre && !_estHorsService)
+    if (_estHorsService)
     {
-        _estLibre = false;
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        if (_chariotProprietaire == 0
+            || chariotCandidat == _chariotProprietaire)
+        {
+            _chariotProprietaire = chariotCandidat;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 
@@ -55,14 +63,15 @@ bool Troncon::occuper()
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Troncon::liberer()
 {
-    _estLibre = true;
+    _chariotProprietaire = 0;
 }
 
 bool Troncon::mettreHorsService()
 {
-    if (_estLibre)
+    if (_chariotProprietaire == 0)
     {
         _estHorsService = true;
+        emit etatModifie();
         return true;
     }
     else
@@ -73,7 +82,11 @@ bool Troncon::mettreHorsService()
 
 void Troncon::reparer()
 {
-    _estHorsService = false;
+    if (_estHorsService)
+    {
+        _estHorsService = false;
+        emit etatModifie();
+    }
 }
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"
@@ -94,7 +107,7 @@ Troncon::EtatTroncon Troncon::etat()
     {
         return HORS_SERVICE;
     }
-    else if (_estLibre)
+    else if (_chariotProprietaire == 0)
     {
         return LIBRE;
     }

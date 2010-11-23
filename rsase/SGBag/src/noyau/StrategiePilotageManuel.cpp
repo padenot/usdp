@@ -9,19 +9,17 @@ StrategiePilotageManuel::StrategiePilotageManuel(Chariot& chariot, Troncon* tron
                                                  Tapis* tapisAssocie) :
     StrategiePilotage(chariot,tronconActuel,tapisAssocie)
 {
+    mettreAJourChemin();
 }
 
 StrategiePilotageManuel::StrategiePilotageManuel(const StrategiePilotage& modele) :
         StrategiePilotage(modele)
 {
+    mettreAJourChemin();
 }
 
-void StrategiePilotageManuel::pilotageNoeudAtteint(Direction directionConseillee,
-                                                   Bagage* /*bagage*/)
+void StrategiePilotageManuel::calculerNouveauChemin()
 {
-    if (changerTroncon(_tronconActuel->noeudFin()
-                   ->trouverProchainTroncon(directionConseillee)))
-    {
-        pilotageEnChemin();
-    }
+    _chemin = _tronconActuel->noeudFin()
+        ->trouverChemin(_chariot.directionConseillee());
 }

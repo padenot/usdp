@@ -10,8 +10,8 @@
 #include "Element.h"
 #include "XmlConfigFactory.h"
 #include "Vol.h"
+#include "Noeud.h"
 
-class Noeud;
 class Bagage;
 class Vol; //Dependency Generated Source:Toboggan Target:Vol
 class Troncon; //Dependency Generated Source:Toboggan Target:Troncon
@@ -45,7 +45,7 @@ class Toboggan : public Element
          * @todo Définir une interface commune à Tapis et Toboggan pour cette méthode ? (IDestinationChariot ?)
          * @todo Commenter la méthode
          */
-        Troncon* trouverObjectifImmediat(Noeud* positionActuelle);
+        Noeud::Chemin trouverChemin(Noeud* positionActuelle);
 
 
         /**
