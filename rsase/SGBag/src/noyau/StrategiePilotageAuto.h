@@ -5,6 +5,8 @@
 
 class StrategiePilotageAuto : public StrategiePilotage
 {
+    Q_OBJECT
+
     public:
         StrategiePilotageAuto(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotageAuto(const StrategiePilotage& modele);

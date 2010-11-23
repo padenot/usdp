@@ -23,3 +23,11 @@ void StrategiePilotageManuel::calculerNouveauChemin()
     _chemin = _tronconActuel->noeudFin()
         ->trouverChemin(_chariot.directionConseillee());
 }
+
+void StrategiePilotageManuel::pilotageNoeudAtteint()
+{
+    mettreAJourChemin(); // Opération peu gourmande, on ne
+                         // fait que demander le tronçon
+                         // de gauche/droite
+    StrategiePilotage::pilotageNoeudAtteint();
+}

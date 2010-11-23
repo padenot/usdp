@@ -24,6 +24,12 @@ VueParametresChariot::VueParametresChariot(Chariot& chariot, QWidget *parent) :
     connect(ui->directionConseillee, SIGNAL(valueChanged(int)),
             this,SLOT(modifierDirectionConseillee(int)));
     ui->directionConseillee->setValue(_chariot.directionConseillee());
+
+    connect(ui->actif,SIGNAL(toggled(bool)),
+            &_chariot,SLOT(definirActivation(bool)));
+    connect(&_chariot,SIGNAL(activationModifiee(bool)),
+            ui->actif,SLOT(setChecked(bool)));
+    ui->actif->setChecked(_chariot.estActif());
 }
 
 VueParametresChariot::~VueParametresChariot()

@@ -18,8 +18,6 @@ const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 const int Prototype::ID_BAGAGE_GENERE_INITIAL = 1000;
 
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DEFCONSTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::Prototype(const QString& xmlfilepath) :
         QObject(0),
         _elementsParType(),
@@ -56,8 +54,6 @@ Prototype::Prototype(const QString& xmlfilepath) :
     connect(&_horloge, SIGNAL(timeout()), this, SLOT(maj()));
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_14GIsOyfEd-0NvPstdZN1w?DESTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Prototype::~Prototype()
 {
     foreach(QVector<Element*> tabElements, _elementsParType)
@@ -69,15 +65,6 @@ Prototype::~Prototype()
     }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Prototype::changementMode(ModeSimulation mode)
-{
-    // TODO
-}
-
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 {
     Bagage* bagage = new Bagage(vol,tapis->position());
@@ -134,8 +121,6 @@ void Prototype::ajouterBagageAleatoire()
     */
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Prototype::changementModeAjoutBagage(ModeSimulation mode)
 {
     //TODO Auto-generated method stub

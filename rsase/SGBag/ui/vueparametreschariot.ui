@@ -19,9 +19,16 @@
      <property name="title">
       <string>Vitesse</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1">
+     <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,1,1">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <widget class="QCheckBox" name="actif">
+        <property name="text">
+         <string>Actif</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
         <item>
          <widget class="QLabel" name="libelleVitesseMax">
           <property name="text">
@@ -54,7 +61,7 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,0">
         <item>
          <widget class="QLabel" name="libelleVitesseActuelle">
           <property name="text">
@@ -69,6 +76,9 @@
           </property>
           <property name="suffix">
            <string>m/s</string>
+          </property>
+          <property name="decimals">
+           <number>1</number>
           </property>
          </widget>
         </item>

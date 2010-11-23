@@ -1,3 +1,5 @@
+#include <assert.h>
+
 #include "StrategiePilotage.h"
 #include "Chariot.h"
 #include "Troncon.h"
@@ -11,6 +13,7 @@ const double StrategiePilotage::RAYON_ACTION_TOBOGGAN = 1.0;
 
 StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
                                      Tapis* tapisAssocie) :
+        QObject(),
         _chariot(chariot),
         _bagage(0),
         _tronconActuel(tronconActuel),
@@ -21,6 +24,7 @@ StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
 }
 
 StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :
+        QObject(),
         _chariot(modele._chariot),
         _bagage(modele._bagage),
         _tronconActuel(modele._tronconActuel),
@@ -44,6 +48,14 @@ void StrategiePilotage::mettreAJourChemin()
         connect(troncon,SIGNAL(etatModifie()),
                 SLOT(mettreAJourChemin()));
     }
+#ifdef DEBUG_ACHEMINEMENT
+    QDebug debug(qDebug());
+    debug << "Chemin de :" << _chariot << ":";
+    foreach(Troncon* troncon, _chemin)
+    {
+        debug << *troncon;
+    }
+#endif
 }
 
 QPointF StrategiePilotage::piloter(Bagage* bagage)
@@ -73,8 +85,6 @@ QPointF StrategiePilotage::piloter(Bagage* bagage)
 
 StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagageTransporte) const
 {
-    // TODO : régler le problème de dépassement de noeud lorsque le prochain tronçon est
-    // occupé induisant un blocage du chariot. Gestion différente des collisions ?
     double distanceArret = _chariot.distanceArret();
     double distanceNoeud = QVector2D(_chariot.position() -
                      _tronconActuel->noeudFin()->position()).length();
@@ -144,8 +154,63 @@ StrategiePilotage::Situation StrategiePilotage::situation(Bagage* bagageTranspor
 
 }
 
-void StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
+void StrategiePilotage::pilotageBagageRecu(Bagage* bagageRecu)
 {
+#ifdef DEBUG_ACHEMINEMENT
+//    qDebug() << _chariot << "avance";
+#endif
+    _bagage = bagageRecu;
+    mettreAJourChemin();
+    _chariot.accelerer();
+}
+
+void StrategiePilotage::pilotageNoeudProche()
+{
+    Troncon* nouveauTroncon = (_chemin.empty() ? 0 : _chemin.top());
+
+    if (_tronconReserveSuivant != 0 && nouveauTroncon != _tronconReserveSuivant)
+    {
+        // On libère l'ancien "tronçon suivant", car on a
+        // changé de destination
+        _tronconReserveSuivant->liberer();
+        _tronconReserveSuivant = 0;
+    }
+
+    if(nouveauTroncon != 0)
+    {
+        if (nouveauTroncon->occuper(&_chariot))
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << _chariot << "va bientôt passer sur" << *nouveauTroncon;
+#endif
+            _tronconReserveSuivant = nouveauTroncon;
+            _chariot.accelerer();
+        }
+        else
+        {
+#ifdef DEBUG_ACHEMINEMENT
+            qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
+#endif
+            _chariot.freiner();
+        }
+    }
+    else
+    {
+#ifdef DEBUG_ACHEMINEMENT
+        qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
+#endif
+        _chariot.freiner();
+    }
+}
+
+void StrategiePilotage::pilotageNoeudAtteint()
+{
+    Troncon* nouveauTroncon = (_chemin.empty() ? 0 : _chemin.top());
+
+#ifdef DEBUG_ACHEMINEMENT
+    //qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
+#endif
+
     if (_tronconReserveSuivant != 0 && nouveauTroncon != _tronconReserveSuivant)
     {
         // On libère l'ancien "tronçon suivant", car on a
@@ -165,15 +230,16 @@ void StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
             _tronconActuel->liberer();
             _tronconActuel = nouveauTroncon;
             _tronconReserveSuivant = 0;
+            _chemin.pop();
 
-            _chariot.demarrer();
+            _chariot.accelerer();
         }
         else
         {
 #ifdef DEBUG_ACHEMINEMENT
    //         qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
 #endif
-            _chariot.arreter();
+            _chariot.freiner();
         }
     }
     else
@@ -181,76 +247,13 @@ void StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
 #ifdef DEBUG_ACHEMINEMENT
         qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
 #endif
-        _chariot.arreter();
+        _chariot.freiner();
     }
-
-    pilotageEnChemin();
-}
-
-void StrategiePilotage::preparerChangementTroncon(Troncon* nouveauTroncon)
-{
-    if (_tronconReserveSuivant != 0 && nouveauTroncon != _tronconReserveSuivant)
-    {
-        // On libère l'ancien "tronçon suivant", car on a
-        // changé de destination
-        _tronconReserveSuivant->liberer();
-        _tronconReserveSuivant = 0;
-    }
-
-    if(nouveauTroncon != 0)
-    {
-        if (nouveauTroncon->occuper(&_chariot))
-        {
-#ifdef DEBUG_ACHEMINEMENT
-            qDebug() << _chariot << "va bientôt passer sur" << *nouveauTroncon;
-#endif
-            _tronconReserveSuivant = nouveauTroncon;
-            _chariot.demarrer();
-        }
-        else
-        {
-#ifdef DEBUG_ACHEMINEMENT
-            qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
-#endif
-            _chariot.arreter();
-        }
-    }
-    else
-    {
-#ifdef DEBUG_ACHEMINEMENT
-        qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
-#endif
-        _chariot.arreter();
-    }
-}
-
-void StrategiePilotage::pilotageBagageRecu(Bagage* bagageRecu)
-{
-#ifdef DEBUG_ACHEMINEMENT
-//    qDebug() << _chariot << "avance";
-#endif
-    _bagage = bagageRecu;
-    mettreAJourChemin();
-    _chariot.demarrer();
-}
-
-void StrategiePilotage::pilotageNoeudProche()
-{
-    preparerChangementTroncon(_chemin.top());
-}
-
-void StrategiePilotage::pilotageNoeudAtteint()
-{
-#ifdef DEBUG_ACHEMINEMENT
-    //qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
-#endif
-
-    changerTroncon(_chemin.top());
 }
 
 void StrategiePilotage::pilotageTobogganProche()
 {
-    _chariot.arreter();
+    _chariot.freiner();
 }
 
 void StrategiePilotage::pilotageTobogganAtteint()
@@ -261,12 +264,13 @@ void StrategiePilotage::pilotageTobogganAtteint()
     _chariot.dechargerBagage(); // Renvoie le même pointeur que "bagage"
     _bagage->objectifFinal()->transfererBagage(_bagage);
     _bagage = 0;
-    _chariot.demarrer();
+    mettreAJourChemin();
+    _chariot.accelerer();
 }
 
 void StrategiePilotage::pilotageTapisProche()
 {
-    _chariot.arreter();
+    _chariot.freiner();
 }
 
 void StrategiePilotage::pilotageTapisAtteint()

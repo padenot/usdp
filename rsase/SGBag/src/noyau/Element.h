@@ -6,6 +6,9 @@
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
+
+#define DEBUG_ACHEMINEMENT
+
 #include <QPointF>
 #ifdef DEBUG_ACHEMINEMENT
 #include <QDebug>

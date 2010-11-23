@@ -13,9 +13,6 @@ class ElementActif : public Element
     Q_OBJECT
 
     public:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         ElementActif(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
@@ -23,28 +20,23 @@ class ElementActif : public Element
         virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                            XmlConfigFactory& fabrique);
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DESTRUCTOR"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         virtual ~ElementActif();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_v0pDgO_3Ed-KganxdgdPew"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        virtual void arreter();
+        // TODO
+        // Émet le signal "activationModifiee" si c'est le cas.
+        virtual void freiner();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tl7KgPD6Ed-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        virtual void demarrer();
+        // TODO
+        // Émet le signal "activationModifiee" si c'est le cas.
+        virtual void accelerer();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_M4WU0PIdEd-TbK1o_cJlKw"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //virtual void modifierVitesse(double nouvelleVitesse);
-
-        virtual bool estActif ();
+        virtual bool estActif();
 
         virtual double vitesse();
         virtual double vitesseMax ();
 
     public slots :
+        virtual void definirActivation (bool estActif);
         virtual void modifierVitesseMax(double nouvelleVitesseMax);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_41riIO52Ed-Jn7v3SB1Zsg"
@@ -54,6 +46,10 @@ class ElementActif : public Element
          * @param[in] dt Intervalle de temps écoulé depuis la dernière mise à jour, en unités de temps.
          */
         virtual void maj(double dt) = 0;
+
+    signals :
+        // N'envoie pas de signal pour notifier de l'activation / désactivation
+        void activationModifiee(bool estActif);
 
     protected:
 

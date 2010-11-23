@@ -32,6 +32,11 @@
 	<troncon>
 		<id>5</id>
 		<noeudDebut>3</noeudDebut>
+		<noeudFin>2</noeudFin>
+	</troncon>
+	<troncon>
+		<id>72</id>
+		<noeudDebut>2</noeudDebut>
 		<noeudFin>1</noeudFin>
 	</troncon>
 	<!-- Col 2 x = 20 -->

@@ -55,15 +55,6 @@ class Prototype : public QObject
          */
         virtual ~Prototype();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * @brief Passage en mode manuel.
-         * @param mode Nouveau mode.
-         * Si mode est égal au mode actuel, cet apppel n'effectue rien.
-         */
-        void changementMode(ModeSimulation mode);
-
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**

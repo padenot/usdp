@@ -1,8 +1,9 @@
 #include <QtSvg/QSvgRenderer>
 #include <QVector2D>
+#include <QDebug>
 
-#include "src/ihm/vuetroncon.h"
-#include "src/ihm/vueconfig.h"
+#include "vuetroncon.h"
+#include "vueconfig.h"
 #include "src/noyau/Noeud.h"
 
 

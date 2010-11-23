@@ -1,8 +1,5 @@
 #ifndef CHARIOT_H
 #define CHARIOT_H
-//Begin section for file Chariot.h
-//TODO: Add definitions that you want preserved
-//End section for file Chariot.h
 
 #include <QMap>
 
@@ -11,11 +8,9 @@
 #include "Direction.h"
 
 class StrategiePilotage;
-class Troncon; //Dependency Generated Source:Chariot Target:Troncon
-class Tapis; //Dependency Generated Source:Chariot Target:Tapis
+class Troncon;
+class Tapis;
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 /**
  * Modèle de données du chariot.
  */
@@ -36,8 +31,6 @@ class Chariot : public ElementActif
             MANUEL
         };
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
          * @todo TODO Constructeur de chariot
          */
@@ -48,13 +41,11 @@ class Chariot : public ElementActif
         virtual void init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
                            XmlConfigFactory& fabrique);
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
          * @todo TODO Destructeur de chariot
          */
         virtual ~Chariot();
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+
         /** Charge un bagage sur le chariot.
          * Déconnecte automatiquement le chariot du tapis.
          * Ne doit être appelé que si le chariot ne contient pas déjà un bagage.
@@ -80,9 +71,10 @@ class Chariot : public ElementActif
          */
         virtual void maj(double dt);
 
+        // TODO
+        // Émet le signal "activationModifiee" si c'est le cas.
+        virtual void accelerer();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /** Fait avancer le chariot vers la destination donnée.
          * Prend en compte la vitesse.
          * Ne vérifie pas si le chariot est à l'arrêt. TODO : changer, décrémentation de la vitesse
@@ -95,6 +87,9 @@ class Chariot : public ElementActif
 
         double distanceArret();
 
+        void connecter (Tapis* tapis);
+        void deconnecter ();
+
     public slots :
         void modifierTypePilotage(TypePilotage type);
         void modifierDirectionConseillee(Direction direction);
@@ -102,31 +97,19 @@ class Chariot : public ElementActif
     signals :
         void vitesseModifiee(double nouvelleVitesse);
 
-    //Begin section for Chariot
-    //TODO: Add attributes that you want preserved
-    //End section for Chariot
-
     protected:
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pgh1sO55Ed-Jn7v3SB1Zsg"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         void dechargerBatterie();
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_klhKcOybEd-q55IxPzNK8w"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Bagage * _bagage; /// Bagage transporté par le chariot.
+
+        Tapis * _tapisConnecte;
+        /// Tapis auquel le chariot est connecte.
+        /// Doit être averti (deconnecter()) si le chariot
+        /// part sans avoir reçu de bagage.
 
         Direction _directionConseillee;
         TypePilotage _typePilotage;
         StrategiePilotage * _pilote; /// Pilote du chariot
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_alMHUO5DEd-dcpIgUje6-w"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //Troncon * _tronconActuel;
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1bIQYPDzEd-R6YEVT5cViQ"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //Tapis * _tapisAssocie;
 
 };  //end class Chariot
 

@@ -11,13 +11,8 @@
 
 #include "XmlConfigFactory.h"
 
-//Begin section for file Tapis.cpp
-//End section for file Tapis.cpp
-
 const double Tapis::RAYON_PROXIMITE_TRONCON = 0.5;
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Tapis::Tapis(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         ElementActif(indexParamValeur),
         _bagages(),
@@ -36,22 +31,13 @@ void Tapis::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
             indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::pos]].toInt()));
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_9b-b4OsVEd-oy8D834IawQ?DESTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Tapis::~Tapis()
 {
     // Destructeur
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_JpFKsO5zEd-X2qSx1xpmxg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Tapis::maj(double dt)
 {
-    // TODO : dérouler même si aucun chariot n'est connecté, en évitant de faire sortir le bagage ?
-    //        Faisable avec deux rayons de proximité : un pour "bagage sur le bord" et l'autre pour
-    //        "bagage sorti"
-
-
     // si un chariot est connecté au tapis
     if(_chariotConnecte != 0)
     {
@@ -60,8 +46,6 @@ void Tapis::maj(double dt)
     }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_wD2mgO5-Ed-Jn7v3SB1Zsg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 bool Tapis::ajouterBagage(Bagage* bagageEntrant)
 {
     bagageEntrant->positionInitiale(*this);
@@ -78,8 +62,6 @@ bool Tapis::ajouterBagage(Bagage* bagageEntrant)
     return true;
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_4ChQwPDwEd-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Tapis::deroulerTapis(double dt)
 {
     QVector2D deplacement(_tronconSupport->position() - _position);
@@ -93,12 +75,6 @@ void Tapis::deroulerTapis(double dt)
     {
         (*it)->simulerDeplacement(deplacement);
 
-        // TODO : gérer le cas où deux bagages sont ajoutés en même temps
-        //        Ils auront alors la même position et sortiront en même temps.
-        //        Même avec la condition _chariotConnecte != 0 plus haut, on risque
-        //        de faire avancer certains bagages plus que d'autres sur le tapis,
-        //        et donc de leur donner une position différente sur le chariot.
-        //        L'interdire ?
         if(bagageEstSorti(*it))
         {
             _chariotConnecte->chargerBagage(*it);
@@ -108,22 +84,25 @@ void Tapis::deroulerTapis(double dt)
     }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__9W_YPD7Ed-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Tapis::connecter(Chariot* chariot)
+void Tapis::connecter (Chariot* chariot)
 {
-    // On sait qu'il ne peut pas y avoir d'autre chariot puisque le
-    // test est effectué niveau tronçon support
-    _chariotConnecte = chariot;
+    if (_chariotConnecte == 0 && chariot != 0)
+    {
+        _chariotConnecte = chariot;
+        chariot->connecter(this);
+    }
 }
 
-void Tapis::deconnecter()
+void Tapis::deconnecter ()
 {
-    _chariotConnecte = 0;
+    if (_chariotConnecte != 0)
+    {
+        Chariot* chariot = _chariotConnecte;
+        _chariotConnecte = 0;
+        chariot->deconnecter();
+    }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__aB14PIZEd-TbK1o_cJlKw"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Noeud::Chemin Tapis::trouverChemin(Noeud* positionActuelle)
 {
     return positionActuelle->trouverChemin(_tronconSupport);

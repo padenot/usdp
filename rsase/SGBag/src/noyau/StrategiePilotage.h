@@ -99,11 +99,11 @@ class StrategiePilotage : public QObject
         /// Troncon sur lequel se déplace actuellement le chariot.
         /// Ne doit jamais être nul.
         Troncon * _tronconReserveSuivant;
+        /// Prochain tronçon sur lequel ira le chariot,
+        /// déjà réservé.
 
         Noeud::Chemin _chemin;
 
-        /// Troncon sur lequel se déplace actuellement le chariot.
-        /// Ne doit jamais être nul.
         Tapis * _tapisAssocie;
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
