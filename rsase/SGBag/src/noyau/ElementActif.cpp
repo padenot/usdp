@@ -3,8 +3,8 @@
 //TODO: Add definitions that you want preserved
 //End section for file ElementActif.cpp
 
-const double ElementActif::VITESSE_DEFAUT = 0.05;
-const double ElementActif::VITESSE_MAX_DEFAUT = 0.1;
+const double ElementActif::VITESSE_DEFAUT = 10; // m/s
+const double ElementActif::VITESSE_MAX_DEFAUT = 20; // m/s
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA?DEFCONSTRUCTOR"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"

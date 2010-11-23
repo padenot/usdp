@@ -13,11 +13,8 @@
 
 const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 1000;
 
-const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 5; // En ms
+const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
-const double Prototype::INTERVALLE_SIMULATION_DEFAUT = Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE;
-const double Prototype::INTERVALLE_SIMULATION_MAX = Prototype::INTERVALLE_SIMULATION_DEFAUT*2;
-const double Prototype::INTERVALLE_SIMULATION_MIN = Prototype::INTERVALLE_SIMULATION_DEFAUT/2;
 const int Prototype::ID_BAGAGE_GENERE_INITIAL = 1000;
 
 
@@ -28,7 +25,7 @@ Prototype::Prototype(const QString& xmlfilepath) :
         _elementsParType(),
         _mode_generation_bagage(AUTOMATIQUE),
         _id_bagage_genere(ID_BAGAGE_GENERE_INITIAL),
-        _dt (INTERVALLE_SIMULATION_DEFAUT)
+        _dt (INTERVALLE_RAFRAICHISSEMENT_MODELE / 1000.0)
 {
     qsrand(time(0));
     // Désérialise le fichier XML.
@@ -154,24 +151,20 @@ void Prototype::arreterSimulation()
     _horloge.stop();
 }
 
-void Prototype::changerVitesse(int pourcentage)
+int Prototype::changerVitesse(int pourcentage)
 {
-    if (pourcentage > 100)
-    {
-        pourcentage = 100;
-    }
-    else if (pourcentage < 0)
+    if (pourcentage < 0)
     {
         pourcentage = 0;
     }
+    _dt = Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE / 1000.0 * pourcentage / 100.0;
 
-    _dt = INTERVALLE_SIMULATION_MIN +
-          (INTERVALLE_SIMULATION_MAX-INTERVALLE_SIMULATION_MIN)*(pourcentage);
+    return pourcentage;
 }
 
-int Prototype::acqVitesse()
+bool Prototype::estEnMarche()
 {
-    return _dt;
+    return _horloge.isActive();
 }
 
 const XmlConfigFactory::IndexTypesElements &Prototype::elements()

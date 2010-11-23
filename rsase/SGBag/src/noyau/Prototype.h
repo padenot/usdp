@@ -55,8 +55,6 @@ class Prototype : public QObject
          */
         virtual ~Prototype();
 
-
-    public slots:
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_oCLrkO59Ed-Jn7v3SB1Zsg"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         /**
@@ -65,17 +63,6 @@ class Prototype : public QObject
          * Si mode est égal au mode actuel, cet apppel n'effectue rien.
          */
         void changementMode(ModeSimulation mode);
-
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        /**
-         * @brief Ajout d'un bagage dans la simulation.
-         * Le bagage est crée, et est placé sur le tapis.
-         * @param tapis Le tapis d'origine du bagage : là où il apparaitra.
-         * @param vol Le vol de destination du bagage : là où il sortira.
-         * @return Le bagage effectivement ajouté.
-         */
-        Bagage* ajouterBagage(Tapis* tapis, Vol* vol);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Eq-X8PCiEd-54vpurc77FA"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -88,46 +75,57 @@ class Prototype : public QObject
          */
         void changementModeAjoutBagage(ModeSimulation mode);
 
+        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_0yUWMO59Ed-Jn7v3SB1Zsg"
+        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+        /**
+         * @brief Ajout d'un bagage dans la simulation.
+         * Le bagage est crée, et est placé sur le tapis.
+         * @param tapis Le tapis d'origine du bagage : là où il apparaitra.
+         * @param vol Le vol de destination du bagage : là où il sortira.
+         * @return Le bagage effectivement ajouté.
+         */
+        Bagage* ajouterBagage(Tapis* tapis, Vol* vol);
+
+        /**
+         * @brief Changer la vitesse de la simulation.
+         * @param pourcentage Pourcentage de la vitesse réelle.
+         *                    Si inférieur à 0, il est ramené à 0.
+         * @return Le pourcentage effectivement appliqué (potentiellement
+         *         élevé à 0, s'il était négatif).
+         */
+        int changerVitesse(int pourcentage);
+
+        bool estEnMarche();
+
+    public slots:
+
         /**
          * @brief Ajoute des bagages de manières aléatoire.
          */
         void ajouterBagageAleatoire();
 
-
         /**
          * @brief Commencer la simulation
          */
         void commencerSimulation();
+
         /**
          * @brief Arreter la simulation
          */
         void arreterSimulation();
-        /**
-         * @brief Changer la vitesse de la simulation, sans arrêter la
-         *        simulation.
-         * @param pourcentage Pourcentage de la vitesse maximale.
-         *                    Si hors bornes (<0 ou >100), il est ramené à
-         *                    la borne la plus proche.
-         */
-        void changerVitesse(int pourcentage);
-
-        /**
-         * @brief Récupérer l'intervalle de temps dt entre deux états simulés.
-         */
-        int acqVitesse();
 
         /**
          * @brief Récupérer la liste des éléments présents.
          */
         const XmlConfigFactory::IndexTypesElements &elements();
+
         /**
-         * Donner le model aux vues.
+         * Donner le modèle aux vues.
          */
         ModelVols* modelVols();
         void ajouterVol(Vol* vol);
         Vol* vol(int index);
         bool retirerVol(int i);
-
 
     protected slots:
         void destructionBagage(QObject* bagage);
@@ -175,9 +173,6 @@ class Prototype : public QObject
         double _dt;
 
         static const int INTERVALLE_RAFRAICHISSEMENT_MODELE;
-        static const double INTERVALLE_SIMULATION_DEFAUT;
-        static const double INTERVALLE_SIMULATION_MAX;
-        static const double INTERVALLE_SIMULATION_MIN;
 
         static const int ID_BAGAGE_GENERE_INITIAL;
 };  //end class Prototype

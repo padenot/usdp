@@ -74,6 +74,7 @@ class FenetrePrincipale : public QMainWindow
         void changementSelection();
 
         void basculerMarcheArret();
+        void definirMarcheArret (bool marche);
 
         void desactiverToutSaufToboggans();
 

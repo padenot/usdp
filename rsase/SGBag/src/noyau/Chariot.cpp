@@ -7,10 +7,9 @@
 #include "StrategiePilotageAuto.h"
 #include "StrategiePilotageManuel.h"
 
-const double Chariot::ACCELERATION_CHARIOT = 0.001; // m/s²
-const double Chariot::DECELERATION_CHARIOT = 0.002; // m/s²
-const double Chariot::VITESSE_NULLE = 0.001; // m/s
-const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.002;
+const double Chariot::ACCELERATION_CHARIOT = 10; // m/s²
+const double Chariot::DECELERATION_CHARIOT = 20; // m/s²
+const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.1;
 
 //Begin section for file Chariot.cpp
 //TODO: Add definitions that you want preserved
@@ -88,7 +87,7 @@ void Chariot::avancer(double dt, QPointF destination)
             _vitesse += ACCELERATION_CHARIOT*dt;
             emit vitesseModifiee(_vitesse);
         }
-        else if(_vitesse > _vitesseMax + MAX_DEPASSEMENT_VITESSEMAX)
+        else if(_vitesse > (_vitesseMax + MAX_DEPASSEMENT_VITESSEMAX))
         {
             _vitesse -= DECELERATION_CHARIOT*dt;
             emit vitesseModifiee(_vitesse);
@@ -96,14 +95,14 @@ void Chariot::avancer(double dt, QPointF destination)
     }
     else
     {
-        if (_vitesse > VITESSE_NULLE)
+        if (_vitesse > 0)
         {
             _vitesse -= DECELERATION_CHARIOT*dt;
             emit vitesseModifiee(_vitesse);
         }
     }
 
-    if (_vitesse > VITESSE_NULLE)
+    if (_vitesse > 0)
     {
         deplacement *= _vitesse * dt;
         _position += deplacement.toPointF();
@@ -128,6 +127,12 @@ Chariot::TypePilotage Chariot::typePilotage()
 Direction Chariot::directionConseillee()
 {
     return _directionConseillee;
+}
+
+double Chariot::distanceArret()
+{
+    // La décélération est linéaire
+    return - _vitesse * _vitesse / (2 * -DECELERATION_CHARIOT);
 }
 
 void Chariot::modifierTypePilotage(TypePilotage type)

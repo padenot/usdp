@@ -1,5 +1,6 @@
-#include "modelvols.h"
 #include <QDebug>
+
+#include "modelvols.h"
 
 const char* ModelVols::LABEL_ENTETE[ModelVols::_COUNT] = {
     "Nom",

@@ -24,7 +24,7 @@ Bagage::Bagage(Vol* vol, QPointF positionInitiale) :
 Bagage::~Bagage()
 {
 #ifdef DEBUG_ACHEMINEMENT
-    qDebug() << "Bagage supprimé";
+    qDebug() << trUtf8("Bagage supprimé");
 #endif
     //TODO Auto-generated method stub
 }
@@ -34,10 +34,6 @@ Bagage::~Bagage()
 void Bagage::simulerDeplacement(const QVector2D& deplacement)
 {
     _position += deplacement.toPointF();
-    #ifdef DEBUG_ACHEMINEMENT
-    qDebug() << "Nouvelle position du bagage "<< _position;
-    #endif
-    //TODO Auto-generated method stub
 }
 
 Toboggan* Bagage::objectifFinal()

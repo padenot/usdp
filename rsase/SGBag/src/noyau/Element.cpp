@@ -1,10 +1,10 @@
+#ifdef DEBUG_ACHEMINEMENT
+#include <QDebug>
+#include <QString>
+#endif
+
 #include "Element.h"
 #include "XmlConfigFactory.h"
-
-#ifdef DEBUG_ACHEMINEMENT
-#include "QDebug"
-#include "QString"
-#endif
 
 //Begin section for file Element.cpp
 //TODO: Add definitions that you want preserved

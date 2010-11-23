@@ -1,5 +1,4 @@
 #include "vueelement.h"
-#include <QDebug>
 #include <QPainter>
 
 VueElement::VueElement(FenetrePrincipale& fenetrePrincipale):

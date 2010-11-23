@@ -38,9 +38,9 @@ class Chariot : public ElementActif
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-		/**
-		 * @todo TODO Constructeur de chariot
-		 */
+        /**
+         * @todo TODO Constructeur de chariot
+         */
         Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** Initialise les membres privés de l'élément
@@ -92,6 +92,8 @@ class Chariot : public ElementActif
 
         TypePilotage typePilotage();
         Direction directionConseillee();
+
+        double distanceArret();
 
     public slots :
         void modifierTypePilotage(TypePilotage type);

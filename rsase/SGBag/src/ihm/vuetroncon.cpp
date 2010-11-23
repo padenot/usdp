@@ -62,12 +62,34 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     // Dessin du noeud de fin
     painter->drawEllipse(QPointF(longueur, 0), largeur*1.2, largeur*1.2);
 
-    //painter->setPen(penLight);
-    //painter->drawPolygon(_fond, 4);
+    if (_troncon.etat() == Troncon::HORS_SERVICE)
+    {
+        double espaceBrise = qMin(largeurEspaceBrise,longueur/4);
+        //painter->setPen(penLight);
+        //painter->drawPolygon(_fond, 4);
 
-    painter->setPen(penDark);
-    painter->drawLine(0,-largeur,longueur,-largeur);
-    painter->drawLine(0,largeur,longueur,largeur);
+        painter->setPen(penDark);
+        // Dessin de la ligne brisée n° 1
+        painter->drawLine(0,-largeur,longueur/2-espaceBrise,-largeur);
+        painter->drawLine(longueur/2+espaceBrise,-largeur,longueur,-largeur);
+        // Dessin du bris de la ligne 1
+        // TODO
+        // Dessin de la ligne brisée n° 2
+        painter->drawLine(0,largeur,longueur/2-espaceBrise,largeur);
+        painter->drawLine(longueur/2+espaceBrise,largeur,longueur,largeur);
+        // Dessin du bris de la ligne 2
+        // TODO
+    }
+    else
+    {
+        //painter->setPen(penLight);
+        //painter->drawPolygon(_fond, 4);
+
+        painter->setPen(penDark);
+        // Dessin des deux lignes du rail
+        painter->drawLine(0,-largeur,longueur,-largeur);
+        painter->drawLine(0,largeur,longueur,largeur);
+    }
 }
 
 /**

@@ -1,5 +1,3 @@
-#include <QDebug>
-
 #include "XmlConfigFactory.h"
 #include "Elements.h"
 

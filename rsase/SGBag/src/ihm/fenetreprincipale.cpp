@@ -2,7 +2,6 @@
 #include <QTableView>
 #include <QTableWidgetItem>
 #include <QInputDialog>
-#include <QMetaClassInfo>
 #include <QMessageBox>
 #include <QFileDialog>
 
@@ -34,18 +33,14 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
         scene(new QGraphicsScene()),
         prototype(proto),
         _vueParametres(0),
-        _etat(NORMAL),
-        ratioActuel(1)
+        ratioActuel(1),
+        _etat(NORMAL)
 {
     ui->setupUi(this);
 
     connect(ui->startStopButton, SIGNAL(clicked()), this, SLOT(basculerMarcheArret()));
 
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
-    ui->speedSlider->setValue(50);
-    ui->ratioSlider->setValue(1);
-    ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
-
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
@@ -63,9 +58,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     ui->vue->setScene(scene);
     ui->vue->setAlignment(Qt::AlignCenter);
 
-    ui->volTableView->setModel(prototype->modelVols());
-
-    connect(ui->volAjouterToolButton, SIGNAL(clicked()), this,SLOT(ajouterVol()));
+    connect(ui->volAjouterToolButton, SIGNAL(clicked()),this,SLOT(ajouterVol()));
     connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
     connect(ui->volAnnulerButton, SIGNAL(clicked()), this, SLOT(annulerAssociation()));
     connect(ui->action_Changer_de_circuit, SIGNAL(triggered()), this, SLOT(changementCircuit()));
@@ -76,15 +69,19 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
+
+    // Initialisations liées au prototype
+    ui->volTableView->setModel(prototype->modelVols());
+    ui->speedSlider->setValue(100);
+    ui->ratioSlider->setValue(1);
+    ui->vitesse->setText("100%");
 }
 
 FenetrePrincipale::~FenetrePrincipale()
 {
-    foreach(QGraphicsItem* item, scene->items())
-    {
-        delete item;
-    }
-
+    // TODO : ça ne fonctionne pas.
+    // "destructionBagage" ne doit pas être déclenché ici !
+    disconnect(this,SLOT(destructionBagage(QObject*)));
     delete scene;
     delete ui;
     delete _dialog;
@@ -95,11 +92,18 @@ void FenetrePrincipale::changementCircuit()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     tr("Choisissez un nouveau fichier de circuit"), ".", tr("*.xml"));
+
+    definirMarcheArret(false);
     scene->clear();
     delete prototype;
     prototype = new Prototype(fileName);
     extraireVuesCanevas(prototype->elements());
+
+    // Initialisations liées au prototype
     ui->volTableView->setModel(prototype->modelVols());
+    ui->speedSlider->setValue(100);
+    ui->ratioSlider->setValue(1);
+    ui->vitesse->setText("100%");
 }
 
 void FenetrePrincipale::quitterApplication()
@@ -135,18 +139,17 @@ void FenetrePrincipale::changementRatio(int valeur)
         ui->ratio->setText(QString::number(ratioActuel)+"x");
 
         //mapToScene(ui->vue->rect())
-
-        qDebug() << ui->vue->rect().center();
     }
 }
 
 void FenetrePrincipale::basculerMarcheArret()
 {
-    // TODO : convertir en donnée membre d'objet, ou récupérer
-    // la valeur dans le modèle
-    static bool etat = false;
+    definirMarcheArret(!prototype->estEnMarche());
+}
 
-    if(!etat)
+void FenetrePrincipale::definirMarcheArret (bool marche)
+{
+    if (marche)
     {
         prototype->commencerSimulation();
         ui->startStopButton->setIcon(QIcon(":/icones/pause"));
@@ -156,8 +159,6 @@ void FenetrePrincipale::basculerMarcheArret()
         prototype->arreterSimulation();
         ui->startStopButton->setIcon(QIcon(":/icones/play"));
     }
-
-    etat = !etat;
 }
 
 void FenetrePrincipale::ajouterVueCanevas(VueCanevas *vue)
@@ -195,8 +196,8 @@ void FenetrePrincipale::extraireVuesCanevas(
 
 void FenetrePrincipale::changerVitesse(int pourcentage)
 {
-    prototype->changerVitesse(pourcentage);
-    ui->vitesse->setText(QString::number(prototype->acqVitesse())+"x");
+    pourcentage = prototype->changerVitesse(pourcentage);
+    ui->vitesse->setText(QString::number(pourcentage)+"%");
 }
 
 void FenetrePrincipale::ajouterVol()

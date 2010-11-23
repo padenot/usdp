@@ -85,15 +85,6 @@ class StrategiePilotage
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
 
-        static const double RAYON_PROXIMITE_TAPIS;
-        /// Distance avec un tapis en dessous de laquelle le chariot est
-        /// considéré comme étant proche du tapis (début du ralentissement).
-
-        static const double RAYON_PROXIMITE_TOBOGGAN;
-        /// Distance avec un toboggan en dessous de laquelle le chariot est
-        /// considéré comme étant proche du toboggan (début du ralentissement).
-
-
         static const double RAYON_ACTION_NOEUD;
         /// Distance avec un noeud en dessous de laquelle le chariot est
         /// considéré comme étant sur le noeud.

@@ -50,7 +50,8 @@ namespace vue_config
     namespace troncon
     {
         const int zIndex = 5;
-        const float largeur = 1; //Demi largeur d'un rail à l'affichage
+        const double largeur = 1; //Demi largeur d'un rail à l'affichage
+        const double largeurEspaceBrise = 2;
 
         const QBrush brushGray(Qt::gray); //couleur de fond du rail
         const QPen penLight(Qt::gray, 0); //affichage du fond du rail

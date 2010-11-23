@@ -78,6 +78,12 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>1</number>
+          </property>
          </widget>
         </item>
         <item>
@@ -103,7 +109,7 @@
         <item>
          <widget class="QLabel" name="vitesse">
           <property name="text">
-           <string>7x</string>
+           <string>100%</string>
           </property>
          </widget>
         </item>
@@ -113,13 +119,22 @@
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>100</number>
+           <number>500</number>
+          </property>
+          <property name="pageStep">
+           <number>50</number>
           </property>
           <property name="value">
            <number>100</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>50</number>
           </property>
          </widget>
         </item>
@@ -138,7 +153,7 @@
      <x>0</x>
      <y>0</y>
      <width>1146</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Fichier">
