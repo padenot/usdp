@@ -16,12 +16,30 @@ StrategiePilotageAuto::StrategiePilotageAuto(const StrategiePilotage& modele) :
 {
 }
 
+void StrategiePilotageAuto::pilotageNoeudProche(Direction /*directionConseillee*/, Bagage* bagage)
+{
+    Troncon* nouveauTroncon = 0;
+
+    if (bagage != 0)
+    {
+        nouveauTroncon = bagage->objectifFinal()->trouverObjectifImmediat(_tronconActuel->noeudFin());
+    }
+    else
+    {
+        nouveauTroncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
+    }
+
+    preparerChangementTroncon(nouveauTroncon);
+
+    pilotageEnChemin();
+}
+
 void StrategiePilotageAuto::pilotageNoeudAtteint(Direction /*directionConseillee*/, Bagage* bagage)
 {
     Troncon* nouveauTroncon = 0;
 
 #ifdef DEBUG_ACHEMINEMENT
-    qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
+    //qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
 #endif
 
     if (bagage != 0)
@@ -33,8 +51,5 @@ void StrategiePilotageAuto::pilotageNoeudAtteint(Direction /*directionConseillee
         nouveauTroncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
     }
 
-    if (changerTroncon(nouveauTroncon))
-    {
-        pilotageEnChemin();
-    }
+    changerTroncon(nouveauTroncon);
 }

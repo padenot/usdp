@@ -1,7 +1,10 @@
 #include <QLineF>
 
+#include "vueconfig.h"
 #include "vuecanevas.h"
 #include "fenetreprincipale.h"
+
+using namespace vue_config::canevas;
 
 VueCanevas::VueCanevas(FenetrePrincipale& fenetrePrincipale) :
     _fenetrePrincipale(fenetrePrincipale)
@@ -36,5 +39,9 @@ void VueCanevas::definirCoordonnees(QPointF positionDebut,
 
 QRectF VueCanevas::boundingRect() const
 {
-    return _rect;
+    QRectF rect = _rect;
+    rect.setTopLeft(rect.topLeft() - QPoint(marge,marge));
+    rect.setBottomRight(rect.bottomRight() + QPoint(marge,marge));
+
+    return rect;
 }

@@ -21,15 +21,15 @@ class StrategiePilotage
     protected:
         /** Tente de faire passer le chariot sur un autre troncon.
          * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
-         *                           rien ne se passera.
-         * @return Vrai si le passage a pu se faire, faux sinon.
+         *                           on considère que l'arrêt est nécessaire.
          */
-        bool changerTroncon(Troncon* nouveauTroncon);
+        void changerTroncon(Troncon* nouveauTroncon);
 
-        /** Pilote le chariot lorsqu'il est à l'arrêt
-         * (Ne fait donc a priori rien).
+        /** Anticipe le changement de tronçon du chariot sur un autre troncon.
+         * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
+         *                           on considère que l'arrêt est nécessaire.
          */
-        virtual void pilotageArret();
+        void preparerChangementTroncon(Troncon* nouveauTroncon);
 
         /** Pilote le chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
          */
@@ -38,6 +38,15 @@ class StrategiePilotage
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
          * @param[in] bagage TODO
+         * @param TODO
+         */
+        virtual void pilotageNoeudProche(
+                Direction directionConseillee, Bagage* bagage) = 0;
+
+        /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
+         * "bagage" doit être nul s'il n'y en a pas.
+         * @param[in] bagage TODO
+         * @param TODO
          */
         virtual void pilotageNoeudAtteint(
                 Direction directionConseillee, Bagage* bagage) = 0;
@@ -62,6 +71,7 @@ class StrategiePilotage
         {
                 //ARRET,
                 EN_CHEMIN,
+                NOEUD_PROCHE,
                 NOEUD_ATTEINT,
                 TAPIS_PROCHE,
                 TAPIS_ATTEINT,
@@ -79,6 +89,9 @@ class StrategiePilotage
         /// Chariot piloté.
 
         Troncon * _tronconActuel;
+        /// Troncon sur lequel se déplace actuellement le chariot.
+        /// Ne doit jamais être nul.
+        Troncon * _tronconReserveSuivant;
         /// Troncon sur lequel se déplace actuellement le chariot.
         /// Ne doit jamais être nul.
         Tapis * _tapisAssocie;

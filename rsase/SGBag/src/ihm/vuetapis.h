@@ -1,12 +1,15 @@
 #ifndef VUETAPIS_H
 #define VUETAPIS_H
 
+#include <QObject>
+#include <QFile>
+
 #include <QGraphicsItem>
+#include <QGraphicsSvgItem>
+#include <QtSvg/QSvgRenderer>
+
 #include <QPainter>
 #include <QRectF>
-#include <QtSvg/QSvgRenderer>
-#include <QFile>
-#include <QObject>
 
 #include "src/noyau/Tapis.h"
 #include "vueelement.h"
@@ -31,11 +34,9 @@ class VueTapis : public VueElement
 
     private:
         int _etat;
-        QSvgRenderer *_image;
+        static QSvgRenderer *_renderer;
+        QGraphicsSvgItem *_image;
         Tapis &_tapis;
-
-        QPixmap _pixmap;
-        QPainter _paintPixmap;
 
         /**
          * Instance de VueTapisHandler intégrée à la vue.

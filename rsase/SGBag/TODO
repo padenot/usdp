@@ -17,9 +17,10 @@ Fait : - Modifier l'apparence du tronçon en fonction de sa disponibilité (cass
 - Résoudre le bug lorsqu'un chariot passe sur un noeud
 - Gestion correcte des dés-association de vols avec des toboggans
 - Permettre l'annulation de l'ajout de bagage
-- Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
+Fait : - Améliorer le rendu des SVG (à chaque repaint, c'est trop violent)
 - Implémenter les différentes vues de paramètres
 - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
+- Fait : Empêcher l'ajout de bagages quand aucun vol n'est disponible
 - TESTER
 - TESTER
 - TESTER

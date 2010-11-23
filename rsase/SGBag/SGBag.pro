@@ -14,7 +14,7 @@ DEPENDPATH += src ui
 QMAKE_CXXFLAGS += -Wall -Wextra
 
  CONFIG(debug) {
-     QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
+#     QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
  }
 
 SOURCES += ihm/main.cpp\

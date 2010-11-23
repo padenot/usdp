@@ -36,7 +36,7 @@ class Troncon : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        bool occuper();
+        bool occuper(Chariot* chariotCandidat);
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
@@ -61,6 +61,9 @@ class Troncon : public Element
         EtatTroncon etat();
 
 protected:
+    Chariot* _chariotProprietaire;
+    /// Chariot occupant actuellement le tronçon
+
     //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_5u8RMOtcEd-6Qct7MaUvyw"
     //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
     Noeud * _noeudDebut;
@@ -72,8 +75,6 @@ protected:
     //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bOJUIPG5Ed-XFOLnxrkHLA"
     //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
     //unsigned long longueur;
-
-    bool _estLibre;
 
     bool _estHorsService;
 };  //end class Troncon

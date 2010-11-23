@@ -16,12 +16,16 @@ StrategiePilotageManuel::StrategiePilotageManuel(const StrategiePilotage& modele
 {
 }
 
+void StrategiePilotageManuel::pilotageNoeudProche(Direction directionConseillee,
+                                                   Bagage* /*bagage*/)
+{
+    preparerChangementTroncon(_tronconActuel->noeudFin()
+                   ->trouverProchainTroncon(directionConseillee));
+}
+
 void StrategiePilotageManuel::pilotageNoeudAtteint(Direction directionConseillee,
                                                    Bagage* /*bagage*/)
 {
-    if (changerTroncon(_tronconActuel->noeudFin()
-                   ->trouverProchainTroncon(directionConseillee)))
-    {
-        pilotageEnChemin();
-    }
+    changerTroncon(_tronconActuel->noeudFin()
+                   ->trouverProchainTroncon(directionConseillee));
 }

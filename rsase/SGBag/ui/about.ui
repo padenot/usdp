@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Cette application a été réalisée par Paul ADENOT, Maxime GAUDIN, Monica GOLUMBEANU, Martin Richard, Étienne BRODU, et Yoann Rodière, pour un projet de 4IF à l'INSA de Lyon.</string>
+      <string>Cette application a été réalisée par Paul ADENOT, Maxime GAUDIN, Monica GOLUMBEANU, Martin RICHARD, Étienne BRODU, et Yoann RODIÈRE, pour un projet de 4IF à l'INSA de Lyon.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>

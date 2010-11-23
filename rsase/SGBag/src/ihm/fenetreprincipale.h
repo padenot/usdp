@@ -37,8 +37,11 @@ class FenetrePrincipale : public QMainWindow
         ~FenetrePrincipale();
 
         void extraireVuesCanevas(const XmlConfigFactory::IndexTypesElements &elements);
+        void messageBarreDeStatus(const QString& message, int ms);
+
 
         void ajoutBagage(VueTapis& tapis);
+        int nombreVols();
 
         typedef QVector<QGraphicsItem*> IndexVues;
 
@@ -65,7 +68,6 @@ class FenetrePrincipale : public QMainWindow
         void ajouterVol();
         void supprimerVol();
 
-        // TODO : supprimer vol
         void associerVolToboggan();
         void annulerAssociation();
 

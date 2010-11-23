@@ -12,12 +12,16 @@ namespace vue_config
     const int fps = 30;
     const int dt = 1000/fps; // rafraichissement en ms
 
+    namespace canevas
+    {
+        const double marge = 2;
+    }
+
     namespace element
     {
         const QBrush brushSelection(Qt::lightGray);
         const QPen penSelection(Qt::darkGray);
         const double opacite = 0.7;
-        const double marge = 2;
         const double arrondis = 1;
     }
 
@@ -43,11 +47,11 @@ namespace vue_config
         const QString etatNormal = ":/images/chariot";
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
 
-        const QFont font = QFont("SansSerif", 40, QFont::Normal);
+        const QFont font = QFont("SansSerif", 26, QFont::Normal);
         const QColor couleurTexte = QColor(35,35,35);
         const qreal rotationTexte = -15;
-        const qreal dxTexte = 45;
-        const qreal dyTexte = 97;
+        const qreal dxTexte = 40;
+        const qreal dyTexte = 90;
 
     }
 
@@ -60,7 +64,7 @@ namespace vue_config
 
     namespace toboggan
     {
-        const int zIndex = 10;
+        const int zIndex = 5;
         const double largeur = 1*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/toboggan";
     }

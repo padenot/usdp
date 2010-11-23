@@ -8,24 +8,29 @@
 
 using namespace vue_config::tapis;
 
+QSvgRenderer *VueTapis::_renderer = new QSvgRenderer(etatNormal);
+
 VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         VueElement(fenetrePrincipale),
-        _image(new QSvgRenderer(etatNormal)),
+        _image(new QGraphicsSvgItem()),
         _tapis(tapis),
-        _pixmap(200, 200),
-        _paintPixmap(&_pixmap),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
     setZValue(zIndex);
+    _image->setSharedRenderer(_renderer);
+
     definirCoordonnees(_tapis.position(),_tapis.pointConnexion(),
                        largeur,-vue_config::chariot::largeur/2);
+
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
     QObject::connect(ajouterBagageAction, SIGNAL(triggered()), &(this->_handler), SLOT(ajouterBagage()));
 
-    //_image->render(&_paintPixmap);
-    _image->setFramesPerSecond(vue_config::fps);
+    _image->renderer()->setFramesPerSecond(vue_config::fps);
+    qDebug() << _image->renderer()->isValid();
 }
 
 VueTapis::~VueTapis()
@@ -41,16 +46,12 @@ void VueTapis::advance(int pas)
     {
             return;
     }
-
-    //setPos(tapis->position());
 }
 
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-
-    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
-    //_image->render(painter);
+    _image->renderer()->render(painter, _rect);
 }
 
 Tapis* VueTapis::tapisAssocie()
@@ -73,6 +74,11 @@ VueTapisHandler::VueTapisHandler(VueTapis& vueTapis,
  */
 void VueTapisHandler::ajouterBagage()
 {
+    // S'il n'y a pas de vol, on refuse l'ajout, l'utilisateur serait bloqué
+    // en mode ajout de bagages.
+   if(_fenetrePrincipale.nombreVols() != 0)
     _fenetrePrincipale.ajoutBagage(_vueTapis);
+   else
+       _fenetrePrincipale.messageBarreDeStatus("Impossible d'ajouter un bagage : aucun vol disponible.",2000);
 }
 

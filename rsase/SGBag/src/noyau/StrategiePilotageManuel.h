@@ -12,6 +12,8 @@ class StrategiePilotageManuel : public StrategiePilotage
     protected :
         virtual void pilotageNoeudAtteint(
                 Direction directionConseillee, Bagage *bagage);
+        virtual void pilotageNoeudProche(
+                Direction directionConseillee, Bagage* bagage);
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H
