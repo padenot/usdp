@@ -432,7 +432,7 @@
 	<toboggan>
 		<id>102</id>
 		<x>35</x>
-		<y>320</y>
+		<y>340</y>
 		<pos>17</pos>
 	</toboggan>
 	<!-- B -->
@@ -445,7 +445,7 @@
 	<toboggan>
 		<id>104</id>
 		<x>195</x>
-		<y>320</y>
+		<y>340</y>
 		<pos>52</pos>
 	</toboggan>
 	

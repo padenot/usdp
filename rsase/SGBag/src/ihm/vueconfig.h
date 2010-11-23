@@ -82,11 +82,10 @@ namespace vue_config
     namespace vol
     {
         const int zIndex = 10;
-        const double longueur = 3*ZOOM_ELEMENTS;
-        const double largeur = 3*ZOOM_ELEMENTS;
+        const double longueur = 70;
+        const double largeur = longueur*0.5;
         const double ecartToboggan = 3*ZOOM_ELEMENTS;
         const QString etatNormal = ":/images/avion";
-        const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
     }
 }
 

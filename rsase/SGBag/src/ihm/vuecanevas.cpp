@@ -19,14 +19,14 @@ VueCanevas::VueCanevas(FenetrePrincipale& fenetrePrincipale,
 
 void VueCanevas::definirCoordonnees(QPointF positionDebut,
                                 QPointF positionFin, double largeur,
-                                double largeurSecurite)
+                                double ecartSecurite)
 {
     QLineF direction = QLineF(QPoint(0, 0), positionFin - positionDebut);
-    QVector2D vecteurDir = QVector2D(positionFin - positionDebut);
+    direction.setLength(direction.length() - ecartSecurite);
 
     _rect = QRectF(0,-largeur/2,direction.length(), largeur);
 
-    setPos(positionDebut); // + (vecteurDir.normalized().toPointF() * (largeurSecurite/2)));
+    setPos(positionDebut);
     setRotation(-direction.angle());
 }
 
