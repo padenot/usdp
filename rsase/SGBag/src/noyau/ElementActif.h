@@ -8,6 +8,10 @@
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_Pu31cPGuEd-1y9a3HOSRUA"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @class ElementActif
+  * @brief Classe mère de tous les éléments dynamiques ( Chariot et Tapis)
+  */
 class ElementActif : public Element
 {
     Q_OBJECT
@@ -29,19 +33,37 @@ class ElementActif : public Element
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_v0pDgO_3Ed-KganxdgdPew"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/**
+	  * @brief Ordonne à l'élément dynamique de s'arrêter le plus vite possible en respectant les contraintes physiques liées au mobile (décélération maximale)
+	  */
         virtual void arreter();
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_tl7KgPD6Ed-R6YEVT5cViQ"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+	/**
+	  * @brief Ordonne à l'élément dynamique de s'arrêter le plus vite possible en respectant les contraintes physiques liées au mobile (décélération maximale)
+	/**
+	  * @brief Ordonne à l'élément dynamique de démarrer le plus vite possible en respectant les contraintes physiques liées au mobile (accélération maximale)
+	  */
         virtual void demarrer();
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_M4WU0PIdEd-TbK1o_cJlKw"
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         //virtual void modifierVitesse(double nouvelleVitesse);
 
+	/**
+	  * @brief Accessur sur l'état ( en mouvement ou pas) de l'élément dynamique
+	  */
         virtual bool estActif ();
 
+	/**
+	  * @brief Accessur la vitesse de l'élément dynamique
+	  */
         virtual double vitesse();
+
+	/**
+	  * @brief Accessur la vitesse maximale de l'élément dynamique
+	  */
         virtual double vitesseMax ();
 
     public slots :
