@@ -19,6 +19,8 @@ VueTroncon::VueTroncon(FenetrePrincipale& fenetrePrincipale, Troncon& troncon):
                        _troncon.noeudFin()->position(),
                        2*largeur);
 
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
     QAction* mettreEnPanneAction = new QAction(QObject::trUtf8("Mettre en panne"), 0);
     QAction* reparerAction = new QAction(QObject::trUtf8("Réparer"), 0);
     _contextMenuActionsList.append(mettreEnPanneAction);

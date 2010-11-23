@@ -43,6 +43,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
     connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
+    connect(&timer, SIGNAL(timeout()), scene, SLOT(update())));
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
     connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
