@@ -6,7 +6,7 @@ def getSourceFiles(srcPath, ext):
 	sourceList = []
 	for path, subdirs, files in os.walk(root):
 		for name in files:
-			if name.endswith(ext) : sourceList.append((name, os.path.join(path, name)))
+			if name.endswith(ext) : sourceList.append((name, os.path.join(os.path.abspath(path), name)))
 	return sourceList
 
 def toLatex(sourceList):
