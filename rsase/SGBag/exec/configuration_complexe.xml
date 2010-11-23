@@ -163,8 +163,8 @@
 		<id>27</id>
 		<x>150</x>
 		<y>210</y>
-		<suivantGauche>30</suivantGauche>
-		<suivantDroit>29</suivantDroit>
+		<suivantGauche>29</suivantGauche>
+		<suivantDroit>30</suivantDroit>
 	</noeud>
 	<troncon>
 		<id>28</id>
@@ -186,9 +186,9 @@
 		<id>31</id>
 		<x>160</x>
 		<y>90</y>
-		<suivantGauche>38</suivantGauche>
+		<suivantGauche>43</suivantGauche>
 		<!-- Jointure Circuit B -->
-		<suivantDroit>43</suivantDroit>
+		<suivantDroit>38</suivantDroit>
 	</noeud>
 	<noeud>
 		<id>32</id>

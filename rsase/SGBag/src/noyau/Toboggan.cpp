@@ -62,3 +62,8 @@ void Toboggan::associerVol(Vol* vol)
     _vol = vol;
 }
 
+int Toboggan::nombreDeBagages() const
+{
+    return _nombreBagages;
+}
+

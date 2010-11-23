@@ -57,6 +57,8 @@ class Toboggan : public Element
         QPointF pointConnexion() const;
         void associerVol(Vol* vol);
 
+        int nombreDeBagages() const;
+
     signals:
         void nombreDeBagages(int);
 
