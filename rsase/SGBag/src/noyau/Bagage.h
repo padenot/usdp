@@ -1,9 +1,9 @@
+/**
+  * @file Bagage.h
+  */
+
 #ifndef BAGAGE_H
 #define BAGAGE_H
-//Begin section for file Bagage.h
-//TODO: Add definitions that you want preserved
-//End section for file Bagage.h
-
 #include <QVector2D>
 
 #include "Element.h"
@@ -15,6 +15,10 @@ class Vol; //Dependency Generated Source:Bagage Target:Vol
 
 //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_1cuGUOsVEd-oy8D834IawQ"
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+/**
+  * @class Bagage 
+* @brief Classe gérant l'association d'un bagage avec un ou plusieurs vols et l'accès aux informations de celui-ci telles que la position courante ou l'objectif final.
+*/
 class Bagage : public Element
 {
     Q_OBJECT

@@ -1,4 +1,10 @@
-#ifndef FENETREPRINCPALE_H
+/**
+  * \file vuefenetreprincipale
+  * \autor
+  * \brief Classe gérant la vue de la fenêtre principale
+  */
+
+ifndef FENETREPRINCPALE_H
 #define FENETREPRINCPALE_H
 
 #include <QMainWindow>
@@ -24,7 +30,6 @@ class VueTroncon;
 namespace Ui {
     class FenetrePrincipale;
 }
-
 
 /**
  * @todo TODO implÃ©menter le zoom
