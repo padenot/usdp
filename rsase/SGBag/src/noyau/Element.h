@@ -48,6 +48,8 @@ class Element : public QObject
         friend QDebug operator<<(QDebug dbg, const Element &element);
 #endif
 
+        int id();
+
     protected:
 
         //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_ncu9YOsVEd-oy8D834IawQ"
@@ -58,8 +60,9 @@ class Element : public QObject
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         QPointF _position;
 
-#ifdef DEBUG_ACHEMINEMENT
         int _id;
+
+#ifdef DEBUG_ACHEMINEMENT
         QString _typeElement;
 #endif
 

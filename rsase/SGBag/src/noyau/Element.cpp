@@ -53,3 +53,8 @@ QDebug operator<<(QDebug dbg, const Element &element)
     return dbg.space();
 }
 #endif
+
+int Element::id()
+{
+    return _id;
+}

@@ -26,6 +26,10 @@ private:
     int _etat;
     QSvgRenderer *_image;
     Chariot &_chariot;
+
+    QPixmap _pixmap;
+    QPainter _paintPixmap;
+    QFont _font;
 };
 
 #endif // VUECHARIOT_H
