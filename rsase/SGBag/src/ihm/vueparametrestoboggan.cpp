@@ -8,6 +8,7 @@ VueParametresToboggan::VueParametresToboggan(Toboggan& toboggan, QWidget *parent
 {
     ui->setupUi(this);
     connect(&_toboggan, SIGNAL(nombreDeBagages(int)), this, SLOT(nombreDeBagages(int)));
+    ui->nbBagagesSpinBox->setValue(_toboggan.nombreDeBagages());
 }
 
 VueParametresToboggan::~VueParametresToboggan()
