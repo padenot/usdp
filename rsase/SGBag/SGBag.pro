@@ -89,4 +89,7 @@ OTHER_FILES += \
     ui/images/saccuir.svg \
     ui/images/homard.svg \
     ui/images/chariot.svg \
-    ui/images/avion.svg
+    ui/images/avion.svg \
+    ui/images/toboggan2.svg \
+    ui/images/tapis.svg \
+    ui/images/caisse.svg

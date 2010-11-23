@@ -18,7 +18,7 @@ VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
     _image->render(&_paintPixmap);
 
     /* Affichage de l'id du chariot
-       Valable avec les nouveaux rendus.
+       Valable avec les nouveaux rendus.*/
 
     _paintPixmap.setFont (font);
     QTransform matriceActuelle = _paintPixmap.transform();
@@ -28,7 +28,7 @@ VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
     _paintPixmap.setTransform(matriceTexte);
     _paintPixmap.setPen(couleurTexte);
     _paintPixmap.drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_chariot.id()));
-    _paintPixmap.setTransform(matriceActuelle);*/
+    _paintPixmap.setTransform(matriceActuelle);//*/
 }
 
 void VueChariot::advance(int pas)

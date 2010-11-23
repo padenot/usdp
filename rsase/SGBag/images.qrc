@@ -1,17 +1,17 @@
 <RCC>
     <qresource prefix="/images">
         <file alias="bagageSimple">ui/images/bagage.svg</file>
-        <file alias="tapis-roulant">ui/images/tapis-roulant.svg</file>
-        <file alias="toboggan">ui/images/toboggan.svg</file>
+        <file alias="tapis-roulant.old">ui/images/tapis-roulant.svg</file>
+        <file alias="toboggan.old">ui/images/toboggan.svg</file>
         <file alias="saccuir">ui/images/saccuir.svg</file>
         <file alias="sacsport">ui/images/sacsport.svg</file>
         <file alias="valise">ui/images/valise.svg</file>
         <file alias="homard">ui/images/homard.svg</file>
         <file alias="avion">ui/images/avion.svg</file>
-        <file alias="chariot.new">ui/images/caisse.svg</file>
-        <file alias="tapis-roulant.new">ui/images/tapis.svg</file>
-        <file alias="toboggan.new">ui/images/toboggan2.svg</file>
-        <file alias="chariot">ui/images/chariot.svg</file>
+        <file alias="tapis-roulant">ui/images/tapis.svg</file>
+        <file alias="chariot.old">ui/images/chariot.svg</file>
+        <file alias="toboggan">ui/images/toboggan2.svg</file>
+        <file alias="chariot">ui/images/caisse.svg</file>
     </qresource>
     <qresource prefix="/icones">
         <file alias="pause">ui/icones/pause.svg</file>

@@ -102,8 +102,8 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     /*if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         double espaceBrise = qMin(largeurEspaceBrise,longueur/4);
-        //painter->setPen(penLight);
-        //painter->drawPolygon(_fond, 4);
+        painter->setPen(penLight);
+        painter->drawPolygon(_fond, 4);
 
         painter->setPen(penDark);
         // Dessin de la ligne brisée n° 1

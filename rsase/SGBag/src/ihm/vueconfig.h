@@ -9,7 +9,8 @@
 namespace vue_config
 {
     const double ZOOM_ELEMENTS = 10.0;
-    const int dt = 1000/30; // rafraichissement en ms
+    const int fps = 30;
+    const int dt = 1000/fps; // rafraichissement en ms
 
     namespace element
     {
@@ -67,8 +68,9 @@ namespace vue_config
     namespace troncon
     {
         const int zIndex = 5;
+
         const double largeur = 0.5; //Demi largeur d'un rail à l'affichage
-        const double largeurEspaceBrise = 2;
+        const double largeurEspaceBrise = 0.3;
 
         const QBrush brushGray(Qt::gray); //couleur de fond du rail
         const QPen penLight(Qt::gray, 0); //affichage du fond du rail

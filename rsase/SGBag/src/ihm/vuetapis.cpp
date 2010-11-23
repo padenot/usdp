@@ -24,7 +24,8 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
     _contextMenuActionsList.append(ajouterBagageAction);
     QObject::connect(ajouterBagageAction, SIGNAL(triggered()), &(this->_handler), SLOT(ajouterBagage()));
 
-    _image->render(&_paintPixmap);
+    //_image->render(&_paintPixmap);
+    _image->setFramesPerSecond(vue_config::fps);
 }
 
 VueTapis::~VueTapis()
@@ -48,7 +49,8 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
 {
     VueElement::paint(painter, 0, 0);
 
-    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
+    //painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
+    _image->render(painter);
 }
 
 Tapis* VueTapis::tapisAssocie()
