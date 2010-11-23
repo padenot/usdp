@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!DOCTYPE config SYSTEM "sgbag-schema.dtd">
 <!--
  * Configuration complexe de l'aéroport
  * 2 tapis, 2 tobogans.
