@@ -2,10 +2,14 @@
 #define VUEBAGAGE_H
 
 #include <QGraphicsItem>
+#include <QGraphicsSvgItem>
+#include <QtSvg/QSvgRenderer>
+
 #include <QPainter>
 #include <QRectF>
-#include <QtSvg/QSvgRenderer>
+
 #include <QFile>
+
 #include "vueelement.h"
 
 #include "src/noyau/Bagage.h"
@@ -24,7 +28,8 @@ protected:
 
 private:
     int _etat;
-    QSvgRenderer *_image;
+    static QSvgRenderer *_renderer;
+    QGraphicsSvgItem *_image;
     Bagage &_bagage;
 };
 

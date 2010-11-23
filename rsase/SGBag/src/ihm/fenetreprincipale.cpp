@@ -20,6 +20,7 @@
 #include "vuetroncon.h"
 #include "vuevol.h"
 #include "vueparametreschariot.h"
+#include "vueparametrestoboggan.h"
 
 #include "src/noyau/XmlConfigFactory.h"
 
@@ -45,18 +46,23 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
     connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
+
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
     // TODO : enlever ça, ça ne sert qu'à Etienne ?
     scene->setBackgroundBrush(Qt::white);
 
-    ui->vue->setRenderHint(QPainter::Antialiasing);
+    ui->vue->setRenderHints( QPainter::Antialiasing |
+                             QPainter::TextAntialiasing |
+                             QPainter::SmoothPixmapTransform |
+                             QPainter::HighQualityAntialiasing);
     ui->vue->setCacheMode(QGraphicsView::CacheNone);
     ui->vue->setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     ui->vue->setDragMode(QGraphicsView::ScrollHandDrag);
     ui->vue->setScene(scene);
     ui->vue->setAlignment(Qt::AlignCenter);
+
 
     connect(ui->volAjouterToolButton, SIGNAL(clicked()),this,SLOT(ajouterVol()));
     connect(ui->volAssocierButton, SIGNAL(clicked()), this, SLOT(associerVolToboggan()));
@@ -137,6 +143,8 @@ void FenetrePrincipale::changementRatio(int valeur)
         ui->vue->scale(ratio, ratio);
 
         ui->ratio->setText(QString::number(ratioActuel)+"x");
+
+        scene->update();
 
         //mapToScene(ui->vue->rect())
     }
@@ -242,13 +250,15 @@ void FenetrePrincipale::supprimerVol()
         if( ! listIndex.empty())
         {
             // On cherche si ce vol a des bagages en attente.
+            // On sauvegarde l'adresse du vol.
+            Vol* vol = prototype->vol(listIndex.at(0).row());
             if(prototype->retirerVol(listIndex.at(0).row()))
             {
                 QList<QGraphicsItem*> list =  scene->items();
                 foreach(QGraphicsItem* item, list)
                 {
                     VueVol* vueVol = dynamic_cast<VueVol*>(item);
-                    if(vueVol != 0)
+                    if(vueVol != 0 && vueVol->volAssocie() == vol)
                         scene->removeItem(vueVol);
                 }
             }
@@ -257,6 +267,12 @@ void FenetrePrincipale::supprimerVol()
         }
     }
 }
+
+int FenetrePrincipale::nombreVols()
+{
+    return prototype->modelVols()->rowCount(QModelIndex());
+}
+
 
 void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 {
@@ -405,6 +421,13 @@ void FenetrePrincipale::changementSelection()
             selectionBagage(*vueBagage);
             return;
         }
+
+        VueTroncon* vueTroncon = dynamic_cast<VueTroncon*>(selectedItems.first());
+        if(vueTroncon != 0)
+        {
+            selectionTroncon(*vueTroncon);
+            return;
+        }
     }
 }
 
@@ -429,7 +452,11 @@ void FenetrePrincipale::selectionToboggan(VueToboggan& vueToboggan)
         annulerAssociation();
         ui->statusBar->showMessage(trUtf8("Toboggan associé"), 2000);
     }
+
     // TODO : autres états + paramètres
+    _vueParametres = new VueParametresToboggan(vueToboggan.toboggan(), this);
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 void FenetrePrincipale::selectionVol(VueVol& vueVol)
@@ -439,15 +466,40 @@ void FenetrePrincipale::selectionVol(VueVol& vueVol)
         finAjoutBagage(vueVol);
     }
     // TODO : autres états + paramètres
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 
 void FenetrePrincipale::selectionTapis(VueTapis& vueTapis)
 {
-    // TODO
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
 
 void FenetrePrincipale::selectionBagage(VueBagage& vueBagage)
 {
-    // TODO
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }
+
+void FenetrePrincipale::selectionTroncon(VueTroncon&)
+{
+    vueParametresDefaut();
+    ui->layoutParametres->addWidget(_vueParametres);
+    ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
+}
+
+void FenetrePrincipale::vueParametresDefaut()
+{
+    _vueParametres = new QLabel(trUtf8("Pas de paramètres pour cet objet"), this);
+}
+
+void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)
+{
+    ui->statusBar->showMessage(message, ms);
+}
+

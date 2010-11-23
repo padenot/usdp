@@ -1,34 +1,28 @@
 #include "src/ihm/vuechariot.h"
 #include "src/ihm/vueconfig.h"
 
+#include <QGraphicsSvgItem>
 #include <QtSvg/QSvgRenderer>
+
+#include <sys/time.h>
+#include <unistd.h>
 
 using namespace vue_config::chariot;
 
+QSvgRenderer *VueChariot::_renderer = new QSvgRenderer(etatNormal);
+
 VueChariot::VueChariot(FenetrePrincipale& fenetrePrincipale, Chariot &chariot):
         VueElement(fenetrePrincipale,rect),
-        _image(new QSvgRenderer(etatNormal)),
-        _chariot(chariot),
-        _pixmap(200, 200),
-        _paintPixmap(&_pixmap)
+        _image(new QGraphicsSvgItem()),
+        _chariot(chariot)
 {
+    _image->setSharedRenderer(_renderer);
+
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
     setZValue(zIndex);
     setPos(chariot.position());
-
-    _image->render(&_paintPixmap);
-
-    /* Affichage de l'id du chariot
-       Valable avec les nouveaux rendus.*/
-
-    _paintPixmap.setFont (font);
-    QTransform matriceActuelle = _paintPixmap.transform();
-    QTransform matriceTexte;
-    matriceTexte.translate(dxTexte,dyTexte);
-    matriceTexte.rotate(rotationTexte);
-    _paintPixmap.setTransform(matriceTexte);
-    _paintPixmap.setPen(couleurTexte);
-    _paintPixmap.drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_chariot.id()));
-    _paintPixmap.setTransform(matriceActuelle);//*/
 }
 
 void VueChariot::advance(int pas)
@@ -42,9 +36,29 @@ void VueChariot::advance(int pas)
 
 void VueChariot::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    timeval val1;
+    timeval val2;
+
     VueElement::paint(painter, 0, 0);
 
-    painter->drawPixmap(rect, _pixmap, QRectF(0, 0, 200, 200));
+    gettimeofday(&val1, 0);
+
+        _image->renderer()->render(painter, rect);
+
+        /* Affichage de l'id du chariot
+           Valable avec les nouveaux rendus.
+
+        painter->setFont (font);
+        QTransform matriceActuelle = _paintPixmap.transform();
+        QTransform matriceTexte;
+        matriceTexte.translate(dxTexte,dyTexte);
+        matriceTexte.rotate(rotationTexte);
+        painter->setTransform(matriceTexte);
+        painter->setPen(couleurTexte);
+        painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_chariot.id()));
+        painter->setTransform(matriceActuelle);*/
+
+    gettimeofday(&val2, 0);
 }
 
 Chariot& VueChariot::chariot()

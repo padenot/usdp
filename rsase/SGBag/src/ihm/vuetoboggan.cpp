@@ -8,19 +8,23 @@
 
 using namespace vue_config::toboggan;
 
+QSvgRenderer *VueToboggan::_renderer = new QSvgRenderer(etatNormal);
+
 VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &toboggan):
         VueElement(fenetrePrincipale),
-        _image(new QSvgRenderer(etatNormal)),
-        _toboggan(toboggan),
-        _pixmap(200, 200),
-        _paintPixmap(&_pixmap)
+        _image(new QGraphicsSvgItem()),
+        _toboggan(toboggan)
 {
+    _image->setSharedRenderer(_renderer);
+
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
     setZValue(zIndex);
     definirCoordonnees(_toboggan.position(),_toboggan.pointConnexion(),
                        largeur,-vue_config::chariot::largeur/2);
 
-    //_image->render(&_paintPixmap);
-    _image->setFramesPerSecond(vue_config::fps);
+    _image->renderer()->setFramesPerSecond(30);
 }
 
 void VueToboggan::associerVol(Vol* vol)
@@ -45,6 +49,11 @@ void VueToboggan::advance(int pas)
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     VueElement::paint(painter, 0, 0);
-    painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
-    //_image->render(painter);
+    //painter->drawPixmap(_rect, _pixmap, QRectF(0, 0, 200, 200));
+    _image->renderer()->render(painter, _rect);
+}
+
+Toboggan& VueToboggan::toboggan() const
+{
+    return _toboggan;
 }

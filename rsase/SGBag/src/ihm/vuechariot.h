@@ -1,11 +1,14 @@
 #ifndef VUECHARIOT_H
 #define VUECHARIOT_H
 
+#include <QFile>
+
 #include <QGraphicsItem>
+#include <QGraphicsSvgItem>
+#include <QtSvg/QSvgRenderer>
+
 #include <QPainter>
 #include <QRectF>
-#include <QtSvg/QSvgRenderer>
-#include <QFile>
 
 #include "vueelement.h"
 #include "src/noyau/Chariot.h"
@@ -24,7 +27,8 @@ protected:
 
 private:
     int _etat;
-    QSvgRenderer *_image;
+    static QSvgRenderer *_renderer;
+    QGraphicsSvgItem *_image;
     Chariot &_chariot;
 
     QPixmap _pixmap;

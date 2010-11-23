@@ -183,6 +183,8 @@ void StrategiePilotage::changerTroncon(Troncon* nouveauTroncon)
 #endif
         _chariot.arreter();
     }
+
+    pilotageEnChemin();
 }
 
 void StrategiePilotage::preparerChangementTroncon(Troncon* nouveauTroncon)

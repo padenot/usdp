@@ -14,7 +14,7 @@ DEPENDPATH += src ui
 QMAKE_CXXFLAGS += -Wall -Wextra
 
  CONFIG(debug) {
-     QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
+#     QMAKE_CXXFLAGS += -DDEBUG_ACHEMINEMENT
  }
 
 SOURCES += ihm/main.cpp\
@@ -42,7 +42,8 @@ SOURCES += ihm/main.cpp\
     src/noyau/StrategiePilotageAuto.cpp \
     src/noyau/StrategiePilotageManuel.cpp \
     src/noyau/modelvols.cpp \
-    src/ihm/vueparametreschariot.cpp
+    src/ihm/vueparametreschariot.cpp \
+    src/ihm/vueparametrestoboggan.cpp
 HEADERS  += ihm/fenetreprincipale.h \
     ihm/vuebagage.h \
     noyau/Chariot.h \
@@ -70,11 +71,13 @@ HEADERS  += ihm/fenetreprincipale.h \
     src/noyau/StrategiePilotageManuel.h \
     src/noyau/modelvols.h \
     src/ihm/vueparametreschariot.h \
-    src/noyau/Direction.h
+    src/noyau/Direction.h \
+    src/ihm/vueparametrestoboggan.h
 FORMS    += fenetreprincipale.ui \
     ajouterVol.ui \
     ui/vueparametreschariot.ui \
-    ui/about.ui
+    ui/about.ui \
+    ui/vueparametrestoboggan.ui
 
 
 RESOURCES += \

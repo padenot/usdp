@@ -1,11 +1,15 @@
 #ifndef VUETOBOGGAN_H
 #define VUETOBOGGAN_H
 
+#include <QFile>
+
+
 #include <QGraphicsItem>
+#include <QGraphicsSvgItem>
+#include <QtSvg/QSvgRenderer>
+
 #include <QPainter>
 #include <QRectF>
-#include <QtSvg/QSvgRenderer>
-#include <QFile>
 
 #include "src/noyau/Toboggan.h"
 #include "vueelement.h"
@@ -17,16 +21,15 @@ public:
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void associerVol(Vol* vol);
+    Toboggan& toboggan() const;
 protected:
     void advance(int step);
 
 private:
     int _etat;
-    QSvgRenderer *_image;
+    static QSvgRenderer *_renderer;
+    QGraphicsSvgItem *_image;
     Toboggan &_toboggan;
-
-    QPixmap _pixmap;
-    QPainter _paintPixmap;
 };
 
 #endif // VUETOBOGGAN_H

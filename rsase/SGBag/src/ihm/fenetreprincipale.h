@@ -19,6 +19,7 @@ class VueToboggan;
 class VueChariot;
 class VueTapis;
 class VueParametresChariot;
+class VueTroncon;
 
 namespace Ui {
     class FenetrePrincipale;
@@ -37,8 +38,11 @@ class FenetrePrincipale : public QMainWindow
         ~FenetrePrincipale();
 
         void extraireVuesCanevas(const XmlConfigFactory::IndexTypesElements &elements);
+        void messageBarreDeStatus(const QString& message, int ms);
+
 
         void ajoutBagage(VueTapis& tapis);
+        int nombreVols();
 
         typedef QVector<QGraphicsItem*> IndexVues;
 
@@ -65,7 +69,6 @@ class FenetrePrincipale : public QMainWindow
         void ajouterVol();
         void supprimerVol();
 
-        // TODO : supprimer vol
         void associerVolToboggan();
         void annulerAssociation();
 
@@ -93,6 +96,8 @@ class FenetrePrincipale : public QMainWindow
         void selectionVol(VueVol& vueVol);
         void selectionTapis(VueTapis& vueTapis);
         void selectionBagage(VueBagage& vueBagage);
+        void selectionTroncon(VueTroncon&);
+        void vueParametresDefaut();
 
         Ui::FenetrePrincipale* ui;
         QGraphicsScene* scene;

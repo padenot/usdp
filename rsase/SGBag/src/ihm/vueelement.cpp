@@ -57,7 +57,6 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
             _contextMenu.addActions(_contextMenuActionsList);
 
         // On affiche
-        // TODO il faut peut-être faire une conversion vers la "global pos"
         _contextMenu.exec(event->screenPos());
     }
 }
@@ -70,10 +69,7 @@ void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
         painter->setBrush(brushSelection);
         painter->setPen(penSelection);
         painter->setOpacity(opacite);
-        QRectF rect = boundingRect();
-        rect.setTopLeft(rect.topLeft() - QPoint(marge,marge));
-        rect.setBottomRight(rect.bottomRight() + QPoint(marge,marge));
-        painter->drawRoundedRect(rect,arrondis,arrondis);
+        painter->drawRoundedRect(boundingRect(),arrondis,arrondis);
         painter->setOpacity(1);
     }
 }

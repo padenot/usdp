@@ -78,11 +78,7 @@ class Troncon : public Element
         //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
         Noeud * _noeudFin;
 
-        //@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bOJUIPG5Ed-XFOLnxrkHLA"
-        //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-        //unsigned long longueur;
-
-        bool _estHorsService;
+    bool _estHorsService;
 };  //end class Troncon
 
 #endif
