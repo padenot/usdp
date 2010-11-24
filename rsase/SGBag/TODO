@@ -3,15 +3,16 @@ Fait ? MAXIME : - Implémenter l'ajustement des rayons de proximité des straté
 
 
 IHM :
-YOANN : - Résoudre le bug du chariot bloqué lorsqu'il démarre en manuel après un tapis (sans bagage)
-YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel il était arrêté est réparé
+FAIT : YOANN : - Résoudre le bug du chariot bloqué lorsqu'il démarre en manuel après un tapis (sans bagage)
+FAIT : YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel il était arrêté est réparé
 - Résoudre le bug du chariot bloqué sur un noeud en vitesse 1000%
 FAIT : - Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
 - Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
 - Idem pour l'association vol-toboggan
 FAIT je crois : - Résoudre les problèmes de localisation (accents)
 PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
-Bug : Blocage sur le premier noeud dans le circuit simple
+FAIT ? Bug : Blocage sur le premier noeud dans le circuit simple
+- Nettoyer tous les TODO
 
 - TESTER
 - TESTER
@@ -27,6 +28,8 @@ Commencé ? TOUT LE MONDE : - Commenter
 - METTRE DES DESTRUCTEURS (virtuels)
 - Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
 - Ajouter DELAI_ATTENTE_BLOCAGE et _tempsDepuisDerniereTentativeDeblocage aux modèles UML + param "dt" de "piloter" et "pilotageNoeudAtteint"
+- Vérifier dans le modèle de classe la justesse des déclarations de méthodes concernant l'ajout (aléatoire) de bagages
+- Dans StrategiePilotageManuel, Remplacer la surcharge de pilotageNoeudAtteint par celle de pilotage 
 
 BONUS :
 - Mieux utiliser la statusbar (plus souvent)

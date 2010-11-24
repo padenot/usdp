@@ -28,7 +28,7 @@ class StrategiePilotage : public QObject
          * @param[in] dt Durée écoulée depuis le dernier appel de "piloter"
          * @return La direction que doit suivre le chariot
          */
-        QPointF piloter (double dt, Bagage* bagageTransporte);
+        virtual QPointF piloter (double dt, Bagage* bagageTransporte);
 
     protected slots :
         virtual void mettreAJourChemin();

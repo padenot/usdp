@@ -13,7 +13,7 @@ class StrategiePilotageManuel : public StrategiePilotage
 
     protected :
         virtual void calculerNouveauChemin();
-        virtual void pilotageNoeudAtteint(double dt);
+        virtual QPointF piloter (double dt, Bagage* bagageTransporte);
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H
