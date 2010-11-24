@@ -3,9 +3,7 @@ CORE :
 IHM :
 - Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
 - Idem pour l'association vol-toboggan
-PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
 - Nettoyer tous les TODO
-- Diagramme de séquences de TopHorloge/chariotmaj : problème de méthode "freiner" inaccessible
 
 - TESTER
 - TESTER
@@ -17,12 +15,7 @@ PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car l
 
 
 INDISPENSABLE, mais plus tard :
-Commencé ? TOUT LE MONDE : - Commenter
-- METTRE DES DESTRUCTEURS (virtuels)
-- Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
 - Ajouter DELAI_ATTENTE_BLOCAGE et _tempsDepuisDerniereTentativeDeblocage aux modèles UML + param "dt" de "piloter" et "pilotageNoeudAtteint"
-- Vérifier dans le modèle de classe la justesse des déclarations de méthodes concernant l'ajout (aléatoire) de bagages
-- Dans StrategiePilotageManuel, Remplacer la surcharge de pilotageNoeudAtteint par celle de pilotage 
 
 BONUS :
 - Lors de la sélection d'un bagage, entourer de bleu le vol associé
