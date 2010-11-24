@@ -21,6 +21,7 @@
 #include "vuevol.h"
 #include "vueparametreschariot.h"
 #include "vueparametrestoboggan.h"
+#include "vueparametrestapis.h"
 
 #include "src/noyau/XmlConfigFactory.h"
 
@@ -470,7 +471,7 @@ void FenetrePrincipale::selectionVol(VueVol& vueVol)
 
 void FenetrePrincipale::selectionTapis(VueTapis& vueTapis)
 {
-    vueParametresDefaut();
+    _vueParametres = new VueParametresTapis(*(vueTapis.tapisAssocie()), this);
     ui->layoutParametres->addWidget(_vueParametres);
     ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
 }

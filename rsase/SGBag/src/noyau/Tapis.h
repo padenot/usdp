@@ -96,6 +96,9 @@ class Tapis : public ElementActif
 
         QPointF pointConnexion() const;
 
+    public slots:
+        virtual void modifierVitesseMax(double nouvelleVitesseMax);
+
     protected:
 
         /**
