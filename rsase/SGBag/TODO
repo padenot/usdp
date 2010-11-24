@@ -1,18 +1,11 @@
 CORE :
-Fait ? MAXIME : - Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
-
 
 IHM :
-FAIT : YOANN : - Résoudre le bug du chariot bloqué lorsqu'il démarre en manuel après un tapis (sans bagage)
-FAIT : YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel il était arrêté est réparé
-- Résoudre le bug du chariot bloqué sur un noeud en vitesse 1000%
-FAIT : - Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
 - Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
 - Idem pour l'association vol-toboggan
-FAIT je crois : - Résoudre les problèmes de localisation (accents)
 PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
-FAIT ? Bug : Blocage sur le premier noeud dans le circuit simple
 - Nettoyer tous les TODO
+- Diagramme de séquences de TopHorloge/chariotmaj : problème de méthode "freiner" inaccessible
 
 - TESTER
 - TESTER
@@ -32,7 +25,6 @@ FAIT : - Vérifier dans le modèle de classe la justesse des déclarations de m�
 - Dans StrategiePilotageManuel, Remplacer la surcharge de pilotageNoeudAtteint par celle de pilotage 
 
 BONUS :
-- Mieux utiliser la statusbar (plus souvent)
 - Lors de la sélection d'un bagage, entourer de bleu le vol associé
 - Lors de la sélection d'un chariot, entourer de bleu la destination
 - Amélioration de la gestion des collisions (zone de sécurité, cf. sujet)

@@ -244,7 +244,7 @@ namespace vue_config
         /**
          * La largeur d'un avion.
          */
-        const double largeur = longueur*0.77;
+        const double largeur = longueur*0.5;//0.77;
         /**
          * L'écart avec le toboggan d'un avion.
          */
