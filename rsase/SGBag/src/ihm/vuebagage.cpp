@@ -37,11 +37,8 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
     renderer()->render(painter, boundingRect());
 
-
-    painter->drawRect(boundingRect());
-
     /* Affichage de l'id du bagage
-       Valable avec les nouveaux rendus. */
+       Valable avec les nouveaux rendus.
 
     painter->setFont (font);
     QTransform matriceActuelle = painter->transform();
@@ -52,7 +49,7 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->setTransform(matriceTexte);
     painter->setPen(couleurTexte);
     painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_bagage.id()));
-    painter->setTransform(matriceActuelle);
+    painter->setTransform(matriceActuelle);//*/
 }
 
 Bagage* VueBagage::bagageAssocie()
