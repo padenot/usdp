@@ -11,11 +11,15 @@
 
 using namespace vue_config::vol;
 
+QSvgRenderer *VueVol::_renderer = new QSvgRenderer(etatNormal);
+
 VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
         VueCanevas(fenetrePrincipale),
-        _image(new QSvgRenderer(etatNormal)),
+        //_image(new QSvgRenderer(etatNormal)),
         _vol (vol)
 {
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
     //TODO : utiliser VueCanevas::definirCoordonnees
     QVector2D directionToboggan(_vol.tobogganAssocie()->position() -
                                 _vol.tobogganAssocie()->pointConnexion());
@@ -42,7 +46,7 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
 void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
-    _image->render(painter, _rect);
+    renderer()->render(painter, _rect);
 }
 
 Vol* VueVol::volAssocie()

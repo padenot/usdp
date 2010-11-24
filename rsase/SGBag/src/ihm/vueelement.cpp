@@ -49,7 +49,7 @@ void VueElement::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
 }
 
-void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void VueElement::paint(QPainter *painter, const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
     if(isSelected())
     {

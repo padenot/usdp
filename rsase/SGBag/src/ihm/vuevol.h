@@ -41,7 +41,12 @@ private:
     /**
      * L'image associé à la vue de l'objet vol
      */
-    QSvgRenderer *_image;
+    //QSvgRenderer *_image;
+
+    /**
+     * attribut qui permet de rendre le fichier svg associé à la vue
+     */
+    static QSvgRenderer *_renderer;
 
     /**
      * L'objet Vol associé à la vue Vol

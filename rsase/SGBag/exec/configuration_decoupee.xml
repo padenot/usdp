@@ -17,23 +17,23 @@
 		<id>2</id>
 		<x>10</x>
 		<y>200</y>
-		<suivantGauche>4</suivantGauche>
+		<suivantGauche>4244</suivantGauche>
 	</noeud>
 	<noeud>
 		<id>3</id>
 		<x>10</x>
 		<y>300</y>
-		<suivantGauche>5</suivantGauche>
+		<suivantGauche>4254</suivantGauche>
 	</noeud>
 	<troncon>
 		<id>4</id>
 		<noeudDebut>2</noeudDebut>
-		<noeudFin>1</noeudFin>
+		<noeudFin>4243</noeudFin>
 	</troncon>
 	<troncon>
 		<id>5</id>
 		<noeudDebut>3</noeudDebut>
-		<noeudFin>2</noeudFin>
+		<noeudFin>4253</noeudFin>
 	</troncon>
 	<troncon>
 		<id>72</id>
@@ -79,7 +79,7 @@
 		<id>12</id>
 		<x>40</x>
 		<y>90</y>
-		<suivantGauche>16</suivantGauche>
+		<suivantGauche>42344</suivantGauche>
 		<suivantDroit>34</suivantDroit>
 	</noeud>
 	<troncon>
@@ -169,7 +169,7 @@
 		<id>27</id>
 		<x>150</x>
 		<y>210</y>
-		<suivantGauche>29</suivantGauche>
+		<suivantGauche>42304</suivantGauche>
 		<suivantDroit>30</suivantDroit>
 	</noeud>
 	<troncon>
@@ -180,12 +180,12 @@
 	<troncon>
 		<id>29</id>
 		<noeudDebut>27</noeudDebut>
-		<noeudFin>7</noeudFin>
+		<noeudFin>42293</noeudFin>
 	</troncon>
 	<troncon>
 		<id>30</id>
 		<noeudDebut>27</noeudDebut>
-		<noeudFin>15</noeudFin>
+		<noeudFin>42303</noeudFin>
 	</troncon>
 	<!-- Colone 10 x=160 -->
 	<noeud>
@@ -210,7 +210,7 @@
 	<troncon>
 		<id>34</id>
 		<noeudDebut>12</noeudDebut>
-		<noeudFin>31</noeudFin>
+		<noeudFin>42343</noeudFin>
 	</troncon>
 	<troncon>
 		<id>35</id>
@@ -222,7 +222,7 @@
 		<id>36</id>
 		<x>170</x>
 		<y>100</y>
-		<suivantGauche>39</suivantGauche>
+		<suivantGauche>42394</suivantGauche>
 	</noeud>
 	<noeud>
 		<id>37</id>
@@ -238,7 +238,7 @@
 	<troncon>
 		<id>39</id>
 		<noeudDebut>36</noeudDebut>
-		<noeudFin>37</noeudFin>
+		<noeudFin>42393</noeudFin>
 	</troncon>
 	<troncon>
 		<id>40</id>
@@ -258,7 +258,7 @@
 		<id>42</id>
 		<x>180</x>
 		<y>310</y>
-		<suivantGauche>44</suivantGauche>
+		<suivantGauche>42444</suivantGauche>
 	</noeud>
 	<troncon>
 		<id>43</id>
@@ -268,7 +268,7 @@
 	<troncon>
 		<id>44</id>
 		<noeudDebut>42</noeudDebut>
-		<noeudFin>32</noeudFin>
+		<noeudFin>42443</noeudFin>
 	</troncon>
 	<!-- Colone 13 x=190 -->
 	<noeud>
@@ -381,7 +381,7 @@
 		<id>63</id>
 		<x>310</x>
 		<y>210</y>
-		<suivantGauche>65</suivantGauche>
+		<suivantGauche>42664</suivantGauche>
 		<suivantDroit>66</suivantDroit>
 	</noeud>
 	<troncon>
@@ -393,19 +393,19 @@
 		<id>65</id>
 		<noeudDebut>63</noeudDebut>
 		<!-- Jointure circuit A -->
-		<noeudFin>32</noeudFin>
+		<noeudFin>42653</noeudFin>
 	</troncon>
 	<troncon>
 		<id>66</id>
 		<noeudDebut>63</noeudDebut>
-		<noeudFin>50</noeudFin>
+		<noeudFin>42663</noeudFin>
 	</troncon>
 	<!-- Colone 21 x=320 -->
 	<noeud>
 		<id>67</id>
 		<x>320</x>
 		<y>100</y>
-		<suivantGauche>70</suivantGauche>
+		<suivantGauche>42704</suivantGauche>
 	</noeud>
 	<noeud>
 		<id>68</id>
@@ -421,7 +421,7 @@
 	<troncon>
 		<id>70</id>
 		<noeudDebut>67</noeudDebut>
-		<noeudFin>68</noeudFin>
+		<noeudFin>42703</noeudFin>
 	</troncon>
 	<troncon>
 		<id>71</id>
@@ -505,4 +505,4 @@
 		<pos>9</pos>
 		<tapisAssocie>103</tapisAssocie>
 	</chariot>
-</config>
+<noeud><id>42341</id><x>100</x><y>90</y><suivanteGauche>42342</suivanteGauche></noeud><troncon><id>42342</id><noeudDebut>42341</noeudDebut><noeudFin>42423425</noeudFin></troncon><noeud><id>42343</id><x>70</x><y>90</y><suivanteGauche>42344</suivanteGauche></noeud><troncon><id>42344</id><noeudDebut>42343</noeudDebut><noeudFin>42341</noeudFin></troncon><noeud><id>42423425</id><x>130</x><y>90</y><suivanteGauche>42423426</suivanteGauche></noeud><troncon><id>42423426</id><noeudDebut>42423425</noeudDebut><noeudFin>31</noeudFin></troncon><noeud><id>4241</id><x>10</x><y>150</y><suivanteGauche>4242</suivanteGauche></noeud><troncon><id>4242</id><noeudDebut>4241</noeudDebut><noeudFin>4242425</noeudFin></troncon><noeud><id>4243</id><x>10</x><y>175</y><suivanteGauche>4244</suivanteGauche></noeud><troncon><id>4244</id><noeudDebut>4243</noeudDebut><noeudFin>4241</noeudFin></troncon><noeud><id>4242425</id><x>10</x><y>125</y><suivanteGauche>4242426</suivanteGauche></noeud><troncon><id>4242426</id><noeudDebut>4242425</noeudDebut><noeudFin>1</noeudFin></troncon><noeud><id>4251</id><x>10</x><y>250</y><suivanteGauche>4252</suivanteGauche></noeud><troncon><id>4252</id><noeudDebut>4251</noeudDebut><noeudFin>4242525</noeudFin></troncon><noeud><id>4253</id><x>10</x><y>275</y><suivanteGauche>4254</suivanteGauche></noeud><troncon><id>4254</id><noeudDebut>4253</noeudDebut><noeudFin>4251</noeudFin></troncon><noeud><id>4242525</id><x>10</x><y>225</y><suivanteGauche>4242526</suivanteGauche></noeud><troncon><id>4242526</id><noeudDebut>4242525</noeudDebut><noeudFin>2</noeudFin></troncon><noeud><id>42291</id><x>85</x><y>210</y><suivanteGauche>42292</suivanteGauche></noeud><troncon><id>42292</id><noeudDebut>42291</noeudDebut><noeudFin>42422925</noeudFin></troncon><noeud><id>42293</id><x>117.5</x><y>210</y><suivanteGauche>42294</suivanteGauche></noeud><troncon><id>42294</id><noeudDebut>42293</noeudDebut><noeudFin>42291</noeudFin></troncon><noeud><id>42422925</id><x>52.5</x><y>210</y><suivanteGauche>42422926</suivanteGauche></noeud><troncon><id>42422926</id><noeudDebut>42422925</noeudDebut><noeudFin>7</noeudFin></troncon><noeud><id>42651</id><x>235</x><y>210</y><suivanteGauche>42652</suivanteGauche></noeud><troncon><id>42652</id><noeudDebut>42651</noeudDebut><noeudFin>42426525</noeudFin></troncon><noeud><id>42653</id><x>272.5</x><y>210</y><suivanteGauche>42654</suivanteGauche></noeud><troncon><id>42654</id><noeudDebut>42653</noeudDebut><noeudFin>42651</noeudFin></troncon><noeud><id>42426525</id><x>197.5</x><y>210</y><suivanteGauche>42426526</suivanteGauche></noeud><troncon><id>42426526</id><noeudDebut>42426525</noeudDebut><noeudFin>32</noeudFin></troncon><noeud><id>42701</id><x>320</x><y>150</y><suivanteGauche>42702</suivanteGauche></noeud><troncon><id>42702</id><noeudDebut>42701</noeudDebut><noeudFin>42427025</noeudFin></troncon><noeud><id>42703</id><x>320</x><y>125</y><suivanteGauche>42704</suivanteGauche></noeud><troncon><id>42704</id><noeudDebut>42703</noeudDebut><noeudFin>42701</noeudFin></troncon><noeud><id>42427025</id><x>320</x><y>175</y><suivanteGauche>42427026</suivanteGauche></noeud><troncon><id>42427026</id><noeudDebut>42427025</noeudDebut><noeudFin>68</noeudFin></troncon><noeud><id>42661</id><x>260</x><y>260</y><suivanteGauche>42662</suivanteGauche></noeud><troncon><id>42662</id><noeudDebut>42661</noeudDebut><noeudFin>42426625</noeudFin></troncon><noeud><id>42663</id><x>285</x><y>235</y><suivanteGauche>42664</suivanteGauche></noeud><troncon><id>42664</id><noeudDebut>42663</noeudDebut><noeudFin>42661</noeudFin></troncon><noeud><id>42426625</id><x>235</x><y>285</y><suivanteGauche>42426626</suivanteGauche></noeud><troncon><id>42426626</id><noeudDebut>42426625</noeudDebut><noeudFin>50</noeudFin></troncon><noeud><id>42441</id><x>170</x><y>260</y><suivanteGauche>42442</suivanteGauche></noeud><troncon><id>42442</id><noeudDebut>42441</noeudDebut><noeudFin>42424425</noeudFin></troncon><noeud><id>42443</id><x>175</x><y>285</y><suivanteGauche>42444</suivanteGauche></noeud><troncon><id>42444</id><noeudDebut>42443</noeudDebut><noeudFin>42441</noeudFin></troncon><noeud><id>42424425</id><x>165</x><y>235</y><suivanteGauche>42424426</suivanteGauche></noeud><troncon><id>42424426</id><noeudDebut>42424425</noeudDebut><noeudFin>32</noeudFin></troncon><noeud><id>42391</id><x>170</x><y>150</y><suivanteGauche>42392</suivanteGauche></noeud><troncon><id>42392</id><noeudDebut>42391</noeudDebut><noeudFin>42423925</noeudFin></troncon><noeud><id>42393</id><x>170</x><y>125</y><suivanteGauche>42394</suivanteGauche></noeud><troncon><id>42394</id><noeudDebut>42393</noeudDebut><noeudFin>42391</noeudFin></troncon><noeud><id>42423925</id><x>170</x><y>175</y><suivanteGauche>42423926</suivanteGauche></noeud><troncon><id>42423926</id><noeudDebut>42423925</noeudDebut><noeudFin>37</noeudFin></troncon><noeud><id>42301</id><x>100</x><y>260</y><suivanteGauche>42302</suivanteGauche></noeud><troncon><id>42302</id><noeudDebut>42301</noeudDebut><noeudFin>42423025</noeudFin></troncon><noeud><id>42303</id><x>125</x><y>235</y><suivanteGauche>42304</suivanteGauche></noeud><troncon><id>42304</id><noeudDebut>42303</noeudDebut><noeudFin>42301</noeudFin></troncon><noeud><id>42423025</id><x>75</x><y>285</y><suivanteGauche>42423026</suivanteGauche></noeud><troncon><id>42423026</id><noeudDebut>42423025</noeudDebut><noeudFin>15</noeudFin></troncon></config>

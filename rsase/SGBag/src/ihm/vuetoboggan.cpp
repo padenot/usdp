@@ -12,19 +12,20 @@ QSvgRenderer *VueToboggan::_renderer = new QSvgRenderer(etatNormal);
 
 VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &toboggan):
         VueElement(fenetrePrincipale),
-        _image(new QGraphicsSvgItem()),
+        //_image(new QGraphicsSvgItem()),
         _toboggan(toboggan)
 {
-    _image->setSharedRenderer(_renderer);
+    setSharedRenderer(_renderer);
 
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     setZValue(zIndex);
     definirCoordonnees(_toboggan.position(),_toboggan.pointConnexion(),
                        largeur,-vue_config::chariot::largeur/2);
 
-    _image->renderer()->setFramesPerSecond(30);
+    //_image->renderer()->setFramesPerSecond(30);
+    renderer()->setFramesPerSecond(30);
 }
 
 void VueToboggan::associerVol(Vol* vol)
@@ -48,8 +49,11 @@ void VueToboggan::advance(int pas)
 
 void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    //------------ Dessin du rectangle de selection
     VueElement::paint(painter, 0, 0);
-    _image->renderer()->render(painter, boundingRect());
+
+    //------------ Rendu du Svg
+    renderer()->render(painter, boundingRect());
 }
 
 Toboggan& VueToboggan::toboggan() const
