@@ -70,9 +70,11 @@ function divide($xml, $troncon, $step, $newId = 1)
 	$node_y = $xml->createElement('y');
 	$node_suivant = $xml->createElement('suivanteGauche');
 
-	$node_id_val = id($troncon).$newId;
+	$node_id_val = '42'.id($troncon).$newId;
+	out("new node id : $node_id_val");
 	++$newId;
-	$troncon_id_val = id($troncon).$newId;
+	$troncon_id_val = '42'.id($troncon).$newId;
+	out("new troncon id : $troncon_id_val");
 	++$newId;
 
 	$node_id->nodeValue = $node_id_val;
