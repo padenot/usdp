@@ -95,4 +95,5 @@ OTHER_FILES += \
     ui/images/avion.svg \
     ui/images/toboggan2.svg \
     ui/images/tapis.svg \
-    ui/images/caisse.svg
+    ui/images/caisse.svg \
+    ui/images/avion2.svg
