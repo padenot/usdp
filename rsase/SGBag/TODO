@@ -9,8 +9,9 @@ YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel 
 FAIT : - Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
 - Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
 - Idem pour l'association vol-toboggan
-- Résoudre les problèmes de localisation (accents)
+FAIT je crois : - Résoudre les problèmes de localisation (accents)
 PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
+Bug : Blocage sur le premier noeud dans le circuit simple
 
 - TESTER
 - TESTER
@@ -25,6 +26,7 @@ INDISPENSABLE, mais plus tard :
 Commencé ? TOUT LE MONDE : - Commenter
 - METTRE DES DESTRUCTEURS (virtuels)
 - Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
+- Ajouter DELAI_ATTENTE_BLOCAGE et _tempsDepuisDerniereTentativeDeblocage aux modèles UML + param "dt" de "piloter" et "pilotageNoeudAtteint"
 
 BONUS :
 - Mieux utiliser la statusbar (plus souvent)

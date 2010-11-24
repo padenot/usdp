@@ -126,3 +126,12 @@ QPointF Tapis::pointConnexion() const
 {
     return _tronconSupport->position();
 }
+
+/**
+ * Pas de variation de vitesse pour un tapis.
+ */
+void Tapis::modifierVitesseMax(double nouvelleVitesseMax)
+{
+    _vitesseMax = nouvelleVitesseMax;
+    _vitesse = _vitesseMax;
+}

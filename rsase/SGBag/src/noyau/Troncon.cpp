@@ -59,6 +59,9 @@ bool Troncon::mettreHorsService()
     if (_chariotProprietaire == 0)
     {
         _estHorsService = true;
+#ifdef DEBUG_ACHEMINEMENT
+        qDebug() << *this << "est désormais HS";
+#endif
         emit etatModifie();
         return true;
     }
@@ -73,6 +76,9 @@ void Troncon::reparer()
     if (_estHorsService)
     {
         _estHorsService = false;
+#ifdef DEBUG_ACHEMINEMENT
+        qDebug() << *this << "est désormais réparé";
+#endif
         emit etatModifie();
     }
 }

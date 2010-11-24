@@ -121,7 +121,7 @@ void Chariot::avancer(double dt, QPointF destination)
 
 void Chariot::maj(double dt)
 {
-    avancer(dt,_pilote->piloter(_bagage));
+    avancer(dt,_pilote->piloter(dt,_bagage));
 }
 
 void Chariot::accelerer()
