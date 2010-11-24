@@ -51,7 +51,6 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
-    // TODO : enlever ça, ça ne sert qu'�  Etienne ?
     scene->setBackgroundBrush(Qt::white);
 
     ui->vue->setRenderHints( QPainter::Antialiasing |
@@ -77,17 +76,14 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
 
-    // Initialisations liées au prototype
     ui->volTableView->setModel(prototype->modelVols());
     ui->speedSlider->setValue(100);
-    ui->ratioSlider->setValue(5);
+    ui->ratioSlider->setValue(1);
     ui->vitesse->setText("100%");
 }
 
 FenetrePrincipale::~FenetrePrincipale()
 {
-    // TODO : ça ne fonctionne pas.
-    // "destructionBagage" ne doit pas être déclenché ici !
     disconnect(this,SLOT(destructionBagage(QObject*)));
     delete scene;
     delete ui;
@@ -106,7 +102,7 @@ void FenetrePrincipale::changementCircuit()
     prototype = new Prototype(fileName);
     extraireVuesCanevas(prototype->elements());
 
-    // Initialisations liées au prototype
+    // Initialisations li�es au prototype
     ui->volTableView->setModel(prototype->modelVols());
     ui->speedSlider->setValue(100);
     ui->ratioSlider->setValue(1);
@@ -139,20 +135,12 @@ void FenetrePrincipale::changementRatio(int valeur)
     {
         qreal ratio = valeur;
 
-
-        ratio /= ratioActuel;
-        ratioActuel *= ratio;
-        ui->vue->scale(ratio, ratio);
-
-        /* ce que Etienne devait faire:
             ui->vue->scale(ratio/ratioActuel, ratio/ratioActuel);
-            ratioActuel = ratio;*/
+            ratioActuel = ratio;
 
         ui->ratio->setText(QString::number(ratioActuel)+"x");
 
         scene->update();
-
-        //mapToScene(ui->vue->rect())
     }
 }
 
@@ -290,8 +278,7 @@ void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 
         ajouterVueCanevas(new VueBagage(*this, *bagage));
 
-        // TODO déutf8izer ?
-        ui->statusBar->showMessage(trUtf8("Bagage ajouté"), 5000);
+        ui->statusBar->showMessage(trUtf8("Bagage ajout�"), 5000);
     }
     else
     {
@@ -311,7 +298,11 @@ void FenetrePrincipale::associerVolToboggan()
     {
         QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
-        if( ! listIndex.empty())
+        if(prototype->vol(listIndex.at(0).row())->tobogganAssocie() != 0)
+        {
+            ui->statusBar->showMessage(trUtf8("Ce vol a d�j� un toboggan associ�."), 2000);
+        }
+        else if( ! listIndex.empty())
         {
             changementEtat(SELECTIONTOBOGGAN);
             desactiverToutSaufToboggans();
@@ -452,14 +443,12 @@ void FenetrePrincipale::selectionToboggan(VueToboggan& vueToboggan)
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         vueToboggan.associerVol(prototype->vol(listIndex.at(0).row()));
         ajouterVueCanevas(new VueVol(*this, *prototype->vol(listIndex.at(0).row())));
-        // TODO : détruire la vue en même temps que le vol
-        // L'association a été faite : on rechange l'état des boutons, et on rend
+        // L'association a �t� faite : on rechange l'�tat des boutons, et on rend
         // tout selectionnable.
         annulerAssociation();
-        ui->statusBar->showMessage(trUtf8("Toboggan associé"), 2000);
+        ui->statusBar->showMessage(trUtf8("Toboggan associ�"), 2000);
     }
 
-    // TODO : autres états + paramètres
     _vueParametres = new VueParametresToboggan(vueToboggan.toboggan(), this);
     ui->layoutParametres->addWidget(_vueParametres);
     ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);
@@ -471,7 +460,6 @@ void FenetrePrincipale::selectionVol(VueVol& vueVol)
     {
         finAjoutBagage(vueVol);
     }
-    // TODO : autres états + paramètres
     vueParametresDefaut();
     ui->layoutParametres->addWidget(_vueParametres);
     ui->onglets->setCurrentIndex(INDEX_ONGLET_PARAMETRES);

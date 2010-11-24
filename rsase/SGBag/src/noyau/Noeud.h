@@ -8,6 +8,7 @@
 #include <QMap>
 #include <QVector>
 #include <QPair>
+#include <QStack>
 
 #include "Element.h"
 #include "Troncon.h"
@@ -22,6 +23,8 @@ class Noeud : public Element
     Q_OBJECT
 
     public:
+        typedef QStack<Troncon*> Chemin;
+
         Noeud(const XmlConfigFactory::IndexParamValeur& indexParamValeur);
 
         /** 
@@ -32,27 +35,31 @@ class Noeud : public Element
 
         virtual ~Noeud();
 
-        /** 
+        /**
 	 * \brief Tente de trouver le troncon offrant le plus court chemin vers la destination en partant de ce noeud.
          * \param destination: Le troncon à atteindre en une distance mdinimale. Si le pointeur est nul, le troncon
          *                     est considéré comme inaccessible.
-         * \return Le troncon optimal, ou 0 si aucun troncon n'est accessible.
+         * \return Le chemin optimal, éventuellement vide si la destination
+		 * n'est pas accessible.
          */
-        Troncon* trouverProchainTroncon(Troncon* destination);
+        Chemin trouverChemin(Troncon* destination);
 
 	/**
-	  * \brief : Cette fonction est une fonction intermédaire au calcul du plus court chemin.
+	  * \brief Cette fonction est une fonction intermédaire au calcul du plus court chemin.
 	  * Elle permet de trouver la distance avec un tronçon passé en paramètre.
-	  * \param destination : C'est le tronçons de destination. C'est à dire le tronçons sur lequel va se baser le calcul de distance.
-	  * \return : Une paire <Noeud, distance> indiquant le tronçons passé en paramètre ainsi que la distance par rapport au tronçon courrant.
+	  * \param destination Le tronçons de destination. C'est à dire le
+	  * tronçon sur lequel va se baser le calcul de distance.
+	  * \return Une paire <Chemin, distance> contenant le plus court chemin
+	  * calculé ainsi que sa longueur.
 	  */
-        QPair<Troncon*, double> calculChemin(Troncon* destination);
+        QPair<Chemin, double> calculChemin(Troncon* destination);
 
 	/**
 	  * \param direction : Direction dans laquelle la recherche du noeud doit s'effectuer.
-	  * \return Renvoie une paire <Tronçon, distance> représentant le noeud le plus proche menant dans le direction passée en paramètre.
-        */
-	Troncon* trouverProchainTroncon(Direction direction);
+	  * \return Un chemin contenant uniquement le tronçon dans la direction indiquée
+	  * juste après le noeud.
+	  */
+        Chemin trouverChemin(Direction direction);
 
     private:
         QVector<Troncon *> _tronconsSuivants;

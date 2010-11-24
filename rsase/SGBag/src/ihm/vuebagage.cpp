@@ -35,7 +35,7 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 {
     VueElement::paint(painter, 0, 0);
 
-    _image->renderer()->render(painter, rect);
+    _image->renderer()->render(painter, boundingRect());
 }
 
 Bagage* VueBagage::bagageAssocie()

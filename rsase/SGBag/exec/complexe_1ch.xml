@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!DOCTYPE config SYSTEM "sgbag-schema.dtd">
 <!--
  * Configuration complexe de l'aéroport
  * 2 tapis, 2 tobogans.
@@ -463,46 +462,5 @@
 		<pos>39</pos>
 		<tapisAssocie>101</tapisAssocie>
 	</chariot>
-	<chariot>
-		<id>202</id>
-		<pos>11</pos>
-		<tapisAssocie>101</tapisAssocie>
-	</chariot>
 	
-	<!-- B vers B -->
-	<chariot>
-		<id>203</id>
-		<pos>69</pos>
-		<tapisAssocie>103</tapisAssocie>
-	</chariot>
-	<chariot>
-		<id>204</id>
-		<pos>52</pos>
-		<tapisAssocie>103</tapisAssocie>
-	</chariot>
-	
-	<!-- B vers A -->
-	<chariot>
-		<id>205</id>
-		<pos>71</pos>
-		<tapisAssocie>101</tapisAssocie>
-	</chariot>
-	
-	<chariot>
-		<id>206</id>
-		<pos>61</pos>
-		<tapisAssocie>101</tapisAssocie>
-	</chariot>
-	
-	<!-- A vers B -->
-	<chariot>
-		<id>207</id>
-		<pos>29</pos>
-		<tapisAssocie>103</tapisAssocie>
-	</chariot>
-	<chariot>
-		<id>208</id>
-		<pos>9</pos>
-		<tapisAssocie>103</tapisAssocie>
-	</chariot>
 </config>

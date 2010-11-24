@@ -1,7 +1,6 @@
 /**
   * \file vuefenetreprincipale
   * \autor
-  * \brief Classe gérant la vue de la fenêtre principale
   */
 
 #ifndef FENETREPRINCPALE_H
@@ -33,6 +32,8 @@ namespace Ui {
 
 /**
  * @todo TODO implÃ©menter le zoom
+ * @class FenetrePrincipale 
+ * \brief Classe gérant la vue de la fenêtre principale
  */
 class FenetrePrincipale : public QMainWindow
 {

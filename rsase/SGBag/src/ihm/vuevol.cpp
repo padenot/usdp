@@ -20,7 +20,7 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
     QVector2D directionToboggan(_vol.tobogganAssocie()->position() -
                                 _vol.tobogganAssocie()->pointConnexion());
     directionToboggan.normalize();
-    QVector2D directionVol(-directionToboggan.x(),directionToboggan.y());
+    QVector2D directionVol(directionToboggan.y(),-directionToboggan.x());
     directionVol.normalize();
 
     QPointF positionDebut = _vol.tobogganAssocie()->position()
@@ -30,8 +30,7 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
 
     // TODO
     definirCoordonnees(positionDebut, positionFin,
-                       largeur,
-                       -10);
+                       largeur);
     /*setPos(_vol.tobogganAssocie()->position() +
            QVector2D(_vol.tobogganAssocie()->position()
                      - vol.tobogganAssocie()->pointConnexion())

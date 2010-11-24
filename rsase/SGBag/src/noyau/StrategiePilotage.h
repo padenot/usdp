@@ -1,24 +1,35 @@
-#ifndef STATEGIEPILOTAGE_H
-#define STATEGIEPILOTAGE_H
-
-#include <QtGlobal>
+#ifndef STRATEGIEPILOTAGE_H
+#define STRATEGIEPILOTAGE_H
+#include <QObject>
 #include <QPointF>
 #include "Direction.h"
+#include "Noeud.h"
 
 class Chariot;
 class Bagage;
 class Troncon;
 class Tapis;
 
-class StrategiePilotage
+/**
+  * @class StrategiePilotage
+  * @brief Régit les différentes stratégie de pilotage, prend les décision de marche ou d'arrêt des chariots.
+  */
+class StrategiePilotage : public QObject
 {
+    Q_OBJECT
+
     public:
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotage(const StrategiePilotage& modele);
 
-        QPointF piloter (Direction directionConseillee, Bagage* bagageTransporte);
+        QPointF piloter (Bagage* bagageTransporte);
+
+    protected slots :
+        virtual void mettreAJourChemin();
 
     protected:
+        virtual void calculerNouveauChemin() = 0;
+
         /** Tente de faire passer le chariot sur un autre troncon.
          * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
          *                           on considère que l'arrêt est nécessaire.
@@ -31,33 +42,31 @@ class StrategiePilotage
          */
         void preparerChangementTroncon(Troncon* nouveauTroncon);
 
-        /** Pilote le chariot lorsqu'il est en chemin vers un tapis ou un toboggan.
+        /** Pilote le chariot lorsqu'il vient de recevoir un bagage.
          */
-        virtual void pilotageEnChemin();
+        virtual void pilotageBagageRecu(Bagage* bagageRecu);
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] bagage TODO
-         * @param TODO
+         * @param[in] directionConseillee : diretion dans laquelle le bagage doit être piloté.
+	 * @param[in] bagage : Bagage à piloter
          */
-        virtual void pilotageNoeudProche(
-                Direction directionConseillee, Bagage* bagage) = 0;
+        virtual void pilotageNoeudProche();
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
          * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] bagage TODO
+         * @param[in] bagage 
          * @param TODO
          */
-        virtual void pilotageNoeudAtteint(
-                Direction directionConseillee, Bagage* bagage) = 0;
+        virtual void pilotageNoeudAtteint();
 
         /** Pilote le chariot lorsqu'il est proche du toboggan objectif.
          */
-        virtual void pilotageTobogganProche(Bagage* bagage);
+        virtual void pilotageTobogganProche();
 
         /** Pilote le chariot lorsqu'il atteint le toboggan objectif.
          */
-        virtual void pilotageTobogganAtteint(Bagage* bagage);
+        virtual void pilotageTobogganAtteint();
 
         /** Pilote le chariot lorsqu'il est proche du tapis objectif.
          */
@@ -69,8 +78,8 @@ class StrategiePilotage
 
         enum Situation
         {
-                //ARRET,
                 EN_CHEMIN,
+                BAGAGE_RECU,
                 NOEUD_PROCHE,
                 NOEUD_ATTEINT,
                 TAPIS_PROCHE,
@@ -83,17 +92,22 @@ class StrategiePilotage
          * Permet de déterminer les actions à effectuer lors d'une demande
          * de pilotage.
          */
-        Situation situation(Bagage* bagage) const;
+        Situation situation(Bagage* bagageTransporte) const;
 
         Chariot& _chariot;
         /// Chariot piloté.
+
+        Bagage * _bagage;
 
         Troncon * _tronconActuel;
         /// Troncon sur lequel se déplace actuellement le chariot.
         /// Ne doit jamais être nul.
         Troncon * _tronconReserveSuivant;
-        /// Troncon sur lequel se déplace actuellement le chariot.
-        /// Ne doit jamais être nul.
+        /// Prochain tronçon sur lequel ira le chariot,
+        /// déjà réservé.
+
+        Noeud::Chemin _chemin;
+
         Tapis * _tapisAssocie;
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
@@ -113,4 +127,4 @@ class StrategiePilotage
 
 };
 
-#endif // STATEGIEPILOTAGE_H
+#endif // STRATEGIEPILOTAGE_H

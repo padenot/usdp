@@ -9,47 +9,24 @@ StrategiePilotageAuto::StrategiePilotageAuto(Chariot& chariot, Troncon* tronconA
                                              Tapis* tapisAssocie) :
     StrategiePilotage(chariot,tronconActuel,tapisAssocie)
 {
+    mettreAJourChemin();
 }
 
 StrategiePilotageAuto::StrategiePilotageAuto(const StrategiePilotage& modele) :
         StrategiePilotage(modele)
 {
+    mettreAJourChemin();
 }
 
-void StrategiePilotageAuto::pilotageNoeudProche(Direction /*directionConseillee*/, Bagage* bagage)
+void StrategiePilotageAuto::calculerNouveauChemin()
 {
-    Troncon* nouveauTroncon = 0;
-
-    if (bagage != 0)
+    if (_bagage != 0)
     {
-        nouveauTroncon = bagage->objectifFinal()->trouverObjectifImmediat(_tronconActuel->noeudFin());
+        _chemin = _bagage->objectifFinal()
+                  ->trouverChemin(_tronconActuel->noeudFin());
     }
     else
     {
-        nouveauTroncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
+        _chemin = _tapisAssocie->trouverChemin(_tronconActuel->noeudFin());
     }
-
-    preparerChangementTroncon(nouveauTroncon);
-
-    pilotageEnChemin();
-}
-
-void StrategiePilotageAuto::pilotageNoeudAtteint(Direction /*directionConseillee*/, Bagage* bagage)
-{
-    Troncon* nouveauTroncon = 0;
-
-#ifdef DEBUG_ACHEMINEMENT
-    //qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
-#endif
-
-    if (bagage != 0)
-    {
-        nouveauTroncon = bagage->objectifFinal()->trouverObjectifImmediat(_tronconActuel->noeudFin());
-    }
-    else
-    {
-        nouveauTroncon = _tapisAssocie->trouverObjectifImmediat(_tronconActuel->noeudFin());
-    }
-
-    changerTroncon(nouveauTroncon);
 }

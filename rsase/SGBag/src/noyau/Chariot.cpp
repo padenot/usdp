@@ -7,19 +7,14 @@
 #include "StrategiePilotageAuto.h"
 #include "StrategiePilotageManuel.h"
 
-const double Chariot::ACCELERATION_CHARIOT = 10; // m/s²
-const double Chariot::DECELERATION_CHARIOT = 20; // m/s²
-const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.1;
+const double Chariot::ACCELERATION_CHARIOT = 20; // m/s²
+const double Chariot::DECELERATION_CHARIOT = 70; // m/s²
+const double Chariot::MAX_DEPASSEMENT_VITESSEMAX = 0.3; // m/s
 
-//Begin section for file Chariot.cpp
-//TODO: Add definitions that you want preserved
-//End section for file Chariot.cpp
-
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DEFCONSTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Chariot::Chariot(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
     ElementActif(indexParamValeur),
     _bagage (0),
+    _tapisConnecte (0),
     _directionConseillee (GAUCHE),
     _typePilotage (AUTOMATIQUE),
     _pilote (0)
@@ -43,20 +38,17 @@ void Chariot::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
     _pilote = new StrategiePilotageAuto(*this, tronconActuel, tapisAssocie);
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_8wh8EOseEd-oy8D834IawQ?DESTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Chariot::~Chariot()
 {
     // _bagage est détruit par le prototype
+    // La stratégie est un QObject, détruit automatiquement à
+    // la destruction de ce chariot.
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_XNzMkO52Ed-Jn7v3SB1Zsg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Chariot::chargerBagage(Bagage* bagage)
 {
     _bagage = bagage;
     // TODO : positionner le bagage exactement sur le chariot
-    demarrer(); // TODO : déplacer dans stratégie pilotage
 }
 
 Bagage* Chariot::dechargerBagage()
@@ -66,15 +58,25 @@ Bagage* Chariot::dechargerBagage()
     return bagage;
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_pgh1sO55Ed-Jn7v3SB1Zsg"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-void Chariot::dechargerBatterie()
+void Chariot::connecter (Tapis* tapis)
 {
-    //TODO Auto-generated method stub
+    if (_tapisConnecte == 0 && tapis != 0)
+    {
+        _tapisConnecte = tapis;
+        tapis->connecter(this);
+    }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_r3Lz8PD-Ed-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
+void Chariot::deconnecter ()
+{
+    if (_tapisConnecte != 0)
+    {
+        Tapis* tapis = _tapisConnecte;
+        _tapisConnecte = 0;
+        tapis->deconnecter();
+    }
+}
+
 void Chariot::avancer(double dt, QPointF destination)
 {
     QVector2D deplacement(destination - _position);
@@ -95,10 +97,14 @@ void Chariot::avancer(double dt, QPointF destination)
     }
     else
     {
-        if (_vitesse > 0)
+        if (_vitesse > 0.0)
         {
             _vitesse -= DECELERATION_CHARIOT*dt;
             emit vitesseModifiee(_vitesse);
+        }
+        else if (_vitesse < 0.0)
+        {
+            _vitesse = 0.0;
         }
     }
 
@@ -115,9 +121,14 @@ void Chariot::avancer(double dt, QPointF destination)
 
 void Chariot::maj(double dt)
 {
-    avancer(dt,_pilote->piloter(_directionConseillee,_bagage));
+    avancer(dt,_pilote->piloter(_bagage));
 }
 
+void Chariot::accelerer()
+{
+    deconnecter();
+    ElementActif::accelerer();
+}
 
 Chariot::TypePilotage Chariot::typePilotage()
 {

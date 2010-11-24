@@ -5,15 +5,15 @@
 
 class StrategiePilotageManuel : public StrategiePilotage
 {
+    Q_OBJECT
+
     public:
         StrategiePilotageManuel(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotageManuel(const StrategiePilotage& modele);
 
     protected :
-        virtual void pilotageNoeudAtteint(
-                Direction directionConseillee, Bagage *bagage);
-        virtual void pilotageNoeudProche(
-                Direction directionConseillee, Bagage* bagage);
+        virtual void calculerNouveauChemin();
+        virtual void pilotageNoeudAtteint();
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H

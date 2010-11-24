@@ -2,12 +2,7 @@
 #include<QVector2D>
 
 #include "Noeud.h"
-//Begin section for file Noeud.cpp
-//TODO: Add definitions that you want preserved
-//End section for file Noeud.cpp
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DEFCONSTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Noeud::Noeud(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
         _tronconsSuivants(),
@@ -32,58 +27,43 @@ void Noeud::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
     }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_R4640OskEd-oy8D834IawQ?DESTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Noeud::~Noeud()
 {
     //TODO Auto-generated method stub
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_bT8WAPD8Ed-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
-Troncon* Noeud::trouverProchainTroncon(Troncon* destination)
+Noeud::Chemin Noeud::trouverChemin(Troncon* destination)
 {
-    if(destination == 0)
+    Chemin chemin;
+
+    if(destination != 0)
     {
-        return 0;
-    }
-    else if (_tronconsSuivants.size()==1)
-    {
+        chemin = calculChemin(destination).first;
 #ifdef DEBUG_ACHEMINEMENT
-        qDebug() << *this << "dit : aucun choix possible, continuer";
-#endif
-        return _tronconsSuivants.first();
-    }
-    else
-    {
-#ifdef DEBUG_ACHEMINEMENT
-        Troncon* resultat = calculChemin(destination).first;
-        if (resultat == 0)
+        if (chemin.empty())
         {
             qDebug() << *this << "Aucun chemin !";
         }
         else
         {
-            qDebug() << *this << "dit : il faut aller a"
-                    << (resultat == _tronconsSuivants.first() ? "gauche" : "droite")
-                    << ", sur" << *resultat;
+            //qDebug() << *this << "Chemin :" << chemin;
         }
-        return resultat;
-#else
-        return calculChemin(destination).first;
 #endif
-
     }
+
+    return chemin;
 }
 
-Troncon* Noeud::trouverProchainTroncon(Direction direction)
+Noeud::Chemin Noeud::trouverChemin(Direction direction)
 {
+    Chemin chemin;
+
     if (_tronconsSuivants.size() == 1)
     {
 #ifdef DEBUG_ACHEMINEMENT
             qDebug() << *this << "dit : aucun choix possible, continuer";
 #endif
-        return _tronconsSuivants.first();
+        chemin.push(_tronconsSuivants.first());
     }
     else
     {
@@ -93,7 +73,7 @@ Troncon* Noeud::trouverProchainTroncon(Direction direction)
             qDebug() << *this << ": tu veux aller à gauche, va sur"
                     << *_tronconsSuivants[0];
 #endif
-            return _tronconsSuivants[0];
+            chemin.push(_tronconsSuivants[0]);
         }
         else
         {
@@ -101,32 +81,21 @@ Troncon* Noeud::trouverProchainTroncon(Direction direction)
             qDebug() << *this << ": tu veux aller à droite, va sur"
                     << *_tronconsSuivants[1];
 #endif
-            return _tronconsSuivants[1];
+            chemin.push(_tronconsSuivants[1]);
         }
     }
+
+    return chemin;
 }
 
 
-QPair<Troncon*, double> Noeud::calculChemin(Troncon* destination)
+QPair<Noeud::Chemin, double> Noeud::calculChemin(Troncon* destination)
 {
-    // TODO : implémenter un algorithme plus efficace
-    // TODO : calculer tout le chemin plutôt que déterminer seulement le prochain tronçon
-    //        (tenir une liste des tronçons à emprunter)
-    // TODO : Proposition à discuter (pas forcément idéal) :
-    //        Lorsqu'un tapis/toboggan est inaccessible (à cause de tronçons hors service), continuer
-    //        à avancer jusqu'à être VRAIMENT bloqué, pour libérer les voies. Actuellement on
-    //        s'arrête dès qu'on détecte que le chemin est bloqué.
+    QPair<Chemin, double> paireMin = qMakePair(Chemin(),
+                                   std::numeric_limits<double>::infinity());
 
-    if(_visite)
+    if(!_visite)
     {
-        return qMakePair(reinterpret_cast<Troncon*>(0),
-                         std::numeric_limits<double>::infinity());
-    }
-    else
-    {
-        double tailleCheminMin = std::numeric_limits<double>::infinity();
-        Troncon* tronconMin = 0;
-
         _visite = true;
 
         foreach(Troncon* troncon, _tronconsSuivants)
@@ -135,29 +104,29 @@ QPair<Troncon*, double> Noeud::calculChemin(Troncon* destination)
             {
                 if (troncon == destination)
                 {
-                    tronconMin = troncon;
-                    tailleCheminMin = 0;
+                    paireMin = qMakePair(Chemin(),0.0);
+                    paireMin.first.push(troncon);
+                    paireMin.second = 0.0;
                     break;
                 }
                 else
                 {
-                    QPair<Troncon*, double> paireRetour = troncon->noeudFin()->calculChemin(destination);
-                    double tailleChemin = paireRetour.second + QVector2D(troncon->noeudFin()->position()
-                                                                       - _position).length();
+                    QPair<Chemin, double> paireCandidate(troncon->noeudFin()->calculChemin(destination));
+                    paireCandidate.second += QVector2D(troncon->noeudFin()->position()
+                                                 - _position).length();
 
-                    if(tailleChemin < tailleCheminMin)
+                    if(paireCandidate.second < paireMin.second)
                     {
-                        tronconMin = troncon;
-                        tailleCheminMin = tailleChemin;
+                        paireMin = paireCandidate;
+                        paireMin.first.push(troncon);
                     }
                 }
             }
         }
 
         _visite = false;
-
-        return qMakePair(tronconMin,tailleCheminMin);
     }
 
+    return paireMin;
 }
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  23 NOV 2010 21:02
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.10.3)  23 NOV 2010 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,10 +896,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7C18BEE1C5E2F79C08DDF14AEE132028;3434.
  ) 
 Here is how much of TeX's memory you used:
- 6479 strings out of 493738
- 96820 string characters out of 3143023
- 187980 words of memory out of 3000000
- 9581 multiletter control sequences out of 15000+200000
+ 6482 strings out of 493738
+ 96846 string characters out of 3143023
+ 188069 words of memory out of 3000000
+ 9584 multiletter control sequences out of 15000+200000
  9899 words of font info for 34 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  33i,13n,43p,319b,364s stack positions out of 5000i,500n,10000p,200000b,50000s

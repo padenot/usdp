@@ -1,12 +1,6 @@
 #include "Troncon.h"
 #include "Noeud.h"
-//Begin section for file Troncon.cpp
-//TODO: Add definitions that you want preserved
-//End section for file Troncon.cpp
 
-
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DEFCONSTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon::Troncon(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         Element(indexParamValeur),
         _chariotProprietaire(0),
@@ -29,15 +23,11 @@ void Troncon::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
     _position = (_noeudDebut->position() + _noeudFin->position()) / 2;
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#__FeJQOsVEd-oy8D834IawQ?DESTRUCTOR"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Troncon::~Troncon()
 {
     //TODO Auto-generated method stub
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_3ZUsUPD8Ed-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 bool Troncon::occuper(Chariot* chariotCandidat)
 {
     if (_estHorsService)
@@ -59,8 +49,6 @@ bool Troncon::occuper(Chariot* chariotCandidat)
     }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_WmO0QPD9Ed-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Troncon::liberer()
 {
     _chariotProprietaire = 0;
@@ -71,6 +59,7 @@ bool Troncon::mettreHorsService()
     if (_chariotProprietaire == 0)
     {
         _estHorsService = true;
+        emit etatModifie();
         return true;
     }
     else
@@ -81,11 +70,13 @@ bool Troncon::mettreHorsService()
 
 void Troncon::reparer()
 {
-    _estHorsService = false;
+    if (_estHorsService)
+    {
+        _estHorsService = false;
+        emit etatModifie();
+    }
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_CIZ-wPG5Ed-XFOLnxrkHLA"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Noeud* Troncon::noeudFin()
 {
     return _noeudFin;

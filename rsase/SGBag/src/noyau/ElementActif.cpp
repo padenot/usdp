@@ -35,9 +35,27 @@ ElementActif::~ElementActif()
     _vitesse = nouvelleVitesse;
 }*/
 
-void ElementActif::arreter()
+void ElementActif::freiner()
 {
-    _estActif = false;
+    if (_estActif)
+    {
+        _estActif = false;
+        emit activationModifiee(false);
+    }
+}
+
+void ElementActif::accelerer()
+{
+    if (!_estActif)
+    {
+        _estActif = true;
+        emit activationModifiee(true);
+    }
+}
+
+void ElementActif::definirActivation (bool estActif)
+{
+    _estActif = estActif;
 }
 
 void ElementActif::modifierVitesseMax(double nouvelleVitesseMax)
@@ -45,10 +63,6 @@ void ElementActif::modifierVitesseMax(double nouvelleVitesseMax)
     _vitesseMax = nouvelleVitesseMax;
 }
 
-void ElementActif::demarrer()
-{
-    _estActif = true;
-}
 
 bool ElementActif::estActif ()
 {
