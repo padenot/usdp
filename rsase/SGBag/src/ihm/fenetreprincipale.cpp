@@ -43,10 +43,11 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->startStopButton, SIGNAL(clicked()), this, SLOT(basculerMarcheArret()));
 
     connect(ui->speedSlider, SIGNAL(valueChanged(int)), this, SLOT(changerVitesse(int)));
-    connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
+    connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
 
     connect(scene, SIGNAL(selectionChanged()), this, SLOT(changementSelection()));
-    connect(ui->ratioSlider, SIGNAL(valueChanged(int)), this, SLOT(changementRatio(int)));
+
+    connect(&timer, SIGNAL(timeout()), scene, SLOT(advance()));
 
     //L'index peut ralentir l'affichage lorsque les items bougent.
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
