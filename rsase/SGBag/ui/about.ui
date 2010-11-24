@@ -11,7 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>À propos de SGBag</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/images/homard</normaloff>:/images/homard</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>5.000000000000000</double>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

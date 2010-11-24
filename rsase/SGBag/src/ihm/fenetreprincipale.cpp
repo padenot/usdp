@@ -488,7 +488,7 @@ void FenetrePrincipale::selectionTroncon(VueTroncon&)
 
 void FenetrePrincipale::vueParametresDefaut()
 {
-    _vueParametres = new QLabel(trUtf8("Pas de paramÃ¨tres pour cet objet"), this);
+    _vueParametres = new QLabel(trUtf8("Pas de paramêtres pour cet objet"), this);
 }
 
 void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)
