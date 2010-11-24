@@ -24,9 +24,9 @@ void StrategiePilotageManuel::calculerNouveauChemin()
         ->trouverChemin(_chariot.directionConseillee());
 }
 
-void StrategiePilotageManuel::pilotageNoeudAtteint()
+void StrategiePilotageManuel::pilotageNoeudAtteint(double dt)
 {
-    StrategiePilotage::pilotageNoeudAtteint();
+    StrategiePilotage::pilotageNoeudAtteint(dt);
     mettreAJourChemin(); // Opération peu gourmande, on ne
                         // fait que demander le tronçon
                         // de gauche/droite

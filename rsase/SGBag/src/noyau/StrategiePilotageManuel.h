@@ -13,7 +13,7 @@ class StrategiePilotageManuel : public StrategiePilotage
 
     protected :
         virtual void calculerNouveauChemin();
-        virtual void pilotageNoeudAtteint();
+        virtual void pilotageNoeudAtteint(double dt);
 };
 
 #endif // STRATEGIEPILOTAGEMANUEL_H

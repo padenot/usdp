@@ -7,9 +7,10 @@
 #include "Tapis.h"
 #include "Noeud.h"
 
-const double StrategiePilotage::RAYON_ACTION_NOEUD = 1.0;
-const double StrategiePilotage::RAYON_ACTION_TAPIS = 1.0;
-const double StrategiePilotage::RAYON_ACTION_TOBOGGAN = 1.0;
+const double StrategiePilotage::RAYON_ACTION_NOEUD = 1.0; // En mètres
+const double StrategiePilotage::RAYON_ACTION_TAPIS = 1.0; // En mètres
+const double StrategiePilotage::RAYON_ACTION_TOBOGGAN = 1.0; // En mètres
+const double StrategiePilotage::INTERVALE_TENTATIVE_DEBLOCAGE = 1.0; // En secondes
 
 StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
                                      Tapis* tapisAssocie) :
@@ -18,7 +19,8 @@ StrategiePilotage::StrategiePilotage(Chariot& chariot, Troncon* tronconActuel,
         _bagage(0),
         _tronconActuel(tronconActuel),
         _tronconReserveSuivant(0),
-        _tapisAssocie(tapisAssocie)
+        _tapisAssocie(tapisAssocie),
+        _tempsDepuisDerniereTentativeDeblocage(0)
 {
     _tronconActuel->occuper(&_chariot);
 }
@@ -36,21 +38,34 @@ StrategiePilotage::StrategiePilotage(const StrategiePilotage& modele) :
 
 void StrategiePilotage::mettreAJourChemin()
 {
+#ifdef DEBUG_ACHEMINEMENT
+    QDebug debug1(qDebug()), debug2(qDebug());
+    qDebug() << _chariot << ": mise à jour du chemin";
+#endif
     foreach (Troncon* troncon, _chemin)
     {
-        troncon->disconnect(this,SLOT(mettreAJourChemin()));
+        troncon->disconnect(this,SLOT(mettreAJourChemin()));  
+#ifdef DEBUG_ACHEMINEMENT
+        debug1 << _chariot << ": déconnexion du tronçon" << *troncon;
+#endif
     }
 
     calculerNouveauChemin();
 
     foreach (Troncon* troncon, _chemin)
     {
+#ifdef DEBUG_ACHEMINEMENT
+        debug2 << _chariot << ": connexion du tronçon" << *troncon;
+#endif
         connect(troncon,SIGNAL(etatModifie()),
                 SLOT(mettreAJourChemin()));
     }
+
+    // TODO : disconnect + connect sur le tronconReserveSuivant
+
 #ifdef DEBUG_ACHEMINEMENT
     QDebug debug(qDebug());
-    debug << "Chemin de :" << _chariot << ":";
+    debug << _chariot << ": nouveau chemin :";
     foreach(Troncon* troncon, _chemin)
     {
         debug << *troncon;
@@ -58,8 +73,9 @@ void StrategiePilotage::mettreAJourChemin()
 #endif
 }
 
-QPointF StrategiePilotage::piloter(Bagage* bagage)
+QPointF StrategiePilotage::piloter(double dt, Bagage* bagage)
 {
+    _tempsDepuisDerniereTentativeDeblocage += dt;
     switch (situation(bagage))
     {
         case EN_CHEMIN :
@@ -69,7 +85,7 @@ QPointF StrategiePilotage::piloter(Bagage* bagage)
         case NOEUD_PROCHE :
             pilotageNoeudProche(); break;
         case NOEUD_ATTEINT :
-            pilotageNoeudAtteint(); break;
+            pilotageNoeudAtteint(dt); break;
         case TOBOGGAN_PROCHE :
             pilotageTobogganProche(); break;
         case TOBOGGAN_ATTEINT :
@@ -197,18 +213,20 @@ void StrategiePilotage::pilotageNoeudProche()
     else
     {
 #ifdef DEBUG_ACHEMINEMENT
-        qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
+        qDebug() << _chariot
+                << "est bloqué (pas de chemin jusqu'à sa destination)";
 #endif
         _chariot.freiner();
     }
 }
 
-void StrategiePilotage::pilotageNoeudAtteint()
+void StrategiePilotage::pilotageNoeudAtteint(double dt)
 {
     Troncon* nouveauTroncon = (_chemin.empty() ? 0 : _chemin.top());
 
 #ifdef DEBUG_ACHEMINEMENT
-    //qDebug() << _chariot << "sur" << *_tronconActuel << ", arrive sur" << *(_tronconActuel->noeudFin());
+    qDebug() << _chariot << "sur" << *_tronconActuel
+            << ", arrive sur" << *(_tronconActuel->noeudFin());
 #endif
 
     if (_tronconReserveSuivant != 0 && nouveauTroncon != _tronconReserveSuivant)
@@ -237,16 +255,24 @@ void StrategiePilotage::pilotageNoeudAtteint()
         else
         {
 #ifdef DEBUG_ACHEMINEMENT
-   //         qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
+            qDebug() << _chariot << "attend son tour pour passer sur" << *nouveauTroncon;
 #endif
             _chariot.freiner();
         }
     }
     else
     {
+        _tempsDepuisDerniereTentativeDeblocage += dt;
+        if (_tempsDepuisDerniereTentativeDeblocage
+            > INTERVALE_TENTATIVE_DEBLOCAGE)
+        {
 #ifdef DEBUG_ACHEMINEMENT
-        qDebug() << _chariot << "est bloqué (pas de chemin jusqu'à sa destination)";
+        qDebug() << _chariot << "est bloqué, tentative de déblocage...";
 #endif
+            mettreAJourChemin();
+            _tempsDepuisDerniereTentativeDeblocage = 0;
+        }
+
         _chariot.freiner();
     }
 }

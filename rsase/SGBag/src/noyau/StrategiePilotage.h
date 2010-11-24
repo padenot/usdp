@@ -22,43 +22,35 @@ class StrategiePilotage : public QObject
         StrategiePilotage(Chariot& chariot, Troncon* tronconActuel, Tapis* tapisAssocie);
         StrategiePilotage(const StrategiePilotage& modele);
 
-        QPointF piloter (Bagage* bagageTransporte);
+        /** Pilote le chariot.
+         * Déclenche les accélérations/décélérations en fonction de la situation
+         * actuelle du chariot
+         * @param[in] dt Durée écoulée depuis le dernier appel de "piloter"
+         * @return La direction que doit suivre le chariot
+         */
+        QPointF piloter (double dt, Bagage* bagageTransporte);
 
     protected slots :
         virtual void mettreAJourChemin();
 
     protected:
+        /** Calcule le nouveau chemin vers la destination du chariot.
+         * Défini dans les classes filles (design pattern patron de méthode)
+         */
         virtual void calculerNouveauChemin() = 0;
-
-        /** Tente de faire passer le chariot sur un autre troncon.
-         * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
-         *                           on considère que l'arrêt est nécessaire.
-         */
-        void changerTroncon(Troncon* nouveauTroncon);
-
-        /** Anticipe le changement de tronçon du chariot sur un autre troncon.
-         * @param[in] nouveauTroncon Troncon sur lequel le chariot va passer. Si nul,
-         *                           on considère que l'arrêt est nécessaire.
-         */
-        void preparerChangementTroncon(Troncon* nouveauTroncon);
 
         /** Pilote le chariot lorsqu'il vient de recevoir un bagage.
          */
         virtual void pilotageBagageRecu(Bagage* bagageRecu);
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
-         * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] directionConseillee : diretion dans laquelle le bagage doit être piloté.
-	 * @param[in] bagage : Bagage à piloter
          */
         virtual void pilotageNoeudProche();
 
         /** Pilote le chariot lorsqu'il atteint le noeud de fin du tronçon.
-         * "bagage" doit être nul s'il n'y en a pas.
-         * @param[in] bagage 
-         * @param TODO
+         * @param[in] dt Durée écoulée depuis le dernier appel de "piloter"
          */
-        virtual void pilotageNoeudAtteint();
+        virtual void pilotageNoeudAtteint(double dt);
 
         /** Pilote le chariot lorsqu'il est proche du toboggan objectif.
          */
@@ -91,6 +83,8 @@ class StrategiePilotage : public QObject
         /** Retourne la situation actuelle du chariot.
          * Permet de déterminer les actions à effectuer lors d'une demande
          * de pilotage.
+         * @param[in] bagageTransporte Bagage transporté par le chariot.
+         *                             Nul s'il n'y en a pas.
          */
         Situation situation(Bagage* bagageTransporte) const;
 
@@ -98,6 +92,7 @@ class StrategiePilotage : public QObject
         /// Chariot piloté.
 
         Bagage * _bagage;
+        /// Bagage transporté
 
         Troncon * _tronconActuel;
         /// Troncon sur lequel se déplace actuellement le chariot.
@@ -112,6 +107,9 @@ class StrategiePilotage : public QObject
         /// Tapis auquel le chariot devra revenir.
         /// Ne doit jamais être nul.
 
+        double _tempsDepuisDerniereTentativeDeblocage;
+        /// Utilisé pour essayer périodiquement de se débloquer
+
         static const double RAYON_ACTION_NOEUD;
         /// Distance avec un noeud en dessous de laquelle le chariot est
         /// considéré comme étant sur le noeud.
@@ -124,7 +122,9 @@ class StrategiePilotage : public QObject
         /// Distance avec un toboggan en dessous de laquelle le chariot est
         /// considéré comme étant à portée du toboggan.
 
-
+        static const double INTERVALE_TENTATIVE_DEBLOCAGE;
+        /// Intervalle durant lequel un chariot attend avant de tenter
+        /// de recalculer un chemin vers sa destination, s'il est bloqué
 };
 
 #endif // STRATEGIEPILOTAGE_H
