@@ -24,8 +24,8 @@ class VueTapis : public VueElement
     public:
         /**
          * Constructeur de la classe.
-         * @param [in] fenetrePrincipale - la fenêtre principale de l'application
-         * @param [in] tapis - le tapis associé à la vue réspective
+         * @param [in] fenetrePrincipale - la fenÃªtre principale de l'application
+         * @param [in] tapis - le tapis associÃ© Ã  la vue rÃ©spective
          */
         VueTapis(FenetrePrincipale& _fenetrePrincipale, Tapis &tapis);
 
@@ -35,7 +35,7 @@ class VueTapis : public VueElement
         virtual ~VueTapis();
 
         /**
-         * Méthode qui permet de dessiner la vue
+         * MÃ©thode qui permet de dessiner la vue
          * @param [in] painter - l'objet Qt pour dessiner
          * @param [in] option - des options en fonction  de l'environnement graphique.
          * @param [in] widget - le widget sur lequel dessiner.
@@ -43,41 +43,41 @@ class VueTapis : public VueElement
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
         /**
-         * Accesseur au tapis associé à la vue
+         * Accesseur au tapis associÃ© Ã  la vue
          */
         Tapis* tapisAssocie();
 
     protected:
         /**
-         * Méthode vide mais nécessaire
+         * MÃ©thode vide mais nÃ©cessaire
          */
         void advance(int step);
 
     private:
         /**
-         * attribut qui permet de rendre le fichier svg associé à la vue
+         * attribut qui permet de rendre le fichier svg associÃ© Ã  la vue
          */
         static QSvgRenderer *_renderer;
 
         /**
-         * L'image associée à la vue du toboggan
+         * L'image associÃ©e Ã  la vue du toboggan
          */
         QGraphicsSvgItem *_image;
 
 
         /**
-         * L'objet tapis associé à la vue
+         * L'objet tapis associÃ© Ã  la vue
          */
         Tapis &_tapis;
 
         /**
-         * Instance de VueTapisHandler intégrée à  la vue.
+         * Instance de VueTapisHandler intÃ©grÃ©e Ã   la vue.
          */
         VueTapisHandler& _handler;
 };
 
 /**
- * Gestionnnaire d'Ã©vÃ©nements pour VueTapis
+ * Gestionnnaire d'ÃƒÂ©vÃƒÂ©nements pour VueTapis
  */
 class VueTapisHandler : public QObject
 {
@@ -85,14 +85,14 @@ class VueTapisHandler : public QObject
 
     public:
         /**
-         * Le handler associé à la vue
-         * @param [in] vueTapis - la vue du tapis associé
-         * @param [in] fenetrePrincipale - la fenêtre principale de l'application
+         * Le handler associÃ© Ã  la vue
+         * @param [in] vueTapis - la vue du tapis associÃ©
+         * @param [in] fenetrePrincipale - la fenÃªtre principale de l'application
          */
         VueTapisHandler(VueTapis& vueTapis, FenetrePrincipale& fenetrePrincipale);
     public slots:
         /**
-         * Méthode qui permet d'ajouter un bagage
+         * MÃ©thode qui permet d'ajouter un bagage
          */
         void ajouterBagage();
     protected:
@@ -102,7 +102,7 @@ class VueTapisHandler : public QObject
         VueTapis& _vueTapis;
 
         /**
-         * La fenêtre principale de l'application
+         * La fenÃªtre principale de l'application
          */
         FenetrePrincipale& _fenetrePrincipale;
 };

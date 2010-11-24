@@ -18,8 +18,8 @@ class VueTroncon : public VueElement
 public:
     /**
      * Constructeur de la classe.
-     * @param [in] fenetrePrincipale - la fenêtre principale de l'application
-     * @param [in] troncon - le troncon associé à la vue réspective
+     * @param [in] fenetrePrincipale - la fenÃªtre principale de l'application
+     * @param [in] troncon - le troncon associÃ© Ã  la vue rÃ©spective
      */
     VueTroncon(FenetrePrincipale& _fenetrePrincipale, Troncon& troncon);
 
@@ -29,7 +29,7 @@ public:
     ~VueTroncon();
 
     /**
-     * Méthode qui permet de dessiner la vue
+     * MÃ©thode qui permet de dessiner la vue
      * @param [in] painter - l'objet Qt pour dessiner
      * @param [in] option - des options en fonction  de l'environnement graphique.
      * @param [in] widget - le widget sur lequel dessiner.
@@ -37,42 +37,42 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
     /**
-     * Méthode qui permet de mettre le troncon hors service
+     * MÃ©thode qui permet de mettre le troncon hors service
      */
     void mettreHorsService();
 
     /**
-     * Méthode qui permet remettre le troncon en service
+     * MÃ©thode qui permet remettre le troncon en service
      */
     void reparer();
 
 
 protected:
     /**
-     * Méthode vide mais nécessaire
+     * MÃ©thode vide mais nÃ©cessaire
      */
     void advance(int step);
 
 private:
     /**
-     * Montre l'état d'un troncon (en service ou hors service)
+     * Montre l'Ã©tat d'un troncon (en service ou hors service)
      */
     int _etat;
 
     /**
-     * L'objet Troncon associé à la vue
+     * L'objet Troncon associÃ© Ã  la vue
      */
     Troncon &_troncon;
 
     /**
-     * Instance de VueTronconHandler intégrée à la vue.
+     * Instance de VueTronconHandler intÃ©grÃ©e Ã  la vue.
      */
     VueTronconHandler& _handler;
 
 };
 
 /**
- * Gestionnnaire d'événements pour VueTroncon
+ * Gestionnnaire d'Ã©vÃ©nements pour VueTroncon
  */
 class VueTronconHandler : public QObject
 {
@@ -80,31 +80,31 @@ class VueTronconHandler : public QObject
 
     public:
         /**
-         * Le handler associé à la vue
-         * @param [in] vueTroncon - la vue du troncon associé
-         * @param [in] fenetrePrincipale - la fenêtre principale de l'application
+         * Le handler associÃ© Ã  la vue
+         * @param [in] vueTroncon - la vue du troncon associÃ©
+         * @param [in] fenetrePrincipale - la fenÃªtre principale de l'application
          */
         VueTronconHandler(VueTroncon& vueTroncon, FenetrePrincipale& fenetrePrincipale);
 
     public slots:
         /**
-         * Méthode qui permet de mettre le troncon hors service
+         * MÃ©thode qui permet de mettre le troncon hors service
          */
         void mettreHorsService();
 
         /**
-         * Méthode qui permet remettre le troncon en service
+         * MÃ©thode qui permet remettre le troncon en service
          */
         void reparer();
 
     protected:
         /**
-         * La vue du troncon associée
+         * La vue du troncon associÃ©e
          */
         VueTroncon& _vueTroncon;
 
         /**
-         * La fenêtre principale de l'application
+         * La fenÃªtre principale de l'application
          */
         FenetrePrincipale& _fenetrePrincipale;
 };

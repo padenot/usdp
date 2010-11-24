@@ -102,7 +102,7 @@ void FenetrePrincipale::changementCircuit()
     prototype = new Prototype(fileName);
     extraireVuesCanevas(prototype->elements());
 
-    // Initialisations li�es au prototype
+    // Initialisations liées au prototype
     ui->volTableView->setModel(prototype->modelVols());
     ui->speedSlider->setValue(100);
     ui->ratioSlider->setValue(1);
@@ -278,11 +278,11 @@ void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
 
         ajouterVueCanevas(new VueBagage(*this, *bagage));
 
-        ui->statusBar->showMessage(trUtf8("Bagage ajout�"), 5000);
+        ui->statusBar->showMessage(trUtf8("Bagage ajouté"), 5000);
     }
     else
     {
-        ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas été ajouté"), 5000);
+        ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas Ã©tÃ© ajoutÃ©"), 5000);
     }
     changementEtat(NORMAL);
 }
@@ -300,7 +300,7 @@ void FenetrePrincipale::associerVolToboggan()
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         if(prototype->vol(listIndex.at(0).row())->tobogganAssocie() != 0)
         {
-            ui->statusBar->showMessage(trUtf8("Ce vol a d�j� un toboggan associ�."), 2000);
+            ui->statusBar->showMessage(trUtf8("Ce vol a déjà un toboggan associé."), 2000);
         }
         else if( ! listIndex.empty())
         {
@@ -443,10 +443,10 @@ void FenetrePrincipale::selectionToboggan(VueToboggan& vueToboggan)
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
         vueToboggan.associerVol(prototype->vol(listIndex.at(0).row()));
         ajouterVueCanevas(new VueVol(*this, *prototype->vol(listIndex.at(0).row())));
-        // L'association a �t� faite : on rechange l'�tat des boutons, et on rend
+        // L'association a été faite : on rechange l'état des boutons, et on rend
         // tout selectionnable.
         annulerAssociation();
-        ui->statusBar->showMessage(trUtf8("Toboggan associ�"), 2000);
+        ui->statusBar->showMessage(trUtf8("Toboggan associé"), 2000);
     }
 
     _vueParametres = new VueParametresToboggan(vueToboggan.toboggan(), this);
@@ -489,7 +489,7 @@ void FenetrePrincipale::selectionTroncon(VueTroncon&)
 
 void FenetrePrincipale::vueParametresDefaut()
 {
-    _vueParametres = new QLabel(trUtf8("Pas de paramètres pour cet objet"), this);
+    _vueParametres = new QLabel(trUtf8("Pas de paramÃ¨tres pour cet objet"), this);
 }
 
 void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)
