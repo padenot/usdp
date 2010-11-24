@@ -57,7 +57,7 @@ private:
     /**
      * Un pointer vers l'image, pour éviter de la redessiner.
      */
-    QGraphicsSvgItem *_image;
+    //QGraphicsSvgItem *_image;
     /**
      * Une référence vers le bagage, dans le modèle.
      */

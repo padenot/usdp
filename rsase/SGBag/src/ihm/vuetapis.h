@@ -62,7 +62,7 @@ class VueTapis : public VueElement
         /**
          * L'image associée à la vue du toboggan
          */
-        QGraphicsSvgItem *_image;
+        //QGraphicsSvgItem *_image;
 
 
         /**

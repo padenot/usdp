@@ -2,13 +2,14 @@
 #define VUE_CANEVAS_H
 
 #include <QGraphicsItem>
+#include <QGraphicsSvgItem>
 
 class FenetrePrincipale;
 /**
  * Classe abstraite, qui permet de définir des implémentation
  * de méthodes communes au éléments graphiques.
  */
-class VueCanevas: public QGraphicsItem
+class VueCanevas: public QGraphicsSvgItem //QGraphicsItem
 {
 public:
 	/**

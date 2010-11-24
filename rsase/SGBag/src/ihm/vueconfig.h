@@ -85,23 +85,7 @@ namespace vue_config
         /**
          * Nombre de ressources utilisées pour les bagages.
          */
-        const int nbrRes = 4;
-        /**
-         * Chemin dans un .qrc d'une image de bagage.
-         */
-        const QString sacsport = ":/images/sacsport";
-        /**
-         * Chemin dans un .qrc d'une image de bagage.
-         */
-        const QString saccuir = ":/images/saccuir";
-        /**
-         * Chemin dans un .qrc d'une image de bagage.
-         */
-        const QString valise = ":/images/valise";
-        /**
-         * Chemin dans un .qrc d'une image de bagage.
-         */
-        const QString homard = ":/images/homard";
+        //const int nbrRes = 4;
         /**
          * Chemin dans un .qrc d'une image de bagage.
          */
@@ -109,11 +93,32 @@ namespace vue_config
         /**
          * Tableau pour avoir les chemins de tous les bagages.
          */
-        const QString resBagage[nbrRes] = { sacsport, saccuir, valise, homard };
+        //const QString resBagage[nbrRes] = { sacsport, saccuir, valise, homard };
         /**
          * Taille de la boite englobante pour un bagage.
          */
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
+
+        /**
+         * La fonte pour afficher l'id sur un bagage.
+         */
+        const QFont font = QFont("SansSerif", 12, QFont::Normal);
+        /**
+         * La couleur du texte de l'id du bagage.
+         */
+        const QColor couleurTexte = QColor(35,35,35);
+        /**
+         * Rotation du texte, en degrés
+         */
+        const qreal rotationTexte = -15;
+        /**
+         * Position horizontale du texte.
+         */
+        const qreal dxTexte = 0;
+        /**
+         * Position verticale du texte.
+         */
+        const qreal dyTexte = 0;
     }
     /**
      * Les constantes relative au chariot
@@ -140,27 +145,6 @@ namespace vue_config
          * Les coordonnées de la fenetre englobante pour un chariot.
          */
         const QRectF rect = QRectF(-longueur/2, -largeur/2, longueur, largeur);
-        /**
-         * La fonte pour afficher des message à côté d'un chariot.
-         */
-        const QFont font = QFont("SansSerif", 26, QFont::Normal);
-        /**
-         * La couleur du texte affichée sur un chariot.
-         */
-        const QColor couleurTexte = QColor(35,35,35);
-        /**
-         * Rotation du texte, en degrés
-         */
-        const qreal rotationTexte = -15;
-        /**
-         * Position horizontale du texte.
-         */
-        const qreal dxTexte = 40;
-        /**
-         * Position verticale du texte.
-         */
-        const qreal dyTexte = 90;
-
     }
 
     /**
@@ -260,7 +244,7 @@ namespace vue_config
         /**
          * La largeur d'un avion.
          */
-        const double largeur = longueur*0.5;
+        const double largeur = longueur*0.77;
         /**
          * L'écart avec le toboggan d'un avion.
          */

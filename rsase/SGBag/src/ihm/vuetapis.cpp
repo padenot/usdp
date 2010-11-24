@@ -13,33 +13,30 @@ QSvgRenderer *VueTapis::_renderer = new QSvgRenderer(etatNormal);
 
 VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         VueElement(fenetrePrincipale),
-        _image(new QGraphicsSvgItem()),
+        //_image(new QGraphicsSvgItem()),
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
     setZValue(zIndex);
-    _image->setSharedRenderer(_renderer);
+    setSharedRenderer(_renderer);
 
     definirCoordonnees(_tapis.position(),_tapis.pointConnexion(),
                        largeur,-vue_config::chariot::largeur/2);
 
-    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    //setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
     QObject::connect(ajouterBagageAction, SIGNAL(triggered()), &(this->_handler), SLOT(ajouterBagage()));
 
-    _image->renderer()->setFramesPerSecond(vue_config::fps);
-#ifdef DEBUG_ACHEMINEMENT
-    qDebug() << _image->renderer()->isValid();
-#endif
+    renderer()->setFramesPerSecond(vue_config::fps);
 }
 
 VueTapis::~VueTapis()
 {
     delete &_handler;
-    delete _image;
+    //delete _image;
 }
 
 
@@ -53,8 +50,11 @@ void VueTapis::advance(int pas)
 
 void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+    //------------ Dessin du rectangle de selection
     VueElement::paint(painter, 0, 0);
-    _image->renderer()->render(painter, boundingRect());
+
+    //------------ Rendu du Svg
+    renderer()->render(painter, boundingRect());
 }
 
 Tapis* VueTapis::tapisAssocie()

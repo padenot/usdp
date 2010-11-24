@@ -10,17 +10,17 @@ QSvgRenderer *VueBagage::_renderer = new QSvgRenderer(bagageSimple);
 
 VueBagage::VueBagage(FenetrePrincipale& fenetrePrincipale, Bagage &bagage):
         VueElement(fenetrePrincipale,rect),
-        _image(new QGraphicsSvgItem()),
+        //_image(new QGraphicsSvgItem()),
         _bagage(bagage)
 {
-    _image->setSharedRenderer(_renderer);
+    //_image->setSharedRenderer(_renderer);
+    setSharedRenderer(_renderer);
 
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    _image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     setZValue(zIndex);
 }
-
 
 void VueBagage::advance(int pas)
 {
@@ -35,7 +35,21 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 {
     VueElement::paint(painter, 0, 0);
 
-    _image->renderer()->render(painter, boundingRect());
+    renderer()->render(painter, boundingRect());
+
+    /* Affichage de l'id du bagage
+       Valable avec les nouveaux rendus.
+
+    painter->setFont (font);
+    QTransform matriceActuelle = painter->transform();
+    QTransform matriceTexte = matriceActuelle;
+    matriceTexte.translate(-0.5,-0.3);
+    matriceTexte.rotate(rotationTexte);
+    matriceTexte.scale(0.1,0.1);
+    painter->setTransform(matriceTexte);
+    painter->setPen(couleurTexte);
+    painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_bagage.id()));
+    painter->setTransform(matriceActuelle);//*/
 }
 
 Bagage* VueBagage::bagageAssocie()
