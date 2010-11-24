@@ -213,7 +213,7 @@ void StrategiePilotage::pilotageNoeudAtteint()
 
     if (_tronconReserveSuivant != 0 && nouveauTroncon != _tronconReserveSuivant)
     {
-        // On libère l'ancien "tronçon suivant", car on a
+        // On libère l'ancien "tronçon suivant réservé", car on a
         // changé de destination au dernier moment
         _tronconReserveSuivant->liberer();
         _tronconReserveSuivant = 0;

@@ -83,11 +83,11 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
 
 FenetrePrincipale::~FenetrePrincipale()
 {
-    disconnect(this,SLOT(destructionBagage(QObject*)));
     delete scene;
+    scene = 0;
+    delete prototype;
     delete ui;
     delete _dialog;
-    delete prototype;
 }
 
 void FenetrePrincipale::changementCircuit()
@@ -214,15 +214,18 @@ void FenetrePrincipale::ajouterVol()
 
 void FenetrePrincipale::destructionBagage(QObject* bagage)
 {
-    QList<QGraphicsItem *> listeObjetsGraphiques = scene->items();
-    foreach(QGraphicsItem* objet, listeObjetsGraphiques)
+    if (scene != 0)
     {
-        VueBagage* vueBagage = dynamic_cast<VueBagage*>(objet);
-        if (vueBagage != 0 && vueBagage->bagageAssocie() == bagage)
+        QList<QGraphicsItem *> listeObjetsGraphiques = scene->items();
+        foreach(QGraphicsItem* objet, listeObjetsGraphiques)
         {
-            scene->removeItem(vueBagage);
-            delete vueBagage;
-            break;
+            VueBagage* vueBagage = dynamic_cast<VueBagage*>(objet);
+            if (vueBagage != 0 && vueBagage->bagageAssocie() == bagage)
+            {
+                scene->removeItem(vueBagage);
+                delete vueBagage;
+                break;
+            }
         }
     }
 }
