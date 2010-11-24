@@ -137,7 +137,7 @@
 	<!-- Colone 7 x = 130 -->
 	<noeud>
 		<id>22</id>
-		<x>130</x>
+		<x>80</x> <!-- déplacement du tapis -->
 		<y>80</y>
 		<suivantGauche>25</suivantGauche>
 	</noeud>
@@ -149,7 +149,7 @@
 	<!-- colone 8 x=140 -->
 	<noeud>
 		<id>24</id>
-		<x>140</x>
+		<x>90</x>
 		<y>80</y>
 		<suivantGauche>28</suivantGauche>
 	</noeud>
@@ -320,7 +320,7 @@
 	<!-- Colone 16 x=270 -->
 	<noeud>
 		<id>53</id>
-		<x>270</x>
+		<x>220</x>
 		<y>80</y>
 		<suivantGauche>56</suivantGauche>
 	</noeud>
@@ -332,7 +332,7 @@
 	<!-- Colone 17 x=280 -->
 	<noeud>
 		<id>55</id>
-		<x>280</x>
+		<x>230</x>
 		<y>80</y>
 		<suivantGauche>58</suivantGauche>
 	</noeud>
@@ -432,9 +432,9 @@
   	<!-- A -->
   	<tapis>
   		<id>101</id>
-  		<x>100</x>
+  		<x>120</x>
   		<y>50</y>
-  		<pos>23</pos>
+  		<pos>28</pos>
   	</tapis>
 	<toboggan>
 		<id>102</id>
@@ -445,7 +445,7 @@
 	<!-- B -->
 	<tapis>
 		<id>103</id>
-		<x>240</x>
+		<x>260</x>
 		<y>50</y>
 		<pos>54</pos>
 	</tapis>
