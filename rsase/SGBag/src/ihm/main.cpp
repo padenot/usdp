@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
      */
     srand(time(NULL));
 
-    Prototype* proto= new Prototype("configuration_simple.xml");
+    Prototype* proto= new Prototype("simple.xml");
 
     FenetrePrincipale w(proto);
     w.extraireVuesCanevas(proto->elements());
