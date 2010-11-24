@@ -173,18 +173,18 @@ INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT main.toc
 INPUT main.toc
-OUTPUT main.toc
-INPUT /usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/commands.tex
-INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/commands.tex
-INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/core.tex
-INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/core.tex
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT main.toc
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/commands.tex
+INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/commands.tex
+INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/core.tex
+INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/ListeBesoins/src/core.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/UseCases/Descriptions/src/commands.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/UseCases/Descriptions/src/commands.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/UseCases/Descriptions/src/core.tex
@@ -222,3 +222,79 @@ INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rappor
 INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/code_listing.tex
 INPUT /Users/maximegaudin/Documents/Professionel/Projets INSA/4IF/TP/usdp/Rapport/code_listing.tex
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/local/texlive/2010/texmf-dist/tex/latex/base/utf8.def
+INPUT main.aux
+INPUT ./main.out
+INPUT ./main.out
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl9.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb

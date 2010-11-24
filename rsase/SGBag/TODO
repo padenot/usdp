@@ -26,9 +26,9 @@ FAIT ? Bug : Blocage sur le premier noeud dans le circuit simple
 INDISPENSABLE, mais plus tard :
 Commencé ? TOUT LE MONDE : - Commenter
 - METTRE DES DESTRUCTEURS (virtuels)
-- Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
+FAIT : - Nettoyer : enlever les méthodes inutiles, les données membres et constantes inutilisées, renommer tout en français
 - Ajouter DELAI_ATTENTE_BLOCAGE et _tempsDepuisDerniereTentativeDeblocage aux modèles UML + param "dt" de "piloter" et "pilotageNoeudAtteint"
-- Vérifier dans le modèle de classe la justesse des déclarations de méthodes concernant l'ajout (aléatoire) de bagages
+FAIT : - Vérifier dans le modèle de classe la justesse des déclarations de méthodes concernant l'ajout (aléatoire) de bagages
 - Dans StrategiePilotageManuel, Remplacer la surcharge de pilotageNoeudAtteint par celle de pilotage 
 
 BONUS :
