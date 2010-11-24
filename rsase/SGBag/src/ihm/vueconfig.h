@@ -11,9 +11,10 @@
  */
 namespace vue_config
 {
-	/**
-	 * Le zoom possible sur la vue.
-	 */
+    /**
+     * Valeur du zoom sur certains éléments, permettant de ne pas les afficher
+     * en taille réelle afin de bien les voir.
+     */
     const double ZOOM_ELEMENTS = 10.0;
     /**
      * Le nombre d'image par seconde désirée.
@@ -76,11 +77,11 @@ namespace vue_config
         /**
          * La longueur d'un bagage.
          */
-        const double longueur = 0.4*ZOOM_ELEMENTS;
+        const double longueur = 0.4;//*ZOOM_ELEMENTS;
         /**
          * La largeur d'un élément.
          */
-        const double largeur = 0.4*ZOOM_ELEMENTS;
+        const double largeur = 0.4;//*ZOOM_ELEMENTS;
         /**
          * Nombre de ressources utilisées pour les bagages.
          */
