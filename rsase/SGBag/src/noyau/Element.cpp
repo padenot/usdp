@@ -15,10 +15,10 @@
 //@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 Element::Element(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         _position(indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::x]].toFloat(),
-                  indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat())
+                  indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::y]].toFloat()),
+        _id (indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]].toInt())
 #ifdef DEBUG_ACHEMINEMENT
         ,
-        _id (indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::id]].toInt()),
         _typeElement(indexParamValeur[XmlConfigFactory::NodeName_String[XmlConfigFactory::typeElement]])
 #endif
 {

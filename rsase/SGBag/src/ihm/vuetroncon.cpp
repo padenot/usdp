@@ -50,7 +50,10 @@ void VueTroncon::reparer()
 
 void VueTroncon::advance(int pas)
 {
-
+    if(pas == 0)
+    {
+            return;
+    }
 }
 
 void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
@@ -58,9 +61,10 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     double longueur = QVector2D(_troncon.noeudDebut()->position() -
                                     _troncon.noeudFin()->position()).length();
 
+    //------------ Dessin du rectangle de selection
     VueElement::paint(painter,0,0);
 
-    //------------ Choix des couleurs du tronçon
+    //------------ Choix des couleurs du fond du tronçon
     if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         painter->setPen(penRedLight);
@@ -72,10 +76,10 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
         painter->setBrush(brushGray);
     }
 
-    //------------ Dessin du tronçon
+    //------------ Dessin du fond du tronçon
     painter->drawRect(QRectF(0,-largeur,longueur,2.0*largeur));
 
-    //------------ Choix des couleurs des noeuds
+    //------------ Choix des couleurs du tronçon
     if (_troncon.etat() == Troncon::HORS_SERVICE)
     {
         painter->setPen(penRedDark);
@@ -85,12 +89,15 @@ void VueTroncon::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
         painter->setPen(penDark);
     }
 
+    //------------ Dessin du tronçon
     painter->drawLine(QPointF(0,-largeur),QPointF(longueur,-largeur));
     painter->drawLine(QPointF(0,largeur),QPointF(longueur,largeur));
 
-    //------------ Dessin des noeuds
+    //------------ Choix des couleurs des noeuds
     painter->setBrush(brushGray);
     painter->setPen(penDark);
+
+    //------------ Dessin des noeuds
     // Dessin du noeud de début
     painter->drawEllipse(QPointF(0,0),
                          rayonNoeud, rayonNoeud);

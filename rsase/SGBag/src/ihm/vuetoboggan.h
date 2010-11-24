@@ -58,7 +58,7 @@ private:
     /**
      * L'image associée à la vue du toboggan
      */
-    QGraphicsSvgItem *_image;
+    //QGraphicsSvgItem *_image;
 
     /**
      * L'objet toboggan associé à la vue
