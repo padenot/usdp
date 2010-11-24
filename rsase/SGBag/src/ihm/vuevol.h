@@ -11,7 +11,6 @@
 #include "vuecanevas.h"
 #include "src/noyau/Vol.h"
 
-//#define FILEPATH_SVG_ETATNORMAL ":/images/tapis-etatNormal"
 class FenetrePrincipale;
 
 class VueVol : public VueCanevas
@@ -38,11 +37,6 @@ public:
     Vol* volAssocie();
 
 private:
-    /**
-     * L'image associé à la vue de l'objet vol
-     */
-    //QSvgRenderer *_image;
-
     /**
      * attribut qui permet de rendre le fichier svg associé à la vue
      */
