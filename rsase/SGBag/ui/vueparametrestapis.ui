@@ -53,19 +53,19 @@
          <string>m/s</string>
         </property>
         <property name="decimals">
-         <number>1</number>
+         <number>2</number>
         </property>
         <property name="minimum">
          <double>0.000000000000000</double>
         </property>
         <property name="maximum">
-         <double>30.000000000000000</double>
+         <double>3.000000000000000</double>
         </property>
         <property name="singleStep">
-         <double>1.000000000000000</double>
+         <double>0.200000000000000</double>
         </property>
         <property name="value">
-         <double>10.000000000000000</double>
+         <double>3.000000000000000</double>
         </property>
        </widget>
       </item>
@@ -73,8 +73,6 @@
     </item>
    </layout>
   </widget>
-  <zorder>groupeVitesse</zorder>
-  <zorder></zorder>
  </widget>
  <resources/>
  <connections/>

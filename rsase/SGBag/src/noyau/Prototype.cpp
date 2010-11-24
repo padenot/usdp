@@ -11,7 +11,6 @@
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
-const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 100;
 
 const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
@@ -50,7 +49,6 @@ Prototype::Prototype(const QString& xmlfilepath) :
 
     _horloge.setInterval(INTERVALLE_RAFRAICHISSEMENT_MODELE);
 
-    connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
     connect(&_horloge, SIGNAL(timeout()), this, SLOT(maj()));
 }
 
@@ -91,35 +89,28 @@ Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 }
 
 
-void Prototype::ajouterBagageAleatoire()
+Bagage* Prototype::ajouterBagageAleatoire()
 {
-    int generated = qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
-    if( ! generated)
+    qDebug() << "Ajout de bagage !";
+    int nbvol = _modelVols.rowCount(QModelIndex());
+    // On peut pas générer de bagage s'il n'y a pas de vol
+    if(nbvol != 0)
     {
-        qDebug() << "Ajout de bagage !";
-        // On peut pas générer de bagage s'il n'y a pas de vol
-        if( ! _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].empty())
+        qDebug() << "Il y a des vols";
+        // Le nouveau bagage choisi un vol au hasard.
+        Vol* vol = 0;
+        vol = _modelVols.at(qrand() % nbvol);
+        if(vol != 0)
         {
-            // Le nouveau bagage choisi un vol au hasard.
-            Vol* vol = 0;
-            /* On prend un vol au hasard dans le modèle, s'il y en a */
-            if(_modelVols.rowCount())
+            if(vol->tobogganAssocie())
             {
-                while( ! (vol = _modelVols.at(qrand() % _modelVols().rowCount())))
-                {
-                    if(vol->tobogganAssocie())
-                    {
-
-                        break;
-                    }
-                }
+                int nbtapis = _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]].size();
+                Tapis* tapis = dynamic_cast<Tapis*>(_elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::tapis]][qrand()%nbtapis]);
+                return ajouterBagage(tapis,vol);
             }
-            // Et un tapis au hasard aussi
-            int nbtapis = _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].size();
-            Tapis* tapis = dynamic_cast<Tapis*>(_elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]][qrand()%nbtapis]);
-            return ajouterBagage(tapis,vol);
         }
     }
+    return 0;
 }
 
 void Prototype::changementModeAjoutBagage(ModeSimulation mode)

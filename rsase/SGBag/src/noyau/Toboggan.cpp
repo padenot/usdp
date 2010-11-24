@@ -25,6 +25,7 @@ Toboggan::~Toboggan()
 
 void Toboggan::transfererBagage(Bagage* bagage)
 {
+
     ++_nombreBagages;
     delete bagage;
     emit nombreDeBagages(_nombreBagages);

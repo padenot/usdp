@@ -98,7 +98,7 @@ class Prototype : public QObject
         /**
          * @brief Ajoute des bagages de manières aléatoire.
          */
-        void ajouterBagageAleatoire();
+        Bagage* ajouterBagageAleatoire();
 
         /**
          * @brief Commencer la simulation

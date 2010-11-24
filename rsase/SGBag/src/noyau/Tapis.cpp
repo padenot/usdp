@@ -12,6 +12,7 @@
 #include "XmlConfigFactory.h"
 
 const double Tapis::RAYON_PROXIMITE_TRONCON = 0.5;
+const double Tapis::VITESSE_MAX_DEFAUT = 3;
 
 Tapis::Tapis(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         ElementActif(indexParamValeur),
@@ -19,7 +20,8 @@ Tapis::Tapis(const XmlConfigFactory::IndexParamValeur& indexParamValeur) :
         _chariotConnecte(0),
         _tronconSupport(0)
 {
-    // Constructeur
+    _vitesseMax = VITESSE_MAX_DEFAUT;
+    _vitesse = VITESSE_MAX_DEFAUT;
 }
 
 void Tapis::init (const XmlConfigFactory::IndexParamValeur& indexParamValeur,
@@ -53,7 +55,7 @@ bool Tapis::ajouterBagage(Bagage* bagageEntrant)
     {
         Bagage* dernierBagage = _bagages.last();
         // Vérifier la présence d'un bagage juste devant...
-        if(QVector2D(dernierBagage->position()-bagageEntrant->position()).length() < Bagage::TAILLE)
+        if(QVector2D(dernierBagage->position()-bagageEntrant->position()).length() < 10*Bagage::TAILLE)
             return false;
     }
 

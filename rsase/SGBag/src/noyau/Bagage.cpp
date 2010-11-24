@@ -29,8 +29,6 @@ Bagage::~Bagage()
     //TODO Auto-generated method stub
 }
 
-//@uml.annotationsderived_abstraction="platform:/resource/usdp/ModeleStructurel.emx#_qKAMUPDxEd-R6YEVT5cViQ"
-//@generated "UML to C++ (com.ibm.xtools.transform.uml2.cpp.CPPTransformation)"
 void Bagage::simulerDeplacement(const QVector2D& deplacement)
 {
     _position += deplacement.toPointF();

@@ -27,6 +27,8 @@
 
 
 const int INDEX_ONGLET_PARAMETRES = 0;
+const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 100;
+
 
 
 FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
@@ -286,7 +288,7 @@ void FenetrePrincipale::finAjoutBagage(VueVol& vueVol)
     }
     else
     {
-        ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas Ã©tÃ© ajoutÃ©"), 5000);
+        ui->statusBar->showMessage(trUtf8("Plus de place sur le tapis ! Le bagage n'a pas été ajouté"), 5000);
     }
     changementEtat(NORMAL);
 }
@@ -302,7 +304,7 @@ void FenetrePrincipale::associerVolToboggan()
     {
         QItemSelectionModel* selectionmodel = ui->volTableView->selectionModel();
         QModelIndexList listIndex = selectionmodel->selectedIndexes();
-        if(prototype->vol(listIndex.at(0).row())->tobogganAssocie() != 0)
+        if( ! listIndex.empty() && prototype->vol(listIndex.at(0).row())->tobogganAssocie() != 0)
         {
             ui->statusBar->showMessage(trUtf8("Ce vol a déjà un toboggan associé."), 2000);
         }
@@ -503,11 +505,33 @@ void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)
 
 void FenetrePrincipale::generationBagageAutomatique(bool etat)
 {
-    if(etat)
-        prototype->changementModeAjoutBagage(Prototype::AUTOMATIQUE);
-    else
-        prototype->changementModeAjoutBagage(Prototype::MANUEL);
+        if(etat)
+        {
+            qDebug() << "Connection du signal";
+            connect(&timer, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
+        }
+        else
+        {
+            qDebug() << "Deconnection";
+            disconnect(this, SLOT(ajouterBagageAleatoire()));
+        }
 
+}
+
+void FenetrePrincipale::ajouterBagageAleatoire()
+{
+    int nombreGenere= qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
+    qDebug() << " aléatoire";
+    if( ! nombreGenere)
+    {
+        Bagage* bagage = prototype->ajouterBagageAleatoire();
+        if(bagage != 0)
+        {
+            connect(bagage,SIGNAL(destroyed(QObject*)),this,SLOT(destructionBagage(QObject*)));
+
+            ajouterVueCanevas(new VueBagage(*this,*bagage));
+        }
+    }
 }
 
 

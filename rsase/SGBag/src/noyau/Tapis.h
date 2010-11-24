@@ -129,6 +129,7 @@ class Tapis : public ElementActif
         Troncon * _tronconSupport;
 
         static const double RAYON_PROXIMITE_TRONCON;
+        static const double VITESSE_MAX_DEFAUT;
 
 };  //end class Tapis
 

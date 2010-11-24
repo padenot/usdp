@@ -1,8 +1,3 @@
-/**
-  * \file vuefenetreprincipale
-  * \autor
-  */
-
 #ifndef FENETREPRINCPALE_H
 #define FENETREPRINCPALE_H
 
@@ -97,12 +92,11 @@ class FenetrePrincipale : public QMainWindow
 
 
     protected slots :
-            /**
-             * Slot relié à la checkbox de génération automatique de bagages.
-             * @param[in] etat Le nouvel état de la checkbox : activé ou non.
-             */
-            void generationBagageAutomatique(bool etat);
-
+        /**
+         * Slot relié à la checkbox de génération automatique de bagages.
+         * @param[in] etat Le nouvel état de la checkbox : activé ou non.
+         */
+        void generationBagageAutomatique(bool etat);
 
         /**
          * Méthode qui permet de supprimer un bagage
@@ -205,6 +199,11 @@ class FenetrePrincipale : public QMainWindow
          * Méthode qui ouvre la fenêtre qui contient des informations générales sur Qt
          */
         void aProposQt();
+
+        /**
+         * Ajoute un bagage de manière aléatoire si possible
+         */
+        void ajouterBagageAleatoire();
 
     private:
 
