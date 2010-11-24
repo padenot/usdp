@@ -97,6 +97,12 @@ class FenetrePrincipale : public QMainWindow
 
 
     protected slots :
+            /**
+             * Slot relié à la checkbox de génération automatique de bagages.
+             * @param[in] etat Le nouvel état de la checkbox : activé ou non.
+             */
+            void generationBagageAutomatique(bool etat);
+
 
         /**
          * Méthode qui permet de supprimer un bagage

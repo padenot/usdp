@@ -71,6 +71,7 @@ FenetrePrincipale::FenetrePrincipale(Prototype *proto, QWidget *parent) :
     connect(ui->actionQuitter, SIGNAL(triggered()), this, SLOT(quitterApplication()));
     connect(ui->action_propos, SIGNAL(triggered()), this, SLOT(aPropos()));
     connect(ui->volSupprimertoolButton, SIGNAL(clicked()), this, SLOT(supprimerVol()));
+    connect(ui->generationBagagecheckBox, SIGNAL(toggled(bool)), this, SLOT(generationBagageAutomatique(bool)));
 
     timer.start(vue_config::dt);
     _dialog = new QDialog(this);
@@ -498,4 +499,14 @@ void FenetrePrincipale::messageBarreDeStatus(const QString& message, int ms)
 {
     ui->statusBar->showMessage(message, ms);
 }
+
+void FenetrePrincipale::generationBagageAutomatique(bool etat)
+{
+    if(etat)
+        prototype->changementModeAjoutBagage(Prototype::AUTOMATIQUE);
+    else
+        prototype->changementModeAjoutBagage(Prototype::MANUEL);
+
+}
+
 

@@ -11,7 +11,7 @@
 //TODO: Add definitions that you want preserved
 //End section for file Prototype.cpp
 
-const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 1000;
+const int NOMBRE_CHANCE_BAGAGE_PAR_TICK = 100;
 
 const int Prototype::INTERVALLE_RAFRAICHISSEMENT_MODELE = 10; // En ms
 
@@ -93,37 +93,47 @@ Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 
 void Prototype::ajouterBagageAleatoire()
 {
-    /*
-    // Un bagage doit être généré
     int generated = qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
     if( ! generated)
     {
         qDebug() << "Ajout de bagage !";
+        // On peut pas générer de bagage s'il n'y a pas de vol
         if( ! _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].empty())
         {
             // Le nouveau bagage choisi un vol au hasard.
             Vol* vol = 0;
-            while( ! (vol = _modelVols[qrand() % _vols.size()]))
+            /* On prend un vol au hasard dans le modèle, s'il y en a */
+            if(_modelVols.rowCount())
             {
-                if(vol->tobogganAssocie())
+                while( ! (vol = _modelVols.at(qrand() % _modelVols().rowCount())))
                 {
-                    break;
+                    if(vol->tobogganAssocie())
+                    {
+
+                        break;
+                    }
                 }
             }
             // Et un tapis au hasard aussi
             int nbtapis = _elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]].size();
             Tapis* tapis = dynamic_cast<Tapis*>(_elementsParType[XmlConfigFactory::NodeName_String[XmlConfigFactory::vol]][qrand()%nbtapis]);
-
-            ajouterBagage(tapis,vol);
-            // TODO : ajouter la vue... ?
+            return ajouterBagage(tapis,vol);
         }
     }
-    */
 }
 
 void Prototype::changementModeAjoutBagage(ModeSimulation mode)
 {
-    //TODO Auto-generated method stub
+    if(mode == AUTOMATIQUE)
+    {
+        qDebug() << "Connection du signal";
+        connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
+    }
+    else if(mode == MANUEL)
+    {
+        qDebug() << "Deconnection";
+        disconnect(this, SLOT(ajouterBagageAleatoire()));
+    }
 }
 
 void Prototype::commencerSimulation()
