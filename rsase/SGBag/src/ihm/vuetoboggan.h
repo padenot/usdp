@@ -20,13 +20,13 @@ public:
 
     /**
      * Constructeur de la classe.
-     * @param [in] fenetrePrincipale - la fenêtre principale de l'application
-     * @param [in] toboggan - le toboggan associé à la vue réspective
+     * @param [in] fenetrePrincipale - la fenÃªtre principale de l'application
+     * @param [in] toboggan - le toboggan associÃ© Ã  la vue rÃ©spective
      */
     VueToboggan(FenetrePrincipale& _fenetrePrincipale, Toboggan &toboggan);
 
     /**
-     * Méthode qui permet de dessiner la vue
+     * MÃ©thode qui permet de dessiner la vue
      * @param [in] painter - l'objet Qt pour dessiner
      * @param [in] option - des options en fonction  de l'environnement graphique.
      * @param [in] widget - le widget sur lequel dessiner.
@@ -34,34 +34,34 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
     /**
-     * Méthode qui permet d'associer un vol à un toboggan
+     * MÃ©thode qui permet d'associer un vol Ã  un toboggan
      */
     void associerVol(Vol* vol);
 
     /**
-     * Le toboggan associé à la vue
+     * Le toboggan associÃ© Ã  la vue
      */
     Toboggan& toboggan() const;
 
 protected:
     /**
-     * Méthode vide mais nécessaire
+     * MÃ©thode vide mais nÃ©cessaire
      */
     void advance(int step);
 
 private:
     /**
-     * attribut qui permet de rendre le fichier svg associé à la vue
+     * attribut qui permet de rendre le fichier svg associÃ© Ã  la vue
      */
     static QSvgRenderer *_renderer;
 
     /**
-     * L'image associée à la vue du toboggan
+     * L'image associÃ©e Ã  la vue du toboggan
      */
     QGraphicsSvgItem *_image;
 
     /**
-     * L'objet toboggan associé à la vue
+     * L'objet toboggan associÃ© Ã  la vue
      */
     Toboggan &_toboggan;
 };

@@ -31,9 +31,9 @@ namespace Ui {
 }
 
 /**
- * @todo TODO implÃ©menter le zoom
+ * @todo TODO implÃƒÂ©menter le zoom
  * @class FenetrePrincipale 
- * \brief Classe gérant la vue de la fenêtre principale
+ * \brief Classe gÃ©rant la vue de la fenÃªtre principale
  */
 class FenetrePrincipale : public QMainWindow
 {
@@ -43,32 +43,32 @@ class FenetrePrincipale : public QMainWindow
         /**
           Le constructeur de la classe
           @param [in] proto - le prototype
-          @param [in] parent - parent de l'entité qui
+          @param [in] parent - parent de l'entitÃ© qui
         */
         explicit FenetrePrincipale(Prototype *proto, QWidget *parent = 0);
         ~FenetrePrincipale();
 
         /**
-          Méthode qui permet de recupérer les vues de tous les élements graphiques affichés dans la fenêtre principale
-          @param [in] elements - la carte qui contient tous les élements
+          MÃ©thode qui permet de recupÃ©rer les vues de tous les Ã©lements graphiques affichÃ©s dans la fenÃªtre principale
+          @param [in] elements - la carte qui contient tous les Ã©lements
         */
         void extraireVuesCanevas(const XmlConfigFactory::IndexTypesElements &elements);
 
         /**
-          Methode qui permet d'afficher un message dans la barre de status de la fenêtre principale
-          @param [in] message - le message qui va être affiché dans la bare de status de la fenêtre principale
-          @param [in] ms - l'identifiant du message affiché
+          Methode qui permet d'afficher un message dans la barre de status de la fenÃªtre principale
+          @param [in] message - le message qui va Ãªtre affichÃ© dans la bare de status de la fenÃªtre principale
+          @param [in] ms - l'identifiant du message affichÃ©
         */
         void messageBarreDeStatus(const QString& message, int ms);
 
         /**
-          Méthode qui permet d'ajouter un bagage sur le tapis.
-          @param [in] tapis - la vue du tapis où le bagage va être ajouté
+          MÃ©thode qui permet d'ajouter un bagage sur le tapis.
+          @param [in] tapis - la vue du tapis oÃ¹ le bagage va Ãªtre ajoutÃ©
         */
         void ajoutBagage(VueTapis& tapis);
 
         /**
-          Méthode qui permet d'obtenir le nombre de vols actifs.
+          MÃ©thode qui permet d'obtenir le nombre de vols actifs.
         */
         int nombreVols();
 
@@ -77,9 +77,9 @@ class FenetrePrincipale : public QMainWindow
 
         /**
          * Etat de la vue.
-            NORMAL - état normal de simulation
-            SELECTIONTOBOGGAN - état de la fenêtre quand un toboggan est selectionné
-            AJOUTBAGAGE - état de la fenêtre quand l'utilisateur a choisi l'action d'ajouter un bagage
+            NORMAL - Ã©tat normal de simulation
+            SELECTIONTOBOGGAN - Ã©tat de la fenÃªtre quand un toboggan est selectionnÃ©
+            AJOUTBAGAGE - Ã©tat de la fenÃªtre quand l'utilisateur a choisi l'action d'ajouter un bagage
          */
         enum Etat
         {
@@ -89,7 +89,7 @@ class FenetrePrincipale : public QMainWindow
         };
 
         /**
-         * Méthode qui permet d'ajouter un canevas sur la fênetre principale.
+         * MÃ©thode qui permet d'ajouter un canevas sur la fÃªnetre principale.
            @param [in] vue - la vue qui correspond au canevas
          */
         void ajouterVueCanevas(VueCanevas *vue);
@@ -99,168 +99,168 @@ class FenetrePrincipale : public QMainWindow
     protected slots :
 
         /**
-         * Méthode qui permet de supprimer un bagage
-         * @param [in] bagage - le bagage qui va être détruit
+         * MÃ©thode qui permet de supprimer un bagage
+         * @param [in] bagage - le bagage qui va Ãªtre dÃ©truit
          */
         void destructionBagage(QObject* bagage);
 
         /**
-         * Méthode qui marque la fin du traitement sur l'ajout d'un bagage
-         * @param [in] vol - le vol auquel le bagage est associé
+         * MÃ©thode qui marque la fin du traitement sur l'ajout d'un bagage
+         * @param [in] vol - le vol auquel le bagage est associÃ©
          */
         void finAjoutBagage(VueVol& vol);
 
         /**
-         * Méthode qui anulle l'ajout d'un bagage sur un tapis
+         * MÃ©thode qui anulle l'ajout d'un bagage sur un tapis
          */
         void annulerAjoutBagage();
 
         /**
-         * Méthode qui permet d'ajouter un vol dans la liste avec tous les vols de la fenêtre principale
+         * MÃ©thode qui permet d'ajouter un vol dans la liste avec tous les vols de la fenÃªtre principale
          */
         void ajouterVol();
 
         /**
-         * Méthode qui permet de supprimer un vol de la liste de vols dans la fenêtre principale
+         * MÃ©thode qui permet de supprimer un vol de la liste de vols dans la fenÃªtre principale
          */
         void supprimerVol();
 
         /**
-         * Méthode qui permet d'associer un vol à un toboggan, la fenêtre passe en mode sélection toboggan
+         * MÃ©thode qui permet d'associer un vol Ã  un toboggan, la fenÃªtre passe en mode sÃ©lection toboggan
          */
         void associerVolToboggan();
 
         /**
-         * Méthode qui permet d'annuler l'opération d'association, la fenêtre sort du mode sélection tobogan
+         * MÃ©thode qui permet d'annuler l'opÃ©ration d'association, la fenÃªtre sort du mode sÃ©lection tobogan
          */
         void annulerAssociation();
 
         /**
-         * Méthode qui permet de changer la vitesse de la simulation
+         * MÃ©thode qui permet de changer la vitesse de la simulation
          * @param [in] pourcentage - pourcentage de la vitesse normale
          */
         void changerVitesse(int pourcentage);
 
         /**
-         * Méthode appelée quand l'élement selectionné a changé
+         * MÃ©thode appelÃ©e quand l'Ã©lement selectionnÃ© a changÃ©
          */
         void changementSelection();
 
         /**
-         * Méthode qui permet démarrer la simulation si elle est arrêtée ou de l'arrêter si elle est démarrée
+         * MÃ©thode qui permet dÃ©marrer la simulation si elle est arrÃªtÃ©e ou de l'arrÃªter si elle est dÃ©marrÃ©e
          */
         void basculerMarcheArret();
 
         /**
-         * Méthode qui permet démarrer/arrêter la simulation
-         * @param [in] marche - true si on veut dámarrer la simulation, false si on veut l'arrêter
+         * MÃ©thode qui permet dÃ©marrer/arrÃªter la simulation
+         * @param [in] marche - true si on veut dÃ¡marrer la simulation, false si on veut l'arrÃªter
          */
         void definirMarcheArret (bool marche);
 
         /**
-         * Méthode qui empêche de sélectionner tous les objets de la fenêtre principale sauf les toboggans
+         * MÃ©thode qui empÃªche de sÃ©lectionner tous les objets de la fenÃªtre principale sauf les toboggans
          */
         void desactiverToutSaufToboggans();
 
         /**
-         * Méthode qui permet de changer l'état de la fenêtre
-         * @param [in] etat - le nouvel état de la fenêtre
+         * MÃ©thode qui permet de changer l'Ã©tat de la fenÃªtre
+         * @param [in] etat - le nouvel Ã©tat de la fenÃªtre
          */
         void changementEtat(Etat etat);
 
         /**
-         * Méthode qui rend actifs tous les objets de la fenêtre principale
+         * MÃ©thode qui rend actifs tous les objets de la fenÃªtre principale
          */
         void activerSelection();
 
         /**
-         * Méthode qui permet de zoomer/dezoomer sur le canevas
-         * @param [in] ratio - répresente combien de fois on agrandit/réduit la taille
-                               du canevas par rapport à la taille actuelle
+         * MÃ©thode qui permet de zoomer/dezoomer sur le canevas
+         * @param [in] ratio - rÃ©presente combien de fois on agrandit/rÃ©duit la taille
+                               du canevas par rapport Ã  la taille actuelle
          */
         void changementRatio(int ratio);
 
         /**
-         * Méthode qui permet decharger le circuit de rails à partir d'n fichier
+         * MÃ©thode qui permet decharger le circuit de rails Ã  partir d'n fichier
          */
         void changementCircuit();
 
         /**
-         * Méthode qui permet de quitter l'application
+         * MÃ©thode qui permet de quitter l'application
          */
         void quitterApplication();
 
         /**
-         * Méthode qui ouvre la fenêtre qui contient des informations générales sur l'application SgBag
+         * MÃ©thode qui ouvre la fenÃªtre qui contient des informations gÃ©nÃ©rales sur l'application SgBag
          */
         void aPropos();
 
         /**
-         * Méthode qui ouvre la fenêtre qui contient des informations générales sur Qt
+         * MÃ©thode qui ouvre la fenÃªtre qui contient des informations gÃ©nÃ©rales sur Qt
          */
         void aProposQt();
 
     private:
 
         /**
-         * Méthode qui sélectionne un chariot
-         * @param vueChariot [in] - la vue de l'objet chariot qu'on veut sélectionner
+         * MÃ©thode qui sÃ©lectionne un chariot
+         * @param vueChariot [in] - la vue de l'objet chariot qu'on veut sÃ©lectionner
          */
         void selectionChariot(VueChariot& vueChariot);
 
         /**
-         * Méthode qui sélectionne un toboggan
-         * @param vueToboggan [in] - la vue de l'objet toboggan qu'on veut sélectionner
+         * MÃ©thode qui sÃ©lectionne un toboggan
+         * @param vueToboggan [in] - la vue de l'objet toboggan qu'on veut sÃ©lectionner
          */
         void selectionToboggan(VueToboggan& vueToboggan);
 
         /**
-         * Méthode qui sélectionne un vol
-         * @param vueVol [in] - la vue de l'objet vol qu'on veut sélectionner
+         * MÃ©thode qui sÃ©lectionne un vol
+         * @param vueVol [in] - la vue de l'objet vol qu'on veut sÃ©lectionner
          */
         void selectionVol(VueVol& vueVol);
 
         /**
-         * Méthode qui sélectionne un chariot
-         * @param vueTapis [in] - la vue de l'objet tapis qu'on veut sélectionner
+         * MÃ©thode qui sÃ©lectionne un chariot
+         * @param vueTapis [in] - la vue de l'objet tapis qu'on veut sÃ©lectionner
          */
         void selectionTapis(VueTapis& vueTapis);
 
         /**
-         * Méthode qui sélectionne un bagage
-         * @param vueBagage [in] - la vue de l'objet bagage qu'on veut sélectionner
+         * MÃ©thode qui sÃ©lectionne un bagage
+         * @param vueBagage [in] - la vue de l'objet bagage qu'on veut sÃ©lectionner
          */
         void selectionBagage(VueBagage& vueBagage);
         void selectionTroncon(VueTroncon&);
         void vueParametresDefaut();
 
         /**
-         * L'objet qui correspond à la fenêtre principale
+         * L'objet qui correspond Ã  la fenÃªtre principale
          */
         Ui::FenetrePrincipale* ui;
 
         /**
-         * L'objet qui correspond au canevas de la fenêtre principale
+         * L'objet qui correspond au canevas de la fenÃªtre principale
          */
         QGraphicsScene* scene;
 
         /**
-         * L'objet qui correspond au prototype lié à la fenêtre principale
+         * L'objet qui correspond au prototype liÃ© Ã  la fenÃªtre principale
          */
         Prototype* prototype;
 
         /**
-         * Le timer utilisé pour la simulation
+         * Le timer utilisÃ© pour la simulation
          */
         QTimer timer;
 
         /**
-         * La vue du tapis qui correspond à l'ajout du bagage
+         * La vue du tapis qui correspond Ã  l'ajout du bagage
          */
         VueTapis* _vueTapisAjoutBagage;
 
         /**
-         * La vue qui correspond à l'onglet Paramètres dans la fenêtre principale
+         * La vue qui correspond Ã  l'onglet ParamÃ¨tres dans la fenÃªtre principale
          */
         QWidget* _vueParametres;
 
@@ -270,17 +270,17 @@ class FenetrePrincipale : public QMainWindow
         QDialog* _dialog;
 
         /**
-        * Paramètre qui marque le fait qu'on est en train de sélectionner un toboggan
+        * ParamÃ¨tre qui marque le fait qu'on est en train de sÃ©lectionner un toboggan
         */
         bool enTrainDeSelectionnerUnToboggan;
 
         /**
-        * Le niveau actuel de granularité du canevas
+        * Le niveau actuel de granularitÃ© du canevas
         */
         qreal ratioActuel;
 
         /**
-        * L'état de la fenêtre principale
+        * L'Ã©tat de la fenÃªtre principale
         */
         Etat _etat;
 };
