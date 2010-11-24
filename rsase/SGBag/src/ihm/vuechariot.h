@@ -58,10 +58,6 @@ private:
      */
     static QSvgRenderer *_renderer;
     /**
-     * Un pointer vers l'image, pour éviter de la redessiner.
-     */
-    //QGraphicsSvgItem *_image;
-    /**
      * Une référence vers le chariot, dans le modèle.
      */
     Chariot &_chariot;

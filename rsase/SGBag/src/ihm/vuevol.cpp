@@ -15,9 +15,10 @@ QSvgRenderer *VueVol::_renderer = new QSvgRenderer(etatNormal);
 
 VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
         VueCanevas(fenetrePrincipale),
-        //_image(new QSvgRenderer(etatNormal)),
         _vol (vol)
 {
+    setZValue(zIndex);
+    setSharedRenderer(_renderer);
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     //TODO : utiliser VueCanevas::definirCoordonnees
@@ -45,8 +46,8 @@ VueVol::VueVol(FenetrePrincipale& fenetrePrincipale, Vol& vol):
 
 void VueVol::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    // TODO : faire un rendu à chaque repaint (donc toutes les 10ms environ), c'est violent.
     renderer()->render(painter, _rect);
+    qDebug() << "rendu vol";
 }
 
 Vol* VueVol::volAssocie()

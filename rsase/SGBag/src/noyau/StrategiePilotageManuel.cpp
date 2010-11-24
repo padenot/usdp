@@ -1,8 +1,6 @@
 #include "StrategiePilotageManuel.h"
 #include "Chariot.h"
 #include "Troncon.h"
-#include "Toboggan.h"
-#include "Tapis.h"
 #include "Noeud.h"
 
 StrategiePilotageManuel::StrategiePilotageManuel(Chariot& chariot, Troncon* tronconActuel,
@@ -24,10 +22,10 @@ void StrategiePilotageManuel::calculerNouveauChemin()
         ->trouverChemin(_chariot.directionConseillee());
 }
 
-void StrategiePilotageManuel::pilotageNoeudAtteint(double dt)
+QPointF StrategiePilotageManuel::piloter(double dt, Bagage* bagage)
 {
-    StrategiePilotage::pilotageNoeudAtteint(dt);
     mettreAJourChemin(); // Opération peu gourmande, on ne
                         // fait que demander le tronçon
                         // de gauche/droite
+    return StrategiePilotage::piloter(dt,bagage);
 }

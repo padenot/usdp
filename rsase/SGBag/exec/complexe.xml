@@ -169,8 +169,8 @@
 		<id>27</id>
 		<x>150</x>
 		<y>210</y>
-		<suivantGauche>29</suivantGauche>
-		<suivantDroit>30</suivantDroit>
+		<suivantGauche>30</suivantGauche>
+		<suivantDroit>29</suivantDroit>
 	</noeud>
 	<troncon>
 		<id>28</id>

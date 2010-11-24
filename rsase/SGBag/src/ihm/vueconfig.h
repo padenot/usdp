@@ -33,7 +33,7 @@ namespace vue_config
 		/**
 		 * La marge utilisée pour les boites englobantes.
 		 */
-        const double marge = 2;
+        const double marge = 1;
     }
 
     /**
@@ -61,7 +61,7 @@ namespace vue_config
          * Le rayon du cercle utilisé pour les coins arrondis des
          * rectangles de selection.
          */
-        const double arrondis = 1;
+        const double arrondis = 0.2;
     }
 
     /**
@@ -77,11 +77,11 @@ namespace vue_config
         /**
          * La longueur d'un bagage.
          */
-        const double longueur = 0.4;//*ZOOM_ELEMENTS;
+        const double longueur = 0.4*ZOOM_ELEMENTS;
         /**
          * La largeur d'un élément.
          */
-        const double largeur = 0.4;//*ZOOM_ELEMENTS;
+        const double largeur = 0.4*ZOOM_ELEMENTS;
         /**
          * Nombre de ressources utilisées pour les bagages.
          */
@@ -236,7 +236,7 @@ namespace vue_config
 		/**
 		 * L'indice de pronfondeur de l'élément graphique vol.
 		 */
-        const int zIndex = 10;
+        const int zIndex = 5;
         /**
          * La longueur d'un avion.
          */
@@ -244,7 +244,7 @@ namespace vue_config
         /**
          * La largeur d'un avion.
          */
-        const double largeur = longueur*0.77;
+        const double largeur = longueur*0.5;// /0.77;
         /**
          * L'écart avec le toboggan d'un avion.
          */

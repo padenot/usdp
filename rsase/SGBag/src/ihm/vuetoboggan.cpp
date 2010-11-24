@@ -12,13 +12,11 @@ QSvgRenderer *VueToboggan::_renderer = new QSvgRenderer(etatNormal);
 
 VueToboggan::VueToboggan(FenetrePrincipale& fenetrePrincipale, Toboggan &toboggan):
         VueElement(fenetrePrincipale),
-        //_image(new QGraphicsSvgItem()),
         _toboggan(toboggan)
 {
     setSharedRenderer(_renderer);
 
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     setZValue(zIndex);
     definirCoordonnees(_toboggan.position(),_toboggan.pointConnexion(),
@@ -53,7 +51,7 @@ void VueToboggan::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWi
     VueElement::paint(painter, 0, 0);
 
     //------------ Rendu du Svg
-    renderer()->render(painter, boundingRect());
+    renderer()->render(painter, _rect);
 }
 
 Toboggan& VueToboggan::toboggan() const

@@ -10,14 +10,12 @@ QSvgRenderer *VueBagage::_renderer = new QSvgRenderer(bagageSimple);
 
 VueBagage::VueBagage(FenetrePrincipale& fenetrePrincipale, Bagage &bagage):
         VueElement(fenetrePrincipale,rect),
-        //_image(new QGraphicsSvgItem()),
         _bagage(bagage)
 {
     //_image->setSharedRenderer(_renderer);
     setSharedRenderer(_renderer);
 
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     setZValue(zIndex);
 }
@@ -35,7 +33,7 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 {
     VueElement::paint(painter, 0, 0);
 
-    renderer()->render(painter, boundingRect());
+    renderer()->render(painter, _rect);
 
     /* Affichage de l'id du bagage
        Valable avec les nouveaux rendus.
@@ -50,6 +48,8 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->setPen(couleurTexte);
     painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_bagage.id()));
     painter->setTransform(matriceActuelle);//*/
+
+    qDebug() << "rendu bagage";
 }
 
 Bagage* VueBagage::bagageAssocie()

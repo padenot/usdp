@@ -13,7 +13,6 @@ QSvgRenderer *VueTapis::_renderer = new QSvgRenderer(etatNormal);
 
 VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
         VueElement(fenetrePrincipale),
-        //_image(new QGraphicsSvgItem()),
         _tapis(tapis),
         _handler(*new VueTapisHandler(*this,fenetrePrincipale))
 {
@@ -23,8 +22,7 @@ VueTapis::VueTapis(FenetrePrincipale& fenetrePrincipale, Tapis &tapis):
     definirCoordonnees(_tapis.position(),_tapis.pointConnexion(),
                        largeur,-vue_config::chariot::largeur/2);
 
-    //setCacheMode(QGraphicsItem::DeviceCoordinateCache);
-    //_image->setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+    setCacheMode(QGraphicsItem::DeviceCoordinateCache);
 
     QAction* ajouterBagageAction = new QAction("Ajouter un bagage", 0);
     _contextMenuActionsList.append(ajouterBagageAction);
@@ -54,7 +52,7 @@ void VueTapis::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     VueElement::paint(painter, 0, 0);
 
     //------------ Rendu du Svg
-    renderer()->render(painter, boundingRect());
+    renderer()->render(painter, _rect);
 }
 
 Tapis* VueTapis::tapisAssocie()
