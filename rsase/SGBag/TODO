@@ -1,12 +1,15 @@
 CORE :
 Fait ? MAXIME : - Implémenter l'ajustement des rayons de proximité des stratégies de pilotage en fonction de la vitesse du chariot
 
+
 IHM :
 YOANN : - Résoudre le bug du chariot bloqué lorsqu'il démarre en manuel après un tapis (sans bagage)
 YOANN : - Résoudre le bug du chariot bloqué lorsque le tronçon devant lequel il était arrêté est réparé
-- Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
+- Résoudre le bug du chariot bloqué sur un noeud en vitesse 1000%
+FAIT : - Résoudre le SIGSEGV à la fermeture du programme lorsque la simulation est commencée (destruction des bagages)
 - Lors de l'ajout d'un bagage, si on clique sur un vol déjà sélectionné, ça marche pas.
 - Idem pour l'association vol-toboggan
+- Résoudre les problèmes de localisation (accents)
 PAUL : - Gérer l'ajout aléatoire et automatique de bagages (DANS LA VUE, car les vues doivent être créées en même temps... Ou bien envoyer un signal à la création d'un bagage)
 
 - TESTER
