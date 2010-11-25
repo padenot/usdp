@@ -14,8 +14,9 @@ def getSourceFiles(srcPath, ext):
 	sourceList = []
 	for path, subdirs, files in os.walk(root):
 		for name in files:
-			if name.endswith(ext): 
-				sourceList.append((name, os.path.join(os.path.abspath(path), name)))
+			for e in ext:
+				if name.endswith(e): 
+					sourceList.append((name, os.path.join(os.path.abspath(path), name)))
 	return sourceList
 
 def toLatex(sourceList):
@@ -25,16 +26,13 @@ def toLatex(sourceList):
 		p = s[1]
 
 		buffer = "\\begin{lstlisting}\n"
-		try:
-			buffer += codecs.encode(readFile(p), 'utf8') + "\n"
-		except: 
-			print n
-#			buffer += readFile(p).decode('ascii').encode('utf-8') + "\n"
+		buffer += readFile(p) + "\n"
 		buffer += "\\end{lstlisting}\n\n"
+
 		output += buffer
 	return output
 	
 def main():
-	print toLatex(getSourceFiles(sys.argv[1], "cpp"))
+	print toLatex(getSourceFiles(sys.argv[1], ["h", "cpp"]))
 
 main()
