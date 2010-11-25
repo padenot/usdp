@@ -1,0 +1,81 @@
+\select@language {french}
+\contentsline {part}{I\hspace {1em}Liste des besoins}{4}{part.1}
+\contentsline {subsection}{\numberline {0.1}Besoins communs}{4}{subsection.0.1}
+\contentsline {subsection}{\numberline {0.2}Configuration}{4}{subsection.0.2}
+\contentsline {subsection}{\numberline {0.3}Simulation}{4}{subsection.0.3}
+\contentsline {subsection}{\numberline {0.4}Exploitation}{4}{subsection.0.4}
+\contentsline {subsection}{\numberline {0.5}Maintenance}{4}{subsection.0.5}
+\contentsline {subsection}{\numberline {0.6}R\IeC {\'e}clamation}{4}{subsection.0.6}
+\contentsline {part}{II\hspace {1em}Cas d'utilisation}{5}{part.2}
+\contentsline {section}{\numberline {1}R\IeC {\^o}les}{5}{section.1}
+\contentsline {section}{\numberline {2}Cas d'utilisation}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Besoins communs}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Visualiser un objet statique}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Effectuer des actions sur l'historique}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Configuration}{8}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Effectuer des op\IeC {\'e}rations sur un \IeC {\'e}l\IeC {\'e}ment}{8}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Simuler la configuration en cours}{8}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}G\IeC {\'e}rer la persistance d'une configuration}{8}{subsubsection.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Simulation}{9}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Charger une configuration}{9}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}G\IeC {\'e}rer la liste des vols}{9}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}Changer le mode de simulation}{9}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}Agir manuellement sur les \IeC {\'e}l\IeC {\'e}ments}{9}{subsubsection.2.5.4}
+\contentsline {subsubsection}{\numberline {2.5.5}Effectuer des op\IeC {\'e}rations sur l'avancement de la simulation}{10}{subsubsection.2.5.5}
+\contentsline {subsubsection}{\numberline {2.5.6}G\IeC {\'e}rer les \IeC {\'e}v\IeC {\'e}nements}{10}{subsubsection.2.5.6}
+\contentsline {subsection}{\numberline {2.6}G\IeC {\'e}rer la persistance d'une simulation}{10}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me ponctuellement}{10}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me p\IeC {\'e}riodiquement}{10}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Visualiser un objet dynamique}{10}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Exploitation}{11}{subsection.2.10}
+\contentsline {subsubsection}{\numberline {2.10.1}Charger une configuration}{11}{subsubsection.2.10.1}
+\contentsline {subsection}{\numberline {2.11}G\IeC {\'e}rer la persistance des fichiers de journalisation}{11}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Effectuer un arr\IeC {\^e}t d'urgence}{11}{subsection.2.12}
+\contentsline {subsubsection}{\numberline {2.12.1}Effectuer une op\IeC {\'e}ration prot\IeC {\'e}g\IeC {\'e}e sur un \IeC {\'e}l\IeC {\'e}ments}{11}{subsubsection.2.12.1}
+\contentsline {subsubsection}{\numberline {2.12.2}Acheminer automatiquement les bagages}{11}{subsubsection.2.12.2}
+\contentsline {subsection}{\numberline {2.13}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me p\IeC {\'e}riodiquement}{12}{subsection.2.13}
+\contentsline {subsection}{\numberline {2.14}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me ponctuellement}{12}{subsection.2.14}
+\contentsline {subsection}{\numberline {2.15}Visualiser un objet dynamique}{12}{subsection.2.15}
+\contentsline {subsection}{\numberline {2.16}Maintenance}{12}{subsection.2.16}
+\contentsline {subsubsection}{\numberline {2.16.1}Effectuer des op\IeC {\'e}rations non prot\IeC {\'e}g\IeC {\'e}es sur un \IeC {\'e}l\IeC {\'e}ment}{12}{subsubsection.2.16.1}
+\contentsline {subsubsection}{\numberline {2.16.2}Visualiser les r\IeC {\'e}sultats}{12}{subsubsection.2.16.2}
+\contentsline {subsubsection}{\numberline {2.16.3}G\IeC {\'e}rer la persistance des fiches \IeC {\'e}lectroniques d'interventions et des fichiers de journaux}{12}{subsubsection.2.16.3}
+\contentsline {subsubsection}{\numberline {2.16.4}G\IeC {\'e}rer les interventions}{13}{subsubsection.2.16.4}
+\contentsline {subsection}{\numberline {2.17}R\IeC {\'e}clamation}{13}{subsection.2.17}
+\contentsline {subsubsection}{\numberline {2.17.1}G\IeC {\'e}rer un dossier de litige}{13}{subsubsection.2.17.1}
+\contentsline {subsubsection}{\numberline {2.17.2}Se renseigner sur un bagage}{13}{subsubsection.2.17.2}
+\contentsline {subsubsection}{\numberline {2.17.3}G\IeC {\'e}rer la persistance des dossiers de litiges}{13}{subsubsection.2.17.3}
+\contentsline {part}{III\hspace {1em}Sc\IeC {\'e}narios}{14}{part.3}
+\contentsline {section}{\numberline {3}Besoins communs}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}Visualisation statique}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Visualisation dynamique}{14}{subsection.3.2}
+\contentsline {section}{\numberline {4}Configuration}{14}{section.4}
+\contentsline {subsection}{\numberline {4.1}Effectuer des op\IeC {\'e}rations sur un \IeC {\'e}l\IeC {\'e}ment}{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Simuler}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}G\IeC {\'e}rer la persistance de la configuration}{15}{subsection.4.3}
+\contentsline {section}{\numberline {5}Simulation}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Charger une configuration pour la simulation}{15}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}G\IeC {\'e}rer la persistance d'une simulation}{15}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}G\IeC {\'e}rer la liste des vols}{15}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Changer le mode de simulation}{16}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Agir sur les \IeC {\'e}l\IeC {\'e}ments visualis\IeC {\'e}s}{16}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Effectuer des op\IeC {\'e}rations sur l'avancement de la simulation}{16}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}G\IeC {\'e}rer les \IeC {\'e}v\IeC {\'e}nements}{16}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}D\IeC {\'e}clencher les \IeC {\'e}v\IeC {\'e}nements}{17}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me}{17}{subsection.5.9}
+\contentsline {section}{\numberline {6}Exploitation}{17}{section.6}
+\contentsline {subsection}{\numberline {6.1}Effectuer une op\IeC {\'e}ration prot\IeC {\'e}g\IeC {\'e}e}{17}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Acheminer automatiquement les bagages}{17}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Arr\IeC {\^e}ter d'urgence le syst\IeC {\`e}me}{17}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}G\IeC {\'e}rer la persistance des configurations et des fichiers de logs}{17}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Mettre \IeC {\`a} jour l'\IeC {\'e}tat du syst\IeC {\`e}me}{18}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Maintenance}{18}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Visualiser les r\IeC {\'e}sultats}{18}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}G\IeC {\'e}rer les interventions}{18}{subsection.6.8}
+\contentsline {subsection}{\numberline {6.9}G\IeC {\'e}rer la persistance des fichiers \IeC {\'e}lectroniques d'intervention et des fichiers de journaux}{18}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}R\IeC {\'e}clamation}{18}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}G\IeC {\'e}rer un dossier de litige}{18}{subsection.6.11}
+\contentsline {subsection}{\numberline {6.12}Cr\IeC {\'e}er un nouvel identifiant voyageur}{19}{subsection.6.12}
+\contentsline {subsection}{\numberline {6.13}Se renseigner sur un bagage}{19}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}G\IeC {\'e}rer la persistance des dossiers de litiges}{19}{subsection.6.14}
+\contentsline {part}{IV\hspace {1em}Listings}{20}{part.4}
