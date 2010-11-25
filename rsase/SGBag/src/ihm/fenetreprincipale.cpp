@@ -100,6 +100,9 @@ void FenetrePrincipale::changementCircuit()
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     tr("Choisissez un nouveau fichier de circuit"), ".", tr("*.xml"));
 
+    if(fileName.isEmpty())
+        return;
+
     definirMarcheArret(false);
     scene->clear();
     delete prototype;
@@ -355,15 +358,12 @@ void FenetrePrincipale::changementEtat(Etat etat)
     switch(etat)
     {
     case SELECTIONTOBOGGAN:
-        qDebug() << "On passe en selection toboggan";
         ui->volAssocierButton->setText("&Annuler");
         break;
     case NORMAL:
-        qDebug() << "On passe en mode normal";
         ui->volAssocierButton->setText("&Associer");
         break;
     case AJOUTBAGAGE:
-        qDebug() << "On passe en ajout bagage";
         break;
     };
     _etat = etat;
@@ -508,13 +508,11 @@ void FenetrePrincipale::generationBagageAutomatique(bool etat)
 {
         if(etat)
         {
-            qDebug() << "Connection du signal";
             connect(&timer, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
         }
         else
         {
-            qDebug() << "Deconnection";
-            disconnect(this, SLOT(ajouterBagageAleatoire()));
+            timer.disconnect(this, SLOT(ajouterBagageAleatoire()));
         }
 
 }
@@ -522,7 +520,6 @@ void FenetrePrincipale::generationBagageAutomatique(bool etat)
 void FenetrePrincipale::ajouterBagageAleatoire()
 {
     int nombreGenere= qrand()%NOMBRE_CHANCE_BAGAGE_PAR_TICK;
-    qDebug() << " aléatoire";
     if( ! nombreGenere)
     {
         Bagage* bagage = prototype->ajouterBagageAleatoire();

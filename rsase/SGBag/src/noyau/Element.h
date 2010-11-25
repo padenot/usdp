@@ -7,7 +7,7 @@
 #define ELEMENT_H
 
 
-#define DEBUG_ACHEMINEMENT
+//#define DEBUG_ACHEMINEMENT
 
 #include <QPointF>
 #ifdef DEBUG_ACHEMINEMENT

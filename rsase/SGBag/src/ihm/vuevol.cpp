@@ -1,4 +1,5 @@
 #include <QtSvg/QSvgRenderer>
+#include <QDebug>
 
 #include "fenetreprincipale.h"
 

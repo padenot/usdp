@@ -43,8 +43,6 @@ Prototype::Prototype(const QString& xmlfilepath) :
     if (reader.parse(xmlInputSource))
     {
         _elementsParType = handler.resultat();
-
-        qDebug() << _elementsParType;
     }
 
     _horloge.setInterval(INTERVALLE_RAFRAICHISSEMENT_MODELE);
@@ -91,12 +89,10 @@ Bagage* Prototype::ajouterBagage(Tapis* tapis, Vol* vol)
 
 Bagage* Prototype::ajouterBagageAleatoire()
 {
-    qDebug() << "Ajout de bagage !";
     int nbvol = _modelVols.rowCount(QModelIndex());
     // On peut pas générer de bagage s'il n'y a pas de vol
     if(nbvol != 0)
     {
-        qDebug() << "Il y a des vols";
         // Le nouveau bagage choisi un vol au hasard.
         Vol* vol = 0;
         vol = _modelVols.at(qrand() % nbvol);
@@ -117,12 +113,10 @@ void Prototype::changementModeAjoutBagage(ModeSimulation mode)
 {
     if(mode == AUTOMATIQUE)
     {
-        qDebug() << "Connection du signal";
         connect(&_horloge, SIGNAL(timeout()), this, SLOT(ajouterBagageAleatoire()));
     }
     else if(mode == MANUEL)
     {
-        qDebug() << "Deconnection";
         disconnect(this, SLOT(ajouterBagageAleatoire()));
     }
 }

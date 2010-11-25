@@ -49,7 +49,6 @@ void VueBagage::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->drawText(QRectF(0,0,200,100), Qt::AlignLeft, QString::number(_bagage.id()));
     painter->setTransform(matriceActuelle);//*/
 
-    qDebug() << "rendu bagage";
 }
 
 Bagage* VueBagage::bagageAssocie()
