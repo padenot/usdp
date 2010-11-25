@@ -1,13 +1,6 @@
 \newcommand{\h}{\unit{h}}
 
 \section{Bilan technique}
-{\huge TODO acheter du terrain}
-\begin{itemize}
-\item Pourquoi C++ et pas Java? \ldots ?
-\item Pourquoi Qt ?
-\item Avantages (gestion vitesse chariot, \ldots)
-\item Limites
-\end{itemize}
 \subsection{Justification du choix des technologies}
 Le langage C++ était premièrement connu de tous les membres de l'hexanôme, de part son enseignement en 3IF, effectué plus en profondeur que celui dispensé en Java.
 De plus, les connaissances acquises en dehors du cadre universitaire en C++, par plusieurs personnes ont été bénéfiques tout au long du projet, en particulier une connaissance du framework utilisé, Qt. Il s'est en effet avéré un composant essentiel lors du développement, simplifiant grandement les opérations d'affichage sur un canevas. Si le langage Java avait été choisi, nous aurions du adapter nos méthodes de programmation, ce qui aurait été positif, d'un point de vue pédagogique, mais non efficace du point de vue réalisation.
@@ -20,13 +13,13 @@ De plus il est d'ors et déjà, moyennant une légère modification des fichiers
 Au niveau interface graphique, il est facile réorganiser et de modifier les contrôles, indépendamment de la base de code.
 On remarquera également que le taux de rafraîchissement graphique est séparé du calcul au niveau modèle. Il est donc possible d'accélérer et de ralentir la simulation indépendamment de l'affichage, pouvant donc avoir une simulation très lente parfaitement fluide.
 
-{\huge TODO limites}
+Qt nous apporte énormément d'avantages, mais aussi une limite : la dépendance. En effet, l'utilisation de ce framework est très intrusive ; aussi le code ne sera pas portable sur une autre technologie. C'est un choix que nous avons fait, en grande partie parce que nous savions que ce portage ne serait jamais effectué.
 
 \section{Bilan organisationnel}
 \subsection{Planning réel}
 {\Huge TODO}
 \subsection{Temps passé sur le projet} 
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 & Martin & Maxime & Monica & Paul & Étienne & Yoann \\
 \hline
